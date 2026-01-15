@@ -1,68 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Primary Colors */
+  --color-primary-60: #703bf7;
+  --color-primary-65: #8254f8;
+  --color-primary-70: #946cf9;
+  --color-primary-75: #a685fa;
+  --color-primary-90: #dbcefd;
+  --color-primary-95: #ede7fe;
+  --color-primary-97: #f4f0fe;
+  --color-primary-99: #fbfaff;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* Light Colors */
+  --color-light-90: #e4e4e7;
+  --color-light-95: #f1f1f3;
+  --color-light-97: #f7f7f8;
+  --color-light-99: #fcfcfd;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* Gray Colors */
+  --color-gray-08: #141414;
+  --color-gray-10: #1a1a1a;
+  --color-gray-15: #262626;
+  --color-gray-20: #333333;
+  --color-gray-30: #4d4d4d;
+  --color-gray-40: #666666;
+  --color-gray-50: #808080;
+  --color-gray-60: #999999;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+@theme {
+  --font-urbanist: "Urbanist", sans-serif;
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+  --color-primary-60: var(--color-primary-60);
+  --color-primary-65: var(--color-primary-65);
+  --color-primary-70: var(--color-primary-70);
+  --color-primary-75: var(--color-primary-75);
+  --color-primary-90: var(--color-primary-90);
+  --color-primary-95: var(--color-primary-95);
+  --color-primary-97: var(--color-primary-97);
+  --color-primary-99: var(--color-primary-99);
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  --color-gray-08: var(--color-gray-08);
+  --color-gray-10: var(--color-gray-10);
+  --color-gray-15: var(--color-gray-15);
+  --color-gray-20: var(--color-gray-20);
+  --color-gray-30: var(--color-gray-30);
+  --color-gray-40: var(--color-gray-40);
+  --color-gray-50: var(--color-gray-50);
+  --color-gray-60: var(--color-gray-60);
+
+  --color-light-90: var(--color-light-90);
+  --color-light-95: var(--color-light-95);
+  --color-light-97: var(--color-light-97);
+  --color-light-99: var(--color-light-99);
 }
