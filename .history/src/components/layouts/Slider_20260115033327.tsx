@@ -1,0 +1,92 @@
+import type { SliderProps } from "../../interfaces";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import SliderButton from "../ui/SliderButton";
+import { useState } from "react";
+import type { Swiper as SwiperType } from "swiper";
+
+const Slider = ({
+  cards = [],
+  cardsPerView = 3,
+  spaceBetween = 24,
+}: SliderProps) => {
+  const totalPages = Math.ceil(cards.length / cardsPerView);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  return (
+    <div className="relative">
+      {/* Swiper */}
+      <Swiper
+        modules={[Navigation]}
+        slidesPerView={cardsPerView}
+        slidesPerGroup={cardsPerView}
+        spaceBetween={spaceBetween}
+        navigation={{
+          prevEl: ".slider-prev",
+          nextEl: ".slider-next",
+        }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          },
+          768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+          1024: {
+            slidesPerView: cardsPerView,
+            slidesPerGroup: cardsPerView,
+          },
+        }}
+        onSlideChange={(swiper: SwiperType) => {
+          setCurrentPage(
+            Math.floor(swiper.realIndex / cardsPerView) + 1
+          );
+        }}
+        loop
+      >
+        {cards.map((card, index) => (
+          <SwiperSlide key={index}>{card}</SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Controls (خارج Swiper) */}
+      <div className="mt-6 flex justify-between items-center">
+        <button className="border border-gray-15 py-3.5 px-5 text-[14px] text-white lg:hidden rounded-xl">
+          View All FAQ’s
+        </button>
+
+        <div className="hidden lg:block">
+          <span className="text-white">
+            {String(currentPage).padStart(2, "0")}
+          </span>
+          <span className="text-gray-60"> of </span>
+          <span className="text-gray-60">
+            {String(totalPages).padStart(2, "0")}
+          </span>
+        </div>
+
+        <div className="flex items-center gap-2.5">
+          <SliderButton
+            className="slider-prev"
+            image={{
+              source: "/assets/icons/arrowleft.svg",
+              alternative: "arrow left",
+            }}
+          />
+
+          <SliderButton
+            className="slider-next"
+            image={{
+              source: "/assets/icons/arrowright.svg",
+              alternative: "arrow right",
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Slider;
