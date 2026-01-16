@@ -8,7 +8,7 @@ const SectionHeader = ({
   onClick,
 }: SectionHeaderProps) => {
   return (
-    <header>
+    <header className="mb-10 lg:mb-15 xl:mb-20">
       <div className="relative">
         <img
           className="h-5 lg:h-6 xl:h-7.5 absolute -top-5 lg:-top-8 xl:-top-11 -left-2 lg:-left-3 xl:-left-5"
@@ -28,9 +28,13 @@ const SectionHeader = ({
             </p>
           </div>
           <div>
-            <button onClick={() => onClick} className="hidden whitespace-nowrap md:inline-block text-[14px] xl:text-[18px] font-medium py-3.5 xl:py-4.5 xl:px-6 px-5 rounded-lg border border-gray-15 bg-gray-10 cursor-pointer">
-              {btnText}
-            </button>
+            {btnText && (
+              <button
+                onClick={() => onClick}
+                className="hidden whitespace-nowrap md:inline-block text-[14px] xl:text-[18px] font-medium py-3.5 xl:py-4.5 xl:px-6 px-5 rounded-lg border border-gray-15 bg-gray-10 cursor-pointer">
+                {btnText}
+              </button>
+            )}
           </div>
         </div>
       </div>

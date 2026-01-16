@@ -3,7 +3,7 @@ import { infoCardsData } from "../data/homeData";
 
 const Home = () => {
   return (
-    <div className="h-screen">
+    <div className="">
       <section className="mx-4 sm:mx-20 lg:mx-0">
         <InfoCardsSection cards={infoCardsData} />
       </section>

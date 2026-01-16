@@ -7,11 +7,12 @@ export interface SliderProps {
 export interface SectionHeaderProps {
   title: string;
   text: string;
-  extraText: string;
+  extraText?: string;
   btnText?: string;
   onClick?: () => void;
 }
 
+// Info Cards Section
 export interface InfoCardProps {
   id: number;
   icon: string;
@@ -21,4 +22,15 @@ export interface InfoCardProps {
 
 export interface InfoCardSectionProps {
   cards: InfoCardProps[]
+}
+
+// Achievements Section
+export interface AchievementsCardProps {
+  id: number;
+  title: string;
+  text: string;
+}
+export interface AchievementsSectionProps {
+  headerData: SectionHeaderProps;
+  cards: AchievementsCardProps[];
 }
