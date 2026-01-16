@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
-import StatisticsCardsGorup from "../ui/statisticsCardsGorup";
+import StatisticsCardsGorup from "../ui/StatisticsCardsGorup";
 
 const HomeHero = () => {
   const navigate = useNavigate();
