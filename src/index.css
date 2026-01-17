@@ -3,6 +3,7 @@
 
 :root {
   /* Primary Colors */
+  --color-primary-50: #2a213f;
   --color-primary-60: #703bf7;
   --color-primary-65: #8254f8;
   --color-primary-70: #946cf9;
@@ -19,6 +20,7 @@
   --color-light-99: #fcfcfd;
 
   /* Gray Colors */
+  --color-gray-09: #191919;
   --color-gray-08: #141414;
   --color-gray-10: #1a1a1a;
   --color-gray-15: #262626;
@@ -32,6 +34,7 @@
 @theme {
   --font-urbanist: "Urbanist", sans-serif;
 
+  --color-primary-50: var(--color-primary-50);
   --color-primary-60: var(--color-primary-60);
   --color-primary-65: var(--color-primary-65);
   --color-primary-70: var(--color-primary-70);
@@ -41,6 +44,7 @@
   --color-primary-97: var(--color-primary-97);
   --color-primary-99: var(--color-primary-99);
 
+  --color-gray-09: var(--color-gray-09);
   --color-gray-08: var(--color-gray-08);
   --color-gray-10: var(--color-gray-10);
   --color-gray-15: var(--color-gray-15);

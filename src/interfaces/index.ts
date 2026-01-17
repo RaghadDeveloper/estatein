@@ -1,7 +1,37 @@
+export interface imageProps {
+  className?: string;
+  source: string;
+  source_alternative?: string;
+  alternative: string;
+}
+export interface SliderButtonProps {
+  className: string;
+  disabled?: boolean;
+  image: imageProps;
+}
 export interface SliderProps {
   cards: React.ReactNode[];
   cardsPerView?: number;
   spaceBetween?: number;
+}
+
+export interface PropsFaqCArd {
+  H3: string;
+  P: string;
+}
+
+export interface Clientcarddata {
+  year: string;
+  title: string;
+  textButton: string;
+  img1: string;
+  titleBox1: string;
+  PBox1: string;
+  img2: string;
+  titleBox2: string;
+  PBox2: string;
+  titleBoxBig: string;
+  PBoxBig: string;
 }
 
 export interface SectionHeaderProps {
@@ -27,7 +57,7 @@ export interface InfoCardProps {
 }
 
 export interface InfoCardSectionProps {
-  cards: InfoCardProps[]
+  cards: InfoCardProps[];
 }
 
 // Achievements Section
@@ -40,4 +70,23 @@ export interface AchievementsSectionProps {
   headerData: SectionHeaderProps;
   cards: AchievementsCardProps[];
 }
+export interface ButtonProps {
+  variant: "primary" | "secondary" | "border";
+  onClick?: () => void;
+  children: React.ReactNode;
+}
 
+export interface StatisticCardType {
+  value: string;
+  text: string;
+}
+
+export interface Testimonial {
+  id: number;
+  stars: number;
+  title: string;
+  content: string;
+  userImage: string;
+  userName: string;
+  location: string;
+}
