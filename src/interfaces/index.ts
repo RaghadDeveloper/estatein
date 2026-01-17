@@ -53,3 +53,13 @@ export interface AchievementsSectionProps {
   headerData: SectionHeaderProps;
   cards: AchievementsCardProps[];
 }
+export interface ButtonProps {
+  variant: "primary" | "secondary" | "border";
+  onClick?: () => void;
+  children: React.ReactNode;
+}
+
+export interface StatisticCardType {
+  value: string;
+  text: string;
+}
