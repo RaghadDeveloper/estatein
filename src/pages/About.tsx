@@ -1,8 +1,13 @@
-import Clients from "../components/sections/Clients";
+
+import SectionContainer from "../components/layouts/SectionContainer";
+import Achievements from "../components/sections/Achievements";
+import { achievementsCardsData, achievementsHeaderData } from "../data/aboutData";
 
 const About = () => {
-  return <div>About
-    <Clients/>
+  return <div>
+    <SectionContainer>
+      <Achievements headerData={achievementsHeaderData} cards={achievementsCardsData}/>
+    </SectionContainer>
   </div>;
 };
 
