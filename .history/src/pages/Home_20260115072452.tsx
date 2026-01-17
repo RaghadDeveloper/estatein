@@ -1,0 +1,10 @@
+import CallToActionSection from "../components/sections/CallToActionSection";
+
+const Home = () => {
+  const cards=[1,2,3,4,5,6,7,8,9]
+  return <div>Home
+    <CallToActionSection/>
+  </div>;
+};
+
+export default Home;
