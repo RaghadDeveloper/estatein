@@ -1,11 +1,19 @@
 import type { PropsFaqCArd } from "../../interfaces";
+import Button from "./Button";
 
-const FaqCard = ({H3,P,TextButton}:PropsFaqCArd) => {
-  return <div className="border-1 border-gray-15 p-[25px] rounded-xl lg:w-[350px] justify-between flex flex-col lg:gap-[20px] md:w-[300px] md:gap-[15px] w-[350px] gap-[20px]">
-    <h3>{H3}</h3>
-    <p className="text-gray-60">{P}</p>
-    <button className="border-1 border-gray-15 p-[10px] rounded-xl bg-gray-10 w-fit">{TextButton}</button>
-  </div>;
+const FaqCard = ({ H3, P }: PropsFaqCArd) => {
+  return (
+    <div className="border border-gray-15 p-7.5 lg:p-10 2xl:p-12.5 rounded-xl justify-between flex flex-col gap-5 lg:gap-6 2xl:gap-7.5 h-full">
+      <h3 className="font-semibold text-lg lg:text-xl 2xl:text-2xl leading-[150%]">
+        {H3}
+      </h3>
+      <p className="text-gray-60 text-sm lg:text-base 2xl:text-lg">{P}</p>
+
+      <div className="w-full md:w-fit">
+        <Button variant="secondary">Read More</Button>
+      </div>
+    </div>
+  );
 };
 
 export default FaqCard;

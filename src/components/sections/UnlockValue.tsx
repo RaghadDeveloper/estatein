@@ -1,5 +1,5 @@
 const UnlockValue = () => {
-  return <div>UnlockValue</div>
-}
+  return <div>UnlockValue</div>;
+};
 
-export default UnlockValue
+export default UnlockValue;

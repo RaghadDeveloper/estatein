@@ -1,13 +1,13 @@
-export interface imageProps{
-  className?:string;
-  source:string;
-  source_alternative?:string;
-  alternative:string;
+export interface imageProps {
+  className?: string;
+  source: string;
+  source_alternative?: string;
+  alternative: string;
 }
-export interface SliderButtonProps{
-  className:string;
-  disabled?:boolean;
-  image:imageProps;
+export interface SliderButtonProps {
+  className: string;
+  disabled?: boolean;
+  image: imageProps;
 }
 export interface SliderProps {
   cards: React.ReactNode[];
@@ -15,26 +15,26 @@ export interface SliderProps {
   spaceBetween?: number;
 }
 
-export interface PropsFaqCArd{
-  H3:string,
-  P:string,
-  TextButton:string
+export interface PropsFaqCArd {
+  H3: string;
+  P: string;
 }
 
-export interface Clientcarddata{
-  year:string,
-  title:string,
-  textButton:string,
-  img1:string
-  titleBox1:string,
-  PBox1:string,
-  img2:string
-  titleBox2:string,
-  PBox2:string,
-  titleBoxBig:string,
-  PBoxBig:string}
+export interface Clientcarddata {
+  year: string;
+  title: string;
+  textButton: string;
+  img1: string;
+  titleBox1: string;
+  PBox1: string;
+  img2: string;
+  titleBox2: string;
+  PBox2: string;
+  titleBoxBig: string;
+  PBoxBig: string;
+}
 
-  export interface SectionHeaderProps {
+export interface SectionHeaderProps {
   title: string;
   text: string;
   extraText?: string;
@@ -51,7 +51,7 @@ export interface InfoCardProps {
 }
 
 export interface InfoCardSectionProps {
-  cards: InfoCardProps[]
+  cards: InfoCardProps[];
 }
 
 // Achievements Section

@@ -11,11 +11,12 @@ const Slider = ({
   spaceBetween = 24,
 }: SliderProps) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [activeSlidesPerView, setActiveSlidesPerView] =useState<number>(cardsPerView);
+  const [activeSlidesPerView, setActiveSlidesPerView] =
+    useState<number>(cardsPerView);
   const totalPages = Math.ceil(cards.length / activeSlidesPerView);
   const isPrevDisabled = currentPage === 1;
   const isNextDisabled = currentPage === totalPages;
-  const [show,setShow]=useState<boolean>(true)
+  const [show, setShow] = useState<boolean>(true);
   return (
     <div className="relative">
       <Swiper
@@ -32,9 +33,20 @@ const Slider = ({
             slidesPerView: 1,
             slidesPerGroup: 1,
           },
-          1024: {
+          768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: spaceBetween === 50 ? 40 : 20,
+          },
+          1280: {
             slidesPerView: cardsPerView,
             slidesPerGroup: cardsPerView,
+            spaceBetween: spaceBetween === 50 ? 40 : 20,
+          },
+          1536: {
+            slidesPerView: cardsPerView,
+            slidesPerGroup: cardsPerView,
+            spaceBetween: spaceBetween,
           },
         }}
         onSlideChange={(swiper: SwiperType) => {
@@ -43,28 +55,30 @@ const Slider = ({
               ? swiper.params.slidesPerView
               : cardsPerView;
           setActiveSlidesPerView(slidesView);
-          setCurrentPage(
-            Math.floor(swiper.realIndex / slidesView) + 1
-          );
-      }}
+          setCurrentPage(Math.floor(swiper.realIndex / slidesView) + 1);
+        }}
+        className="items-stretch!"
       >
         {cards.map((card, index) => (
-          <SwiperSlide key={index}>{card}</SwiperSlide>
+          <SwiperSlide key={index} className="h-auto flex">
+            <div className="h-full w-full flex">{card}</div>
+          </SwiperSlide>
         ))}
       </Swiper>
       {!show && (
-      <div className="mt-6 grid grid-cols-1 gap-6">
-        {cards.map((card, index) => (
-          <div key={index}>
-            {card}
-          </div>
-        ))}
-      </div>
-    )}
+        <div className="mt-6 grid grid-cols-1 gap-6">
+          {cards.map((card, index) => (
+            <div key={index}>{card}</div>
+          ))}
+        </div>
+      )}
       <div className="mt-6 flex justify-between items-center">
-        <button onClick={()=>setShow(!show)} className={`${!show&&"mx-auto"}
+        <button
+          onClick={() => setShow(!show)}
+          className={`${!show && "mx-auto"}
           border border-gray-15 py-3.5 px-5 text-[14px]
-        text-white lg:hidden rounded-xl`}>
+        text-white lg:hidden rounded-xl`}
+        >
           View All FAQ’s
         </button>
         <div className="hidden lg:block">
@@ -76,7 +90,9 @@ const Slider = ({
             {String(totalPages).padStart(2, "0")}
           </span>
         </div>
-        <div className={`${show?"block":"hidden"} flex items-center gap-2.5`}>
+        <div
+          className={`${show ? "block" : "hidden"} flex items-center gap-2.5`}
+        >
           <SliderButton
             className="slider-prev"
             disabled={isPrevDisabled}

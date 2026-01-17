@@ -27,7 +27,7 @@ const HomeHero = () => {
       </div>
 
       {/* left section content */}
-      <div className="mt-5 lg:my-10 lg:ml-20 2xl:ml-40.5 flex flex-col justify-center items-center gap-10 lg:gap-12.5 2xl:gap-15">
+      <div className="mt-5 lg:my-10 lg:ml-20 2xl:ml-40.5 flex flex-col justify-center gap-10 lg:gap-12.5 2xl:gap-15">
         <div className="flex flex-col gap-4 lg:gap-5 2xl:gap-6">
           <h2 className="text-[28px] lg:text-[46px] 2xl:text-[60px] font-semibold leading-[120%]">
             Discover Your Dream Property with Estatein
@@ -38,7 +38,7 @@ const HomeHero = () => {
           </p>
         </div>
 
-        <div className="w-full flex flex-col gap-4 2xl:gap-5 sm:flex-row">
+        <div className="w-full flex flex-col gap-4 2xl:gap-5 sm:flex-row md:w-fit">
           <Button variant="border">Learn More</Button>
           <Button variant="primary" onClick={() => navigate("/properties")}>
             Browse Properties
