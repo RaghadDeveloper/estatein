@@ -12,6 +12,12 @@ export interface SectionHeaderProps {
   onClick?: () => void;
 }
 
+export interface CommonHeroProps {
+  title: string;
+  text: string;
+  propertyHero?: boolean;
+}
+
 // Info Cards Section
 export interface InfoCardProps {
   id: number;
@@ -34,3 +40,4 @@ export interface AchievementsSectionProps {
   headerData: SectionHeaderProps;
   cards: AchievementsCardProps[];
 }
+
