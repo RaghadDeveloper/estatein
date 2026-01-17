@@ -1,5 +1,9 @@
+import HowItWorks from "../components/sections/HowItWorks";
+
 const About = () => {
-  return <div>About</div>;
+  return <div>
+    <HowItWorks />
+  </div>;
 };
 
 export default About;
