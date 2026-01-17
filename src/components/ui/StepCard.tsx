@@ -17,7 +17,7 @@ const StepCard: React.FC<StepCardProps> = ({ stepNumber, title, description }) =
         <div 
           className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20"
           style={{
-            background: `radial-gradient(circle at 0% 0%, #703BF7 0%, transparent 25%)`
+            background: `radial-gradient(circle at 0% 0%, #703BF7 0%, transparent 20%)`
           }}
         ></div>
 

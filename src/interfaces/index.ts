@@ -84,3 +84,14 @@ export interface Testimonial {
   userName: string;
   location: string;
 }
+export interface Step {
+  id: number;
+  stepNumber: string;
+  title: string;
+  description: string;
+}
+ export interface StepCardProps {
+  stepNumber: string;
+  title: string;
+  description: string;
+}

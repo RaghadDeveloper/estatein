@@ -4,7 +4,7 @@ import StepCard from "../ui/StepCard";
 
 const HowItWorks = () => {
   return (
-    <section className="bg-gray-10 py-16">
+    <section className="bg-[color-gray-08] py-16">
       <SectionContainer>
         <div className="max-w-[1596px] mx-auto"> 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 2xl:gap-x-8">
