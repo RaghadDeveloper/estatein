@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { testimonialsData, type Testimonial } from "../../data/homeData";
 
-const initialState = {
-  testimonials: [],
+interface TestimonialState {
+  testimonials: Testimonial[];
+}
+
+const initialState: TestimonialState = {
+  testimonials: testimonialsData,
 };
 
 const testimonialsSlice = createSlice({

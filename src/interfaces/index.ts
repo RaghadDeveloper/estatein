@@ -74,3 +74,13 @@ export interface StatisticCardType {
   value: string;
   text: string;
 }
+
+export interface Testimonial {
+  id: number;
+  stars: number;
+  title: string;
+  content: string;
+  userImage: string;
+  userName: string;
+  location: string;
+}
