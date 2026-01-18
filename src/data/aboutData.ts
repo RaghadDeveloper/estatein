@@ -1,6 +1,11 @@
 import type { AchievementsCardProps, SectionHeaderProps } from "../interfaces";
 import type { Clientcarddata } from "../interfaces";
 
+export const aboutHeroHeaderData : SectionHeaderProps = {
+  title: "Our Journey",
+  text: "Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary. Over the years, we've expanded our reach, forged valuable partnerships, and gained the trust of countless clients.",
+}
+
 export const ClientCardData: Array<Clientcarddata> = [
   {
     year: "Since 2019",
