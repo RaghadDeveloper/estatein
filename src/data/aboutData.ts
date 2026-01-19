@@ -65,6 +65,11 @@ export const achievementsHeaderData: SectionHeaderProps = {
   text: "Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.",
 };
 
+export const valuesHeaderData: SectionHeaderProps = {
+  title: "Our Values",
+  text: "Our story is one of continuous growth and evolution. We started as a small team with big dreams, determined to create a real estate platform that transcended the ordinary.",
+};
+
 export const achievementsCardsData: AchievementsCardProps[] = [
   {
     id: 1,
@@ -80,5 +85,44 @@ export const achievementsCardsData: AchievementsCardProps[] = [
     id: 3,
     title: "Industry Recognition",
     text: "We've earned the respect of our peers and industry leaders, with accolades and awards that reflect our commitment to excellence.",
+  },
+];
+
+export const valuesData = [
+  {
+    image: {
+      source: "/assets/icons/star.svg",
+      alternative: "star icon",
+    },
+    title: "Trust",
+    description:
+      "Your dreams and needs are at the center of our universe. We listen, understand.",
+  },
+  {
+    image: {
+      source: "/assets/icons/Excellence.svg",
+      alternative: "hat icon",
+    },
+    title: "Excellence",
+    description:
+      "We set the bar high for ourselves. From the properties we list to the services we provide.",
+  },
+  {
+    image: {
+      source: "/assets/icons/people.svg",
+      alternative: "people icon",
+    },
+    title: "Client-Centric",
+    description:
+      "Your dreams and needs are at the center of our universe. We listen, understand.",
+  },
+  {
+    image: {
+      source: "/assets/icons/star.svg",
+      alternative: "star icon",
+    },
+    title: "Our Commitment",
+    description:
+      "We are dedicated to providing you with the highest level of service, professionalism, and support.",
   },
 ];
