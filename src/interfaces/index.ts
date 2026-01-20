@@ -113,3 +113,16 @@ export interface StepCardProps {
   title: string;
   description: string;
 }
+
+export interface PropertySelectProps {
+  icon: string;
+  label: string;
+  options: string[];
+  onSelect: (value: string) => void;
+}
+
+export interface SearchBarProps {
+  value: string;
+  onChange: (val: string) => void;
+  onSearch: () => void;
+}
