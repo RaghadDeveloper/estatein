@@ -32,18 +32,12 @@ export interface PropsFaqCArd {
   P: string;
 }
 
-export interface Clientcarddata {
-  year: string;
-  title: string;
-  textButton: string;
-  img1: string;
-  titleBox1: string;
-  PBox1: string;
-  img2: string;
-  titleBox2: string;
-  PBox2: string;
-  titleBoxBig: string;
-  PBoxBig: string;
+export interface Clientcarddata{
+  year:string,
+  title:string,
+  PBox1:string,
+  PBox2:string,
+  PBoxBig:string
 }
 
 export interface SectionHeaderProps {
@@ -126,4 +120,13 @@ export interface SearchBarProps {
   value: string;
   onChange: (val: string) => void;
   onSearch: () => void;
+}
+export interface columnFoot {
+  title: string,
+  link1: string,
+  link2: string,
+  link3?: string,
+  link4?: string,
+  link5?: string,
+  Border:boolean
 }
