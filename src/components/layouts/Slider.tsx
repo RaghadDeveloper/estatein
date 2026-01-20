@@ -9,6 +9,7 @@ const Slider = ({
   cards = [],
   cardsPerView = 3,
   spaceBetween = 24,
+  text
 }: SliderProps) => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [activeSlidesPerView, setActiveSlidesPerView] =
@@ -72,14 +73,14 @@ const Slider = ({
           ))}
         </div>
       )}
-      <div className="mt-6 flex justify-between items-center">
+      <div className="mt-6 flex justify-between items-center border-t border-gray-15 pt-7.5 lg:pt-4 2xl:pt-5">
         <button
           onClick={() => setShow(!show)}
           className={`${!show && "mx-auto"}
           border border-gray-15 py-3.5 px-5 text-[14px]
         text-white lg:hidden rounded-xl`}
         >
-          View All FAQ’s
+          {text}
         </button>
         <div className="hidden lg:block">
           <span className="text-white">

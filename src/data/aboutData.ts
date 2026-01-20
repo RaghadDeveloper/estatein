@@ -1,9 +1,9 @@
 import type {
   AchievementsCardProps,
+  Clientcarddata,
   SectionHeaderProps,
   Step,
 } from "../interfaces";
-import type { Clientcarddata } from "../interfaces";
 
 export const ClientCardData: Array<Clientcarddata> = [
   {
