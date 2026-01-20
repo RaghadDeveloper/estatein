@@ -1,4 +1,8 @@
-import type { AchievementsCardProps, SectionHeaderProps } from "../interfaces";
+import type {
+  AchievementsCardProps,
+  SectionHeaderProps,
+  Step,
+} from "../interfaces";
 import type { Clientcarddata } from "../interfaces";
 
 export const ClientCardData: Array<Clientcarddata> = [
@@ -6,10 +10,10 @@ export const ClientCardData: Array<Clientcarddata> = [
     year: "Since 2019",
     title: "ABC Corporation",
     textButton: "Visit Website",
-    img1: "/public/assets/icons/domain.svg",
+    img1: "/assets/icons/domain.svg",
     titleBox1: "Domain",
     PBox1: "Commercial Real Estate",
-    img2: "/public/assets/icons/category.svg",
+    img2: "/assets/icons/category.svg",
     titleBox2: "Category",
     PBox2: "Luxury Home Development",
     titleBoxBig: "What They Said 🤗",
@@ -20,10 +24,10 @@ export const ClientCardData: Array<Clientcarddata> = [
     year: "Since 2018",
     title: "GreenTech Enterprises",
     textButton: "Visit Website",
-    img1: "/public/assets/icons/domain.svg",
+    img1: "/assets/icons/domain.svg",
     titleBox1: "Domain",
     PBox1: "Commercial Real Estate",
-    img2: "/public/assets/icons/category.svg",
+    img2: "/assets/icons/category.svg",
     titleBox2: "Category",
     PBox2: "Retail Space",
     titleBoxBig: "What They Said 🤗",
@@ -34,10 +38,10 @@ export const ClientCardData: Array<Clientcarddata> = [
     year: "Since 2019 2",
     title: "ABC Corporation 2",
     textButton: "Visit Website 2",
-    img1: "/public/assets/icons/domain.svg",
+    img1: "/assets/icons/domain.svg",
     titleBox1: "Domain 2",
     PBox1: "Commercial Real Estate 2",
-    img2: "/public/assets/icons/category.svg",
+    img2: "/assets/icons/category.svg",
     titleBox2: "Category 2",
     PBox2: "Luxury Home Development 2",
     titleBoxBig: "What They Said2 🤗",
@@ -48,10 +52,10 @@ export const ClientCardData: Array<Clientcarddata> = [
     year: "Since 2018 2",
     title: "GreenTech Enterprises 2",
     textButton: "Visit Website 2",
-    img1: "/public/assets/icons/domain.svg",
+    img1: "/assets/icons/domain.svg",
     titleBox1: "Domain 2",
     PBox1: "Commercial Real Estate 2",
-    img2: "/public/assets/icons/category.svg",
+    img2: "/assets/icons/category.svg",
     titleBox2: "Category 2",
     PBox2: "Retail Space 2",
     titleBoxBig: "What They Said2 🤗",
@@ -91,7 +95,7 @@ export const achievementsCardsData: AchievementsCardProps[] = [
 export const valuesData = [
   {
     image: {
-      source: "/assets/icons/star.svg",
+      source: "/assets/icons/Star.svg",
       alternative: "star icon",
     },
     title: "Trust",
@@ -109,7 +113,7 @@ export const valuesData = [
   },
   {
     image: {
-      source: "/assets/icons/people.svg",
+      source: "/assets/icons/People.svg",
       alternative: "people icon",
     },
     title: "Client-Centric",
@@ -118,11 +122,61 @@ export const valuesData = [
   },
   {
     image: {
-      source: "/assets/icons/star.svg",
+      source: "/assets/icons/Star.svg",
       alternative: "star icon",
     },
     title: "Our Commitment",
     description:
       "We are dedicated to providing you with the highest level of service, professionalism, and support.",
+  },
+];
+
+export const howItWorksHeaderData: SectionHeaderProps = {
+  title: "Navigating the Estatein Experience",
+  text: "At Estatein, we've designed a straightforward process to help you find and purchase your dream property with ease. Here's a step-by-step guide to how it all works.",
+};
+
+export const aboutData: Step[] = [
+  {
+    id: 1,
+    stepNumber: "Step 01",
+    title: "Discover a World of Possibilities",
+    description:
+      "Your journey begins with exploring our carefully curated property listings. Use our intuitive search tools to filter properties based on your preferences, including location, type, size, and budget.",
+  },
+  {
+    id: 2,
+    stepNumber: "Step 02",
+    title: "Narrowing Down Your Choices",
+    description:
+      "Once you've found properties that catch your eye, save them to your account or make a shortlist. This allows you to compare and revisit your favorites as you make your decision.",
+  },
+  {
+    id: 3,
+    stepNumber: "Step 03",
+    title: "Personalized Guidance",
+    description:
+      "Have questions about a property or need more information? Our dedicated team of real estate experts is just a call or message away.",
+  },
+  {
+    id: 4,
+    stepNumber: "Step 04",
+    title: "See It for Yourself",
+    description:
+      "Arrange viewings of the properties you're interested in. We'll coordinate with the property owners and accompany you to ensure you get a firsthand look at your potential new home.",
+  },
+  {
+    id: 5,
+    stepNumber: "Step 05",
+    title: "Making Informed Decisions",
+    description:
+      "Before making an offer, our team will assist you with due diligence, including property inspections, legal checks, and market analysis. We want you to be fully informed and confident in your choice.",
+  },
+  {
+    id: 6,
+    stepNumber: "Step 06",
+    title: "Getting the Best Deal",
+    description:
+      "We'll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favorable terms.",
   },
 ];
