@@ -10,10 +10,22 @@ export interface SliderButtonProps {
   disabled?: boolean;
   image: imageProps;
 }
+
+export interface ValueCardProps {
+  className: string;
+  isLast: boolean;
+  image: imageProps;
+  title: string;
+  description: string;
+}
+export interface ContainerValueCardsProps {
+  children: React.ReactNode[];
+}
 export interface SliderProps {
   cards: React.ReactNode[];
   cardsPerView?: number;
   spaceBetween?: number;
+  text?: string;
 }
 
 export interface PropsFaqCArd {
@@ -59,6 +71,7 @@ export interface InfoCardProps {
 
 export interface InfoCardSectionProps {
   cards: InfoCardProps[];
+  rounded?: boolean;
 }
 
 // Achievements Section
@@ -92,6 +105,30 @@ export interface Testimonial {
   userImage: string;
   userName: string;
   location: string;
+}
+export interface Step {
+  id: number;
+  stepNumber: string;
+  title: string;
+  description: string;
+}
+export interface StepCardProps {
+  stepNumber: string;
+  title: string;
+  description: string;
+}
+
+export interface PropertySelectProps {
+  icon: string;
+  label: string;
+  options: string[];
+  onSelect: (value: string) => void;
+}
+
+export interface SearchBarProps {
+  value: string;
+  onChange: (val: string) => void;
+  onSearch: () => void;
 }
 
 // Form

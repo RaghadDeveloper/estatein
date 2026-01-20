@@ -10,7 +10,7 @@ import type { InputProps } from "../../interfaces";
 const TextareaField = ({ label, placeholder, name, colSpan }: InputProps) => {
   return (
     <div
-      className={`${inputDevStyleBase} md:col-span-2 lg:col-span-${colSpan && colSpan} row-span-2`}>
+      className={`${inputDevStyleBase} md:col-span-2 lg:col-span-${colSpan ? colSpan : 2} row-span-2`}>
       <label className={`${inputLabelStyleBase}`} htmlFor={name}>
         {label}
       </label>

@@ -8,7 +8,7 @@ const CallToActionSection = () => {
     <section
       className="relative z-0 flex flex-col lg:flex-row justify-between lg:items-center
       gap-7.5 bg-[url('/assets/images/abstractDesign/ctaLeft.png')]
-      bg-no-repeat bg-bottom-left
+      bg-no-repeat bg-top-left lg:bg-bottom-left
       py-12.5 lg:py-15 2xl:py-25 px-4 lg:px-20 2xl:px-40.5 border-y border-gray-15 mt-20 lg:mt-30 2xl:mt-37.5"
     >
       <img
