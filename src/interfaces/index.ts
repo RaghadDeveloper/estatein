@@ -1,3 +1,4 @@
+
 export interface imageProps {
   className?: string;
   source: string;
@@ -74,6 +75,8 @@ export interface ButtonProps {
   variant: "primary" | "secondary" | "border";
   onClick?: () => void;
   children: React.ReactNode;
+  btnType?: "button" | "submit" | "reset" | undefined;
+  checked?: boolean;
 }
 
 export interface StatisticCardType {
@@ -89,4 +92,23 @@ export interface Testimonial {
   userImage: string;
   userName: string;
   location: string;
+}
+
+// Form
+export interface Option{
+  label?: string;
+  name?: string;
+  placeholder?:string;
+  value:string;
+  icon?:string 
+}
+
+export interface InputProps {
+  label: string;
+  placeholder?: string;
+  type: string;
+  name: string;
+  options?: Option[];
+  icon?: string;
+  colSpan?: number;
 }
