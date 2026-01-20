@@ -1,13 +1,12 @@
 import CommonHero from "../components/sections/CommonHero";
+import Portfolio from "../components/sections/Portfolio";
 import { propertiesPageHeroData } from "../data/propertiesData";
-import PropertyFilters from "../components/ui/PropertyFilters";
 
 const Properties = () => {
   return (
     <div>
-      {/* Hero */}
       <CommonHero {...propertiesPageHeroData} />
-      <PropertyFilters />
+      <Portfolio />
     </div>
   );
 };

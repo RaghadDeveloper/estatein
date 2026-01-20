@@ -1,5 +1,11 @@
+import PropertyFilters from "../ui/PropertyFilters";
+
 const Portfolio = () => {
-  return <div>Portfolio</div>;
+  return (
+    <div className="relative mb-35">
+      <PropertyFilters />
+    </div>
+  );
 };
 
 export default Portfolio;

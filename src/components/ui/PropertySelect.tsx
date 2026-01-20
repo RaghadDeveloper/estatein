@@ -1,8 +1,13 @@
-import { useState } from 'react';
-import arrowIcon from '/assets/icons/arrowbottom.svg';
-import type { PropertySelectProps } from '../../interfaces';
+import { useState } from "react";
+import arrowIcon from "/assets/icons/arrowbottom.svg";
+import type { PropertySelectProps } from "../../interfaces";
 
-const PropertySelect = ({ icon, label, options, onSelect }: PropertySelectProps) => {
+const PropertySelect = ({
+  icon,
+  label,
+  options,
+  onSelect,
+}: PropertySelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selected, setSelected] = useState<string>(label);
 
@@ -14,23 +19,25 @@ const PropertySelect = ({ icon, label, options, onSelect }: PropertySelectProps)
 
   return (
     <div className="relative w-full">
-      <div 
+      <div
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between bg-gray-08 border border-gray-15 p-3 rounded-[10px] cursor-pointer hover:border-gray-20 transition-all"
+        className="flex items-center justify-between bg-gray-08 border border-gray-15 px-3.5 py-3 2xl:p-5 rounded-[10px] cursor-pointer hover:border-gray-20 transition-all"
       >
         <div className="flex items-center gap-3 w-full">
           <div className="border-r border-gray-15 pr-3 shrink-0">
-             <img src={icon} alt={label} className="w-5 h-5 opacity-60" />
+            <img src={icon} alt={label} className="w-5 h-5 opacity-60" />
           </div>
           <span className="text-gray-60 text-[14px] font-urbanist font-medium truncate">
             {selected}
           </span>
         </div>
-        <img 
-          src={arrowIcon} 
-          alt="arrow" 
-          className={`w-4 h-4 opacity-50 transition-transform ${isOpen ? 'rotate-180' : ''}`} 
-        />
+        <div className="shrink-0 bg-gray-10 p-1 rounded-full w-7 h-7 2xl:w-8 2xl:h-8 flex items-center justify-center ">
+          <img
+            src={arrowIcon}
+            alt="arrow"
+            className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
+          />
+        </div>
       </div>
 
       {isOpen && (

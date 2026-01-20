@@ -24,7 +24,7 @@ export interface SliderProps {
   cards: React.ReactNode[];
   cardsPerView?: number;
   spaceBetween?: number;
-  text: string;
+  text?: string;
 }
 
 export interface PropsFaqCArd {
