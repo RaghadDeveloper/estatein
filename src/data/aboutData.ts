@@ -83,7 +83,7 @@ export const achievementsCardsData: AchievementsCardProps[] = [
   {
     id: 1,
     title: "3+ Years of Excellence",
-    text: "With over 3 years in the industry, we've amassed a wealth of knowledge and experience, becoming a go-to resource for all things real estate.",
+    text: "With over 3 years in the industry, we've amassed a wealth of knowledge and experience.",
   },
   {
     id: 2,
