@@ -1,3 +1,4 @@
+import AboutHero from "../components/sections/AboutHero";
 import Achievements from "../components/sections/Achievements";
 import Clients from "../components/sections/Clients";
 import Values from "../components/sections/Values";
@@ -10,6 +11,7 @@ import {
 const About = () => {
   return (
     <div>
+      <AboutHero />
       <Values />
       <Achievements
         headerData={achievementsHeaderData}

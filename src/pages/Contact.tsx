@@ -1,5 +1,11 @@
+import CommonHero from "../components/sections/CommonHero";
+import { contactPageHeroData } from "../data/contactData";
+
 const Contact = () => {
-  return <div>Contact</div>;
+  return <div>
+    {/* Hero */}
+    <CommonHero {...contactPageHeroData} />
+  </div>;
 };
 
 export default Contact;
