@@ -70,6 +70,7 @@ export interface InfoCardProps {
 
 export interface InfoCardSectionProps {
   cards: InfoCardProps[];
+  rounded?: boolean;
 }
 
 // Achievements Section
