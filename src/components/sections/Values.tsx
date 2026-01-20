@@ -10,13 +10,12 @@ const Values = () => {
   }
   return (
     <SectionContainer>
-      <div className="flex items-center gap-20">
-        <SectionHeader {...valuesHeaderData} />
-        <div
-          className="w-fit
-      p-6 lg:p-12.5 2xl:p-15 border border-gray-15
-      shadow-[0_0_0_6px_#191919] rounded-xl"
-        >
+      <div className="flex items-center flex-col xl:flex-row lg:gap-15 2xl:gap-20">
+        <div className="xl:max-w-103.25 2xl:max-w-129.25">
+          <SectionHeader {...valuesHeaderData} />
+        </div>
+        
+        <div className="w-full p-6 lg:p-12.5 2xl:p-15 border border-gray-15 shadow-[0_0_0_6px_#191919] rounded-xl">
           {groupedValues.map((group, groupIndex) => {
             const isEven = groupIndex % 2 === 0;
             return (
@@ -25,8 +24,8 @@ const Values = () => {
                 className={`flex flex-col lg:flex-row
               ${
                 isEven
-                  ? "lg:even lg:pb-7.5 lg:border-b lg:border-gray-15"
-                  : "lg:odd lg:pt-7.5"
+                  ? "lg:even lg:pb-6 2xl:pb-7.5 lg:border-b lg:border-gray-15"
+                  : "lg:odd lg:pt-6 2xl:pt-7.5"
               }`}
               >
                 {group.map((element, index) => {

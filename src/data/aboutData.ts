@@ -132,7 +132,7 @@ export const valuesData = [
     },
     title: "Our Commitment",
     description:
-      "We are dedicated to providing you with the highest level of service, professionalism, and support.",
+      "We are dedicated to providing you with the highest level of service, professionalism",
   },
 ];
 

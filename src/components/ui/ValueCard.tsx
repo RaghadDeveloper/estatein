@@ -27,7 +27,7 @@ const ValueCard = ({
         >
           <img src={image.source} alt={image.alternative} />
         </div>
-        <h3 className="font-semibold text-white text-[18px] lg:text-[20px] 2xl:">
+        <h3 className="font-semibold text-white text-[18px] lg:text-[20px] 2xl:text-2xl text-nowrap">
           {title}
         </h3>
       </div>
