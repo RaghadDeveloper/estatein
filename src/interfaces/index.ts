@@ -77,6 +77,28 @@ export interface AchievementsSectionProps {
   headerData: SectionHeaderProps;
   cards: AchievementsCardProps[];
 }
+//Locations section
+export interface LocationsCardProps{
+  id:number,
+  title:string,
+  H3:string,
+  text:string,
+  category:string
+}
+
+export interface LocationsSectionProps{
+  headerData:SectionHeaderProps;
+  cards:LocationsCardProps[]
+}
+
+export interface ButtonDataLocation{
+  Img:string,
+  text:string
+}
+export interface TapS{
+  id:number
+  tap:string
+}
 export interface ButtonProps {
   variant: "primary" | "secondary" | "border";
   onClick?: () => void;
@@ -128,5 +150,14 @@ export interface columnFoot {
   link3?: string,
   link4?: string,
   link5?: string,
-  Border:boolean
+  Border:boolean,
+  Href?:string
+}
+
+//ButtonLocations
+export interface buttonLocations {
+  Bool :boolean
+  variant: "BgBlack" | "BgGray";
+  onClick?: () => void;
+  children: React.ReactNode;
 }

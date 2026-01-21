@@ -10,7 +10,7 @@ import {
 
 const About = () => {
   return (
-    <div>
+    <div >
       <AboutHero />
       <Values />
       <Achievements
