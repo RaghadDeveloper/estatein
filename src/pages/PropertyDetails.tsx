@@ -1,5 +1,11 @@
+import CallToActionSection from "../components/sections/CallToActionSection";
+
 const PropertyDetails = () => {
-  return <div>PropertyDetails</div>;
+  return (
+    <div>
+      <CallToActionSection />
+    </div>
+  );
 };
 
 export default PropertyDetails;

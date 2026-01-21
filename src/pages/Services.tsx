@@ -1,3 +1,4 @@
+import CallToActionSection from "../components/sections/CallToActionSection";
 import CommonHero from "../components/sections/CommonHero";
 import InfoCardsSection from "../components/sections/InfoCardsSection";
 import { infoCardsData } from "../data/homeData";
@@ -8,6 +9,7 @@ const Services = () => {
     <div>
       <CommonHero {...servicesPageHeroData} />
       <InfoCardsSection cards={infoCardsData} />
+      <CallToActionSection />
     </div>
   );
 };

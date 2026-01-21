@@ -7,6 +7,7 @@ import {
   achievementsCardsData,
   achievementsHeaderData,
 } from "../data/aboutData";
+import CallToActionSection from "../components/sections/CallToActionSection";
 
 const About = () => {
   return (
@@ -19,6 +20,7 @@ const About = () => {
       />
       <HowItWorks />
       <Clients />
+      <CallToActionSection />
     </div>
   );
 };
