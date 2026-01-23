@@ -5,12 +5,19 @@ import {
 } from "../../data/propertiesData";
 import type { InputProps } from "../../interfaces";
 
-// `col-span-1 md:col-span${input.colSpan === 4 || (input.colSpan === 2 && 2)} lg:col-span-${input.colSpan ? input.colSpan : 1} ${input.type === "textarea" && "row-span-2"}`;
+const TextareaField = ({ label, placeholder, name, colSpan, value, onChange }: InputProps) => {
 
-const TextareaField = ({ label, placeholder, name, colSpan }: InputProps) => {
+  const colSpanClasses = {
+    3: "lg:col-span-3",
+    4: "lg:col-span-4",
+    // more col span can be added
+  };
+
+  const lgColSpan = colSpanClasses[colSpan as keyof typeof colSpanClasses] || "lg:col-span-2"
+
   return (
     <div
-      className={`${inputDevStyleBase} md:col-span-2 lg:col-span-${colSpan ? colSpan : 2} row-span-2`}>
+      className={`${inputDevStyleBase} md:col-span-2 ${lgColSpan} row-span-2`}>
       <label className={`${inputLabelStyleBase}`} htmlFor={name}>
         {label}
       </label>
@@ -20,6 +27,8 @@ const TextareaField = ({ label, placeholder, name, colSpan }: InputProps) => {
         placeholder={placeholder}
         name={name}
         id={name}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

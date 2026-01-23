@@ -13,7 +13,7 @@ const SectionHeader = ({
       <div className="relative">
         <img
           className="h-5 lg:h-6 2xl:h-7.5 absolute -top-5 lg:-top-8 2xl:-top-11 -left-2 lg:-left-3 2xl:-left-5"
-          src="assets/images/abstractDesign/threeStars.png"
+          src="/assets/images/abstractDesign/threeStars.png"
           alt=""
         />
         <div

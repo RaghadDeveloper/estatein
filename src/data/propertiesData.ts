@@ -32,7 +32,8 @@ export const inputLabelStyleBase : string = "text-[16px] 2xl-[20px] font-semibol
 
 export const inputDevStyleBase : string = "flex flex-col gap-2.5 lg:gap-3.5 2xl:gap-4 col-span-1"
 
-export const propertyFormInputsData : InputProps[] = [{
+export const propertyFormInputsData : InputProps[] = [
+  {
     name: "firstName",
     label: "First Name",
     type: "text",
