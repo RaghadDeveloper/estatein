@@ -62,7 +62,9 @@ const InquireForm = () => {
           <SectionHeader {...inquireFormHeaderData} />
         </div>
         <div className="flex-1">
-          <form onSubmit={handleSubmit} className="rounded-xl p-5 border border-gray-15 flex flex-col gap-7.5">
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-xl p-5 lg:p-12.5 2xl:p-25 border border-gray-15 flex flex-col gap-7.5 2xl:gap-12.5">
             {/* inputs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-7.5 2xl:gap-12.5">
               {inquireFormInputsData.map((input) => {
