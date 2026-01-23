@@ -131,6 +131,35 @@ export const aboutData: Step[] = [
   },
 ];
 
+// Team Section
+export const teamHeaderData: SectionHeaderProps = {
+  title: "Meet the Estatein Team",
+  text: "At Estatein, our success is driven by the dedication and expertise of our team. Get to know the people behind our mission to make your real estate dreams a reality.",
+};
+
+export const teamMembers = [
+  {
+    name: "Max Mitchell",
+    position: "Founder",
+    imageUrl: "/assets/images/team/member1.webp",
+  },
+  {
+    name: "Sarah Johnson",
+    position: "Chief Real Estate Officer",
+    imageUrl: "/assets/images/team/member2.webp",
+  },
+  {
+    name: "David Brown",
+    position: "Head of Property Management",
+    imageUrl: "/assets/images/team/member3.webp",
+  },
+  {
+    name: "Michael Turner",
+    position: "Legal Counsel",
+    imageUrl: "/assets/images/team/member4.webp",
+  },
+];
+
 // Clients Section
 export const clientsHeaderData: SectionHeaderProps = {
   title: "Our Valued Clients",
@@ -138,33 +167,35 @@ export const clientsHeaderData: SectionHeaderProps = {
 };
 export const ClientCardData: Array<Clientcarddata> = [
   {
-      year: " 2019",
-      title: "ABC Corporation",
-      PBox1: "Commercial Real Estate",
-      PBox2: "Luxury Home Development",
-      PBoxBig: "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs."
+    year: " 2019",
+    title: "ABC Corporation",
+    PBox1: "Commercial Real Estate",
+    PBox2: "Luxury Home Development",
+    PBoxBig:
+      "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs.",
   },
   {
-      year: " 2018",
-      title: "GreenTech Enterprises",
-      PBox1: "Commercial Real Estate",
-      PBox2: "Retail Space",
-      PBoxBig: "Estatein's ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth."
+    year: " 2018",
+    title: "GreenTech Enterprises",
+    PBox1: "Commercial Real Estate",
+    PBox2: "Retail Space",
+    PBoxBig:
+      "Estatein's ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth.",
   },
   {
-      year: "Since 2019 2",
-      title: "ABC Corporation 2",
-      PBox1: "Commercial Real Estate 2",
-      PBox2: "Luxury Home Development 2",
-      PBoxBig: "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs. 2"
+    year: "Since 2019 2",
+    title: "ABC Corporation 2",
+    PBox1: "Commercial Real Estate 2",
+    PBox2: "Luxury Home Development 2",
+    PBoxBig:
+      "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs. 2",
   },
   {
-      year: "Since 2018 2",
-      title: "GreenTech Enterprises 2",
-      PBox1: "Commercial Real Estate 2",
-      PBox2: "Retail Space 2",
-      PBoxBig: "Estatein's ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth. 2"
-  }
-]
-
-
+    year: "Since 2018 2",
+    title: "GreenTech Enterprises 2",
+    PBox1: "Commercial Real Estate 2",
+    PBox2: "Retail Space 2",
+    PBoxBig:
+      "Estatein's ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth. 2",
+  },
+];
