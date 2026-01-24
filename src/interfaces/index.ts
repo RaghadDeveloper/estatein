@@ -11,6 +11,12 @@ export interface SliderButtonProps {
   disabled?: boolean;
   image: imageProps;
 }
+export interface SliderProps {
+  cards: React.ReactNode[];
+  cardsPerView?: number;
+  spaceBetween?: number;
+  text?: string;
+}
 
 export interface ValueCardProps {
   className: string;
@@ -22,12 +28,6 @@ export interface ValueCardProps {
 export interface ContainerValueCardsProps {
   children: React.ReactNode[];
 }
-export interface SliderProps {
-  cards: React.ReactNode[];
-  cardsPerView?: number;
-  spaceBetween?: number;
-  text?: string;
-}
 
 export interface PropsFaqCArd {
   H3: string;
@@ -37,14 +37,8 @@ export interface PropsFaqCArd {
 export interface Clientcarddata {
   year: string;
   title: string;
-  textButton: string;
-  img1: string;
-  titleBox1: string;
   PBox1: string;
-  img2: string;
-  titleBox2: string;
   PBox2: string;
-  titleBoxBig: string;
   PBoxBig: string;
 }
 
@@ -53,7 +47,7 @@ export interface SectionHeaderProps {
   text: string;
   extraText?: string;
   btnText?: string;
-  onClick?: () => void;
+  onClick?: string;
 }
 
 export interface CommonHeroProps {
@@ -62,7 +56,6 @@ export interface CommonHeroProps {
   propertyHero?: boolean;
 }
 
-// Info Cards Section
 export interface InfoCardProps {
   id: number;
   icon: string;
@@ -75,7 +68,6 @@ export interface InfoCardSectionProps {
   rounded?: boolean;
 }
 
-// Achievements Section
 export interface AchievementsCardProps {
   id: number;
   title: string;
@@ -85,6 +77,7 @@ export interface AchievementsSectionProps {
   headerData: SectionHeaderProps;
   cards: AchievementsCardProps[];
 }
+
 export interface ButtonProps {
   variant: "primary" | "secondary" | "border";
   onClick?: () => void;
@@ -130,6 +123,28 @@ export interface SearchBarProps {
   value: string;
   onChange: (val: string) => void;
   onSearch: () => void;
+}
+export interface columnFoot {
+  title: string;
+  link1: string;
+  link2: string;
+  link3?: string;
+  link4?: string;
+  link5?: string;
+  Border: boolean;
+}
+
+export interface PropertyData {
+  id: number;
+  title: string;
+  description: string;
+  photos: string[];
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+  location: string;
+  propertyType: string;
+  area: number;
 }
 
 // Form

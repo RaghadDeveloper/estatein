@@ -7,6 +7,8 @@ import {
   achievementsCardsData,
   achievementsHeaderData,
 } from "../data/aboutData";
+import CallToActionSection from "../components/sections/CallToActionSection";
+import Team from "../components/sections/Team";
 
 const About = () => {
   return (
@@ -18,7 +20,9 @@ const About = () => {
         cards={achievementsCardsData}
       />
       <HowItWorks />
+      <Team />
       <Clients />
+      <CallToActionSection />
     </div>
   );
 };

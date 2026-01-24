@@ -1,3 +1,4 @@
+import CallToActionSection from "../components/sections/CallToActionSection";
 import CommonHero from "../components/sections/CommonHero";
 import Portfolio from "../components/sections/Portfolio";
 import PropertiesForm from "../components/sections/PropertiesForm";
@@ -8,6 +9,7 @@ const Properties = () => {
     <div>
       <CommonHero {...propertiesPageHeroData} />
       <Portfolio />
+      <CallToActionSection />
       <PropertiesForm />
     </div>
   );

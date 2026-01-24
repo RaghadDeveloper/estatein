@@ -27,6 +27,22 @@ export const infoCardsData: InfoCardProps[] = [
   },
 ];
 
+// Property Section
+export const propertiesHeaderData = {
+  title: "Featured Properties",
+  text: "Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein.",
+  extraText: 'Click "View Details" for more information.',
+  btnText: "View All Properties",
+  onClick: "/properties",
+};
+
+// Testimonials Section
+export const testimonialsHeaderData = {
+  title: "What Our Clients Say",
+  text: "Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.",
+  btnText: "View All Testimonials",
+};
+
 export const testimonialsData: Testimonial[] = [
   {
     id: 1,
@@ -100,12 +116,7 @@ export const testimonialsData: Testimonial[] = [
   },
 ];
 
-export const testimonialsHeaderData = {
-  title: "What Our Clients Say",
-  text: "Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.",
-  btnText: "View All Testimonials",
-};
-
+// FAQ Section
 export const faqsHeaderData = {
   title: "Frequently Asked Questions",
   text: "Find answers to common questions about Estatein's services, property listings, and the real estate process. We're here to provide clarity and assist you every step of the way.",
