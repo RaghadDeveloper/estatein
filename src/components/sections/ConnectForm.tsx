@@ -30,7 +30,7 @@ const ConnectForm = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >,
+    >
   ) => {
     const { name, value } = e.target;
     setConnectFormData((prev) => ({ ...prev, [name]: value }));
@@ -57,7 +57,8 @@ const ConnectForm = () => {
       <SectionHeader {...connectFormHeaderData} />
       <form
         onSubmit={handleSubmit}
-        className="rounded-xl p-5 lg:p-12.5 2xl:p-25 border border-gray-15 flex flex-col gap-7.5 2xl:gap-12.5">
+        className="rounded-xl p-5 lg:p-20 2xl:p-25 border border-gray-15 flex flex-col gap-7.5 2xl:gap-12.5"
+      >
         {/* input fields */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7.5 2xl:gap-12.5">
           {connectFormInputsData.map((input) => {

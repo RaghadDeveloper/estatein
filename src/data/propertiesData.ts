@@ -162,7 +162,7 @@ export const inputStyleBase: string =
   "w-full rounded-md py-4 px-5 bg-gray-10 border border-gray-15 text-[14px] font-medium 2xl:text-[18px] 2xl:py-6 leading-[20px] focus:outline-none focus:ring-2 focus:ring-primary-60 caret-primary-60";
 
 export const inputLabelStyleBase: string =
-  "text-[16px] 2xl-[20px] font-semibold";
+  "text-[16px] 2xl:text-[20px] font-semibold";
 
 export const inputDevStyleBase: string =
   "flex flex-col gap-2.5 lg:gap-3.5 2xl:gap-4 col-span-1";

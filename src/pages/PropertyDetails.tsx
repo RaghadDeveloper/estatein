@@ -22,9 +22,9 @@ const PropertyDetails = () => {
   console.log(property);
   return (
     <div>
+      <InquireForm />
       <Faq />
       <CallToActionSection />
-      <InquireForm />
     </div>
   );
 };
