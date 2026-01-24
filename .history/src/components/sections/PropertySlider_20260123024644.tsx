@@ -1,0 +1,14 @@
+import PropertyPhotos from "../ui/PropertyPhotos"
+
+const PropertySlider = () => {
+  return (
+    <div className="p-5 lg:p-10 2xl:p-12.5 border border-gray-15 bg-gray-10">
+      <PropertyPhotos/>
+      <div>
+        
+      </div>
+    </div>
+  )
+}
+
+export default PropertySlider
