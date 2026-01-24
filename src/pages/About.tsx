@@ -12,7 +12,7 @@ import Team from "../components/sections/Team";
 
 const About = () => {
   return (
-    <div>
+    <div >
       <AboutHero />
       <Values />
       <Achievements
