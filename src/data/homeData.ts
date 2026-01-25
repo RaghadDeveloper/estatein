@@ -155,3 +155,15 @@ export const questions = [
     TextButton: "Read More",
   },
 ];
+export const iconFooter:Array<string>=[
+  "/public/assets/icons/facebook.svg",
+  "/public/assets/icons/linkedin.svg",
+  "/public/assets/icons/twitter.svg",
+  "/public/assets/icons/youtube.svg"
+]
+export const iconLinks:Array<string>=[
+  "https://www.facebook.com",
+  "https://www.linkedin.com",
+  "https://www.twitter.com",
+  "https://www.youtube.com"
+]

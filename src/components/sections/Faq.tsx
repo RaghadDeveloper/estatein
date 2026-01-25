@@ -4,10 +4,13 @@ import SectionHeader from "../ui/SectionHeader";
 import { faqsHeaderData, questions } from "../../data/homeData";
 import type { PropsFaqCArd } from "../../interfaces";
 import Slider from "../layouts/Slider";
+import { useState } from "react";
 
 function Faq() {
-  const questionsCards = questions.map((item: PropsFaqCArd) => (
-    <FaqCard H3={item.H3} P={item.P} />
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
+  const questionsCards = questions.map((item: PropsFaqCArd, index: number) => (
+    <FaqCard key={index} H3={item.H3} P={item.P} isOpen={openIndex === index} onToggle={() => setOpenIndex(openIndex === index ? null : index)} />
   ));
   return (
     <SectionContainer>
@@ -18,4 +21,3 @@ function Faq() {
 }
 
 export default Faq;
-
