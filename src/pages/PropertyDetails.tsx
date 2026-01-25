@@ -3,6 +3,7 @@ import CallToActionSection from "../components/sections/CallToActionSection";
 import { useSelector } from "react-redux";
 import type { PropertyData } from "../interfaces";
 import Faq from "../components/sections/Faq";
+import InquireForm from "../components/sections/InquireForm";
 
 const PropertyDetails = () => {
   const { id } = useParams();
@@ -21,6 +22,7 @@ const PropertyDetails = () => {
   console.log(property);
   return (
     <div>
+      <InquireForm />
       <Faq />
       <CallToActionSection />
     </div>

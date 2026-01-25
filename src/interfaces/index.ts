@@ -1,3 +1,5 @@
+import type { ChangeEvent } from "react";
+
 export interface imageProps {
   className?: string;
   source: string;
@@ -76,10 +78,35 @@ export interface AchievementsSectionProps {
   cards: AchievementsCardProps[];
 }
 
+//Locations section
+export interface LocationsCardProps{
+  id:number,
+  title:string,
+  H3:string,
+  text:string,
+  category:string
+}
+
+export interface LocationsSectionProps{
+  headerData:SectionHeaderProps;
+  cards:LocationsCardProps[]
+}
+
+export interface ButtonDataLocation{
+  Img:string,
+  text:string
+}
+export interface TapS{
+  id:number
+  tap:string
+}
+
 export interface ButtonProps {
   variant: "primary" | "secondary" | "border" | 'gray08';
   onClick?: () => void;
   children: React.ReactNode;
+  btnType?: "button" | "submit" | "reset" | undefined;
+  checked?: boolean;
 }
 
 export interface StatisticCardType {
@@ -121,13 +148,14 @@ export interface SearchBarProps {
   onSearch: () => void;
 }
 export interface columnFoot {
-  title: string;
-  link1: string;
-  link2: string;
-  link3?: string;
-  link4?: string;
-  link5?: string;
-  Border: boolean;
+ title: string,
+  link1: string,
+  link2: string,
+  link3?: string,
+  link4?: string,
+  link5?: string,
+  Border:boolean,
+  Href?:string
 }
 
 export interface PropertyData {
@@ -142,25 +170,76 @@ export interface PropertyData {
   propertyType: string;
   area: number;
 }
-export interface ServiceItem {
-  id: number;
-  title: string;
-  description: string;
-  icon: string;
+
+// Form
+export interface Option{
+  label?: string;
+  name?: string;
+  placeholder?:string;
+  value:string;
+  icon?:string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  checked?: boolean
 }
 
-export interface FeatureItem {
-  title: string;
-  description: string;
-  bgImage: string;
+export interface InputProps {
+  label: string;
+  placeholder?: string;
+  type: "text" | "email" | "tel" | "select" | "textarea" | "radio";
+  name: string;
+  options?: Option[];
+  icon?: string;
+  colSpan?: number;
+  value?: string;
+  checked?: boolean;
+  onChange?: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void;
 }
-export interface ServiceCardProps {
-  title: string;
-  description: string;
-  icon: string;
+
+export interface FormFooterProps {
+  isChecked: boolean;
+  handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
-export interface FeatureServiceCardProps {
-  title: string;
-  description: string;
-  bgImage: string;
+
+export type PropertiesFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  location: string;
+  propertyType: string;
+  bathrooms: string;
+  bedrooms: string;
+  budget: string;
+  contactMethod: string;
+  message: string;
+  [key: string] : string;
+}
+
+export type InquireFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  selectedProperty: string;
+  message: string;
+  [key: string] : string;
+}
+
+export type ConnectFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  inquiry: string;
+  hear: string;
+  message: string;
+  [key: string] : string;
+}
+
+//ButtonLocations
+export interface buttonLocations {
+  Bool :boolean
+  variant: "BgBlack" | "BgGray";
+  onClick?: () => void;
+  children: React.ReactNode;
 }
