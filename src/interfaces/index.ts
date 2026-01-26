@@ -211,3 +211,16 @@ export type ConnectFormData = {
   message: string;
   [key: string] : string;
 }
+
+export interface PricingDetailInfo {
+  title: string;
+  price: string;
+  note?: string;
+  isFirst?: boolean;
+  isTwo? : boolean;
+}
+
+export interface PricingDetailsCardProps {
+  title: string;
+  detailsInfo: PricingDetailInfo[];
+}

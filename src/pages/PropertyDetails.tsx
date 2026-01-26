@@ -5,6 +5,7 @@ import type { PropertyData } from "../interfaces";
 import Faq from "../components/sections/Faq";
 
 import InquireForm from "../components/sections/InquireForm";
+import ComprehensivePricing from "../components/sections/ComprehensivePricing";
 
 
 const PropertyDetails = () => {
@@ -24,13 +25,12 @@ const PropertyDetails = () => {
   console.log(property);
   return (
     <div>
+      <InquireForm />
+      <ComprehensivePricing />
       <Faq />
       <CallToActionSection />
     </div>
   );
-  return <div>
-    <InquireForm />
-  </div>;
 };
 
 export default PropertyDetails;
