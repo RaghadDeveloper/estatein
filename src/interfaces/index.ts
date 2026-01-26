@@ -243,3 +243,25 @@ export interface buttonLocations {
   onClick?: () => void;
   children: React.ReactNode;
 }
+export interface ServiceItem {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
+
+export interface FeatureItem {
+  title: string;
+  description: string;
+  bgImage: string;
+}
+export interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: string;
+}
+export interface FeatureServiceCardProps {
+  title: string;
+  description: string;
+  bgImage: string;
+}

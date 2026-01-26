@@ -4,7 +4,7 @@ import FeatureServiceCard from "../ui/FeatureServiceCard";
 
 function UnlockValue() {
   return (
-    <section className="bg-gray-08 py-16 lg:py-24 min-h-screen flex justify-center">
+    <section className="bg-gray-08 pb-16 lg:pb-24 flex justify-center">
       <div
         className="w-full 
         min-[1440px]:!max-w-[1287px]  
