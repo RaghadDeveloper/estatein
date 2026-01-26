@@ -1,8 +1,4 @@
-interface PillInfoProps {
-  icon?: string;
-  label: string;
-  value?: string;
-}
+import type { PillInfoProps } from "../../interfaces";
 
 const PillInfo = ({ icon, label, value }: PillInfoProps) => {
   return (

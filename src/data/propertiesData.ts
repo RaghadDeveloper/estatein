@@ -11,12 +11,14 @@ import type {
   FilterType,
 } from "../interfaces";
 
+// Hero Section
 export const propertiesPageHeroData: CommonHeroProps = {
   title: "Find Your Dream Property",
   text: "Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey ",
   propertyHero: true,
 };
 
+// Filters Data
 export const filters: FilterType[] = [
   {
     label: "Location",
@@ -64,6 +66,13 @@ export const filters: FilterType[] = [
   },
 ];
 
+// Portfolio Section
+export const portfolioHeaderData: SectionHeaderProps = {
+  title: "Discover a World of Possibilities",
+  text: "Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home",
+};
+
+// Properties Data
 export const propertiesData: PropertyData[] = [
   {
     id: 1,
@@ -167,19 +176,11 @@ export const propertiesData: PropertyData[] = [
   },
 ];
 
+// Property Form Section
 export const propertiesFormHeaderData: SectionHeaderProps = {
   title: "Let's Make it Happen",
   text: "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.",
 };
-
-export const inputStyleBase: string =
-  "w-full rounded-md py-4 px-5 bg-gray-10 border border-gray-15 text-[14px] font-medium 2xl:text-[18px] 2xl:py-6 leading-[20px] focus:outline-none focus:ring-2 focus:ring-primary-60 caret-primary-60";
-
-export const inputLabelStyleBase: string =
-  "text-[16px] 2xl:text-[20px] font-semibold";
-
-export const inputDevStyleBase: string =
-  "flex flex-col gap-2.5 lg:gap-3.5 2xl:gap-4 col-span-1";
 
 export const propertyFormInputsData: InputProps[] = [
   {
@@ -306,11 +307,6 @@ export const propertyFormInputsData: InputProps[] = [
   },
 ];
 
-export const portfolioHeaderData: SectionHeaderProps = {
-  title: "Discover a World of Possibilities",
-  text: "Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home",
-};
-
 export const photos = [
   {
     images: [
@@ -421,3 +417,13 @@ export const photos = [
     ],
   },
 ];
+
+// styles for property form inputs
+export const inputStyleBase: string =
+  "w-full rounded-md py-4 px-5 bg-gray-10 border border-gray-15 text-[14px] font-medium 2xl:text-[18px] 2xl:py-6 leading-[20px] focus:outline-none focus:ring-2 focus:ring-primary-60 caret-primary-60";
+
+export const inputLabelStyleBase: string =
+  "text-[16px] 2xl:text-[20px] font-semibold";
+
+export const inputDevStyleBase: string =
+  "flex flex-col gap-2.5 lg:gap-3.5 2xl:gap-4 col-span-1";

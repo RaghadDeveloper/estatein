@@ -1,7 +1,18 @@
-import { inputDevStyleBase, inputLabelStyleBase, inputStyleBase } from "../../data/propertiesData";
+import {
+  inputDevStyleBase,
+  inputLabelStyleBase,
+  inputStyleBase,
+} from "../../data/propertiesData";
 import type { InputProps } from "../../interfaces";
 
-const InputField = ({ label, placeholder, type, name, value, onChange}: InputProps) => {
+const InputField = ({
+  label,
+  placeholder,
+  type,
+  name,
+  value,
+  onChange,
+}: InputProps) => {
   return (
     <div className={`${inputDevStyleBase}`}>
       <label className={`${inputLabelStyleBase}`} htmlFor={name}>

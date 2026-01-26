@@ -3,16 +3,8 @@ import PillInfo from "./PillInfo";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import PriceValue from "./PriceValue";
+import type { PropertyCardProps } from "../../interfaces";
 
-interface PropertyCardProps {
-  id: number;
-  title: string;
-  description: string;
-  photos: string[];
-  price: number;
-  infos?: { icon: string; label: string }[];
-  subTitle?: string;
-}
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
   id,
