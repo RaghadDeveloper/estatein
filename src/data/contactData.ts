@@ -142,3 +142,25 @@ export const TAps: TapS[] = [
     tap: "International",
   },
 ];
+export const dataGallery = [
+  {
+    source: "/assets/images/gallery/gallery1.webp",
+    alternative: "Gallery",
+  },
+  {
+    source: "/assets/images/gallery/gallery3.webp",
+    alternative: "Gallery",
+  },
+  {
+    source: "/assets/images/gallery/gallery2.webp",
+    alternative: "Gallery",
+  },
+  {
+    source: "/assets/images/gallery/gallery4.webp",
+    alternative: "Gallery",
+  },
+  {
+    source: "/assets/images/gallery/gallery5.webp",
+    alternative: "Gallery",
+  },
+];

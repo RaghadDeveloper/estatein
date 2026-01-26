@@ -310,3 +310,114 @@ export const portfolioHeaderData: SectionHeaderProps = {
   title: "Discover a World of Possibilities",
   text: "Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home",
 };
+
+export const photos = [
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto1.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto8.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto2.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto4.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto3.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto9.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto4.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto3.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto5.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto1.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto6.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto5.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto7.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto4.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto8.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto6.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto9.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto2.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+];

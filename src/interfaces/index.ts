@@ -1,5 +1,5 @@
 import type { ChangeEvent } from "react";
-
+import type { Swiper as SwiperType } from "swiper"
 export interface imageProps {
   className?: string;
   source: string;
@@ -12,22 +12,39 @@ export interface SliderButtonProps {
   image: imageProps;
 }
 export interface SliderProps {
-  cards: React.ReactNode[];
-  cardsPerView?: number;
-  spaceBetween?: number;
-  text?: string;
+  cards: React.ReactNode[]
+  cardsPerView?: number
+  spaceBetween?: number
+  onSlideIndexChange?: (index: number) => void
+  swiperRef?: (swiper: SwiperType) => void
+  sliderId?: string   
 }
 
-export interface ValueCardProps {
-  className: string;
-  isLast: boolean;
-  image: imageProps;
-  title: string;
-  description: string;
+
+export interface SliderPagesProps {
+  cardsLength: number
+  currentPage: number
+  totalPages: number
+  show: boolean
+  setShow: (value: boolean) => void
+  isPrevDisabled: boolean
+  isNextDisabled: boolean
+  text?: string
+  prevClass: string
+  nextClass: string
 }
-export interface ContainerValueCardsProps {
-  children: React.ReactNode[];
+
+
+export interface SliderDotsProps {
+  count: number
+  activeIndex: number
+  onDotClick: (index: number) => void
+  isPrevDisabled: boolean
+  isNextDisabled: boolean
+  prevClass: string
+  nextClass: string
 }
+
 
 export interface PropsFaqCArd {
   H3: string;

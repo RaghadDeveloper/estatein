@@ -5,10 +5,11 @@ import Slider from "../layouts/Slider";
 import PropertyCard from "../ui/PropertyCard";
 import SectionHeader from "../ui/SectionHeader";
 import type { PropertyData } from "../../interfaces";
-import { selectFilteredProperties } from "../../redux/slice/propertiesSelectors";
 
 const FeaturedProperties = () => {
-  const properties = useSelector(selectFilteredProperties);
+  const properties = useSelector(
+    (state: { properties: { all: PropertyData[] } }) => state.properties.all
+  );
 
   const propertiesCards = properties.map((property: PropertyData) => {
     const infos = [
