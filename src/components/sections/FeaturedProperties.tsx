@@ -5,14 +5,12 @@ import Slider from "../layouts/Slider";
 import PropertyCard from "../ui/PropertyCard";
 import SectionHeader from "../ui/SectionHeader";
 import type { PropertyData } from "../../interfaces";
+import { selectFilteredProperties } from "../../redux/slice/propertiesSelectors";
 
 const FeaturedProperties = () => {
-  const propertiesData = useSelector(
-    (state: { properties: { properties: PropertyData[] } }) =>
-      state.properties.properties
-  );
+  const properties = useSelector(selectFilteredProperties);
 
-  const propertiesCards = propertiesData.map((property) => {
+  const propertiesCards = properties.map((property: PropertyData) => {
     const infos = [
       {
         icon: "assets/icons/Bedroom.svg",
@@ -29,7 +27,14 @@ const FeaturedProperties = () => {
         label: property.propertyType,
       },
     ];
-    return <PropertyCard key={property.id} {...property} infos={infos} />;
+    return (
+      <PropertyCard
+        key={property.id}
+        {...property}
+        infos={infos}
+        subTitle={undefined}
+      />
+    );
   });
 
   return (

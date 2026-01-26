@@ -75,10 +75,10 @@ const Footer = () => {
           <p>Terms & Conditions</p>
         </div>
         <div className=" flex gap-[10px]">
-          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/public/assets/icons/facebook.svg" alt="imgFooter1" /></div>
-          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/public/assets/icons/linkedin.svg" alt="imgFooter1" /></div>
-          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/public/assets/icons/twitter.svg" alt="imgFooter1" /></div>
-          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/public/assets/icons/youtube.svg" alt="imgFooter1" /></div>
+          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/assets/icons/facebook.svg" alt="imgFooter1" /></div>
+          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/assets/icons/linkedin.svg" alt="imgFooter1" /></div>
+          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/assets/icons/twitter.svg" alt="imgFooter1" /></div>
+          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/assets/icons/youtube.svg" alt="imgFooter1" /></div>
         </div>
       </div>
     </div>

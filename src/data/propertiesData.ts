@@ -8,6 +8,7 @@ import type {
   PropertyData,
   InputProps,
   SectionHeaderProps,
+  FilterType,
 } from "../interfaces";
 
 export const propertiesPageHeroData: CommonHeroProps = {
@@ -16,9 +17,10 @@ export const propertiesPageHeroData: CommonHeroProps = {
   propertyHero: true,
 };
 
-export const filters = [
+export const filters: FilterType[] = [
   {
     label: "Location",
+    key: "location",
     icon: locationIcon,
     options: [
       "Any location",
@@ -30,11 +32,13 @@ export const filters = [
   },
   {
     label: "Property Type",
+    key: "propertyType",
     icon: propertyIcon,
     options: ["Any Type", "Apartment", "House", "Villa", "Studio", "Office"],
   },
   {
     label: "Pricing Range",
+    key: "price",
     icon: priceIcon,
     options: [
       "Any Price",
@@ -48,11 +52,13 @@ export const filters = [
   },
   {
     label: "Property Size",
+    key: "area",
     icon: sizeIcon,
     options: ["Any Size", "50-100m", "100-150m", "150-250m", "250+m"],
   },
   {
     label: "Build Year",
+    key: "buildYear",
     icon: buildIcon,
     options: ["New", "2017-2021", "2010-2016", "2000-2009", "Before 2000"],
   },
@@ -61,8 +67,10 @@ export const filters = [
 export const propertiesData: PropertyData[] = [
   {
     id: 1,
+    subTitle: "Coastal Escapes - Where Waves Beckon",
     title: "Seaside Serenity Villa",
     location: "Malibu, California",
+    locationType: "Near Beach",
     photos: [
       "/assets/images/propertyPhoto/propertyPhoto1.webp",
       "/assets/images/propertyPhoto/propertyPhoto2.webp",
@@ -79,13 +87,15 @@ export const propertiesData: PropertyData[] = [
     price: 550000,
     bedrooms: 4,
     bathrooms: 3,
-    propertyType: "Villa",
+    propertyType: "House",
     area: 2500,
   },
   {
     id: 2,
+    subTitle: "Urban Oasis - Life in the Heart of the City",
     title: "Metropolitan Haven",
     location: "Malibu, California",
+    locationType: "City center",
     photos: [
       "/assets/images/properties/property2.webp",
       "/assets/images/propertyPhoto/propertyPhoto2.webp",
@@ -107,8 +117,10 @@ export const propertiesData: PropertyData[] = [
   },
   {
     id: 3,
+    subTitle: "Countryside Charm - Escape to Nature's Embrace",
     title: "Rustic Retreat Cottage",
     location: "Malibu, California",
+    locationType: "Suburbs",
     photos: [
       "/assets/images/properties/property3.webp",
       "/assets/images/propertyPhoto/propertyPhoto2.webp",
@@ -130,8 +142,10 @@ export const propertiesData: PropertyData[] = [
   },
   {
     id: 4,
+    subTitle: "Coastal Escapes - Where Waves Beckon",
     title: "Seaside Serenity Villa",
     location: "Malibu, California",
+    locationType: "Suburbs",
     photos: [
       "/assets/images/propertyPhoto/propertyPhoto1.webp",
       "/assets/images/propertyPhoto/propertyPhoto2.webp",
@@ -291,3 +305,8 @@ export const propertyFormInputsData: InputProps[] = [
     colSpan: 4,
   },
 ];
+
+export const portfolioHeaderData: SectionHeaderProps = {
+  title: "Discover a World of Possibilities",
+  text: "Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home",
+};
