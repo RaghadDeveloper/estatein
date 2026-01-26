@@ -1,15 +1,14 @@
 import HomeHero from "../components/sections/HomeHero";
-import InfoCardsSection from "../components/sections/InfoCardsSection";
-import { infoCardsData } from "../data/homeData";
 import Testimonials from "../components/sections/Testimonials";
 import Faq from "../components/sections/Faq";
 import CallToActionSection from "../components/sections/CallToActionSection";
+import FeaturedProperties from "../components/sections/FeaturedProperties";
 
 const Home = () => {
   return (
     <div>
       <HomeHero />
-      <InfoCardsSection cards={infoCardsData} />
+      <FeaturedProperties />
       <Testimonials />
       <Faq />
       <CallToActionSection />

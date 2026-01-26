@@ -6,7 +6,7 @@ import { faqsHeaderData, questions } from "../../data/homeData"
 import type { PropsFaqCArd } from "../../interfaces"
 import Slider from "../layouts/Slider"
 import type { Swiper as SwiperType } from "swiper"
-import SliderPages from "../ui/SliderPAges"
+import SliderPages from "../ui/SliderPages"
 
 function Faq() {
   const questionsCards = questions.map((item: PropsFaqCArd, index) => (

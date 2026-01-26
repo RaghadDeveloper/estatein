@@ -13,11 +13,22 @@ const CallToActionSection = () => {
       py-12.5 lg:py-15 2xl:py-25 px-4 lg:px-20 2xl:px-40.5 border-y border-gray-15 
       mt-20 lg:mt-30 2xl:mt-37.5"
     >
+      {/* left image */}
       <img
-        className="absolute right-0 bottom-0 -z-1"
+        className="absolute -z-1 rotate-90 lg:rotate-0 h-71 lg:w-118.5 2xl:w-141.5 lg:h-full -left-19sm: -left-27 lg:left-0 -top-3.75 lg:top-0"
+        src="/assets/images/abstractDesign/ctaLeft.png"
+        alt="bg photo"
+      />
+
+      {/* right image */}
+      <div className="w-fit">
+        <img
+        className="absolute -z-1 h-54.25 lg:h-77.5 2xl:w-181.25 max-w-full -right-7.5 lg:right-0 -bottom-5.5 lg:bottom-0"
         src="/assets/images/abstractDesign/ctaRight.png"
         alt="bg photo"
       />
+      </div>
+
       <div className="lg:w-244.75 2xl:w-288.5">
         <h2
           className="font-semibold leading-normal

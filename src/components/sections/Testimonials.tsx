@@ -6,7 +6,8 @@ import Slider from "../layouts/Slider"
 import { testimonialsData, testimonialsHeaderData } from "../../data/homeData"
 import SectionHeader from "../ui/SectionHeader"
 import type { Swiper as SwiperType } from "swiper"
-import SliderPages from "../ui/SliderPAges"
+import SliderPages from "../ui/SliderPages"
+
 
 const Testimonials = () => {
   const testimonialCards = testimonialsData.map((item: Testimonial) => (
