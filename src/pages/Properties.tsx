@@ -11,7 +11,6 @@ const Properties = () => {
       <Portfolio />
       <PropertiesForm />
       <CallToActionSection />
-
     </div>
   );
 };

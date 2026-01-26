@@ -8,6 +8,7 @@ import {
 } from "../data/contactData";
 
 import ConnectForm from "../components/sections/ConnectForm";
+import Gallery from "../components/sections/Gallery";
 
 const Contact = () => {
   return (
@@ -15,6 +16,7 @@ const Contact = () => {
       <CommonHero {...contactPageHeroData} />
       <ConnectForm />
       <Locations headerData={LocationsHeaderData} cards={locationsCardsData} />
+      <Gallery/>
       <CallToActionSection />
     </div>
   );
