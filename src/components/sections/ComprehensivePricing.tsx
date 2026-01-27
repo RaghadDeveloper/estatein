@@ -1,4 +1,3 @@
-import React from 'react'
 import SectionContainer from '../layouts/SectionContainer'
 import SectionHeader from '../ui/SectionHeader';
 import { pricingDetailsCardsData, pricingDetailsHeaderData, pricingDetailsNote } from '../../data/PropertyData';

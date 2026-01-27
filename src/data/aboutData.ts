@@ -165,9 +165,10 @@ export const clientsHeaderData: SectionHeaderProps = {
   title: "Our Valued Clients",
   text: "At Estatein, we have had the privilege of working with a diverse range of clients across various industries. Here are some of the clients we've had the pleasure of serving",
 };
+
 export const ClientCardData: Array<Clientcarddata> = [
   {
-    year: " 2019",
+    year: "2019",
     title: "ABC Corporation",
     PBox1: "Commercial Real Estate",
     PBox2: "Luxury Home Development",
@@ -175,7 +176,7 @@ export const ClientCardData: Array<Clientcarddata> = [
       "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs.",
   },
   {
-    year: " 2018",
+    year: "2018",
     title: "GreenTech Enterprises",
     PBox1: "Commercial Real Estate",
     PBox2: "Retail Space",
@@ -183,7 +184,7 @@ export const ClientCardData: Array<Clientcarddata> = [
       "Estatein's ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth.",
   },
   {
-    year: "2019 2",
+    year: "2019",
     title: "ABC Corporation 2",
     PBox1: "Commercial Real Estate 2",
     PBox2: "Luxury Home Development 2",
@@ -191,7 +192,7 @@ export const ClientCardData: Array<Clientcarddata> = [
       "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs. 2",
   },
   {
-    year: "2018 2",
+    year: "2018",
     title: "GreenTech Enterprises 2",
     PBox1: "Commercial Real Estate 2",
     PBox2: "Retail Space 2",

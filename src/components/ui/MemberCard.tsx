@@ -1,10 +1,5 @@
 import React from "react";
-
-interface MemberCardProps {
-  name: string;
-  position: string;
-  imageUrl: string;
-}
+import type { MemberCardProps } from "../../interfaces";
 
 const MemberCard: React.FC<MemberCardProps> = ({
   name,

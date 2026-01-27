@@ -8,6 +8,7 @@ import type {
   TapS,
 } from "../interfaces";
 
+// Hero Section
 export const contactPageHeroData: CommonHeroProps = {
   title: "Get in Touch with Estatein",
   text: "Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have. Whether you're looking to buy or sell a property, explore investment opportunities, or simply want to connect, we're just a message away. Reach out to us, and let's start a conversation.",
@@ -16,25 +17,25 @@ export const contactPageHeroData: CommonHeroProps = {
 export const infoCardsData: InfoCardProps[] = [
   {
     id: 1,
-    icon: "assets/icons/Home.svg",
+    icon: "assets/icons/emailContact.svg",
     text: "info@estatein.com",
     link: "/contact",
   },
   {
     id: 2,
-    icon: "assets/icons/Value.svg",
+    icon: "assets/icons/phoneContact.svg",
     text: "+1 (123) 456-7890",
     link: "/contact",
   },
   {
     id: 3,
-    icon: "assets/icons/Building.svg",
+    icon: "assets/icons/locationContact.svg",
     text: "Main Headquarters",
     link: "/contact",
   },
   {
     id: 4,
-    icon: "assets/icons/sun.svg",
+    icon: "assets/icons/socials.svg",
     socials: [
       {label:"Instagram",link:"/contact"},
       {label:"LinkedIn",link:"/contact"},
@@ -44,6 +45,7 @@ export const infoCardsData: InfoCardProps[] = [
   },
 ];
 
+// Connect Form Section
 export const connectFormHeaderData: SectionHeaderProps = {
   title: "Let's Connect",
   text: "We're excited to connect with you and learn more about your real estate goals. Use the form below to get in touch with Estatein. Whether you're a prospective client, partner, or simply curious about our services, we're here to answer your questions and provide the assistance you need.",
@@ -130,6 +132,7 @@ export const LocationsHeaderData: SectionHeaderProps = {
   title: "Discover Our Office Locations",
   text: "Estatein is here to serve you across multiple locations. Whether you're looking to meet our team, discuss real estate opportunities, or simply drop by for a chat, we have offices conveniently located to serve your needs. Explore the categories below to find the Estatein office nearest to you",
 };
+
 export const locationsCardsData: LocationsCardProps[] = [
   {
     id: 1,
@@ -146,6 +149,7 @@ export const locationsCardsData: LocationsCardProps[] = [
     category: "Regional",
   },
 ];
+
 export const buttonDataLocation: ButtonDataLocation[] = [
   {
     Img: "/public/assets/icons/email.svg",
@@ -160,6 +164,7 @@ export const buttonDataLocation: ButtonDataLocation[] = [
     text: "Metropolis",
   },
 ];
+
 export const TAps: TapS[] = [
   {
     id: 1,
@@ -174,6 +179,8 @@ export const TAps: TapS[] = [
     tap: "International",
   },
 ];
+
+// Gallery Section
 export const dataGallery = [
   {
     source: "/assets/images/gallery/gallery1.webp",

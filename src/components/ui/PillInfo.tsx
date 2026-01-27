@@ -1,3 +1,4 @@
+import type { PillInfoProps } from "../../interfaces";
 import { useEffect, useRef, useState } from "react";
 
 interface PillInfoProps {
