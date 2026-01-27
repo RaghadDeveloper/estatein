@@ -1,6 +1,11 @@
-import { featureData, servicesData } from "../../data/servicesData";
+import {
+  featureData,
+  servicesData,
+  servicesFormHeaderData,
+} from "../../data/servicesData";
 import ServiceCard from "../ui/ServiceCard";
 import FeatureServiceCard from "../ui/FeatureServiceCard";
+import SectionHeader from "../ui/SectionHeader";
 
 function UnlockValue() {
   return (
@@ -11,6 +16,7 @@ function UnlockValue() {
         min-[1920px]:!max-w-[1584px]  
       "
       >
+        <SectionHeader {...servicesFormHeaderData} />
         <div className="grid grid-cols-1 md:grid-cols-2 min-[1201px]:!grid-cols-3 gap-6">
           {servicesData.slice(0, 3).map((service) => (
             <ServiceCard

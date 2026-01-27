@@ -1,6 +1,11 @@
 import ServiceCard from "../ui/ServiceCard";
 import FeatureServiceCard from "../ui/FeatureServiceCard";
-import { managementFeatureData, managementServicesData } from "../../data/servicesData";
+import {
+  EffortlessFormHeaderData,
+  managementFeatureData,
+  managementServicesData,
+} from "../../data/servicesData";
+import SectionHeader from "../ui/SectionHeader";
 
 const EffortlessManagement = () => {
   return (
@@ -12,8 +17,9 @@ const EffortlessManagement = () => {
       
       "
       >
+        <SectionHeader {...EffortlessFormHeaderData} />
+
         <div className="grid grid-cols-1 md:grid-cols-2 min-[1201px]:!grid-cols-3 gap-6">
-          
           {managementServicesData.slice(0, 3).map((service) => (
             <ServiceCard
               key={service.id}
@@ -38,7 +44,6 @@ const EffortlessManagement = () => {
               bgImage={managementFeatureData.bgImage}
             />
           </div>
-          
         </div>
       </div>
     </section>
