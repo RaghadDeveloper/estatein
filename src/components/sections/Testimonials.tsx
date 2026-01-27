@@ -8,23 +8,32 @@ import SectionHeader from "../ui/SectionHeader"
 import type { Swiper as SwiperType } from "swiper"
 import SliderPages from "../ui/SliderPages"
 
-
 const Testimonials = () => {
   const testimonialCards = testimonialsData.map((item: Testimonial) => (
     <TestimonialCard key={item.id} testimonial={item} />
   ))
 
   const [activeIndex, setActiveIndex] = useState(0)
-  const [show, setShow] = useState(true)
   const [swiper, setSwiper] = useState<SwiperType | null>(null)
+
   const sliderId = "testimonials"
+
+  // ✅ عدد الصفحات الحقيقي
+  const totalPages = swiper
+    ? Math.ceil(
+        testimonialCards.length /
+          (typeof swiper.params.slidesPerView === "number"
+            ? swiper.params.slidesPerView
+            : 1)
+      )
+    : 0
 
   return (
     <SectionContainer>
       <SectionHeader {...testimonialsHeaderData} />
 
       <Slider
-        sliderId={sliderId}          
+        sliderId={sliderId}
         cards={testimonialCards}
         spaceBetween={30}
         swiperRef={setSwiper}
@@ -32,15 +41,13 @@ const Testimonials = () => {
       />
 
       <SliderPages
-        prevClass={`slider-prev-${sliderId}`}   
-        nextClass={`slider-next-${sliderId}`}   
+        prevClass={`slider-prev-${sliderId}`}
+        nextClass={`slider-next-${sliderId}`}
         cardsLength={testimonialCards.length}
         currentPage={activeIndex + 1}
-        totalPages={testimonialCards.length}
-        show={show}
-        setShow={setShow}
+        totalPages={totalPages}
         isPrevDisabled={activeIndex === 0}
-        isNextDisabled={activeIndex === testimonialCards.length - 1}
+        isNextDisabled={activeIndex === totalPages - 1}
         text="View All Testimonials"
       />
     </SectionContainer>

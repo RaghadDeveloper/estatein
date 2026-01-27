@@ -26,9 +26,17 @@ const Slider = ({
           prevEl: `.${prevClass}`,
           nextEl: `.${nextClass}`,
         }}
-
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          },
+          1024: {
+            slidesPerView: cardsPerView,
+            slidesPerGroup: cardsPerView,
+          },
+        }}
         onBeforeInit={(swiper) => {
-          // ✅ الحل السحري
           swiper.params.navigation!.prevEl = `.${prevClass}`
           swiper.params.navigation!.nextEl = `.${nextClass}`
         }}

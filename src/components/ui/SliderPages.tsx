@@ -5,8 +5,6 @@ const SliderPages = ({
     cardsLength,
     currentPage,
     totalPages,
-    show,
-    setShow,
     isPrevDisabled,
     isNextDisabled,
     text,
@@ -15,14 +13,13 @@ const SliderPages = ({
     }: SliderPagesProps) => {
     return (
         <div className="mt-6 flex justify-between items-center border-t border-gray-15 pt-7.5 lg:pt-4 2xl:pt-5">
-        <button
-            onClick={() => setShow(!show)}
-            className={`${!show && "mx-auto"}
+        {text && <button
+            className={`
             border border-gray-15 py-3.5 px-5 text-[14px]
             text-white lg:hidden rounded-xl`}
         >
             {text}
-        </button>
+        </button>}
 
         <div className="hidden lg:block">
             <span className="text-white">
@@ -34,7 +31,8 @@ const SliderPages = ({
             </span>
         </div>
 
-        <div className={`${show ? "block" : "hidden"} flex items-center gap-2.5`}>
+        <div className={`flex items-center gap-2.5
+        ${!text&&"justify-between grow"}`}>
             <SliderButton
             className={prevClass}   
             disabled={isPrevDisabled}
@@ -45,6 +43,15 @@ const SliderPages = ({
                 alternative: "arrow left",
             }}
             />
+            <div className="block lg:hidden">
+            <span className="text-white">
+            {String(currentPage).padStart(2, "0")}
+            </span>
+            <span className="text-gray-60"> of </span>
+            <span className="text-gray-60">
+            {String(totalPages).padStart(2, "0")}
+            </span>
+        </div>
             <SliderButton
             className={nextClass}   
             disabled={isNextDisabled}

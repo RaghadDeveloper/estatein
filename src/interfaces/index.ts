@@ -25,8 +25,6 @@ export interface SliderPagesProps {
   cardsLength: number
   currentPage: number
   totalPages: number
-  show: boolean
-  setShow: (value: boolean) => void
   isPrevDisabled: boolean
   isNextDisabled: boolean
   text?: string
@@ -259,4 +257,8 @@ export interface buttonLocations {
   variant: "BgBlack" | "BgGray";
   onClick?: () => void;
   children: React.ReactNode;
+}
+export interface PropertyPhotosProps {
+  activeIndex: number
+  setActiveIndex: (index: number) => void
 }

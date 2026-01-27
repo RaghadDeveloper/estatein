@@ -12,7 +12,7 @@ const PropertySlider = () => {
 
   const cards = photos.map((photo, index) => (
   <div key={index} className="w-full grid justify-between grid-cols-1 
-  lg:lg:grid-cols-[minmax(300px,583px)_minmax(300px,583px)]
+  lg:lg:grid-cols-2
   gap-7.5">
       {photo.images.map((image, i) => (
         <div

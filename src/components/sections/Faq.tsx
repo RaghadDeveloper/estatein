@@ -14,16 +14,26 @@ function Faq() {
   ))
 
   const [activeIndex, setActiveIndex] = useState(0)
-  const [show, setShow] = useState(true)
   const [swiper, setSwiper] = useState<SwiperType | null>(null)
+
   const sliderId = "faq"
+
+  // ✅ عدد الصفحات الحقيقي
+  const totalPages = swiper
+    ? Math.ceil(
+        questionsCards.length /
+          (typeof swiper.params.slidesPerView === "number"
+            ? swiper.params.slidesPerView
+            : 1)
+      )
+    : 0
 
   return (
     <SectionContainer>
       <SectionHeader {...faqsHeaderData} />
 
       <Slider
-        sliderId={sliderId}         
+        sliderId={sliderId}
         cards={questionsCards}
         spaceBetween={30}
         swiperRef={setSwiper}
@@ -31,15 +41,13 @@ function Faq() {
       />
 
       <SliderPages
-        prevClass={`slider-prev-${sliderId}`}   // ✅
-        nextClass={`slider-next-${sliderId}`}   // ✅
+        prevClass={`slider-prev-${sliderId}`}
+        nextClass={`slider-next-${sliderId}`}
         cardsLength={questionsCards.length}
         currentPage={activeIndex + 1}
-        totalPages={questionsCards.length}
-        show={show}
-        setShow={setShow}
+        totalPages={totalPages}
         isPrevDisabled={activeIndex === 0}
-        isNextDisabled={activeIndex === questionsCards.length - 1}
+        isNextDisabled={activeIndex === totalPages - 1}
         text="View All FAQ’s"
       />
     </SectionContainer>
