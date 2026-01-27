@@ -5,7 +5,7 @@ function ServiceCard({ title, description, icon }: ServiceCardProps) {
     <div
       className="
       border border-gray-15 p-6 md:p-8 lg:p-10 rounded-[12px] flex flex-col gap-6 h-full font-urbanist 
-      w-full bg-[#141414]
+      w-full bg-gray-08
    
     "
     >

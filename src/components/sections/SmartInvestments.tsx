@@ -15,23 +15,28 @@ const SmartInvestments = () => {
         min-[1440px]:!max-w-[1287px]  
         min-[1920px]:!max-w-[1584px]"
       >
-        <div className="grid grid-cols-1 min-[1241px]:grid-cols-[0.8fr_1.2fr] gap-10 min-[1241px]:gap-16 items-stretch">
+        <div className="grid grid-cols-1 min-[1241px]:grid-cols-3 gap-6 items-start">
           
-          <div className="flex flex-col h-full justify-between">
-          
-            <div className="max-w-[600px] [&_header]:!mb-[30px] md:[&_header]:!mb-[40px] min-[1241px]:[&_header]:!mb-[50px]">
+          <div className="min-[1241px]:col-span-1 flex flex-col">
+            
+            <div className="[&_header]:!mb-0 
+              [&_h2]:max-[1919px]:!text-[38px] 
+              [&_h1]:max-[1919px]:!text-[38px]
+            
+            ">
               <SectionHeader {...SmartInvestmentsFormHeaderData} />
             </div>
 
-            <div className="
-             flex flex-col
-              [&>div]:min-[1241px]:flex-col 
-              [&>div]:min-[1241px]:items-start 
-              [&>div]:min-[1241px]:justify-between 
-              [&>div]:h-full 
-              [&>div]:w-full
-              [&>div>div:last-child]:min-[1241px]:w-full 
-              [&_button]:min-[1241px]:w-full
+            <div className="mt-3  
+              [&>div]:!flex-col 
+              [&>div]:!items-start 
+              [&>div]:!p-6 md:[&>div]:!p-10
+              [&>div_h2]:!text-[20px] md:[&>div_h2]:!text-[24px] min-[1920px]:[&>div_h2]:!text-[30px]
+              [&>div_p]:!text-gray-60 
+              [&>div_button]:!w-full 
+              [&>div_div:nth-child(2)]:!flex-col 
+              [&>div_div:last-child]:!w-full
+              [&>div_div:last-child]:!mt-auto
             ">
               <FeatureServiceCard 
                 title={investmentFeatureData.title}
@@ -41,15 +46,16 @@ const SmartInvestments = () => {
             </div>
           </div>
 
-          <div className="bg-gray-10 p-2 rounded-[12px] border border-gray-15 shadow-sm">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2   h-full">
+          <div className="min-[1241px]:col-span-2 bg-gray-10 p-2 rounded-[12px] border border-gray-15 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
               {investmentServicesData.map((service) => (
-                <ServiceCard 
-                  key={service.id}
-                  title={service.title}
-                  description={service.description}
-                  icon={service.icon}
-                />
+                <div key={service.id}>
+                  <ServiceCard 
+                    title={service.title}
+                    description={service.description}
+                    icon={service.icon}
+                  />
+                </div>
               ))}
             </div>
           </div>

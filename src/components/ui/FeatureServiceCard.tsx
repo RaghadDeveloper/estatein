@@ -7,7 +7,7 @@ function FeatureServiceCard({
   bgImage,
 }: FeatureServiceCardProps) {
   return (
-    <div className="relative border border-gray-15 rounded-[12px] p-6 md:p-8 lg:p-12 overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-6 h-full font-urbanist bg-[#1A1A1A]">
+    <div className="relative border border-gray-15 rounded-[12px] p-6 md:p-8 lg:p-12 overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-6 h-full font-urbanist bg-gray-10">
       <div
         className="absolute inset-0 z-0 opacity-40 pointer-events-none"
         style={{
@@ -35,7 +35,7 @@ function FeatureServiceCard({
           </Button>
         </div>
 
-        <p className="text-gray-60 text-sm lg:text-base max-w-2xl leading-relaxed">
+        <p className="text-gray-60 text-sm lg:text-base max-w-2xl leading-relaxed ">
           {description}
         </p>
       </div>
