@@ -9,8 +9,8 @@ const Properties = () => {
     <div>
       <CommonHero {...propertiesPageHeroData} />
       <Portfolio />
-      <CallToActionSection />
       <PropertiesForm />
+      <CallToActionSection />
     </div>
   );
 };

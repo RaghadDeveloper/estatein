@@ -17,7 +17,7 @@ const TextareaField = ({ label, placeholder, name, colSpan, value, onChange }: I
 
   return (
     <div
-      className={`${inputDevStyleBase} md:col-span-2 ${lgColSpan} row-span-2`}>
+      className={`${inputDevStyleBase} md:col-span-2 ${lgColSpan} row-span-2 lg:gap-4`}>
       <label className={`${inputLabelStyleBase}`} htmlFor={name}>
         {label}
       </label>

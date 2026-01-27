@@ -3,9 +3,9 @@ import SectionContainer from '../layouts/SectionContainer'
 import SectionHeader from '../ui/SectionHeader';
 import { pricingDetailsCardsData, pricingDetailsHeaderData, pricingDetailsNote } from '../../data/PropertyData';
 import PriceCard from '../ui/PriceCard';
-import type { PricingDetailsCardProps } from '../../interfaces';
+import type { ComprehensivePricingProps, PricingDetailsCardProps } from '../../interfaces';
 
-const ComprehensivePricing = () => {
+const ComprehensivePricing = ({ propertyPrice }: ComprehensivePricingProps) => {
   return (
     <SectionContainer>
       <SectionHeader {...pricingDetailsHeaderData} />
@@ -27,7 +27,7 @@ const ComprehensivePricing = () => {
               Listing Price
             </p>
             <span className="font-semibold text-[24px] lg:text-[30px] 2xl:text-[40px]">
-              $PRICE 1M
+              ${propertyPrice}
             </span>
           </div>
           {/* pricing details cards */}

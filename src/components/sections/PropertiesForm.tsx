@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   inputDevStyleBase,
+  inputLabelStyleBase,
   propertiesFormHeaderData,
   propertyFormInputsData,
 } from "../../data/propertiesData";
@@ -15,27 +16,29 @@ import type { PropertiesFormData } from "../../interfaces";
 
 const PropertiesForm = () => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
-  const [propertiesFormData, setPropertiesFormData] = useState<PropertiesFormData>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    location: "Select Location",
-    propertyType: "Select Property Type",
-    bathrooms: "Select no. of Bathrooms",
-    bedrooms: "Select no. of Bedrooms",
-    budget: "Select Budget",
-    contactMethod: "phone",
-    message: "",
-  });
+  const [propertiesFormData, setPropertiesFormData] =
+    useState<PropertiesFormData>({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      location: "Select Location",
+      propertyType: "Select Property Type",
+      bathrooms: "Select no. of Bathrooms",
+      bedrooms: "Select no. of Bedrooms",
+      budget: "Select Budget",
+      contactMethod: "phone",
+      message: "",
+    });
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
   };
 
   const handleChange = (
-    e:
-      | React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
     setPropertiesFormData((prev) => ({ ...prev, [name]: value }));
@@ -66,7 +69,8 @@ const PropertiesForm = () => {
       <SectionHeader {...propertiesFormHeaderData} />
       <form
         onSubmit={handleSubmit}
-        className="rounded-xl p-5 lg:p-12.5 2xl:p-25 border border-gray-15 flex flex-col gap-7.5 2xl:gap-12.5">
+        className="rounded-xl p-5 lg:p-12.5 2xl:p-25 border border-gray-15 flex flex-col gap-7.5 2xl:gap-12.5"
+      >
         {/* input fields */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7.5 2xl:gap-12.5">
           {propertyFormInputsData.map((input) => {
@@ -93,13 +97,18 @@ const PropertiesForm = () => {
                 return (
                   <div
                     key={input.name}
-                    className={`${inputDevStyleBase} md:col-span-2`}>
-                    <label htmlFor="">{input.label}</label>
+                    className={`${inputDevStyleBase} md:col-span-2`}
+                  >
+                    <label htmlFor="" className={`${inputLabelStyleBase}`}>
+                      {input.label}
+                    </label>
                     <div className="flex flex-col md:flex-row gap-4">
                       {input.options?.map((option) => (
                         <OptionField
                           key={option.value}
-                          checked={propertiesFormData[input.name] === option.value}
+                          checked={
+                            propertiesFormData[input.name] === option.value
+                          }
                           onChange={handleChange}
                           {...option}
                         />

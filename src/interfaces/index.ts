@@ -1,5 +1,5 @@
 import type { ChangeEvent } from "react";
-
+import type { Swiper as SwiperType } from "swiper"
 export interface imageProps {
   className?: string;
   source: string;
@@ -12,22 +12,39 @@ export interface SliderButtonProps {
   image: imageProps;
 }
 export interface SliderProps {
-  cards: React.ReactNode[];
-  cardsPerView?: number;
-  spaceBetween?: number;
-  text?: string;
+  cards: React.ReactNode[]
+  cardsPerView?: number
+  spaceBetween?: number
+  onSlideIndexChange?: (index: number) => void
+  swiperRef?: (swiper: SwiperType) => void
+  sliderId?: string   
 }
 
-export interface ValueCardProps {
-  className: string;
-  isLast: boolean;
-  image: imageProps;
-  title: string;
-  description: string;
+
+export interface SliderPagesProps {
+  cardsLength: number
+  currentPage: number
+  totalPages: number
+  show: boolean
+  setShow: (value: boolean) => void
+  isPrevDisabled: boolean
+  isNextDisabled: boolean
+  text?: string
+  prevClass: string
+  nextClass: string
 }
-export interface ContainerValueCardsProps {
-  children: React.ReactNode[];
+
+
+export interface SliderDotsProps {
+  count: number
+  activeIndex: number
+  onDotClick: (index: number) => void
+  isPrevDisabled: boolean
+  isNextDisabled: boolean
+  prevClass: string
+  nextClass: string
 }
+
 
 export interface PropsFaqCArd {
   H3: string;
@@ -56,16 +73,23 @@ export interface CommonHeroProps {
   propertyHero?: boolean;
 }
 
+interface Socials {
+  label: string;
+  link: string;
+}
 export interface InfoCardProps {
   id: number;
   icon: string;
-  text: string;
+  text?: string;
+  socials?: Socials[];
   link?: string;
+  externalLink?: boolean;
 }
 
 export interface InfoCardSectionProps {
   cards: InfoCardProps[];
   rounded?: boolean;
+  externalLink? : boolean;
 }
 
 export interface AchievementsCardProps {
@@ -76,6 +100,29 @@ export interface AchievementsCardProps {
 export interface AchievementsSectionProps {
   headerData: SectionHeaderProps;
   cards: AchievementsCardProps[];
+}
+
+//Locations section
+export interface LocationsCardProps {
+  id: number;
+  title: string;
+  H3: string;
+  text: string;
+  category: string;
+}
+
+export interface LocationsSectionProps {
+  headerData: SectionHeaderProps;
+  cards: LocationsCardProps[];
+}
+
+export interface ButtonDataLocation {
+  Img: string;
+  text: string;
+}
+export interface TapS {
+  id: number;
+  tap: string;
 }
 
 export interface ButtonProps {
@@ -120,10 +167,27 @@ export interface PropertySelectProps {
 }
 
 export interface SearchBarProps {
-  value: string;
+  value?: string;
   onChange: (val: string) => void;
-  onSearch: () => void;
+  onSearch?: () => void;
 }
+
+export interface FiltersState {
+  search: string;
+  propertyType?: string;
+  location?: string;
+  price?: string;
+  area?: string;
+  buildYear?: string;
+}
+
+export interface FilterType {
+  label: string;
+  key: keyof FiltersState;
+  icon: string;
+  options: string[];
+}
+
 export interface columnFoot {
   title: string;
   link1: string;
@@ -132,30 +196,33 @@ export interface columnFoot {
   link4?: string;
   link5?: string;
   Border: boolean;
+  Href?: string;
 }
 
 export interface PropertyData {
   id: number;
   title: string;
+  subTitle: string;
   description: string;
   photos: string[];
   price: number;
   bedrooms: number;
   bathrooms: number;
   location: string;
+  locationType: string;
   propertyType: string;
   area: number;
 }
 
 // Form
-export interface Option{
+export interface Option {
   label?: string;
   name?: string;
-  placeholder?:string;
-  value:string;
-  icon?:string;
+  placeholder?: string;
+  value: string;
+  icon?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  checked?: boolean
+  checked?: boolean;
 }
 
 export interface InputProps {
@@ -168,7 +235,9 @@ export interface InputProps {
   colSpan?: number;
   value?: string;
   checked?: boolean;
-  onChange?: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => void;
+  onChange?: (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => void;
 }
 
 export interface FormFooterProps {
@@ -188,8 +257,8 @@ export type PropertiesFormData = {
   budget: string;
   contactMethod: string;
   message: string;
-  [key: string] : string;
-}
+  [key: string]: string;
+};
 
 export type InquireFormData = {
   firstName: string;
@@ -198,8 +267,8 @@ export type InquireFormData = {
   phone: string;
   selectedProperty: string;
   message: string;
-  [key: string] : string;
-}
+  [key: string]: string;
+};
 
 export type ConnectFormData = {
   firstName: string;
@@ -209,7 +278,15 @@ export type ConnectFormData = {
   inquiry: string;
   hear: string;
   message: string;
-  [key: string] : string;
+  [key: string]: string;
+};
+
+//ButtonLocations
+export interface buttonLocations {
+  Bool: boolean;
+  variant: "BgBlack" | "BgGray";
+  onClick?: () => void;
+  children: React.ReactNode;
 }
 
 export interface PricingDetailInfo {
@@ -223,4 +300,13 @@ export interface PricingDetailInfo {
 export interface PricingDetailsCardProps {
   title: string;
   detailsInfo: PricingDetailInfo[];
+}
+
+export interface InquireFormProps {
+  propertyName: string;
+  propertyLocation: string;
+}
+
+export interface ComprehensivePricingProps {
+  propertyPrice: string;
 }

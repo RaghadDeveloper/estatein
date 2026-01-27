@@ -1,17 +1,56 @@
-import type { CommonHeroProps, InputProps, SectionHeaderProps } from "../interfaces";
+import type {
+  ButtonDataLocation,
+  CommonHeroProps,
+  InfoCardProps,
+  InputProps,
+  LocationsCardProps,
+  SectionHeaderProps,
+  TapS,
+} from "../interfaces";
 
-export const contactPageHeroData : CommonHeroProps = {
-    title: "Get in Touch with Estatein",
-    text: "Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have. Whether you're looking to buy or sell a property, explore investment opportunities, or simply want to connect, we're just a message away. Reach out to us, and let's start a conversation.",
-}
+export const contactPageHeroData: CommonHeroProps = {
+  title: "Get in Touch with Estatein",
+  text: "Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have. Whether you're looking to buy or sell a property, explore investment opportunities, or simply want to connect, we're just a message away. Reach out to us, and let's start a conversation.",
+};
 
-export const connectFormHeaderData : SectionHeaderProps = {
-    title: "Let's Connect",
-    text: "We're excited to connect with you and learn more about your real estate goals. Use the form below to get in touch with Estatein. Whether you're a prospective client, partner, or simply curious about our services, we're here to answer your questions and provide the assistance you need.",
-}
+export const infoCardsData: InfoCardProps[] = [
+  {
+    id: 1,
+    icon: "assets/icons/Home.svg",
+    text: "info@estatein.com",
+    link: "/contact",
+  },
+  {
+    id: 2,
+    icon: "assets/icons/Value.svg",
+    text: "+1 (123) 456-7890",
+    link: "/contact",
+  },
+  {
+    id: 3,
+    icon: "assets/icons/Building.svg",
+    text: "Main Headquarters",
+    link: "/contact",
+  },
+  {
+    id: 4,
+    icon: "assets/icons/sun.svg",
+    socials: [
+      {label:"Instagram",link:"/contact"},
+      {label:"LinkedIn",link:"/contact"},
+      {label:"Facebook",link:"/contact"},
+    ],
+    link: "/contact",
+  },
+];
 
-export const connectFormInputsData : InputProps[] = [
-    {
+export const connectFormHeaderData: SectionHeaderProps = {
+  title: "Let's Connect",
+  text: "We're excited to connect with you and learn more about your real estate goals. Use the form below to get in touch with Estatein. Whether you're a prospective client, partner, or simply curious about our services, we're here to answer your questions and provide the assistance you need.",
+};
+
+export const connectFormInputsData: InputProps[] = [
+  {
     name: "firstName",
     label: "First Name",
     type: "text",
@@ -42,16 +81,16 @@ export const connectFormInputsData : InputProps[] = [
     type: "select",
     icon: "assets/icons/arrowbottom.svg",
     options: [
-        { label: "General Question", value: "general" },
-        { label: "Product Inquiry", value: "product" },
-        { label: "Order Status", value: "order" },
-        { label: "Shipping & Delivery", value: "shipping" },
-        { label: "Returns & Exchanges", value: "returns" },
-        { label: "Technical Support", value: "technical" },
-        { label: "Partnership Inquiry", value: "partnership" },
-        { label: "Feedback/Suggestions", value: "feedback" },
-        { label: "Complaint", value: "complaint" },
-        { label: "Other", value: "other" }
+      { label: "General Question", value: "general" },
+      { label: "Product Inquiry", value: "product" },
+      { label: "Order Status", value: "order" },
+      { label: "Shipping & Delivery", value: "shipping" },
+      { label: "Returns & Exchanges", value: "returns" },
+      { label: "Technical Support", value: "technical" },
+      { label: "Partnership Inquiry", value: "partnership" },
+      { label: "Feedback/Suggestions", value: "feedback" },
+      { label: "Complaint", value: "complaint" },
+      { label: "Other", value: "other" },
     ],
   },
   {
@@ -61,17 +100,20 @@ export const connectFormInputsData : InputProps[] = [
     type: "select",
     icon: "assets/icons/arrowbottom.svg",
     options: [
-        { label: "Google Search", value: "google" },
-        { label: "Social Media (Instagram, Facebook, etc.)", value: "social_media" },
-        { label: "Friend/Family Referral", value: "referral" },
-        { label: "Email Newsletter", value: "email" },
-        { label: "Online Advertisement", value: "online_ad" },
-        { label: "YouTube", value: "youtube" },
-        { label: "Blog/Online Article", value: "blog" },
-        { label: "Podcast", value: "podcast" },
-        { label: "In-Store/Physical Location", value: "physical" },
-        { label: "Event/Tradeshow", value: "event" },
-        { label: "Other", value: "other" }
+      { label: "Google Search", value: "google" },
+      {
+        label: "Social Media (Instagram, Facebook, etc.)",
+        value: "social_media",
+      },
+      { label: "Friend/Family Referral", value: "referral" },
+      { label: "Email Newsletter", value: "email" },
+      { label: "Online Advertisement", value: "online_ad" },
+      { label: "YouTube", value: "youtube" },
+      { label: "Blog/Online Article", value: "blog" },
+      { label: "Podcast", value: "podcast" },
+      { label: "In-Store/Physical Location", value: "physical" },
+      { label: "Event/Tradeshow", value: "event" },
+      { label: "Other", value: "other" },
     ],
   },
   {
@@ -81,4 +123,76 @@ export const connectFormInputsData : InputProps[] = [
     placeholder: "Enter your message here..",
     colSpan: 3,
   },
-]
+];
+
+// Location Section
+export const LocationsHeaderData: SectionHeaderProps = {
+  title: "Discover Our Office Locations",
+  text: "Estatein is here to serve you across multiple locations. Whether you're looking to meet our team, discuss real estate opportunities, or simply drop by for a chat, we have offices conveniently located to serve your needs. Explore the categories below to find the Estatein office nearest to you",
+};
+export const locationsCardsData: LocationsCardProps[] = [
+  {
+    id: 1,
+    title: "Main Headquarters",
+    H3: "123 Estatein Plaza, City Center, Metropolis",
+    text: "Our main headquarters serve as the heart of Estatein. Located in the bustling city center, this is where our core team of experts operates, driving the excellence and innovation that define us.",
+    category: "International",
+  },
+  {
+    id: 2,
+    title: "Regional Offices",
+    H3: "456 Urban Avenue, Downtown District, Metropolis",
+    text: "Estatein's presence extends to multiple regions, each with its own dynamic real estate landscape. Discover our regional offices, staffed by local experts who understand the nuances of their respective markets.",
+    category: "Regional",
+  },
+];
+export const buttonDataLocation: ButtonDataLocation[] = [
+  {
+    Img: "/public/assets/icons/email.svg",
+    text: "info@estatein.com",
+  },
+  {
+    Img: "/public/assets/icons/Phone.svg",
+    text: "+1 (123) 456-7890",
+  },
+  {
+    Img: "/public/assets/icons/Location.svg",
+    text: "Metropolis",
+  },
+];
+export const TAps: TapS[] = [
+  {
+    id: 1,
+    tap: "All",
+  },
+  {
+    id: 2,
+    tap: "Regional",
+  },
+  {
+    id: 3,
+    tap: "International",
+  },
+];
+export const dataGallery = [
+  {
+    source: "/assets/images/gallery/gallery1.webp",
+    alternative: "Gallery",
+  },
+  {
+    source: "/assets/images/gallery/gallery3.webp",
+    alternative: "Gallery",
+  },
+  {
+    source: "/assets/images/gallery/gallery2.webp",
+    alternative: "Gallery",
+  },
+  {
+    source: "/assets/images/gallery/gallery4.webp",
+    alternative: "Gallery",
+  },
+  {
+    source: "/assets/images/gallery/gallery5.webp",
+    alternative: "Gallery",
+  },
+];

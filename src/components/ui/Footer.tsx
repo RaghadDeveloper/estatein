@@ -9,7 +9,8 @@ const ColumnFooter: Array<columnFoot> = [
     link3: "Properties",
     link4: "Testimonials",
     link5: "FAQ's",
-    Border:true
+    Border:true,
+    Href:"/"
   },
   {
     title: "About Us",
@@ -18,13 +19,15 @@ const ColumnFooter: Array<columnFoot> = [
     link3: "How It Works",
     link4: "Our Team",
     link5: "Our Clients",
-    Border:false
+    Border:false,
+    Href:"/about"
   },
   {
     title: "Properties",
     link1: "Portfolio",
     link2: "Categories",
-    Border:true
+    Border:true,
+    Href:"/properties"
   },
   {
     title: "Services",
@@ -33,13 +36,15 @@ const ColumnFooter: Array<columnFoot> = [
     link3: "Negotiation Wizardry",
     link4: "Closing Success",
     link5: "Property Management",
-    Border:false
+    Border:false,
+    Href:"/services"
   },
   {
     title: "Contact Us",
     link1: "Contact Form",
     link2: "Our Offices",
-    Border:true
+    Border:true,
+    Href:"/contact"
   },
 ]
 const Footer = () => {
@@ -70,10 +75,10 @@ const Footer = () => {
           <p>Terms & Conditions</p>
         </div>
         <div className=" flex gap-[10px]">
-          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/public/assets/icons/facebook.svg" alt="imgFooter1" /></div>
-          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/public/assets/icons/linkedin.svg" alt="imgFooter1" /></div>
-          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/public/assets/icons/twitter.svg" alt="imgFooter1" /></div>
-          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/public/assets/icons/youtube.svg" alt="imgFooter1" /></div>
+          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/assets/icons/facebook.svg" alt="imgFooter1" /></div>
+          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/assets/icons/linkedin.svg" alt="imgFooter1" /></div>
+          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/assets/icons/twitter.svg" alt="imgFooter1" /></div>
+          <div className="w-fit p-3 flex justify-center bg-gray-08 rounded-[25px]"><img src="/assets/icons/youtube.svg" alt="imgFooter1" /></div>
         </div>
       </div>
     </div>

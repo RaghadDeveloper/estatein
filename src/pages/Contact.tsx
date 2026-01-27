@@ -1,21 +1,28 @@
 import CallToActionSection from "../components/sections/CallToActionSection";
 import CommonHero from "../components/sections/CommonHero";
+import Locations from "../components/sections/Locations";
+import {
+  LocationsHeaderData,
+  contactPageHeroData,
+  infoCardsData,
+  locationsCardsData,
+} from "../data/contactData";
+
 import ConnectForm from "../components/sections/ConnectForm";
-import { contactPageHeroData } from "../data/contactData";
+import Gallery from "../components/sections/Gallery";
+import InfoCardsSection from "../components/sections/InfoCardsSection";
 
 const Contact = () => {
   return (
     <div>
-      {/* Hero */}
       <CommonHero {...contactPageHeroData} />
+      <InfoCardsSection cards={infoCardsData} externalLink={true} />
+      <ConnectForm />
+      <Locations headerData={LocationsHeaderData} cards={locationsCardsData} />
+      <Gallery/>
       <CallToActionSection />
     </div>
   );
-  return <div>
-    {/* Hero */}
-    <CommonHero {...contactPageHeroData} />
-    <ConnectForm />
-  </div>;
 };
 
 export default Contact;

@@ -1,7 +1,7 @@
-import type { FormFooterProps } from '../../interfaces';
-import Button from './Button';
+import type { FormFooterProps } from "../../interfaces";
+import Button from "./Button";
 
-const FormFooter = ({isChecked, handleCheckboxChange} : FormFooterProps) => {
+const FormFooter = ({ isChecked, handleCheckboxChange }: FormFooterProps) => {
   return (
     <div className="flex gap-5 flex-col md:flex-row md:items-center md:justify-between">
       <div className="flex gap-1.5 items-center">
@@ -12,18 +12,18 @@ const FormFooter = ({isChecked, handleCheckboxChange} : FormFooterProps) => {
           type="checkbox"
         />
         <p className="font-medium text-gray-60 text-[14px] lg:text-[16px] 2xl:text-[18px] cursor-default">
-          I agree with <span className="underline cursor-pointer">Terms of Use</span> and{" "}
+          I agree with{" "}
+          <span className="underline cursor-pointer">Terms of Use</span> and{" "}
           <span className="underline cursor-pointer">Privacy Policy</span>
         </p>
       </div>
       <div className="">
-        <Button btnType='submit' checked={isChecked} variant="primary">
+        <Button btnType="submit" checked={isChecked} variant="primary">
           Send Your Message
         </Button>
       </div>
     </div>
   );
-}
+};
 
-export default FormFooter
-
+export default FormFooter;
