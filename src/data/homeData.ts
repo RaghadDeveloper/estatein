@@ -1,4 +1,4 @@
-import type { InfoCardProps, Testimonial } from "../interfaces";
+import type { FooterLink, FooterSocial, InfoCardProps, Testimonial } from "../interfaces";
 
 export const infoCardsData: InfoCardProps[] = [
   {
@@ -155,3 +155,50 @@ export const questions = [
     TextButton: "Read More",
   },
 ];
+
+export const footerLinks : FooterLink[] = [
+  {
+    title: "Home",
+    sectionsLinks: ["Hero Section","Features","Properties","Testimonials","FAQ's",],
+    link: "/"
+  },
+  {
+    title: "About Us",
+    sectionsLinks: ["Our Story", "Our Works","How It Works","Our Team","Our Clients",],
+    link: "/about",
+  },
+  {
+    title: "Properties",
+    sectionsLinks: ["Portfolio","Categories",],
+    link: "/properties",
+  },
+  {
+    title: "Services",
+    sectionsLinks: ["Valuation Mastery","Strategic Marketing","Negotiation Wizardry","Closing Success","Property Management",],
+    link: "/services",
+  },
+  {
+    title: "Contact Us",
+    sectionsLinks: ["Contact Form","Our Offices",],
+    link: "/contact",
+  },
+]
+
+export const socialIcons : FooterSocial[] = [
+  {
+    icon: "facebook",
+    link: "/"
+  },
+  {
+    icon: "linkedin",
+    link: "/"
+  },
+  {
+    icon: "twitter",
+    link: "/"
+  },
+  {
+    icon: "youtube",
+    link: "/"
+  },
+]

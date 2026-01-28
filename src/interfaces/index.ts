@@ -319,3 +319,14 @@ export interface InquireFormProps {
 export interface ComprehensivePricingProps {
   propertyPrice: string;
 }
+
+export interface FooterLink {
+  title: string;
+  sectionsLinks: string[];
+  link: string;
+}
+
+export interface FooterSocial {
+  icon: string;
+  link: string;
+}
