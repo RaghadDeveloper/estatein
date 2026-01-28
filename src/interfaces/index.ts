@@ -21,7 +21,7 @@ export interface PillInfoProps {
   pricing?: boolean;
 }
 export interface ButtonProps {
-  variant: "primary" | "secondary" | "border";
+  variant: "primary" | "secondary" | "border" | 'gray08';
   onClick?: () => void;
   children: React.ReactNode;
   btnType?: "button" | "submit" | "reset" | undefined;
@@ -153,6 +153,30 @@ export interface Step extends StepCardProps {
   id: number;
 }
 
+// Service Card
+export interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: string;
+}
+export interface FeatureServiceCardProps {
+  title: string;
+  description: string;
+  bgImage: string;
+}
+export interface ServiceItem {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
+export interface FeatureItem {
+  title: string;
+  description: string;
+  bgImage: string;
+}
+
+
 // =============================== Property Filter & Search Bar ============================
 export interface PropertySelectProps {
   icon: string;
@@ -247,6 +271,10 @@ export type PropertiesFormData = {
   message: string;
   [key: string]: string;
 };
+export interface InquireFormProps {
+  propertyName: string;
+  propertyLocation: string;
+}
 export type InquireFormData = {
   firstName: string;
   lastName: string;
@@ -303,6 +331,7 @@ export interface imageProps {
   alternative: string;
 }
 
+// ============================== Pricing Section ============================
 export interface PricingDetailInfo {
   title: string;
   price: string;
@@ -325,6 +354,7 @@ export interface ComprehensivePricingProps {
   propertyPrice: string;
 }
 
+// ============================== Footer ============================
 export interface FooterLink {
   title: string;
   sectionsLinks: string[];
@@ -335,3 +365,4 @@ export interface FooterSocial {
   icon: string;
   link: string;
 }
+
