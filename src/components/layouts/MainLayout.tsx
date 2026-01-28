@@ -11,17 +11,16 @@ const MainLayout = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLoader(false);
-    }, 1500); // ⏱️ ثانيتين
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-08 text-white">
+    <div className="font-urbanist bg-gray-08 text-white">
       <AnnouncementBar />
       <Navbar />
-
-      <div className="flex-1 flex flex-col justify-center items-center">
+      <div>
         {showLoader ? (
           <Loader />
         ) : (
@@ -30,7 +29,6 @@ const MainLayout = () => {
           </Suspense>
         )}
       </div>
-
       <Footer />
     </div>
   );
