@@ -102,3 +102,12 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--color-primary-60);
   transition: background-color 5000s ease-in-out 0s;
 }
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper .swiper-slide {
+  height: auto;
+}

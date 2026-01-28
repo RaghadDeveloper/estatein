@@ -21,9 +21,11 @@ const PropertyDetails = () => {
   }
 
   // property deytails
-  const propertyName = "Seaside Serenity Villa";
-  const propertyLocation = "Malibu, California";
-  const propertyPrice = "1,250,000";
+  console.log(property);
+  
+  const propertyName = property.title;
+  const propertyLocation = property.location;
+  const propertyPrice = property.price.toString();
 
   console.log(property);
   return (
