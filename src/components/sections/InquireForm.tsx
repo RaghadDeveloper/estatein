@@ -9,13 +9,11 @@ import SectionHeader from "../ui/SectionHeader";
 import SelectField from "../ui/SelectField";
 import TextareaField from "../ui/TextareaField";
 import InputField from "../ui/InputField";
-import type { InquireFormData } from "../../interfaces";
+import type { InquireFormData, InquireFormProps } from "../../interfaces";
 
-const InquireForm = () => {
-  const currentPropertyName = "Seaside Serenity Villa";
-  const currentPropertyLocation = "Malibu, California";
-
-  const selectedPlaceholder = `${currentPropertyName}, ${currentPropertyLocation}`;
+const InquireForm = ({propertyName, propertyLocation} : InquireFormProps) => {
+  
+  const selectedPlaceholder = `${propertyName}, ${propertyLocation}`;
 
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const [inquireFormData, setInquireFormData] = useState<InquireFormData>({

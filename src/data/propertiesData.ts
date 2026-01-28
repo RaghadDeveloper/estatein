@@ -177,10 +177,11 @@ export const propertiesData: PropertyData[] = [
 ];
 
 // Property Form Section
-export const propertiesFormHeaderData: SectionHeaderProps = {
-  title: "Let's Make it Happen",
-  text: "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.",
-};
+
+export const propertiesFormHeaderData : SectionHeaderProps = {
+    title: "Let's Make it Happen",
+    text: "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.",
+}
 
 export const propertyFormInputsData: InputProps[] = [
   {

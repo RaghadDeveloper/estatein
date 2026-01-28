@@ -1,6 +1,7 @@
 import type {
   ButtonDataLocation,
   CommonHeroProps,
+  InfoCardProps,
   InputProps,
   LocationsCardProps,
   SectionHeaderProps,
@@ -12,6 +13,37 @@ export const contactPageHeroData: CommonHeroProps = {
   title: "Get in Touch with Estatein",
   text: "Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have. Whether you're looking to buy or sell a property, explore investment opportunities, or simply want to connect, we're just a message away. Reach out to us, and let's start a conversation.",
 };
+
+export const infoCardsData: InfoCardProps[] = [
+  {
+    id: 1,
+    icon: "assets/icons/emailContact.svg",
+    text: "info@estatein.com",
+    link: "/contact",
+  },
+  {
+    id: 2,
+    icon: "assets/icons/phoneContact.svg",
+    text: "+1 (123) 456-7890",
+    link: "/contact",
+  },
+  {
+    id: 3,
+    icon: "assets/icons/locationContact.svg",
+    text: "Main Headquarters",
+    link: "/contact",
+  },
+  {
+    id: 4,
+    icon: "assets/icons/socials.svg",
+    socials: [
+      {label:"Instagram",link:"/contact"},
+      {label:"LinkedIn",link:"/contact"},
+      {label:"Facebook",link:"/contact"},
+    ],
+    link: "/contact",
+  },
+];
 
 // Connect Form Section
 export const connectFormHeaderData: SectionHeaderProps = {

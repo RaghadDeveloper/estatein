@@ -1,4 +1,4 @@
-import type { InfoCardProps, Testimonial } from "../interfaces";
+import type { FooterLink, FooterSocial, InfoCardProps, Testimonial } from "../interfaces";
 
 export const infoCardsData: InfoCardProps[] = [
   {
@@ -155,15 +155,52 @@ export const questions = [
     TextButton: "Read More",
   },
 ];
-export const iconFooter:Array<string>=[
-  "/public/assets/icons/facebook.svg",
-  "/public/assets/icons/linkedin.svg",
-  "/public/assets/icons/twitter.svg",
-  "/public/assets/icons/youtube.svg"
+
+
+// Footer Section
+export const footerLinks : FooterLink[] = [
+  {
+    title: "Home",
+    sectionsLinks: ["Hero Section","Features","Properties","Testimonials","FAQ's",],
+    link: "/"
+  },
+  {
+    title: "About Us",
+    sectionsLinks: ["Our Story", "Our Works","How It Works","Our Team","Our Clients",],
+    link: "/about",
+  },
+  {
+    title: "Properties",
+    sectionsLinks: ["Portfolio","Categories",],
+    link: "/properties",
+  },
+  {
+    title: "Services",
+    sectionsLinks: ["Valuation Mastery","Strategic Marketing","Negotiation Wizardry","Closing Success","Property Management",],
+    link: "/services",
+  },
+  {
+    title: "Contact Us",
+    sectionsLinks: ["Contact Form","Our Offices",],
+    link: "/contact",
+  },
 ]
-export const iconLinks:Array<string>=[
-  "https://www.facebook.com",
-  "https://www.linkedin.com",
-  "https://www.twitter.com",
-  "https://www.youtube.com"
+
+export const socialIcons : FooterSocial[] = [
+  {
+    icon: "facebook",
+    link: "/"
+  },
+  {
+    icon: "linkedin",
+    link: "/"
+  },
+  {
+    icon: "twitter",
+    link: "/"
+  },
+  {
+    icon: "youtube",
+    link: "/"
+  },
 ]

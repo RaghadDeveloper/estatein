@@ -18,6 +18,7 @@ export interface PillInfoProps {
   icon?: string;
   label: string;
   value?: string;
+  pricing?: boolean;
 }
 export interface ButtonProps {
   variant: "primary" | "secondary" | "border";
@@ -100,13 +101,27 @@ export interface InfoCardSectionProps {
   cards: InfoCardProps[];
   rounded?: boolean;
 }
+
+interface Socials {
+  label: string;
+  link: string;
+}
 export interface InfoCardProps {
   id: number;
   icon: string;
-  text: string;
+  text?: string;
+  socials?: Socials[];
   link?: string;
+  externalLink?: boolean;
 }
 // Achievements Card
+
+export interface InfoCardSectionProps {
+  cards: InfoCardProps[];
+  rounded?: boolean;
+  externalLink? : boolean;
+}
+
 export interface AchievementsCardProps {
   id: number;
   title: string;
@@ -286,4 +301,37 @@ export interface imageProps {
   source: string;
   source_alternative?: string;
   alternative: string;
+}
+
+export interface PricingDetailInfo {
+  title: string;
+  price: string;
+  note?: string;
+  isFirst?: boolean;
+  isTwo? : boolean;
+}
+
+export interface PricingDetailsCardProps {
+  title: string;
+  detailsInfo: PricingDetailInfo[];
+}
+
+export interface InquireFormProps {
+  propertyName: string;
+  propertyLocation: string;
+}
+
+export interface ComprehensivePricingProps {
+  propertyPrice: string;
+}
+
+export interface FooterLink {
+  title: string;
+  sectionsLinks: string[];
+  link: string;
+}
+
+export interface FooterSocial {
+  icon: string;
+  link: string;
 }

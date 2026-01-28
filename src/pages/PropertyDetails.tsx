@@ -5,6 +5,8 @@ import type { PropertyData } from "../interfaces";
 import Faq from "../components/sections/Faq";
 import InquireForm from "../components/sections/InquireForm";
 import PropertySlider from "../components/sections/PropertySlider";
+import ComprehensivePricing from "../components/sections/ComprehensivePricing";
+
 
 const PropertyDetails = () => {
   const { id } = useParams();
@@ -18,11 +20,19 @@ const PropertyDetails = () => {
     return <p>Property not found</p>;
   }
 
+  // property deytails
+  console.log(property);
+  
+  const propertyName = property.title;
+  const propertyLocation = property.location;
+  const propertyPrice = property.price.toString();
+
   console.log(property);
   return (
     <div>
       <PropertySlider />
-      <InquireForm />
+      <InquireForm propertyName={propertyName} propertyLocation={propertyLocation} />
+      <ComprehensivePricing propertyPrice={propertyPrice} />
       <Faq />
       <CallToActionSection />
     </div>
