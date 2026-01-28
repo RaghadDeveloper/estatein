@@ -102,3 +102,7 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--color-primary-60);
   transition: background-color 5000s ease-in-out 0s;
 }
+
+.swiper {
+  padding: 6px !important;
+}

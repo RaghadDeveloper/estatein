@@ -9,8 +9,16 @@ import type { Swiper as SwiperType } from "swiper";
 import SliderPages from "../ui/SliderPages";
 
 function Faq() {
-  const questionsCards = questions.map((item: PropsFaqCArd, index) => (
-    <FaqCard key={index} H3={item.H3} P={item.P} />
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const questionsCards = questions.map((item: PropsFaqCArd, index: number) => (
+    <FaqCard
+      key={index}
+      H3={item.H3}
+      P={item.P}
+      isOpen={openIndex === index}
+      onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+    />
   ));
 
   const [activeIndex, setActiveIndex] = useState(0);

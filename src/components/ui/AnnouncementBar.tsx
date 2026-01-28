@@ -6,20 +6,20 @@ const AnnouncementBar = () => {
   return (
     <div>
       {Open == true && (
-        <div className="flex relative  lg:justify-center justify-start  2xl:py-[18px] 2xl:px-[160px] lg:px-[80px] lg:py-[14px] pt-[40px] pb-[20px] ps-[16px] bg-[url(`/assets/images/abstractDesign/announcement.png`) bg-cover bg-center h-screen]">
-          <div className="font-[400] 2xl:text-[18px] lg:text-[14px] text-[12px]">
+        <div className="flex relative lg:justify-center justify-start  2xl:py-4.5 2xl:px-40 lg:px-20 px-4 lg:py-3.5 pt-10 pb-5 ps-4 bg-[url('/assets/images/abstractDesign/announcement.png')] bg-gray-10 bg-cover bg-center">
+          <div className="2xl:text-[18px] lg:text-[14px] text-[12px]">
             ✨Discover Your Dream Property with Estatein
-            <button className="underline underline-offset-1 ml-[10px]">
+            <button className="underline underline-offset-1 ml-2.5">
               <Link to="/">Learn More</Link>
             </button>
           </div>
 
           <button onClick={() => setOpen(!Open)}>
-            <div className=" rounded-4xl 2xl:h-[24px] 2xl:w-[24px] lg:h-[26px] lg:w-[26px] h-[26px] w-[26px] bg-[#FFFFFF1A] absolute 2xl:right-[16px] 2xl:top-[18px] 2xl:p-[6px] top-[36px] right-[16px] lg:right-[32px] lg:top-[11px] ">
+            <div className=" rounded-4xl 2xl:h-6 2xl:w-6 lg:h-6.5 lg:w-6.5 h-6.5 w-6.5 bg-[#FFFFFF1A] absolute 2xl:right-4 2xl:top-4.5 2xl:p-1.5 top-9 right-4 lg:right-8 lg:top-2.75 flex justify-center items-center">
               <img
                 src="/assets/icons/cancel.svg"
                 alt="ImgAnnouncementBar"
-                className=" 2xl:h-[12px] 2xl:w-[12px]  lg:h-[12px] lg:w-[12px] h-[9px] w-[9px] right-[8.5px] top-[8.5px]  absolute  2xl:right-[6px] 2xl:top-[6px] lg:right-[5.5px] lg:top-[5.5px] "
+                className=" 2xl:h-3 2xl:w-3 lg:h-3 lg:w-3 h-2.25 w-2.25"
               />
             </div>
           </button>

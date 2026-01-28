@@ -83,6 +83,10 @@ export interface PropsFaqCArd {
   H3: string;
   P: string;
 }
+export interface CardFaqProps extends PropsFaqCArd {
+  isOpen: boolean;
+  onToggle: () => void;
+}
 // Client Card
 export interface Clientcarddata {
   year: string;
