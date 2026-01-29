@@ -21,7 +21,7 @@ const PropertyPhotos = ({
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
-            className="relative shrink-0 lg:shrink w-16.75 lg:w-36 aspect-4/3 border-0 rounded-md overflow-hidden cursor-pointer"
+            className="relative grow shrink-0 lg:shrink w-16.75 lg:w-36 aspect-4/3 border-0 rounded-md overflow-hidden cursor-pointer"
           >
             <img
               className="w-full h-full object-cover"

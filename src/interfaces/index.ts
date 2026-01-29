@@ -21,7 +21,7 @@ export interface PillInfoProps {
   pricing?: boolean;
 }
 export interface ButtonProps {
-  variant: "primary" | "secondary" | "border" | 'gray08';
+  variant: "primary" | "secondary" | "border" | "gray08";
   onClick?: () => void;
   children: React.ReactNode;
   btnType?: "button" | "submit" | "reset" | undefined;
@@ -57,11 +57,9 @@ export interface SliderProps {
   sliderId?: string;
 }
 export interface SliderPagesProps {
-  cardsLength: number;
+  // cardsLength: number;
   currentPage: number;
   totalPages: number;
-  show: boolean;
-  setShow: (value: boolean) => void;
   isPrevDisabled: boolean;
   isNextDisabled: boolean;
   text?: string;
@@ -76,6 +74,10 @@ export interface SliderDotsProps {
   isNextDisabled: boolean;
   prevClass: string;
   nextClass: string;
+}
+export interface PropertyPhotosProps {
+  activeIndex: number;
+  setActiveIndex: (index: number) => void;
 }
 
 // ================================ Cards ==============================
@@ -119,7 +121,7 @@ export interface InfoCardProps {
 export interface InfoCardSectionProps {
   cards: InfoCardProps[];
   rounded?: boolean;
-  externalLink? : boolean;
+  externalLink?: boolean;
 }
 
 export interface AchievementsCardProps {
@@ -175,7 +177,6 @@ export interface FeatureItem {
   description: string;
   bgImage: string;
 }
-
 
 // =============================== Property Filter & Search Bar ============================
 export interface PropertySelectProps {
@@ -250,7 +251,7 @@ export interface InputProps {
   value?: string;
   checked?: boolean;
   onChange?: (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => void;
 }
 export interface FormFooterProps {
@@ -330,39 +331,3 @@ export interface imageProps {
   source_alternative?: string;
   alternative: string;
 }
-
-// ============================== Pricing Section ============================
-export interface PricingDetailInfo {
-  title: string;
-  price: string;
-  note?: string;
-  isFirst?: boolean;
-  isTwo? : boolean;
-}
-
-export interface PricingDetailsCardProps {
-  title: string;
-  detailsInfo: PricingDetailInfo[];
-}
-
-export interface InquireFormProps {
-  propertyName: string;
-  propertyLocation: string;
-}
-
-export interface ComprehensivePricingProps {
-  propertyPrice: string;
-}
-
-// ============================== Footer ============================
-export interface FooterLink {
-  title: string;
-  sectionsLinks: string[];
-  link: string;
-}
-
-export interface FooterSocial {
-  icon: string;
-  link: string;
-}
-

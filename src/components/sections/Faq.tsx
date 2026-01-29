@@ -10,8 +10,10 @@ import SliderPages from "../ui/SliderPages";
 
 function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
-  const questionsCards = questions.map((item: PropsFaqCArd, index: number) => (
+  const questionsCards = questions.map((item: PropsFaqCArd, index) => (
     <FaqCard
       key={index}
       H3={item.H3}
@@ -21,10 +23,16 @@ function Faq() {
     />
   ));
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [show, setShow] = useState(true);
-  const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const sliderId = "faq";
+
+  const totalPages = swiper
+    ? Math.ceil(
+        questionsCards.length /
+          (typeof swiper.params.slidesPerView === "number"
+            ? swiper.params.slidesPerView
+            : 1),
+      )
+    : 0;
 
   return (
     <SectionContainer>
@@ -41,13 +49,10 @@ function Faq() {
       <SliderPages
         prevClass={`slider-prev-${sliderId}`}
         nextClass={`slider-next-${sliderId}`}
-        cardsLength={questionsCards.length}
         currentPage={activeIndex + 1}
-        totalPages={questionsCards.length}
-        show={show}
-        setShow={setShow}
+        totalPages={totalPages}
         isPrevDisabled={activeIndex === 0}
-        isNextDisabled={activeIndex === questionsCards.length - 1}
+        isNextDisabled={activeIndex === totalPages - 1}
         text="View All FAQ’s"
       />
     </SectionContainer>
