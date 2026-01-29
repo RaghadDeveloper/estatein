@@ -6,6 +6,7 @@ import Faq from "../components/sections/Faq";
 import InquireForm from "../components/sections/InquireForm";
 import PropertySlider from "../components/sections/PropertySlider";
 import ComprehensivePricing from "../components/sections/ComprehensivePricing";
+import PropertyDetailsSec from "../components/sections/PropertyDetailsSec";
 import PropertyDetailsHeader from "../components/ui/PropertyDetailsHeader";
 
 const PropertyDetails = () => {
@@ -23,6 +24,7 @@ const PropertyDetails = () => {
   // property deytails
   console.log(property);
 
+
   const propertyName = property.title;
   const propertyLocation = property.location;
   const propertyPrice = property.price.toString();
@@ -35,6 +37,7 @@ const PropertyDetails = () => {
         price={propertyPrice}
       />
       <PropertySlider />
+      <PropertyDetailsSec />
       <InquireForm
         propertyName={propertyName}
         propertyLocation={propertyLocation}

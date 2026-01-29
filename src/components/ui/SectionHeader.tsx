@@ -22,7 +22,8 @@ const SectionHeader = ({
         <div
           className={`flex items-end md:gap-16 ${
             btnText && "lg:gap-37.5 2xl:gap-50"
-          } justify-between`}>
+          } justify-between`}
+        >
           <div className="flex flex-col gap-1.5 lg:gap-2.5 2xl:gap-3.5">
             <h2 className="text-[28px] md:text-[32px] lg:text-[38px] 2xl:text-[48px] font-semibold">
               {title}
@@ -39,7 +40,8 @@ const SectionHeader = ({
             <div className="hidden md:inline-block">
               <Button
                 variant="secondary"
-                onClick={() => navigate(`${onClick || "#"}`)}>
+                onClick={() => navigate(`${onClick || "#"}`)}
+              >
                 {btnText}
               </Button>
             </div>

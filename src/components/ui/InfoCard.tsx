@@ -73,7 +73,8 @@ const InfoCard = ({ icon, text, socials, link, type }: InfoCardProps) => {
             {socials.map((link) => (
               <span
                 key={link.label}
-                className="cursor-pointer hover:text-primary-75">
+                className="cursor-pointer hover:text-primary-75"
+              >
                 <a href={link.link}>{link.label}</a>
               </span>
             ))}

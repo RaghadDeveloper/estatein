@@ -1,12 +1,7 @@
 import CallToActionSection from "../components/sections/CallToActionSection";
 import CommonHero from "../components/sections/CommonHero";
 import Locations from "../components/sections/Locations";
-import {
-  LocationsHeaderData,
-  contactPageHeroData,
-  infoCardsData,
-  locationsCardsData,
-} from "../data/contactData";
+import { contactPageHeroData, infoCardsData } from "../data/contactData";
 
 import ConnectForm from "../components/sections/ConnectForm";
 import Gallery from "../components/sections/Gallery";
@@ -18,8 +13,8 @@ const Contact = () => {
       <CommonHero {...contactPageHeroData} />
       <InfoCardsSection cards={infoCardsData} />
       <ConnectForm />
-      <Locations headerData={LocationsHeaderData} cards={locationsCardsData} />
-      <Gallery/>
+      <Locations />
+      <Gallery />
       <CallToActionSection />
     </div>
   );

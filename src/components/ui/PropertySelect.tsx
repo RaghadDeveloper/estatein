@@ -27,7 +27,7 @@ const PropertySelect = ({
           <div className="border-r border-gray-15 pr-3 shrink-0">
             <img src={icon} alt={label} className="w-5 h-5 opacity-60" />
           </div>
-          <span className="text-gray-60 text-[14px] font-urbanist font-medium truncate">
+          <span className="text-gray-60 text-[14px] font-medium truncate">
             {selected}
           </span>
         </div>
@@ -46,7 +46,7 @@ const PropertySelect = ({
             <div
               key={idx}
               onClick={() => handleSelect(option)}
-              className="px-4 py-3 text-sm text-gray-60 hover:bg-gray-10 hover:text-white cursor-pointer font-urbanist border-b border-gray-15 last:border-none"
+              className="px-4 py-3 text-sm text-gray-60 hover:bg-gray-10 hover:text-white cursor-pointer border-b border-gray-15 last:border-none"
             >
               {option}
             </div>

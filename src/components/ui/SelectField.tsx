@@ -15,22 +15,23 @@ const SelectField = ({
   value,
   onChange,
 }: InputProps) => {
-
-  const isPlaceholder = placeholder &&  value === placeholder;
+  const isPlaceholder = placeholder && value === placeholder;
 
   return (
     <div
-      className={`${inputDevStyleBase} md:col-span-${colSpan ? colSpan : 1}`}>
+      className={`${inputDevStyleBase} md:col-span-${colSpan ? colSpan : 1}`}
+    >
       <label className={`${inputLabelStyleBase}`} htmlFor={name}>
         {label}
       </label>
       <div className="relative flex items-center">
         <select
-          className={`${inputStyleBase} appearance-none cursor-pointer ${isPlaceholder? "text-gray-40" : "text-white"}`}
+          className={`${inputStyleBase} appearance-none cursor-pointer ${isPlaceholder ? "text-gray-40" : "text-white"}`}
           name={name}
           id={name}
           value={value}
-          onChange={onChange}>
+          onChange={onChange}
+        >
           {/* first option (fixed) */}
           {placeholder && (
             <option selected disabled>
@@ -39,15 +40,12 @@ const SelectField = ({
           )}
           {/* options that user can select */}
           {options?.map((option) => (
-            <option
-              
-              key={option.value}
-              value={option.value}>
+            <option key={option.value} value={option.value}>
               {option.label}
             </option>
           ))}
         </select>
-        <div className="absolute right-5 text-white">
+        <div className="absolute right-5">
           <img className="w-5 2xl:w-6" src={icon} alt="" />
         </div>
       </div>

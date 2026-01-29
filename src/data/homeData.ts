@@ -156,6 +156,8 @@ export const questions = [
   },
 ];
 
+
+// Footer Section
 export const footerLinks : FooterLink[] = [
   {
     title: "Home",

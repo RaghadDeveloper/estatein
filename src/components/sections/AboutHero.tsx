@@ -11,12 +11,12 @@ const AboutHero = () => {
           <img
             className="min-h-77.5 lg:min-h-108.5 2xl:min-h-136 w-full relative z-10 object-cover"
             src="assets/images/hero/aboutHero.webp"
-            alt=""
+            alt="about hero image"
           />
           <img
             className="absolute mix-blend-color-dodge w-full h-full"
             src="assets/images/abstractDesign/aboutHero.png"
-            alt=""
+            alt="abstract design"
           />
         </div>
 

@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import PriceValue from "./PriceValue";
 import type { PropertyCardProps } from "../../interfaces";
 
-
 const PropertyCard: React.FC<PropertyCardProps> = ({
   id,
   title,
@@ -23,7 +22,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
   return (
     <div
-      className={`bg-gray-08 rounded-xl border ${
+      className={`rounded-xl border ${
         isExpanded ? "border-primary-60 z-50" : "border-gray-15 shadow-md"
       } overflow-hidden flex flex-col w-full relative transition-all duration-500 ease-in-out group gap-4 lg:gap-5 2xl:gap-7.5 p-6 lg:p-7.5 2xl:p-10`}
     >

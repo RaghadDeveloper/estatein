@@ -1,4 +1,3 @@
-import React from 'react'
 import type { PropertyDetailsHeaderProps } from '../../interfaces';
 
 const PropertyDetailsHeader = ({name, location, price} : PropertyDetailsHeaderProps) => {

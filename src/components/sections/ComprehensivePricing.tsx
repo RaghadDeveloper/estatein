@@ -1,8 +1,15 @@
-import SectionContainer from '../layouts/SectionContainer'
-import SectionHeader from '../ui/SectionHeader';
-import { pricingDetailsCardsData, pricingDetailsHeaderData, pricingDetailsNote } from '../../data/PropertyData';
-import PriceCard from '../ui/PriceCard';
-import type { ComprehensivePricingProps, PricingDetailsCardProps } from '../../interfaces';
+import SectionContainer from "../layouts/SectionContainer";
+import SectionHeader from "../ui/SectionHeader";
+import {
+  pricingDetailsCardsData,
+  pricingDetailsHeaderData,
+  pricingDetailsNote,
+} from "../../data/PropertyData";
+import PriceCard from "../ui/PriceCard";
+import type {
+  ComprehensivePricingProps,
+  PricingDetailsCardProps,
+} from "../../interfaces";
 
 const ComprehensivePricing = ({ propertyPrice }: ComprehensivePricingProps) => {
   return (
@@ -29,12 +36,11 @@ const ComprehensivePricing = ({ propertyPrice }: ComprehensivePricingProps) => {
               ${propertyPrice}
             </span>
           </div>
+
           {/* pricing details cards */}
           <div className="flex flex-col gap-5 grow lg:gap-10 2xl:gap-12.5">
             {pricingDetailsCardsData.map((card: PricingDetailsCardProps) => (
-              <div key={card.title}>
-                <PriceCard {...card} />
-              </div>
+              <PriceCard key={card.title} {...card} />
             ))}
           </div>
         </div>

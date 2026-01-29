@@ -1,7 +1,7 @@
-import type { SliderProps } from "../../interfaces"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation } from "swiper/modules"
-import type { Swiper as SwiperType } from "swiper"
+import type { SliderProps } from "../../interfaces";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
 
 const Slider = ({
   cards = [],
@@ -11,8 +11,8 @@ const Slider = ({
   swiperRef,
   sliderId = "default",
 }: SliderProps) => {
-  const prevClass = `slider-prev-${sliderId}`
-  const nextClass = `slider-next-${sliderId}`
+  const prevClass = `slider-prev-${sliderId}`;
+  const nextClass = `slider-next-${sliderId}`;
 
   return (
     <div className="relative">
@@ -21,27 +21,44 @@ const Slider = ({
         slidesPerView={cardsPerView}
         slidesPerGroup={cardsPerView}
         spaceBetween={spaceBetween}
-
         navigation={{
           prevEl: `.${prevClass}`,
           nextEl: `.${nextClass}`,
         }}
-
-        onBeforeInit={(swiper) => {
-          swiper.params.navigation!.prevEl = `.${prevClass}`
-          swiper.params.navigation!.nextEl = `.${nextClass}`
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          },
+          968: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: spaceBetween === 50 ? 40 : 20,
+          },
+          1280: {
+            slidesPerView: cardsPerView,
+            slidesPerGroup: cardsPerView,
+            spaceBetween: spaceBetween === 50 ? 40 : 20,
+          },
+          1536: {
+            slidesPerView: cardsPerView,
+            slidesPerGroup: cardsPerView,
+            spaceBetween: spaceBetween,
+          },
         }}
-
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation!.prevEl = `.${prevClass}`;
+          swiper.params.navigation!.nextEl = `.${nextClass}`;
+        }}
         onSlideChange={(swiper: SwiperType) => {
           const slidesView =
             typeof swiper.params.slidesPerView === "number"
               ? swiper.params.slidesPerView
-              : cardsPerView
+              : cardsPerView;
 
-          const newIndex = Math.floor(swiper.realIndex / slidesView)
-          onSlideIndexChange?.(newIndex)
+          const newIndex = Math.floor(swiper.realIndex / slidesView);
+          onSlideIndexChange?.(newIndex);
         }}
-
         onSwiper={(swiper) => swiperRef?.(swiper)}
         className="items-stretch!"
       >
@@ -52,7 +69,7 @@ const Slider = ({
         ))}
       </Swiper>
     </div>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;

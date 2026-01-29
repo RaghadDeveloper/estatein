@@ -38,7 +38,7 @@ const PropertiesForm = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setPropertiesFormData((prev) => ({ ...prev, [name]: value }));

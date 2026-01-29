@@ -18,13 +18,14 @@ export interface PillInfoProps {
   icon?: string;
   label: string;
   value?: string;
+  pricing?: boolean;
 }
 export interface ButtonProps {
   variant: "primary" | "secondary" | "border";
   onClick?: () => void;
   children: React.ReactNode;
   btnType?: "button" | "submit" | "reset" | undefined;
-  checked?: boolean;
+  disabled?: boolean;
 }
 export interface StatisticCardType {
   value: string;
@@ -56,11 +57,9 @@ export interface SliderProps {
   sliderId?: string;
 }
 export interface SliderPagesProps {
-  cardsLength: number;
+  // cardsLength: number;
   currentPage: number;
   totalPages: number;
-  show: boolean;
-  setShow: (value: boolean) => void;
   isPrevDisabled: boolean;
   isNextDisabled: boolean;
   text?: string;
@@ -76,6 +75,10 @@ export interface SliderDotsProps {
   prevClass: string;
   nextClass: string;
 }
+export interface PropertyPhotosProps {
+  activeIndex: number;
+  setActiveIndex: (index: number) => void;
+}
 
 // ================================ Cards ==============================
 // Faq Card
@@ -83,6 +86,19 @@ export interface PropsFaqCArd {
   H3: string;
   P: string;
 }
+export interface CardFaqProps extends PropsFaqCArd {
+  isOpen: boolean;
+  onToggle: () => void;
+}
+// Value Card
+export interface ValueCardProps {
+  className: string;
+  isLast: boolean;
+  image: imageProps;
+  title: string;
+  description: string;
+}
+
 // Client Card
 export interface Clientcarddata {
   year: string;
@@ -96,10 +112,10 @@ export interface InfoCardSectionProps {
   cards: InfoCardProps[];
   rounded?: boolean;
 }
-
-interface Socials {
-  label: string;
-  link: string;
+export interface InfoCardSectionProps {
+  cards: InfoCardProps[];
+  rounded?: boolean;
+  externalLink?: boolean;
 }
 export interface InfoCardProps {
   id: number;
@@ -109,19 +125,18 @@ export interface InfoCardProps {
   link?: string;
   type?: "email" | "location" | "phone" | "website";
 }
-// Achievements Card
-
-export interface InfoCardSectionProps {
-  cards: InfoCardProps[];
-  rounded?: boolean;
-  externalLink? : boolean;
+interface Socials {
+  label: string;
+  link: string;
 }
 
+// Achievements Card
 export interface AchievementsCardProps {
   id: number;
   title: string;
   text: string;
 }
+
 // Member Card
 export interface MemberCardProps {
   name: string;
@@ -146,6 +161,28 @@ export interface StepCardProps {
 }
 export interface Step extends StepCardProps {
   id: number;
+}
+
+// Service Card
+export interface ServiceCardProps {
+  title: string;
+  description: string;
+  icon: string;
+}
+export interface FeatureServiceCardProps {
+  title: string;
+  description: string;
+  bgImage: string;
+}
+export interface ServiceItem {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+}
+export interface FeatureItem {
+  title: string;
+  description: string;
 }
 
 // =============================== Property Filter & Search Bar ============================
@@ -199,6 +236,10 @@ export interface PropertyCardProps {
   infos?: { icon: string; label: string }[];
   subTitle?: string;
 }
+export type FeatureItemProps = {
+  text: string;
+  icon?: string;
+};
 
 // =============================== Forms ============================
 export interface Option {
@@ -221,7 +262,7 @@ export interface InputProps {
   value?: string;
   checked?: boolean;
   onChange?: (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => void;
 }
 export interface FormFooterProps {
@@ -242,6 +283,10 @@ export type PropertiesFormData = {
   message: string;
   [key: string]: string;
 };
+export interface InquireFormProps {
+  propertyName: string;
+  propertyLocation: string;
+}
 export type InquireFormData = {
   firstName: string;
   lastName: string;
@@ -262,6 +307,22 @@ export type ConnectFormData = {
   [key: string]: string;
 };
 
+// =============================== Pricing Section ============================
+export interface PricingDetailInfo {
+  title: string;
+  price: string;
+  note?: string;
+  isFirst?: boolean;
+  isTwo?: boolean;
+}
+export interface PricingDetailsCardProps {
+  title: string;
+  detailsInfo: PricingDetailInfo[];
+}
+export interface ComprehensivePricingProps {
+  propertyPrice: string;
+}
+
 // =============================== Locations Section ============================
 export interface LocationsCardProps {
   id: number;
@@ -269,10 +330,6 @@ export interface LocationsCardProps {
   H3: string;
   text: string;
   category: string;
-}
-export interface LocationsSectionProps {
-  headerData: SectionHeaderProps;
-  cards: LocationsCardProps[];
 }
 export interface ButtonDataLocation {
   Img: string;
@@ -298,28 +355,7 @@ export interface imageProps {
   alternative: string;
 }
 
-export interface PricingDetailInfo {
-  title: string;
-  price: string;
-  note?: string;
-  isFirst?: boolean;
-  isTwo? : boolean;
-}
-
-export interface PricingDetailsCardProps {
-  title: string;
-  detailsInfo: PricingDetailInfo[];
-}
-
-export interface InquireFormProps {
-  propertyName: string;
-  propertyLocation: string;
-}
-
-export interface ComprehensivePricingProps {
-  propertyPrice: string;
-}
-
+// ============================== Footer Section ============================
 export interface FooterLink {
   title: string;
   sectionsLinks: string[];
@@ -330,6 +366,7 @@ export interface FooterSocial {
   icon: string;
   link: string;
 }
+
 
 export interface PropertyDetailsHeaderProps {
   name: string;
