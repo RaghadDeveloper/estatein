@@ -23,7 +23,7 @@ const ClientCard = ({ year, title, PBox1, PBox2, PBoxBig }: Clientcarddata) => {
             <img
               src="/public/assets/icons/domain.svg"
               alt="imgCardCleint1"
-              className=" aspect-square"
+              className="aspect-square"
             />
             <p className="text-gray-60 text-[12px] 2xl:text-lg">Domain</p>
           </div>
@@ -35,7 +35,7 @@ const ClientCard = ({ year, title, PBox1, PBox2, PBoxBig }: Clientcarddata) => {
             <img
               src="/public/assets/icons/category.svg"
               alt="imgCardCleint2"
-              className=" aspect-square"
+              className="aspect-square"
             />
             <p className="text-gray-60 text-[12px] 2xl:text-lg">Category</p>
           </div>

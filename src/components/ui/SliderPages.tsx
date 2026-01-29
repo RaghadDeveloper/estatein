@@ -14,9 +14,7 @@ const SliderPages = ({
     <div className="mt-6 flex justify-between items-center border-t border-gray-15 pt-7.5 lg:pt-4 2xl:pt-5">
       {text && (
         <button
-          className={`
-            border border-gray-15 py-3.5 px-5 text-[14px]
-            text-white lg:hidden rounded-xl`}
+          className={` border border-gray-15 py-3.5 px-5 text-[14px] text-white lg:hidden rounded-xl`}
         >
           {text}
         </button>

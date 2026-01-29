@@ -6,15 +6,7 @@ const PropertyPhotos = ({
   setActiveIndex,
 }: PropertyPhotosProps) => {
   return (
-    <div
-      className="flex justify-between gap-2.5 lg:gap-5 p-2.5 lg:p-5 bg-gray-08
-    border border-gray-15 rounded-xl
-    mt-5 lg:mt-0 mb-5 2xl:mb-7.5
-    overflow-x-auto lg:overflow-visible lg:flex-nowrap
-    [-ms-overflow-style:none]
-    [scrollbar-width:none]
-    [&::-webkit-scrollbar]:hidden"
-    >
+    <div className="flex justify-between gap-2.5 lg:gap-5 p-2.5 lg:p-5 bg-gray-08 border border-gray-15 rounded-xl mt-5 lg:mt-0 mb-5 2xl:mb-7.5 overflow-x-auto lg:overflow-visible lg:flex-nowrap [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
       {photos.map((photo, index) => {
         const isActive = index === activeIndex;
         return (

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="text-[14px] 2xl:text-[18px] font-medium leading-6 tracking-[-0.6%]">
+    <footer className="text-sm 2xl:text-lg font-medium leading-6 tracking-[-0.6%]">
       <div className="ml-4.25 mr-4 md:mx-20 2xl:mx-40.5 py-12.5 lg:py-20 2xl:py-25 flex flex-col lg:flex-row gap-12.5 lg:gap-17.75 2xl:gap-46.25 ">
         {/* logo + entering email */}
         <div className="flex flex-col gap-5 lg:gap-6 2xl:gap-7.5">
@@ -12,7 +12,7 @@ const Footer = () => {
             <img
               className="h-8.5 2xl:h-12"
               src="/assets/images/logo/fullLogo.png"
-              alt=""
+              alt="logo"
             />
           </div>
           <div className="lg:w-76.25 2xl:w-105.75 flex gap-1.5 2xl:gap-2.5 py-3.5 2xl:py-4.5 px-5 2xl:px-6 items-center relative border border-gray-15 rounded-lg">

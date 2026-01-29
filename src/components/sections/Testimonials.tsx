@@ -42,7 +42,6 @@ const Testimonials = () => {
       <SliderPages
         prevClass={`slider-prev-${sliderId}`}
         nextClass={`slider-next-${sliderId}`}
-        // cardsLength={testimonialCards.length}
         currentPage={activeIndex + 1}
         totalPages={totalPages}
         isPrevDisabled={activeIndex === 0}

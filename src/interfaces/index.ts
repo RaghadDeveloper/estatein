@@ -21,11 +21,11 @@ export interface PillInfoProps {
   pricing?: boolean;
 }
 export interface ButtonProps {
-  variant: "primary" | "secondary" | "border" | "gray08";
+  variant: "primary" | "secondary" | "border";
   onClick?: () => void;
   children: React.ReactNode;
   btnType?: "button" | "submit" | "reset" | undefined;
-  checked?: boolean;
+  disabled?: boolean;
 }
 export interface StatisticCardType {
   value: string;
@@ -90,6 +90,15 @@ export interface CardFaqProps extends PropsFaqCArd {
   isOpen: boolean;
   onToggle: () => void;
 }
+// Value Card
+export interface ValueCardProps {
+  className: string;
+  isLast: boolean;
+  image: imageProps;
+  title: string;
+  description: string;
+}
+
 // Client Card
 export interface Clientcarddata {
   year: string;
@@ -103,10 +112,10 @@ export interface InfoCardSectionProps {
   cards: InfoCardProps[];
   rounded?: boolean;
 }
-
-interface Socials {
-  label: string;
-  link: string;
+export interface InfoCardSectionProps {
+  cards: InfoCardProps[];
+  rounded?: boolean;
+  externalLink?: boolean;
 }
 export interface InfoCardProps {
   id: number;
@@ -116,19 +125,18 @@ export interface InfoCardProps {
   link?: string;
   externalLink?: boolean;
 }
-// Achievements Card
-
-export interface InfoCardSectionProps {
-  cards: InfoCardProps[];
-  rounded?: boolean;
-  externalLink?: boolean;
+interface Socials {
+  label: string;
+  link: string;
 }
 
+// Achievements Card
 export interface AchievementsCardProps {
   id: number;
   title: string;
   text: string;
 }
+
 // Member Card
 export interface MemberCardProps {
   name: string;
@@ -175,7 +183,6 @@ export interface ServiceItem {
 export interface FeatureItem {
   title: string;
   description: string;
-  bgImage: string;
 }
 
 // =============================== Property Filter & Search Bar ============================
@@ -300,6 +307,22 @@ export type ConnectFormData = {
   [key: string]: string;
 };
 
+// =============================== Pricing Section ============================
+export interface PricingDetailInfo {
+  title: string;
+  price: string;
+  note?: string;
+  isFirst?: boolean;
+  isTwo?: boolean;
+}
+export interface PricingDetailsCardProps {
+  title: string;
+  detailsInfo: PricingDetailInfo[];
+}
+export interface ComprehensivePricingProps {
+  propertyPrice: string;
+}
+
 // =============================== Locations Section ============================
 export interface LocationsCardProps {
   id: number;
@@ -307,10 +330,6 @@ export interface LocationsCardProps {
   H3: string;
   text: string;
   category: string;
-}
-export interface LocationsSectionProps {
-  headerData: SectionHeaderProps;
-  cards: LocationsCardProps[];
 }
 export interface ButtonDataLocation {
   Img: string;
@@ -334,4 +353,16 @@ export interface imageProps {
   source: string;
   source_alternative?: string;
   alternative: string;
+}
+
+// ============================== Footer Section ============================
+export interface FooterLink {
+  title: string;
+  sectionsLinks: string[];
+  link: string;
+}
+
+export interface FooterSocial {
+  icon: string;
+  link: string;
 }

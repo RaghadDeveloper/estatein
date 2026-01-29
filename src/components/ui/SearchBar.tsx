@@ -4,7 +4,7 @@ import searchIcon from "/assets/icons/search.svg";
 
 const SearchBar = ({ value, onChange, onSearch }: SearchBarProps) => {
   return (
-    <div className="w-full bg-gray-10 shadow-[0px_0px_0px_4px_#191919] lg:shadow-[0px_0px_0px_10px_#191919] rounded-xl lg:rounded-t-2xl lg:rounded-b-none lg:border-b-0">
+    <div className="w-full bg-gray-10 shadow-[0px_0px_0px_4px_var(--color-gray-09)] lg:shadow-[0px_0px_0px_10px_var(--color-gray-09)] rounded-xl lg:rounded-t-2xl lg:rounded-b-none lg:border-b-0">
       <div className="w-full bg-gray-08 border border-gray-15 p-2.5 pl-4.5 lg:p-4 lg:pl-5 2xl:p-5 2xl:pl-6 rounded-xl flex items-center justify-between shadow-inner">
         <div className="flex-1 pr-3 ">
           <input

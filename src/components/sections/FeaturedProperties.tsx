@@ -73,7 +73,7 @@ const FeaturedProperties = () => {
         totalPages={totalPages}
         isPrevDisabled={activeIndex === 0}
         isNextDisabled={activeIndex === totalPages - 1}
-        text="View All Testimonials"
+        text="View All Properties"
       />
     </SectionContainer>
   );

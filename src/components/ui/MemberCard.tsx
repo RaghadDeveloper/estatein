@@ -7,7 +7,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
   imageUrl,
 }) => {
   return (
-    <div className=" w-full bg-gray-08 border border-gray-15 rounded-xl p-5 lg:p-6 2xl:p-7.5 flex flex-col items-center transition-all duration-300 hover:border-primary-60 hover:shadow-[0_20px_50px_rgba(112,59,247,0.25)]">
+    <div className=" w-full border border-gray-15 rounded-xl p-5 lg:p-6 2xl:p-7.5 flex flex-col items-center transition-all duration-300 hover:border-primary-60 hover:shadow-[0_20px_50px_rgba(112,59,247,0.25)]">
       <div className="relative w-full overflow-visible mb-10 lg:mb-12.5">
         <div className="rounded-[10px] overflow-hidden">
           <img

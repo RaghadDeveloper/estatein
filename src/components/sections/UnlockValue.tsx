@@ -11,14 +11,10 @@ import SectionContainer from "../layouts/SectionContainer";
 function UnlockValue() {
   return (
     <SectionContainer>
-      <section className="bg-gray-08 pb-16 lg:pb-24 flex justify-center">
-        <div
-          className="w-full 
-        min-[1440px]:max-w-321.75!  
-        min-[1920px]:max-w-396!
-        "
-        >
+      <section className="pb-16 lg:pb-24 flex justify-center">
+        <div className="w-full min-[1440px]:max-w-321.75! min-[1920px]:max-w-396!">
           <SectionHeader {...servicesFormHeaderData} />
+          
           <div className="grid grid-cols-1 md:grid-cols-2 min-[1201px]:grid-cols-3! gap-6">
             {servicesData.slice(0, 3).map((service) => (
               <ServiceCard

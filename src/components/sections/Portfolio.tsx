@@ -61,7 +61,6 @@ const Portfolio = () => {
           totalPages={totalPages}
           isPrevDisabled={activeIndex === 0}
           isNextDisabled={activeIndex === totalPages - 1}
-          text="View All FAQ’s"
         />
       </SectionContainer>
     </div>

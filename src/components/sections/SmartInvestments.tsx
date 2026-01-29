@@ -11,12 +11,8 @@ import ServiceCard from "../ui/ServiceCard";
 const SmartInvestments = () => {
   return (
     <SectionContainer>
-      <section className="bg-gray-08 pb-10 md:pb-16 min-[1241px]:pb-24 flex justify-center font-urbanist">
-        <div
-          className="w-full 
-        min-[1440px]:max-w-321.75!  
-        min-[1920px]:max-w-396!"
-        >
+      <section className="pb-10 md:pb-16 min-[1241px]:pb-24 flex justify-center font-urbanist">
+        <div className="w-full min-[1440px]:max-w-321.75! min-[1920px]:max-w-396!">
           <div className="grid grid-cols-1 min-[1241px]:grid-cols-3 gap-6 items-start">
             <div className="min-[1241px]:col-span-1 flex flex-col">
               <div className="[&_header]:mb-0! [&_h2]:max-[1919px]:text-[38px]! [&_h1]:max-[1919px]:text-[38px]!">

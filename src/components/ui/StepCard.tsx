@@ -15,11 +15,11 @@ const StepCard: React.FC<StepCardProps> = ({
         </span>
       </div>
 
-      <div className="relative  lg:h-55.5 [@media(min-width:1441px)]:h-66.75! p-7.5 md:p-10 bg-gray-08 border border-gray-15 rounded-xl rounded-tl-none overflow-hidden shadow-2xl">
+      <div className="relative  lg:h-55.5 [@media(min-width:1441px)]:h-66.75! p-7.5 md:p-10 border border-gray-15 rounded-xl rounded-tl-none overflow-hidden shadow-2xl">
         <div
           className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20"
           style={{
-            background: `radial-gradient(circle at 0% 0%, #703BF7 0%, transparent 20%)`,
+            background: `radial-gradient(circle at 0% 0%, var(--color-primary-60) 0%, transparent 20%)`,
           }}
         ></div>
 

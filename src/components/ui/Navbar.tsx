@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [Open, setOpen] = useState(false);
   return (
-    <nav className="bg-gray-10 flex justify-between px-4 py-5 lg:px-20 lg:py-3.5 2xl:px-40.5 2xl:py-5 xl:text-[18px] md:text-[14px] items-center sticky w-full  top-0 h-fit z-50 border-y border-gray-15">
+    <nav className="bg-gray-10 flex justify-between px-4 py-5 lg:px-20 lg:py-3.5 2xl:px-40.5 2xl:py-5 xl:text-[18px] md:text-[14px] items-center sticky w-full top-0 h-fit z-50 border-y border-gray-15">
       {Open == false && (
         <img
           src="/assets/images/logo/fullLogo.png"

@@ -18,7 +18,7 @@ const FormFooter = ({ isChecked, handleCheckboxChange }: FormFooterProps) => {
         </p>
       </div>
       <div className="">
-        <Button btnType="submit" checked={isChecked} variant="primary">
+        <Button btnType="submit" variant="primary" disabled={!isChecked}>
           Send Your Message
         </Button>
       </div>

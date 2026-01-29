@@ -2,7 +2,7 @@ import type { Testimonial } from "../../interfaces";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
-    <div className="bg-gray-08 border border-gray-15 p-7.5 lg:p-10 2xl:p-12.5 rounded-xl flex flex-col h-full font-urbanist">
+    <div className="border border-gray-15 p-7.5 lg:p-10 2xl:p-12.5 rounded-xl flex flex-col h-full font-urbanist">
       <div className="flex gap-2 lg:gap-2 mb-6 lg:mb-7.5 2xl:mb-10">
         {[...Array(testimonial.stars)].map((_, i) => (
           <div

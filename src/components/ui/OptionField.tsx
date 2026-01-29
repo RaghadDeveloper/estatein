@@ -25,12 +25,7 @@ const OptionField = ({
         type="radio"
         className="peer sr-only"
       />
-      <span
-        className="
-      h-2.5 w-2.5 2xl:w-4 2xl:h-4 rounded-full border border-primary-60
-      flex items-center justify-center
-      peer-checked:bg-primary-60"
-      />
+      <span className=" h-2.5 w-2.5 2xl:w-4 2xl:h-4 rounded-full border border-primary-60 flex items-center justify-center peer-checked:bg-primary-60" />
     </label>
   );
 };

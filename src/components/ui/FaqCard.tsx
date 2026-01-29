@@ -9,8 +9,18 @@ const FaqCard = ({ H3, P, isOpen, onToggle }: CardFaqProps) => {
       </h3>
       <p className="text-gray-60 text-sm lg:text-base 2xl:text-lg">{P}</p>
       <div className="w-full md:w-fit">
-        {!isOpen && <Button variant="secondary" onClick={onToggle}>Read More</Button>}
-        {isOpen && <p className="text-gray-60 text-sm lg:text-base 2xl:text-lg" onClick={onToggle}>{P}</p>}
+        {!isOpen ? (
+          <Button variant="secondary" onClick={onToggle}>
+            Read More
+          </Button>
+        ) : (
+          <p
+            className="text-gray-60 text-sm lg:text-base 2xl:text-lg cursor-pointer"
+            onClick={onToggle}
+          >
+            {P}
+          </p>
+        )}
       </div>
     </div>
   );

@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import type { InfoCardProps } from "../../interfaces";
 
-const InfoCard = ({ icon, text, socials, link, externalLink }: InfoCardProps) => {
+const InfoCard = ({
+  icon,
+  text,
+  socials,
+  link,
+  externalLink,
+}: InfoCardProps) => {
   return (
     <article className="py-5 px-3.5 lg:py-7.5 lg:px-4 2xl:py-10 2xl:px-5 bg-gray-10 border border-gray-15 rounded-[10px] flex flex-col relative items-center justify-center h-full">
       {/* Link Arrow */}
@@ -52,7 +58,8 @@ const InfoCard = ({ icon, text, socials, link, externalLink }: InfoCardProps) =>
             {socials.map((link) => (
               <span
                 key={link.label}
-                className="cursor-pointer hover:text-primary-75">
+                className="cursor-pointer hover:text-primary-75"
+              >
                 <a href={link.link}>{link.label}</a>
               </span>
             ))}

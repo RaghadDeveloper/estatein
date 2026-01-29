@@ -37,9 +37,9 @@ export const infoCardsData: InfoCardProps[] = [
     id: 4,
     icon: "assets/icons/socials.svg",
     socials: [
-      {label:"Instagram",link:"/contact"},
-      {label:"LinkedIn",link:"/contact"},
-      {label:"Facebook",link:"/contact"},
+      { label: "Instagram", link: "/contact" },
+      { label: "LinkedIn", link: "/contact" },
+      { label: "Facebook", link: "/contact" },
     ],
     link: "/contact",
   },
@@ -181,6 +181,10 @@ export const TAps: TapS[] = [
 ];
 
 // Gallery Section
+export const galleryHeaderData: SectionHeaderProps = {
+  title: "Explore Estatein's World",
+  text: "Step inside the world of Estatein, where professionalism meets warmth, and expertise meets passion. Our gallery offers a glimpse into our team and workspaces, inviting you to get to know us better.",
+};
 export const dataGallery = [
   {
     source: "/assets/images/gallery/gallery1.webp",

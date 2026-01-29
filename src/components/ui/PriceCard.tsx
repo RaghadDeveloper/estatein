@@ -21,17 +21,20 @@ const PriceCard = ({ title, detailsInfo }: PricingDetailsCardProps) => {
         {detailsInfo.map((pricingDetail: PricingDetailInfo, index) => {
           const totalItems = detailsInfo.length;
           const isEvenTotal = totalItems % 2 === 0;
-          const isLastItem = index === totalItems -1;
+          const isLastItem = index === totalItems - 1;
           const isSecondLastItem = index === totalItems - 2;
 
           // detect if the item was the last on a row
-          const isSecondInRow = index % 2 ===1;
+          const isSecondInRow = index % 2 === 1;
           const isFirstInRow = index % 2 === 0 && !isLastItem;
 
           const isTwoItems = totalItems === 2;
 
           // condition to add a divider with border bottom style
-          const shouldAddDivider = isSecondInRow && !isLastItem && !(isEvenTotal && (isLastItem || isSecondLastItem));
+          const shouldAddDivider =
+            isSecondInRow &&
+            !isLastItem &&
+            !(isEvenTotal && (isLastItem || isSecondLastItem));
           return (
             <React.Fragment key={index}>
               <PricingDetail

@@ -1,4 +1,8 @@
-import type { InputProps, PricingDetailsCardProps, SectionHeaderProps } from "../interfaces";
+import type {
+  InputProps,
+  PricingDetailsCardProps,
+  SectionHeaderProps,
+} from "../interfaces";
 
 // Inquire Form Section
 export const inquireFormHeaderData: SectionHeaderProps = {
@@ -49,15 +53,15 @@ export const inquireFormInputsData: InputProps[] = [
   },
 ];
 
-
-export const pricingDetailsHeaderData : SectionHeaderProps = {
+export const pricingDetailsHeaderData: SectionHeaderProps = {
   title: "Comprehensive Pricing Details",
   text: "At Estatein, transparency is key. We want you to have a clear understanding of all costs associated with your property investment. Below, we break down the pricing for Seaside Serenity Villa to help you make an informed decision",
 };
 
-export const pricingDetailsNote : string = "The figures provided above are estimates and may vary depending on the property, location, and individual circumstances.";
+export const pricingDetailsNote: string =
+  "The figures provided above are estimates and may vary depending on the property, location, and individual circumstances.";
 
-export const pricingDetailsCardsData : PricingDetailsCardProps[] = [
+export const pricingDetailsCardsData: PricingDetailsCardProps[] = [
   {
     title: "Additional Fees",
     detailsInfo: [
@@ -86,7 +90,7 @@ export const pricingDetailsCardsData : PricingDetailsCardProps[] = [
         price: "Varies",
         note: "If applicable, consult with your lender for specific details",
       },
-    ]
+    ],
   },
   {
     title: "Monthly Costs",
@@ -101,7 +105,7 @@ export const pricingDetailsCardsData : PricingDetailsCardProps[] = [
         price: "$300",
         note: "Monthly fee for common area maintenance and security",
       },
-    ]
+    ],
   },
   {
     title: "Total Initial Costs",
@@ -125,7 +129,7 @@ export const pricingDetailsCardsData : PricingDetailsCardProps[] = [
         price: "$1,000,000",
         note: "If applicable",
       },
-    ]
+    ],
   },
   {
     title: "Monthly Expenses",
@@ -148,6 +152,6 @@ export const pricingDetailsCardsData : PricingDetailsCardProps[] = [
         price: "$100",
         note: "Approximate monthly cost",
       },
-    ]
+    ],
   },
-]
+];

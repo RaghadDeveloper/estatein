@@ -11,8 +11,7 @@ import TextareaField from "../ui/TextareaField";
 import InputField from "../ui/InputField";
 import type { InquireFormData, InquireFormProps } from "../../interfaces";
 
-const InquireForm = ({propertyName, propertyLocation} : InquireFormProps) => {
-  
+const InquireForm = ({ propertyName, propertyLocation }: InquireFormProps) => {
   const selectedPlaceholder = `${propertyName}, ${propertyLocation}`;
 
   const [isChecked, setIsChecked] = useState<boolean>(false);
@@ -32,7 +31,7 @@ const InquireForm = ({propertyName, propertyLocation} : InquireFormProps) => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setInquireFormData((prev) => ({ ...prev, [name]: value }));

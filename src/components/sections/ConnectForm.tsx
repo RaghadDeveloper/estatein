@@ -30,7 +30,7 @@ const ConnectForm = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setConnectFormData((prev) => ({ ...prev, [name]: value }));
