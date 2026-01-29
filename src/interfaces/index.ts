@@ -229,6 +229,10 @@ export interface PropertyCardProps {
   infos?: { icon: string; label: string }[];
   subTitle?: string;
 }
+export type FeatureItemProps = {
+  text: string;
+  icon?: string;
+};
 
 // =============================== Forms ============================
 export interface Option {

@@ -78,7 +78,7 @@ const Navbar = () => {
       </button>
       {Open == false && (
         <button className="md:hidden flex" onClick={() => setOpen(!Open)}>
-          <img src="/public/assets/icons/bars.svg" alt="ImbBar" />
+          <img src="/assets/icons/bars.svg" alt="ImbBar" />
         </button>
       )}
       {Open == true && (

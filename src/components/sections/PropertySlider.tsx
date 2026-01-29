@@ -13,9 +13,7 @@ const PropertySlider = () => {
   const cards = photos.map((photo, index) => (
     <div
       key={index}
-      className="w-full grid justify-between grid-cols-1 
-  lg:lg:grid-cols-2
-  gap-7.5"
+      className="w-full grid justify-between grid-cols-1 lg:lg:grid-cols-2 gap-7.5"
     >
       {photo.images.map((image, i) => (
         <div
@@ -41,7 +39,7 @@ const PropertySlider = () => {
   };
 
   return (
-    <div className="p-5 lg:p-10 2xl:p-12.5 border border-gray-15 bg-gray-10">
+    <div className="mx-4 lg:mx-20 2xl:mx-40.5 p-5 lg:p-10 2xl:p-12.5 border border-gray-15 bg-gray-10">
       <div className="flex flex-col-reverse lg:flex-col">
         {/* thumbnails */}
         <PropertyPhotos activeIndex={activeIndex} setActiveIndex={goToIndex} />
