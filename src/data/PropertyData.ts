@@ -1,11 +1,12 @@
 import type { InputProps, SectionHeaderProps } from "../interfaces";
 
-export const inquireFormHeaderData : SectionHeaderProps = {
-    title: "Inquire About Seaside Serenity Villa",
-    text: "Interested in this property? Fill out the form below, and our real estate experts will get back to you with more details, including scheduling a viewing and answering any questions you may have.",
-}
+// Inquire Form Section
+export const inquireFormHeaderData: SectionHeaderProps = {
+  title: "Inquire About Seaside Serenity Villa",
+  text: "Interested in this property? Fill out the form below, and our real estate experts will get back to you with more details, including scheduling a viewing and answering any questions you may have.",
+};
 
-export const inquireFormInputsData : InputProps[] = [
+export const inquireFormInputsData: InputProps[] = [
   {
     name: "firstName",
     label: "First Name",
@@ -37,9 +38,7 @@ export const inquireFormInputsData : InputProps[] = [
     type: "select",
     icon: "/assets/icons/Location.svg",
     colSpan: 2,
-    options: [
-      { label: "selectd property", value: "selected property" },
-    ],
+    options: [{ label: "selectd property", value: "selected property" }],
   },
   {
     name: "message",

@@ -3,15 +3,8 @@ import PillInfo from "./PillInfo";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import PriceValue from "./PriceValue";
+import type { PropertyCardProps } from "../../interfaces";
 
-interface PropertyCardProps {
-  id: number;
-  title: string;
-  description: string;
-  photos: string[];
-  price: number;
-  infos: { icon: string; label: string }[];
-}
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
   id,
@@ -20,6 +13,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   description,
   infos,
   price,
+  subTitle,
 }) => {
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -42,6 +36,12 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
       </div>
 
       <div className=" flex flex-col flex-1 relative z-20">
+        {subTitle && (
+          <div className="mb-4 2xl:mb-5">
+            <PillInfo label={subTitle} />
+          </div>
+        )}
+
         <h3 className="text-lg lg:text-xl 2xl:text-2xl font-bold mb-0.5 lg:mb-1 2xl:mb-1.5 leading-[150%]">
           {title}
         </h3>
@@ -77,7 +77,8 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         </div>
 
         <div className="flex gap-1.5 2xl:gap-2.5 flex-wrap">
-          {infos.length > 0 &&
+          {infos &&
+            infos.length > 0 &&
             infos.map((feature) => (
               <PillInfo key={feature.label} {...feature} />
             ))}

@@ -11,10 +11,8 @@ const Properties = () => {
       <Portfolio />
       <PropertiesForm />
       <CallToActionSection />
-
     </div>
   );
 };
 
-
-export default Properties
+export default Properties;

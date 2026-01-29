@@ -6,12 +6,8 @@ const CallToActionSection = () => {
 
   return (
     <section
-      className="relative z-0 flex flex-col lg:flex-row justify-between lg:items-center
-      gap-7.5 bg-[url('/assets/images/abstractDesign/ctaLeftSmall.png')]
-      bg-no-repeat bg-top-left lg:bg-[url('/assets/images/abstractDesign/ctaLeft.png')]
-      lg:bg-bottom-left
-      py-12.5 lg:py-15 2xl:py-25 px-4 lg:px-20 2xl:px-40.5 border-y border-gray-15 
-      mt-20 lg:mt-30 2xl:mt-37.5"
+      className="relative z-0 flex flex-col lg:flex-row justify-between overflow-hidden lg:items-center
+      gap-7.5 py-12.5 lg:py-15 2xl:py-25 px-4 md:px-20 2xl:px-40.5 border-y border-gray-15 mt-20 lg:mt-30 2xl:mt-37.5"
     >
       {/* left image */}
       <img
@@ -21,13 +17,11 @@ const CallToActionSection = () => {
       />
 
       {/* right image */}
-      <div className="w-fit">
-        <img
-        className="absolute -z-1 h-54.25 lg:h-77.5 2xl:w-181.25 max-w-full -right-7.5 lg:right-0 -bottom-5.5 lg:bottom-0"
+      <img
+        className="absolute -z-1 h-54.25 lg:h-77.5 2xl:w-181.25 -right-7.5 lg:right-0 -bottom-5.5 lg:bottom-0"
         src="/assets/images/abstractDesign/ctaRight.png"
         alt="bg photo"
       />
-      </div>
 
       <div className="lg:w-244.75 2xl:w-288.5">
         <h2

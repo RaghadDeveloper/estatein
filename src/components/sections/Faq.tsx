@@ -1,17 +1,17 @@
-import { useState } from "react"
-import FaqCard from "../ui/FaqCard"
-import SectionContainer from "../layouts/SectionContainer"
-import SectionHeader from "../ui/SectionHeader"
-import { faqsHeaderData, questions } from "../../data/homeData"
-import type { PropsFaqCArd } from "../../interfaces"
-import Slider from "../layouts/Slider"
-import type { Swiper as SwiperType } from "swiper"
-import SliderPages from "../ui/SliderPages"
+import { useState } from "react";
+import FaqCard from "../ui/FaqCard";
+import SectionContainer from "../layouts/SectionContainer";
+import SectionHeader from "../ui/SectionHeader";
+import { faqsHeaderData, questions } from "../../data/homeData";
+import type { PropsFaqCArd } from "../../interfaces";
+import Slider from "../layouts/Slider";
+import type { Swiper as SwiperType } from "swiper";
+import SliderPages from "../ui/SliderPages";
 
 function Faq() {
   const questionsCards = questions.map((item: PropsFaqCArd, index) => (
     <FaqCard key={index} H3={item.H3} P={item.P} />
-  ))
+  ));
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [swiper, setSwiper] = useState<SwiperType | null>(null)
@@ -51,7 +51,7 @@ function Faq() {
         text="View All FAQ’s"
       />
     </SectionContainer>
-  )
+  );
 }
 
-export default Faq
+export default Faq;

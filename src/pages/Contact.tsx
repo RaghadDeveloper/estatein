@@ -16,8 +16,8 @@ const Contact = () => {
       <CommonHero {...contactPageHeroData} />
       <ConnectForm />
       <Locations headerData={LocationsHeaderData} cards={locationsCardsData} />
-      <CallToActionSection />
       <Gallery/>
+      <CallToActionSection />
     </div>
   );
 };

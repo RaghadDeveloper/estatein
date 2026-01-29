@@ -1,113 +1,3 @@
-export const photos=[
-    {
-        images:[
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto1.webp",
-                alternative:"Villa photo"
-            },
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto8.webp",
-                alternative:"Villa photo"
-            }
-        ]
-    },
-    {
-        images:[
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto2.webp",
-                alternative:"Villa photo"
-            },
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto4.webp",
-                alternative:"Villa photo"
-            }
-        ]
-    },
-    {
-        images:[
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto3.webp",
-                alternative:"Villa photo"
-            },
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto9.webp",
-                alternative:"Villa photo"
-            }
-        ]
-    },
-    {
-        images:[
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto4.webp",
-                alternative:"Villa photo"
-            },
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto3.webp",
-                alternative:"Villa photo"
-            }
-        ]
-    },
-    {
-        images:[
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto5.webp",
-                alternative:"Villa photo"
-            },
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto1.webp",
-                alternative:"Villa photo"
-            }
-        ]
-    },
-    {
-        images:[
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto6.webp",
-                alternative:"Villa photo"
-            },
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto5.webp",
-                alternative:"Villa photo"
-            }
-        ]
-    },
-    {
-        images:[
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto7.webp",
-                alternative:"Villa photo"
-            },
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto4.webp",
-                alternative:"Villa photo"
-            }
-        ]
-    },
-    {
-        images:[
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto8.webp",
-                alternative:"Villa photo"
-            },
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto6.webp",
-                alternative:"Villa photo"
-            }
-        ]
-    },
-    {
-        images:[
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto9.webp",
-                alternative:"Villa photo"
-            },
-            {
-                source:"/assets/images/propertyPhoto/propertyPhoto2.webp",
-                alternative:"Villa photo"
-            }
-        ]
-    }
-]
 import locationIcon from "/assets/icons/Location.svg";
 import propertyIcon from "/assets/icons/property.svg";
 import priceIcon from "/assets/icons/Union.svg";
@@ -118,17 +8,21 @@ import type {
   PropertyData,
   InputProps,
   SectionHeaderProps,
+  FilterType,
 } from "../interfaces";
 
+// Hero Section
 export const propertiesPageHeroData: CommonHeroProps = {
   title: "Find Your Dream Property",
   text: "Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties, each offering a unique story and a chance to redefine your life. With categories to suit every dreamer, your journey ",
   propertyHero: true,
 };
 
-export const filters = [
+// Filters Data
+export const filters: FilterType[] = [
   {
     label: "Location",
+    key: "location",
     icon: locationIcon,
     options: [
       "Any location",
@@ -140,11 +34,13 @@ export const filters = [
   },
   {
     label: "Property Type",
+    key: "propertyType",
     icon: propertyIcon,
     options: ["Any Type", "Apartment", "House", "Villa", "Studio", "Office"],
   },
   {
     label: "Pricing Range",
+    key: "price",
     icon: priceIcon,
     options: [
       "Any Price",
@@ -158,21 +54,32 @@ export const filters = [
   },
   {
     label: "Property Size",
+    key: "area",
     icon: sizeIcon,
     options: ["Any Size", "50-100m", "100-150m", "150-250m", "250+m"],
   },
   {
     label: "Build Year",
+    key: "buildYear",
     icon: buildIcon,
     options: ["New", "2017-2021", "2010-2016", "2000-2009", "Before 2000"],
   },
 ];
 
+// Portfolio Section
+export const portfolioHeaderData: SectionHeaderProps = {
+  title: "Discover a World of Possibilities",
+  text: "Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home",
+};
+
+// Properties Data
 export const propertiesData: PropertyData[] = [
   {
     id: 1,
+    subTitle: "Coastal Escapes - Where Waves Beckon",
     title: "Seaside Serenity Villa",
     location: "Malibu, California",
+    locationType: "Near Beach",
     photos: [
       "/assets/images/propertyPhoto/propertyPhoto1.webp",
       "/assets/images/propertyPhoto/propertyPhoto2.webp",
@@ -189,13 +96,15 @@ export const propertiesData: PropertyData[] = [
     price: 550000,
     bedrooms: 4,
     bathrooms: 3,
-    propertyType: "Villa",
+    propertyType: "House",
     area: 2500,
   },
   {
     id: 2,
+    subTitle: "Urban Oasis - Life in the Heart of the City",
     title: "Metropolitan Haven",
     location: "Malibu, California",
+    locationType: "City center",
     photos: [
       "/assets/images/properties/property2.webp",
       "/assets/images/propertyPhoto/propertyPhoto2.webp",
@@ -217,8 +126,10 @@ export const propertiesData: PropertyData[] = [
   },
   {
     id: 3,
+    subTitle: "Countryside Charm - Escape to Nature's Embrace",
     title: "Rustic Retreat Cottage",
     location: "Malibu, California",
+    locationType: "Suburbs",
     photos: [
       "/assets/images/properties/property3.webp",
       "/assets/images/propertyPhoto/propertyPhoto2.webp",
@@ -240,8 +151,10 @@ export const propertiesData: PropertyData[] = [
   },
   {
     id: 4,
+    subTitle: "Coastal Escapes - Where Waves Beckon",
     title: "Seaside Serenity Villa",
     location: "Malibu, California",
+    locationType: "Suburbs",
     photos: [
       "/assets/images/propertyPhoto/propertyPhoto1.webp",
       "/assets/images/propertyPhoto/propertyPhoto2.webp",
@@ -263,19 +176,11 @@ export const propertiesData: PropertyData[] = [
   },
 ];
 
+// Property Form Section
 export const propertiesFormHeaderData: SectionHeaderProps = {
   title: "Let's Make it Happen",
   text: "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.",
 };
-
-export const inputStyleBase: string =
-  "w-full rounded-md py-4 px-5 bg-gray-10 border border-gray-15 text-[14px] font-medium 2xl:text-[18px] 2xl:py-6 leading-[20px] focus:outline-none focus:ring-2 focus:ring-primary-60 caret-primary-60";
-
-export const inputLabelStyleBase: string =
-  "text-[16px] 2xl:text-[20px] font-semibold";
-
-export const inputDevStyleBase: string =
-  "flex flex-col gap-2.5 lg:gap-3.5 2xl:gap-4 col-span-1";
 
 export const propertyFormInputsData: InputProps[] = [
   {
@@ -401,3 +306,124 @@ export const propertyFormInputsData: InputProps[] = [
     colSpan: 4,
   },
 ];
+
+export const photos = [
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto1.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto8.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto2.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto4.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto3.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto9.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto4.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto3.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto5.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto1.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto6.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto5.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto7.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto4.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto8.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto6.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+  {
+    images: [
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto9.webp",
+        alternative: "Villa photo",
+      },
+      {
+        source: "/assets/images/propertyPhoto/propertyPhoto2.webp",
+        alternative: "Villa photo",
+      },
+    ],
+  },
+];
+
+// styles for property form inputs
+export const inputStyleBase: string =
+  "w-full rounded-md py-4 px-5 bg-gray-10 border border-gray-15 text-[14px] font-medium 2xl:text-[18px] 2xl:py-6 leading-[20px] focus:outline-none focus:ring-2 focus:ring-primary-60 caret-primary-60";
+
+export const inputLabelStyleBase: string =
+  "text-[16px] 2xl:text-[20px] font-semibold";
+
+export const inputDevStyleBase: string =
+  "flex flex-col gap-2.5 lg:gap-3.5 2xl:gap-4 col-span-1";

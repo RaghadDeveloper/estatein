@@ -1,5 +1,5 @@
-import SliderButton from "./SliderButton"
-import type { SliderPagesProps } from "../../interfaces"
+import SliderButton from "./SliderButton";
+import type { SliderPagesProps } from "../../interfaces";
 
 const SliderPages = ({
     cardsLength,
@@ -21,15 +21,15 @@ const SliderPages = ({
             {text}
         </button>}
 
-        <div className="hidden lg:block">
-            <span className="text-white">
-            {String(currentPage).padStart(2, "0")}
-            </span>
-            <span className="text-gray-60"> of </span>
-            <span className="text-gray-60">
-            {String(totalPages).padStart(2, "0")}
-            </span>
-        </div>
+      <div className="hidden lg:block">
+        <span className="text-white">
+          {String(currentPage).padStart(2, "0")}
+        </span>
+        <span className="text-gray-60"> of </span>
+        <span className="text-gray-60">
+          {String(totalPages).padStart(2, "0")}
+        </span>
+      </div>
 
         <div className={`flex items-center gap-2.5
         ${!text&&"justify-between grow"}`}>
@@ -67,4 +67,4 @@ const SliderPages = ({
     )
 }
 
-export default SliderPages
+export default SliderPages;
