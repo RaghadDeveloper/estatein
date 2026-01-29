@@ -1,4 +1,3 @@
-import React from 'react'
 import type { FooterLink } from '../../interfaces'
 import { Link } from 'react-router-dom'
 

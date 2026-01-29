@@ -1,4 +1,3 @@
-import React from "react";
 import { footerLinks, socialIcons } from "../../data/homeData";
 import FooterColumn from "./FooterColumn";
 import { Link } from "react-router-dom";

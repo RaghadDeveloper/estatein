@@ -1,12 +1,33 @@
 import { Link } from "react-router-dom";
 import type { InfoCardProps } from "../../interfaces";
 
-const InfoCard = ({ icon, text, socials, link, externalLink }: InfoCardProps) => {
+const InfoCard = ({ icon, text, socials, link, type }: InfoCardProps) => {
+  const getFinalLink = () => {
+    switch (type) {
+      case "email":
+        return `mailto:${link}`;
+      case "location":
+        return `https://www.google.com/maps/search/?api=1&query=${link && encodeURIComponent(link)}`;
+      case "phone":
+        return `tel:${link?.replace(/\s+/g, "")}`;
+      case "website":
+        return link?.startsWith("http") ? link : `https://${link}`;
+      default:
+        return link;
+    }
+  };
+
+  const isExternalLink =
+    type === "email" ||
+    type === "location" ||
+    type === "phone" ||
+    link?.startsWith("http");
+
   return (
     <article className="py-5 px-3.5 lg:py-7.5 lg:px-4 2xl:py-10 2xl:px-5 bg-gray-10 border border-gray-15 rounded-[10px] flex flex-col relative items-center justify-center h-full">
       {/* Link Arrow */}
-      {externalLink ? (
-        <a href="">
+      {isExternalLink ? (
+        <a href={getFinalLink()} target={type === "email" ? '_self' : "_blank"} >
           <img
             className="absolute top-[24.38px] right-[24.38px] xl:top-[26.38px] xl:right-[26.38px] w-[16.25px] xl:w-[21.5px] cursor-pointer"
             src="assets/icons/arrowgrey.svg"
@@ -14,7 +35,7 @@ const InfoCard = ({ icon, text, socials, link, externalLink }: InfoCardProps) =>
           />
         </a>
       ) : (
-        <Link to={`${link}`}>
+        <Link to={`${getFinalLink()}`}>
           <img
             className="absolute top-[24.38px] right-[24.38px] xl:top-[26.38px] xl:right-[26.38px] w-[16.25px] xl:w-[21.5px] cursor-pointer"
             src="assets/icons/arrowgrey.svg"
@@ -58,7 +79,7 @@ const InfoCard = ({ icon, text, socials, link, externalLink }: InfoCardProps) =>
             ))}
           </div>
         ) : (
-          text
+          text ? text : link
         )}
       </h3>
     </article>

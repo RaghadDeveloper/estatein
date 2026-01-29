@@ -107,7 +107,7 @@ export interface InfoCardProps {
   text?: string;
   socials?: Socials[];
   link?: string;
-  externalLink?: boolean;
+  type?: "email" | "location" | "phone" | "website";
 }
 // Achievements Card
 
@@ -329,4 +329,10 @@ export interface FooterLink {
 export interface FooterSocial {
   icon: string;
   link: string;
+}
+
+export interface PropertyDetailsHeaderProps {
+  name: string;
+  location: string;
+  price: string;
 }

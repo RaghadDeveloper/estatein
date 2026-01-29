@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <div>
       <CommonHero {...contactPageHeroData} />
-      <InfoCardsSection cards={infoCardsData} externalLink={true} />
+      <InfoCardsSection cards={infoCardsData} />
       <ConnectForm />
       <Locations headerData={LocationsHeaderData} cards={locationsCardsData} />
       <Gallery/>

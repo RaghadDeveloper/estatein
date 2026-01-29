@@ -4,7 +4,6 @@ import InfoCard from "../ui/InfoCard";
 const InfoCardsSection = ({
   cards,
   rounded,
-  externalLink,
 }: InfoCardSectionProps) => {
   return (
     <div
@@ -13,7 +12,7 @@ const InfoCardsSection = ({
       }`}>
       {cards.map((card) => (
         <div key={card.id}>
-          <InfoCard {...card} externalLink={externalLink} />
+          <InfoCard {...card} />
         </div>
       ))}
     </div>
