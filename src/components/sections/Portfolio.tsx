@@ -6,9 +6,9 @@ import PropertyCard from "../ui/PropertyCard";
 import PropertyFilters from "../ui/PropertyFilters";
 import SectionHeader from "../ui/SectionHeader";
 import Slider from "../layouts/Slider";
-import { selectFilteredProperties } from "../../redux/slice/propertiesSelectors";
+import { selectFilteredProperties } from "../../redux/properties/propertiesSelectors";
 import { useEffect, useState } from "react";
-import { clearFilters } from "../../redux/slice/propertiesSlice";
+import { clearFilters } from "../../redux/properties/propertiesSlice";
 import type { Swiper as SwiperType } from "swiper";
 import SliderPages from "../ui/SliderPages";
 

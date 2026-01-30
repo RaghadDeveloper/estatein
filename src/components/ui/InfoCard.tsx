@@ -1,18 +1,16 @@
 import { Link } from "react-router-dom";
 import type { InfoCardProps } from "../../interfaces";
+import { getFinalLink } from "../../utiles/helpers";
 
-const InfoCard = ({
-  icon,
-  text,
-  socials,
-  link,
-  externalLink,
-}: InfoCardProps) => {
+const InfoCard = ({ icon, text, socials, link, type }: InfoCardProps) => {
   return (
     <article className="py-5 px-3.5 lg:py-7.5 lg:px-4 2xl:py-10 2xl:px-5 bg-gray-10 border border-gray-15 rounded-[10px] flex flex-col relative items-center justify-center h-full">
       {/* Link Arrow */}
-      {externalLink ? (
-        <a href="">
+      {type ? (
+        <a
+          href={getFinalLink(type, link)}
+          target={type === "email" ? "_self" : "_blank"}
+        >
           <img
             className="absolute top-[24.38px] right-[24.38px] xl:top-[26.38px] xl:right-[26.38px] w-[16.25px] xl:w-[21.5px] cursor-pointer"
             src="assets/icons/arrowgrey.svg"
@@ -20,7 +18,7 @@ const InfoCard = ({
           />
         </a>
       ) : (
-        <Link to={`${link}`}>
+        <Link to={link}>
           <img
             className="absolute top-[24.38px] right-[24.38px] xl:top-[26.38px] xl:right-[26.38px] w-[16.25px] xl:w-[21.5px] cursor-pointer"
             src="assets/icons/arrowgrey.svg"
@@ -60,12 +58,16 @@ const InfoCard = ({
                 key={link.label}
                 className="cursor-pointer hover:text-primary-75"
               >
-                <a href={link.link}>{link.label}</a>
+                <a href={link.link} target="_blank">
+                  {link.label}
+                </a>
               </span>
             ))}
           </div>
-        ) : (
+        ) : text ? (
           text
+        ) : (
+          link
         )}
       </h3>
     </article>

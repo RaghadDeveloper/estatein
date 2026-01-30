@@ -9,10 +9,15 @@ import SectionHeader from "../ui/SectionHeader";
 import SelectField from "../ui/SelectField";
 import TextareaField from "../ui/TextareaField";
 import InputField from "../ui/InputField";
-import type { InquireFormData, InquireFormProps } from "../../interfaces";
+import type { InquireFormData } from "../../interfaces";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectProperty } from "../../redux/properties/propertiesSelectors";
 
-const InquireForm = ({ propertyName, propertyLocation }: InquireFormProps) => {
-  const selectedPlaceholder = `${propertyName}, ${propertyLocation}`;
+const InquireForm = () => {
+  const { id } = useParams();
+  const property = useSelector(selectProperty(Number(id)));
+  const selectedPlaceholder = `${property?.title}, ${property?.location}`;
 
   const [isChecked, setIsChecked] = useState<boolean>(false);
   const [inquireFormData, setInquireFormData] = useState<InquireFormData>({

@@ -42,6 +42,11 @@ export interface columnFoot {
   Href?: string;
 }
 
+export interface PriceValueProps {
+  title: string;
+  value: number;
+}
+
 // ============================== Sliders ===============================
 export interface SliderButtonProps {
   className: string;
@@ -122,8 +127,8 @@ export interface InfoCardProps {
   icon: string;
   text?: string;
   socials?: Socials[];
-  link?: string;
-  externalLink?: boolean;
+  link: string;
+  type?: "email" | "location" | "phone" | "website";
 }
 interface Socials {
   label: string;
@@ -283,10 +288,6 @@ export type PropertiesFormData = {
   message: string;
   [key: string]: string;
 };
-export interface InquireFormProps {
-  propertyName: string;
-  propertyLocation: string;
-}
 export type InquireFormData = {
   firstName: string;
   lastName: string;
@@ -318,9 +319,6 @@ export interface PricingDetailInfo {
 export interface PricingDetailsCardProps {
   title: string;
   detailsInfo: PricingDetailInfo[];
-}
-export interface ComprehensivePricingProps {
-  propertyPrice: string;
 }
 
 // =============================== Locations Section ============================
