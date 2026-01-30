@@ -373,3 +373,21 @@ export interface PropertyDetailsHeaderProps {
   location: string;
   price: string;
 }
+
+export interface PropertyDetailsSectionProps {
+  description: string;
+  bedrooms: number;
+  bathrooms: number;
+  area: number;
+}
+
+export interface InfoBlockCardProps {
+  label: string;
+  icon: string;
+  value: number;
+}
+
+export interface NavLink {
+  label: string;
+  link: string;
+}

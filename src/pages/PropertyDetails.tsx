@@ -28,6 +28,10 @@ const PropertyDetails = () => {
   const propertyName = property.title;
   const propertyLocation = property.location;
   const propertyPrice = property.price.toString();
+  const propertyBedrooms = property.bedrooms;
+  const propertyBathrooms = property.bathrooms;
+  const propertyArea = property.area;
+  const propertyDescription = property.description;
 
   return (
     <div>
@@ -37,7 +41,12 @@ const PropertyDetails = () => {
         price={propertyPrice}
       />
       <PropertySlider />
-      <PropertyDetailsSec />
+      <PropertyDetailsSec
+        description={propertyDescription}
+        bedrooms={propertyBedrooms}
+        bathrooms={propertyBathrooms}
+        area={propertyArea}
+      />
       <InquireForm
         propertyName={propertyName}
         propertyLocation={propertyLocation}
