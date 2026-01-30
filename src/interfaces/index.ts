@@ -8,6 +8,7 @@ export interface SectionHeaderProps {
   extraText?: string;
   btnText?: string;
   onClick?: string;
+  className?: string;
 }
 export interface CommonHeroProps {
   title: string;
@@ -108,9 +109,14 @@ export interface ValueCardProps {
 export interface Clientcarddata {
   year: string;
   title: string;
-  PBox1: string;
-  PBox2: string;
-  PBoxBig: string;
+  domain: string;
+  category: string;
+  comment: string;
+}
+export interface ClientInfoProps {
+  label: string;
+  value: string;
+  icon: string;
 }
 // Info Card
 export interface InfoCardSectionProps {

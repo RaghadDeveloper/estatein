@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import AnnouncementBar from "../ui/AnnouncementBar";
 import Navbar from "../ui/Navbar";
 import Footer from "../ui/Footer";
+import ScrollBtn from "../ui/ScrollBtn";
 
 const MainLayout = () => {
   return (
@@ -13,6 +14,7 @@ const MainLayout = () => {
         <Outlet />
       </Suspense>
       <Footer />
+      <ScrollBtn />
     </div>
   );
 };
