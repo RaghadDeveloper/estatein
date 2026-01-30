@@ -11,7 +11,7 @@ import SectionContainer from "../layouts/SectionContainer";
 function UnlockValue() {
   return (
     <SectionContainer>
-      <section className="pb-16 lg:pb-24 flex justify-center">
+      <section className="  flex justify-center">
         <div className="w-full min-[1440px]:max-w-321.75! min-[1920px]:max-w-396!">
           <SectionHeader {...servicesFormHeaderData} />
           

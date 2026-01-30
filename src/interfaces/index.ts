@@ -188,6 +188,7 @@ export interface ServiceItem {
 export interface FeatureItem {
   title: string;
   description: string;
+   bgImage: string;
 }
 
 // =============================== Property Filter & Search Bar ============================
