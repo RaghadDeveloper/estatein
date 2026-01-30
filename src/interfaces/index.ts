@@ -335,6 +335,7 @@ export interface LocationsCardProps {
   category: string;
 }
 export interface ButtonDataLocation {
+  type:"email" | "location" | "phone" ;
   Img: string;
   text: string;
 }

@@ -154,14 +154,17 @@ export const locationsCardsData: LocationsCardProps[] = [
 
 export const buttonDataLocation: ButtonDataLocation[] = [
   {
+    type:"email",
     Img: "/public/assets/icons/email.svg",
     text: "info@estatein.com",
   },
   {
+    type:"phone",
     Img: "/public/assets/icons/Phone.svg",
     text: "+1 (123) 456-7890",
   },
   {
+    type:"location",
     Img: "/public/assets/icons/Location.svg",
     text: "Metropolis",
   },

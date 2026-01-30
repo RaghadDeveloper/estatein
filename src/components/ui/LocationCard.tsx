@@ -1,6 +1,8 @@
 import { buttonDataLocation } from "../../data/contactData";
 import type { LocationsCardProps } from "../../interfaces";
+import Button from "./Button";
 import ButtonLocations from "./ButtonLocations";
+import LocarionHref from "./LocarionHref";
 
 function LocationCard(data: LocationsCardProps) {
   return (
@@ -17,34 +19,13 @@ function LocationCard(data: LocationsCardProps) {
       <div className="flex gap-2.5 flex-wrap">
         {buttonDataLocation.map((item) => (
           <ButtonLocations Bool={true} variant="BgGray">
-            {(item.text == "info@estatein.com" && (
-              <a href={`mailto:${item.text}`} className="flex gap-1.5">
-                <img src={item.Img} alt="emailImg" />
-                {item.text}
-              </a>
-            )) ||
-              (item.text == "+1 (123) 456-7890" && (
-                <a href={`tel:${item.text}`} className="flex gap-1.5">
-                  <img src={item.Img} alt="phoneImg" />
-                  {item.text}
-                </a>
-              )) ||
-              (item.text == "Metropolis" && (
-                <a
-                  href={`https://www.google.com/maps?q=${item.text}`}
-                  className="flex gap-1.5"
-                >
-                  <img src={item.Img} alt="locationImg" />
-                  {item.text}
-                </a>
-              ))}
+            <LocarionHref {...item} />
           </ButtonLocations>
         ))}
       </div>
-      <button className="w-full 2xl:py-4.5 2xl:px-6 rounded-lg text-center bg-primary-60 2xl:text-[18px] text-[14px] py-3.5 px-5 ">
-        {" "}
-        Get Direction{" "}
-      </button>
+      <Button variant="primary">
+        Get Direction
+      </Button>
     </div>
   );
 }
