@@ -34,10 +34,11 @@ const SelectField = ({
         >
           {/* first option (fixed) */}
           {placeholder && (
-            <option selected disabled>
+            <option value="" disabled>
               {placeholder}
             </option>
           )}
+
           {/* options that user can select */}
           {options?.map((option) => (
             <option key={option.value} value={option.value}>

@@ -21,5 +21,9 @@ export const selectFilteredProperties = createSelector(
 
       return matchesSearch && matchesType && matchesLocation;
     });
-  }
+  },
 );
+
+export const selectProperty =
+  (id: number) => (state: { properties: { all: PropertyData[] } }) =>
+    state.properties.all.find((item: PropertyData) => item.id === id);

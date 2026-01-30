@@ -6,12 +6,15 @@ import {
   pricingDetailsNote,
 } from "../../data/PropertyData";
 import PriceCard from "../ui/PriceCard";
-import type {
-  ComprehensivePricingProps,
-  PricingDetailsCardProps,
-} from "../../interfaces";
+import type { PricingDetailsCardProps } from "../../interfaces";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectProperty } from "../../redux/properties/propertiesSelectors";
 
-const ComprehensivePricing = ({ propertyPrice }: ComprehensivePricingProps) => {
+const ComprehensivePricing = () => {
+  const { id } = useParams();
+  const property = useSelector(selectProperty(Number(id)));
+
   return (
     <SectionContainer>
       <SectionHeader {...pricingDetailsHeaderData} />
@@ -33,7 +36,7 @@ const ComprehensivePricing = ({ propertyPrice }: ComprehensivePricingProps) => {
               Listing Price
             </p>
             <span className="font-semibold text-[24px] lg:text-[30px] 2xl:text-[40px]">
-              ${propertyPrice}
+              ${property?.price.toLocaleString()}
             </span>
           </div>
 

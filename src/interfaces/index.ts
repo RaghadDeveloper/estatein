@@ -8,6 +8,7 @@ export interface SectionHeaderProps {
   extraText?: string;
   btnText?: string;
   onClick?: string;
+  className?: string;
 }
 export interface CommonHeroProps {
   title: string;
@@ -40,6 +41,11 @@ export interface columnFoot {
   link5?: string;
   Border: boolean;
   Href?: string;
+}
+
+export interface PriceValueProps {
+  title: string;
+  value: number;
 }
 
 // ============================== Sliders ===============================
@@ -103,9 +109,14 @@ export interface ValueCardProps {
 export interface Clientcarddata {
   year: string;
   title: string;
-  PBox1: string;
-  PBox2: string;
-  PBoxBig: string;
+  domain: string;
+  category: string;
+  comment: string;
+}
+export interface ClientInfoProps {
+  label: string;
+  value: string;
+  icon: string;
 }
 // Info Card
 export interface InfoCardSectionProps {
@@ -122,7 +133,7 @@ export interface InfoCardProps {
   icon: string;
   text?: string;
   socials?: Socials[];
-  link?: string;
+  link: string;
   type?: "email" | "location" | "phone" | "website";
 }
 interface Socials {
@@ -254,7 +265,7 @@ export interface Option {
 export interface InputProps {
   label: string;
   placeholder?: string;
-  type: "text" | "email" | "tel" | "select" | "textarea" | "radio";
+  type: "text" | "email" | "number" | "select" | "textarea" | "radio";
   name: string;
   options?: Option[];
   icon?: string;
@@ -266,6 +277,7 @@ export interface InputProps {
   ) => void;
 }
 export interface FormFooterProps {
+  loading?: boolean;
   isChecked: boolean;
   handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -283,10 +295,6 @@ export type PropertiesFormData = {
   message: string;
   [key: string]: string;
 };
-export interface InquireFormProps {
-  propertyName: string;
-  propertyLocation: string;
-}
 export type InquireFormData = {
   firstName: string;
   lastName: string;
@@ -318,9 +326,6 @@ export interface PricingDetailInfo {
 export interface PricingDetailsCardProps {
   title: string;
   detailsInfo: PricingDetailInfo[];
-}
-export interface ComprehensivePricingProps {
-  propertyPrice: string;
 }
 
 // =============================== Locations Section ============================
@@ -374,17 +379,10 @@ export interface PropertyDetailsHeaderProps {
   price: string;
 }
 
-export interface PropertyDetailsSectionProps {
-  description: string;
-  bedrooms: number;
-  bathrooms: number;
-  area: number;
-}
-
 export interface InfoBlockCardProps {
   label: string;
   icon: string;
-  value: number;
+  value?: number;
 }
 
 export interface NavLink {

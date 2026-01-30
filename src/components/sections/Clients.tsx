@@ -15,13 +15,7 @@ const Clients = () => {
   const sliderId = "clients";
 
   const cards = ClientCardData.map((item: Clientcarddata) => (
-    <ClientCard
-      year={item.year}
-      title={item.title}
-      PBox1={item.PBox1}
-      PBox2={item.PBox2}
-      PBoxBig={item.PBoxBig}
-    />
+    <ClientCard key={item.title} {...item} />
   ));
 
   const totalPages = swiper

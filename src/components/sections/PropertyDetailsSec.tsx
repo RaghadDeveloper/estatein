@@ -1,15 +1,9 @@
 import { motion } from "framer-motion";
 import InfoBlock from "../ui/InfoBlock";
 import FeatureItem from "../ui/FeatureItem";
-import type { PropertyDetailsSectionProps } from "../../interfaces";
 import { featureItems } from "../../data/PropertyData";
 
-const PropertyDetailsSec = ({
-  description,
-  bedrooms,
-  bathrooms,
-  area,
-}: PropertyDetailsSectionProps) => {
+const PropertyDetailsSec = () => {
   return (
     <section className="flex flex-col items-start gap-5 2xl:gap-7.5 px-4 pt-5 lg:px-20 2xl:px-40.5 2xl:pt-7.5 lg:flex-row ">
       {/* Info Block Card */}
@@ -19,12 +13,7 @@ const PropertyDetailsSec = ({
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
         className="lg:w-1/2 rounded-[10px] 2xl:rounded-xl border border-gray-15 flex flex-col p-5 gap-5 lg:p-10 lg:gap-10 2xl:p-12.5 2xl:gap-12.5 overflow-auto transition-all duration-500 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_12px_32px_rgba(99,102,241,0.2)] lg:overflow-hidden cursor-default">
-        <InfoBlock
-          description={description}
-          bedrooms={bedrooms}
-          bathrooms={bathrooms}
-          area={area}
-        />
+        <InfoBlock />
       </motion.div>
 
       {/* Key Features Card */}

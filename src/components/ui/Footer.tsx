@@ -69,7 +69,7 @@ const Footer = () => {
         {/* socials */}
         <div className="flex items-center justify-center gap-2 2xl:gap-2.5">
           {socialIcons.map((iconName) => (
-            <div className="bg-gray-08 p-5 lg:p-2.5 2xl:p-3.5 rounded-full w-15 h-15 lg:w-10 lg:h-10 2xl:w-13 2xl:h-13 flex items-center justify-center relative cursor-pointer hover:shadow-2xs shadow-primary-60">
+            <div key={iconName.icon} className="bg-gray-08 p-5 lg:p-2.5 2xl:p-3.5 rounded-full w-15 h-15 lg:w-10 lg:h-10 2xl:w-13 2xl:h-13 flex items-center justify-center relative cursor-pointer hover:shadow-2xs shadow-primary-60">
               <Link to={iconName.link}>
                 <img src={`/assets/icons/${iconName.icon}.svg`} alt="" />
               </Link>

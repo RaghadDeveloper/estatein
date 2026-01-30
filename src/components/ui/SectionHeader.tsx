@@ -8,11 +8,12 @@ const SectionHeader = ({
   extraText,
   btnText,
   onClick,
+  className,
 }: SectionHeaderProps) => {
   const navigate = useNavigate();
 
   return (
-    <header className="mb-10 lg:mb-15 2xl:mb-20">
+    <header className={`${className || "mb-10 lg:mb-15 2xl:mb-20"} `}>
       <div className="relative">
         <img
           className="h-5 lg:h-6 2xl:h-7.5 absolute -top-5 lg:-top-8 2xl:-top-11 -left-2 lg:-left-3 2xl:-left-5"

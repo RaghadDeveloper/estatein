@@ -2,7 +2,7 @@ import SearchBar from "./SearchBar";
 import PropertySelect from "./PropertySelect";
 import { filters } from "../../data/propertiesData";
 import { useDispatch } from "react-redux";
-import { setFilter, setSearch } from "../../redux/slice/propertiesSlice";
+import { setFilter, setSearch } from "../../redux/properties/propertiesSlice";
 import { useState } from "react";
 
 const PropertyFilters = () => {

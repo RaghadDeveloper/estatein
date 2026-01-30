@@ -19,28 +19,30 @@ export const infoCardsData: InfoCardProps[] = [
     id: 1,
     icon: "assets/icons/emailContact.svg",
     link: "info@estatein.com",
-    type: "email"
+    type: "email",
   },
   {
     id: 2,
     icon: "assets/icons/phoneContact.svg",
     link: "+1 (123) 456-7890",
-    type: "phone"
+    type: "phone",
   },
   {
     id: 3,
     icon: "assets/icons/locationContact.svg",
     text: "Main Headquarters",
     link: "123 Estatein Plaza, City Center, Metropolis",
-    type: "location"
+    type: "location",
   },
   {
     id: 4,
     icon: "assets/icons/socials.svg",
+    link: "www.facebook.com",
+    type: "website",
     socials: [
-      { label: "Instagram", link: "/contact" },
-      { label: "LinkedIn", link: "/contact" },
-      { label: "Facebook", link: "/contact" },
+      { label: "Instagram", link: "http://www.instagram.com" },
+      { label: "LinkedIn", link: "http://www.linkedin.com" },
+      { label: "Facebook", link: "http://www.facebook.com" },
     ],
   },
 ];
@@ -73,7 +75,7 @@ export const connectFormInputsData: InputProps[] = [
   {
     name: "phone",
     label: "Phone",
-    type: "tel",
+    type: "number",
     placeholder: "Enter Phone Number",
   },
   {

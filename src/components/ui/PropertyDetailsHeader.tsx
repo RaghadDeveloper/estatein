@@ -1,11 +1,18 @@
-import type { PropertyDetailsHeaderProps } from '../../interfaces';
+import { useParams } from "react-router-dom";
+import PriceValue from "./PriceValue";
+import { useSelector } from "react-redux";
+import { selectProperty } from "../../redux/properties/propertiesSelectors";
 
-const PropertyDetailsHeader = ({name, location, price} : PropertyDetailsHeaderProps) => {
+const PropertyDetailsHeader = () => {
+  const { id } = useParams();
+
+  const property = useSelector(selectProperty(Number(id)));
+
   return (
     <div className="px-4 pt-15 pb-7.5 lg:px-20 lg:pt-20 lg:pb-10 2xl:px-40.5 2xl:pt-30 2xl:pb-12.5">
       <div className="flex flex-col lg:items-center lg:flex-row gap-2.5 lg:gap-5">
         <h1 className="font-semibold text-[20px] lg:text-[24px] 2xl:text-[30px] block lg:">
-          {name}
+          {property?.title}
         </h1>
         <div className="flex items-center gap-5 flex-wrap-reverse lg:flex-1 lg:justify-between">
           <div className="flex items-center border border-gray-15 rounded-md p-2 gap-1">
@@ -15,21 +22,17 @@ const PropertyDetailsHeader = ({name, location, price} : PropertyDetailsHeaderPr
               alt=""
             />
             <p className="font-medium text-[14px] 2xl:text-[18px]">
-              {location}
+              {property?.location}
             </p>
           </div>
-          <div className="flex gap-1 lg:gap-0.5 lg:flex-col">
-            <p className="font-medium text-[14px] 2xl:text-[18px] text-gray-60">
-              price
-            </p>
-            <h2 className="font-semibold text-[18px] lg:text-[20px] 2xl:text-[24px]">
-              ${price}
-            </h2>
-          </div>
+
+          {property?.price && (
+            <PriceValue title="Price" value={property?.price} />
+          )}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default PropertyDetailsHeader
+export default PropertyDetailsHeader;
