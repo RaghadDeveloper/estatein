@@ -75,7 +75,7 @@ export const connectFormInputsData: InputProps[] = [
   {
     name: "phone",
     label: "Phone",
-    type: "tel",
+    type: "number",
     placeholder: "Enter Phone Number",
   },
   {

@@ -265,7 +265,7 @@ export interface Option {
 export interface InputProps {
   label: string;
   placeholder?: string;
-  type: "text" | "email" | "tel" | "select" | "textarea" | "radio";
+  type: "text" | "email" | "number" | "select" | "textarea" | "radio";
   name: string;
   options?: Option[];
   icon?: string;
@@ -277,6 +277,7 @@ export interface InputProps {
   ) => void;
 }
 export interface FormFooterProps {
+  loading?: boolean;
   isChecked: boolean;
   handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
