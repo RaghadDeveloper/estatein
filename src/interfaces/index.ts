@@ -8,6 +8,7 @@ export interface SectionHeaderProps {
   extraText?: string;
   btnText?: string;
   onClick?: string;
+  className?: string;
 }
 export interface CommonHeroProps {
   title: string;
