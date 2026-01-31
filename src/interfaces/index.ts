@@ -341,8 +341,10 @@ export interface LocationsCardProps {
   H3: string;
   text: string;
   category: string;
+  locationLinks: LocationLinkType[];
 }
-export interface ButtonDataLocation {
+export interface LocationLinkType {
+  type: "email" | "location" | "phone";
   Img: string;
   text: string;
 }
@@ -352,9 +354,8 @@ export interface TapS {
 }
 
 //ButtonLocations
-export interface buttonLocations {
-  Bool: boolean;
-  variant: "BgBlack" | "BgGray";
+export interface LocationTab {
+  active: boolean;
   onClick?: () => void;
   children: React.ReactNode;
 }
