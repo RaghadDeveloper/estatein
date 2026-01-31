@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { PillInfoProps } from "../../interfaces";
+import { useTheme } from "../../context/ThemeContext";
 
 const PillInfo = ({ icon, label, value, pricing }: PillInfoProps) => {
   const textRef = useRef<HTMLSpanElement>(null);
@@ -22,10 +23,10 @@ const PillInfo = ({ icon, label, value, pricing }: PillInfoProps) => {
     window.addEventListener("resize", checkTextHeight);
     return window.removeEventListener("resize", checkTextHeight);
   }, []);
-
+  const {theme}=useTheme()
   return (
     <div
-      className={`${pricing ? "" : "shrink-0"} flex items-center gap-1 px-3.5 py-1.5 2xl:py-2 bg-gray-10 border border-gray-15 ${pricing ? (isMultiLine ? "rounded-md" : "rounded-[28px]") : "rounded-full"}`}
+      className={`${pricing ? "" : "shrink-0"} ${theme=="light"?"bg-light-97":"bg-gray-10"} flex items-center gap-1 px-3.5 py-1.5 2xl:py-2  border border-gray-15 ${pricing ? (isMultiLine ? "rounded-md" : "rounded-[28px]") : "rounded-full"}`}
     >
       {icon && (
         <img src={icon} alt={label} className="w-5 2xl:w-6 h-5 2xl:h-6" />

@@ -1,3 +1,4 @@
+import { useTheme } from "../../context/ThemeContext";
 import {
   inputDevStyleBase,
   inputLabelStyleBase,
@@ -22,6 +23,7 @@ const TextareaField = ({
   const lgColSpan =
     colSpanClasses[colSpan as keyof typeof colSpanClasses] || "lg:col-span-2";
 
+    const {theme}=useTheme()
   return (
     <div
       className={`${inputDevStyleBase} md:col-span-2 ${lgColSpan} row-span-2 lg:gap-4`}
@@ -31,7 +33,7 @@ const TextareaField = ({
       </label>
       <textarea
         required
-        className={`${inputStyleBase} resize-none placeholder:text-gray-40 field-sizing-fixed h-22.5 lg:h-30.5 2xl:h-42.5`}
+        className={`${inputStyleBase} ${theme=="light"?"bg-light-90 text-white":"bg-gray-10"} resize-none placeholder:text-gray-40 field-sizing-fixed h-22.5 lg:h-30.5 2xl:h-42.5`}
         placeholder={placeholder}
         name={name}
         id={name}

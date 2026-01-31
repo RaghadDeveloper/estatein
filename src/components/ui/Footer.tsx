@@ -1,8 +1,10 @@
+import { useTheme } from "../../context/ThemeContext";
 import { footerLinks, socialIcons } from "../../data/homeData";
 import FooterColumn from "./FooterColumn";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const {theme}=useTheme()
   return (
     <footer className="text-sm 2xl:text-lg font-medium leading-6 tracking-[-0.6%]">
       <div className="ml-4.25 mr-4 md:mx-20 2xl:mx-40.5 py-12.5 lg:py-20 2xl:py-25 flex flex-col lg:flex-row gap-12.5 lg:gap-17.75 2xl:gap-46.25 ">
@@ -15,7 +17,7 @@ const Footer = () => {
               alt="logo"
             />
           </div>
-          <div className="lg:w-76.25 2xl:w-105.75 flex gap-1.5 2xl:gap-2.5 py-3.5 2xl:py-4.5 px-5 2xl:px-6 items-center relative border border-gray-15 rounded-lg">
+          <div className={` ${theme=="light"?"bg-primary-65":""} lg:w-76.25 2xl:w-105.75 flex gap-1.5 2xl:gap-2.5 py-3.5 2xl:py-4.5 px-5 2xl:px-6 items-center relative border border-gray-15 rounded-lg`}>
             <img
               className="w-5 2xl:w-6"
               src="/assets/icons/envelope.svg"
@@ -69,7 +71,7 @@ const Footer = () => {
         {/* socials */}
         <div className="flex items-center justify-center gap-2 2xl:gap-2.5">
           {socialIcons.map((iconName) => (
-            <div key={iconName.icon} className="bg-gray-08 p-5 lg:p-2.5 2xl:p-3.5 rounded-full w-15 h-15 lg:w-10 lg:h-10 2xl:w-13 2xl:h-13 flex items-center justify-center relative cursor-pointer hover:shadow-2xs shadow-primary-60">
+            <div key={iconName.icon} className={`${theme=="light"?"bg-gray-60":"bg-gray-08"}  p-5 lg:p-2.5 2xl:p-3.5 rounded-full w-15 h-15 lg:w-10 lg:h-10 2xl:w-13 2xl:h-13 flex items-center justify-center relative cursor-pointer hover:shadow-2xs shadow-primary-60 `}>
               <Link to={iconName.link}>
                 <img src={`/assets/icons/${iconName.icon}.svg`} alt="" />
               </Link>

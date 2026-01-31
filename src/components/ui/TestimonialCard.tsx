@@ -1,6 +1,8 @@
+import { useTheme } from "../../context/ThemeContext";
 import type { Testimonial } from "../../interfaces";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
+  const {theme}=useTheme()
   return (
     <div className="border border-gray-15 p-7.5 lg:p-10 2xl:p-12.5 rounded-xl flex flex-col h-full font-urbanist">
       <div className="flex gap-2 lg:gap-2 mb-6 lg:mb-7.5 2xl:mb-10">
@@ -19,7 +21,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
       </div>
 
       <div className="grow">
-        <h3 className="text-white text-lg lg:text-xl 2xl:text-2xl font-semibold mb-1.5 lg:mb-2.5 2xl:mb-3.5 leading-[150%]">
+        <h3 className={`${theme=="light"?"text-black":"text-white"} text-lg lg:text-xl 2xl:text-2xl font-semibold mb-1.5 lg:mb-2.5 2xl:mb-3.5 leading-[150%]`}>
           {testimonial.title}
         </h3>
 
@@ -35,7 +37,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           className="w-12.5 h-12.5 2xl:w-15 2xl:h-15 rounded-full object-cover"
         />
         <div className="min-w-0">
-          <h4 className="text-white text-base lg:text-lg font-medium leading-tight truncate 2xl:mb-0.5">
+          <h4 className=" text-light-99  text-base lg:text-lg font-medium leading-tight truncate 2xl:mb-0.5">
             {testimonial.userName}
           </h4>
           <p className="text-gray-400 text-sm lg:text-base 2xl:text-lg truncate">

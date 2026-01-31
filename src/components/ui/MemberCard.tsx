@@ -1,11 +1,13 @@
 import React from "react";
 import type { MemberCardProps } from "../../interfaces";
+import { useTheme } from "../../context/ThemeContext";
 
 const MemberCard: React.FC<MemberCardProps> = ({
   name,
   position,
   imageUrl,
 }) => {
+  const {theme}=useTheme()
   return (
     <div className=" w-full border border-gray-15 rounded-xl p-5 lg:p-6 2xl:p-7.5 flex flex-col items-center transition-all duration-300 hover:border-primary-60 hover:shadow-[0_20px_50px_rgba(112,59,247,0.25)]">
       <div className="relative w-full overflow-visible mb-10 lg:mb-12.5">
@@ -25,7 +27,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
         </div>
       </div>
 
-      <h3 className="text-xl 2xl:text-2xl font-semibold text-white mb-0.5 lg:mb-1 text-center">
+      <h3 className={`${theme=="light"?"text-dark":"text-white"} text-xl 2xl:text-2xl font-semibold  mb-0.5 lg:mb-1 text-center`}>
         {name}
       </h3>
       <p className="text-gray-60 text-[16px] 2xl:text-lg mb-4 lg:mb-5 text-center">

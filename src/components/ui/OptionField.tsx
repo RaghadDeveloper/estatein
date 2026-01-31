@@ -1,3 +1,4 @@
+import { useTheme } from "../../context/ThemeContext";
 import { inputStyleBase } from "../../data/propertiesData";
 import type { Option } from "../../interfaces";
 
@@ -9,9 +10,10 @@ const OptionField = ({
   icon,
   onChange,
 }: Option) => {
+  const {theme}=useTheme()
   return (
     <label
-      className={`${inputStyleBase} flex justify-between items-center cursor-pointer`}
+      className={`${inputStyleBase} ${theme=="light"?"bg-light-90 text-white":"bg-gray-10"} flex justify-between items-center cursor-pointer`}
     >
       <div className="flex items-center  gap-1.5 2xl:gap-3">
         <img src={icon} alt="" className="w-5 2xl:6" />

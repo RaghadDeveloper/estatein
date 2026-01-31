@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+
+
 const AnnouncementBar = () => {
   const [Open, setOpen] = useState(true);
   return (
@@ -15,7 +17,7 @@ const AnnouncementBar = () => {
           </div>
 
           <button onClick={() => setOpen(!Open)}>
-            <div className=" rounded-4xl 2xl:h-6 2xl:w-6 lg:h-6.5 lg:w-6.5 h-6.5 w-6.5 bg-[#FFFFFF1A] absolute 2xl:right-4 2xl:top-4.5 2xl:p-1.5 top-9 right-4 lg:right-8 lg:top-2.75 flex justify-center items-center">
+            <div className=" rounded-4xl 2xl:h-6 2xl:w-6 lg:h-6.5 lg:w-6.5 h-6.5 w-6.5  bg-gray-20 absolute 2xl:right-4 2xl:top-4.5 2xl:p-1.5 top-9 right-4 lg:right-8 lg:top-2.75 flex justify-center items-center">
               <img
                 src="/assets/icons/cancel.svg"
                 alt="ImgAnnouncementBar"

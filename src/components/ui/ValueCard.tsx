@@ -1,3 +1,4 @@
+import { useTheme } from "../../context/ThemeContext";
 import type { ValueCardProps } from "../../interfaces";
 
 const ValueCard = ({
@@ -7,6 +8,7 @@ const ValueCard = ({
   title,
   description,
 }: ValueCardProps) => {
+  const {theme}=useTheme()
   return (
     <div
       className={`${
@@ -27,7 +29,7 @@ const ValueCard = ({
         >
           <img src={image.source} alt={image.alternative} />
         </div>
-        <h3 className="font-semibold text-white text-[18px] lg:text-[20px] 2xl:text-2xl text-nowrap">
+        <h3 className={`${theme=="light"?"text-primary-99":"text-white "} font-semibold text-[18px] lg:text-[20px] 2xl:text-2xl text-nowrap`}>
           {title}
         </h3>
       </div>

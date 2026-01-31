@@ -5,9 +5,11 @@ import Navbar from "../ui/Navbar";
 import Footer from "../ui/Footer";
 import ScrollBtn from "../ui/ScrollBtn";
 
+
+
 const MainLayout = () => {
   return (
-    <div className="font-urbanist bg-gray-08 text-white">
+    <div className="font-urbanist bg-gray-08  text-light-99">
       <AnnouncementBar />
       <Navbar />
       <Suspense fallback={<div>Loading...</div>}>
@@ -20,3 +22,6 @@ const MainLayout = () => {
 };
 
 export default MainLayout;
+
+
+

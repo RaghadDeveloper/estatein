@@ -4,6 +4,7 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import PriceValue from "./PriceValue";
 import type { PropertyCardProps } from "../../interfaces";
+import { useTheme } from "../../context/ThemeContext";
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
   id,
@@ -19,7 +20,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 
   const needsReadMore = description.length > 100;
   const shortDescription = description.substring(0, 74) + "...";
-
+  const{theme}=useTheme()
   return (
     <div
       className={`rounded-xl border ${
@@ -45,11 +46,11 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           {title}
         </h3>
 
-        <div className="mb-5 lg:mb-6 2xl:mb-7.5">
+        <div className=" mb-5 lg:mb-6 2xl:mb-7.5">
           <div
-            className={` text-sm sm:text-base text-gray-40 transition-all duration-500 ease-in-out leading-relaxedd leading-[150%] ${
+            className={`${theme=="light"?"text-black":"text-gray-40 "} text-sm sm:text-base transition-all duration-500 ease-in-out leading-relaxedd leading-[150%] ${
               isExpanded
-                ? "line-clamp-none p-4 sm:p-6 bg-[#1a1a1a]/90 rounded-xl shadow-2xl"
+                ? "line-clamp-none p-4 sm:p-6 bg-[#1a1a1a]/90 rounded-xl shadow-2xl text-white"
                 : "line-clamp-3"
             }`}
           >

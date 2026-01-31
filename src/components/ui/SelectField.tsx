@@ -1,3 +1,4 @@
+import { useTheme } from "../../context/ThemeContext";
 import {
   inputDevStyleBase,
   inputLabelStyleBase,
@@ -16,7 +17,7 @@ const SelectField = ({
   onChange,
 }: InputProps) => {
   const isPlaceholder = placeholder && value === placeholder;
-
+  const {theme}=useTheme()
   return (
     <div
       className={`${inputDevStyleBase} md:col-span-${colSpan ? colSpan : 1}`}
@@ -26,7 +27,7 @@ const SelectField = ({
       </label>
       <div className="relative flex items-center">
         <select
-          className={`${inputStyleBase} appearance-none cursor-pointer ${isPlaceholder ? "text-gray-40" : "text-white"}`}
+          className={`${inputStyleBase} ${theme=="light"?"bg-light-90 text-white":"bg-gray-10"} appearance-none cursor-pointer ${isPlaceholder ? "text-gray-40" : "text-white"}`}
           name={name}
           id={name}
           value={value}

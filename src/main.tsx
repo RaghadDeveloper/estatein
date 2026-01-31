@@ -8,13 +8,15 @@ import store from "./redux/store";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import { ThemeProvider } from "./context/ThemeContext";
 
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={routes} />
-    </Provider>
+    <ThemeProvider>
+      <Provider store={store}>
+        <RouterProvider router={routes} />
+      </Provider>
+    </ThemeProvider>
   </StrictMode>
 );

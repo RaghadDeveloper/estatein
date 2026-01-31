@@ -31,9 +31,71 @@
   --color-gray-60: #999999;
 }
 
+
+
+
+:root[data-theme="dark"] {
+  /* Primary */
+  --color-primary-50: #2a213f;
+  --color-primary-60: #703bf7;
+  --color-primary-65: #8254f8;
+  --color-primary-70: #946cf9;
+  --color-primary-75: #a685fa;
+  --color-primary-90: #dbcefd;
+  --color-primary-95: #ede7fe;
+  --color-primary-97: #f4f0fe;
+  --color-primary-99: #fbfaff;
+
+  /* Gray */
+  --color-gray-09: #191919;
+  --color-gray-08: #141414;
+  --color-gray-10: #1a1a1a;
+  --color-gray-15: #262626;
+  --color-gray-20: #333333;
+  --color-gray-30: #4d4d4d;
+  --color-gray-40: #666666;
+  --color-gray-50: #808080;
+  --color-gray-60: #999999;
+
+  /* Light accents */
+  --color-light-90: #e4e4e7;
+  --color-light-95: #f1f1f3;
+  --color-light-97: #f7f7f8;
+  --color-light-99: #fcfcfd;
+}
+
+:root[data-theme="light"] {
+  /* Primary */
+  --color-primary-50: #ede7fe;
+  --color-primary-60: #703bf7;
+  --color-primary-65: #8254f8;
+  --color-primary-70: #0f0919;
+  --color-primary-75: #0f0919;
+  --color-primary-90: #0f0919;
+  --color-primary-95: #0f0919;
+  --color-primary-97: #0f0919;
+  --color-primary-99: #0f0919;
+
+  /* Gray */
+  --color-gray-09: #ffffff;
+  --color-gray-08: #ffffff;
+  --color-gray-10: #ffffff;
+  --color-gray-15: #0f0919;
+  --color-gray-20: #0f0919;
+  --color-gray-30: #0f0919;
+  --color-gray-40: #ffffff;
+  --color-gray-50: #0f0919;
+  --color-gray-60: #0f0919;
+
+  /* Light accents */
+  --color-light-90: #1a1a1a;
+  --color-light-95: #1a1a1a;
+  --color-light-97: #828181;
+  --color-light-99: #1a1a1a;
+}
+
 @theme {
   --font-urbanist: "Urbanist", sans-serif;
-
   --color-primary-50: var(--color-primary-50);
   --color-primary-60: var(--color-primary-60);
   --color-primary-65: var(--color-primary-65);
@@ -68,12 +130,7 @@
 
   input[type="checkbox"]::after {
     content: "";
-    @apply block w-full h-full absolute top-1/2 left-1/2
-      -translate-x-1/2 -translate-y-1/2
-      scale-50 opacity-0
-      transition-all duration-200 ease-in-out
-      bg-current pointer-events-none;
-
+    @apply block w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-50 opacity-0 transition-all duration-200 ease-in-out bg-current pointer-events-none;
     z-index: 10;
     mask-size: 120%;
     mask-position: center;
@@ -87,7 +144,7 @@
 }
 
 /* Form Autofill */
-input:-webkit-autofill,
+/* input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
@@ -101,7 +158,37 @@ select:-webkit-autofill:focus {
   border: var(--color-primary-60) solid 1px;
   -webkit-text-fill-color: var(--color-primary-60);
   transition: background-color 5000s ease-in-out 0s;
+} */
+
+
+
+/* Form Checkbox */
+:root[data-theme="dark"] input:-webkit-autofill,
+:root[data-theme="dark"] textarea:-webkit-autofill,
+:root[data-theme="dark"] select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-gray-10) inset;
+  box-shadow: 0 0 0px 1000px var(--color-gray-10) inset;
+  border: 1px solid var(--color-primary-60);
+  -webkit-text-fill-color: var(--color-primary-60);
 }
+
+:root[data-theme="light"] input:-webkit-autofill,
+:root[data-theme="light"] textarea:-webkit-autofill,
+:root[data-theme="light"] select:-webkit-autofill :not([multiple]) {
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-gray-09) inset;
+  box-shadow: 0 0 0px 1000px var(--color-gray-09) inset;
+  border: 1px solid var(--color-primary-60);
+  -webkit-text-fill-color: var(--color-gray-60);
+  color: var(--color-primary-60);
+}
+
+/* Base Autofill */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 
 @layer utilities {
   ::-webkit-scrollbar {
@@ -109,20 +196,18 @@ select:-webkit-autofill:focus {
     height: 8px;
     background-color: var(--color-gray-15);
   }
+
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-      to bottom,
-      var(--color-primary-90),
-      var(--color-primary-65)
-    );
+    background: linear-gradient(to bottom,
+        var(--color-primary-90),
+        var(--color-primary-65));
     border-radius: 8px;
   }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-      to top,
-      var(--color-primary-75),
-      var(--color-primary-50)
-    );
+    background: linear-gradient(to top,
+        var(--color-primary-75),
+        var(--color-primary-50));
   }
 }
 

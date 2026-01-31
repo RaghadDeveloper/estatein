@@ -1,3 +1,4 @@
+import { useTheme } from "../../context/ThemeContext";
 import {
   inputDevStyleBase,
   inputLabelStyleBase,
@@ -13,13 +14,15 @@ const InputField = ({
   value,
   onChange,
 }: InputProps) => {
+  const {theme}=useTheme()
+
   return (
     <div className={`${inputDevStyleBase}`}>
       <label className={`${inputLabelStyleBase}`} htmlFor={name}>
         {label}
       </label>
       <input
-        className={`${inputStyleBase} placeholder:text-gray-40`}
+        className={`${inputStyleBase}  ${theme=="light"?"bg-light-90 text-white":"bg-gray-10"} placeholder:text-gray-40`}
         type={type}
         placeholder={placeholder}
         name={name}

@@ -21,7 +21,7 @@ const SliderPages = ({
       )}
 
       <div className="hidden lg:block">
-        <span className="text-white">
+        <span className="text-light-99">
           {String(currentPage).padStart(2, "0")}
         </span>
         <span className="text-gray-60"> of </span>
