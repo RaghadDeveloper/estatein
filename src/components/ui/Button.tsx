@@ -9,9 +9,9 @@ const Button = ({
 }: ButtonProps) => {
   const styles = {
     base: `px-5 py-3.5 2xl:px-6 2xl:py-4.5 rounded-lg 2xl:rounded-[10px] text-[14px] 2xl:text-lg text-nowrap h-full w-full transtion-all duration-200 disabled:bg-gray-15 disabled:text-gray-40 disabled:cursor-not-allowed cursor-pointer`,
-    primary: "bg-primary-60",
-    secondary: "bg-gray-10 border border-gray-15",
-    border: "bg-gray-08 border border-gray-15",
+    primary: "bg-primary-60 hover:bg-primary-60/70",
+    secondary: "bg-gray-10 border border-gray-15 hover:bg-gray-15/80",
+    border: "bg-gray-08 border border-gray-15 hover:bg-gray-15/70",
   };
 
   return (

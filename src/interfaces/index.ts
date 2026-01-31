@@ -183,7 +183,7 @@ export interface ServiceCardProps {
 export interface FeatureServiceCardProps {
   title: string;
   description: string;
-  bgImage: string;
+  reverse?: boolean;
 }
 export interface ServiceItem {
   id: number;

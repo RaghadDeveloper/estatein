@@ -8,6 +8,12 @@ import { useState } from "react";
 const PropertyFilters = () => {
   const dispatch = useDispatch();
   const [searchValue, setSearchValue] = useState("");
+  
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <div className="w-full lg:absolute -top-15 2xl:-top-18">
@@ -29,6 +35,8 @@ const PropertyFilters = () => {
                 icon={f.icon}
                 options={f.options}
                 onSelect={(value) => dispatch(setFilter({ key: f.key, value }))}
+                isOpen={openIndex === i}
+                onToggle={() => handleToggle(i)}
               />
             ))}
           </div>
