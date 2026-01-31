@@ -48,6 +48,12 @@ export interface PriceValueProps {
   value: number;
 }
 
+export interface InfoBlockCardProps {
+  label: string;
+  icon: string;
+  value?: number;
+}
+
 // ============================== Sliders ===============================
 export interface SliderButtonProps {
   className: string;
@@ -369,5 +375,10 @@ export interface FooterLink {
 
 export interface FooterSocial {
   icon: string;
+  link: string;
+}
+
+export interface NavLink {
+  label: string;
   link: string;
 }

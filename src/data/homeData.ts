@@ -1,4 +1,4 @@
-import type { FooterLink, FooterSocial, InfoCardProps, Testimonial } from "../interfaces";
+import type { FooterLink, FooterSocial, InfoCardProps, NavLink, Testimonial } from "../interfaces";
 
 export const infoCardsData: InfoCardProps[] = [
   {
@@ -203,4 +203,28 @@ export const socialIcons : FooterSocial[] = [
     icon: "youtube",
     link: "/"
   },
+]
+
+export const navLinks : NavLink[] = [
+  {
+    label: "Home",
+    link: "/",
+  },
+  {
+    label: "About Us",
+    link: "/about",
+  },
+  {
+    label: "Properties",
+    link: "/properties",
+  },
+  {
+    label: "Services",
+    link: "/services",
+  },
+  {
+    label: "Contact Us",
+    link: "/contact",
+  },
+
 ]

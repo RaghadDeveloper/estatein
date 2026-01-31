@@ -52,7 +52,7 @@ const InfoCard = ({ icon, text, socials, link, type }: InfoCardProps) => {
       {/* Card Text */}
       <h3 className="text-[14px] lg:text-[16px] 2xl:text-[20px] mt-3.5 lg:mt-4 2xl:mt-5 font-semibold flex-1 text-center cursor-default">
         {socials ? (
-          <div className="flex flex-wrap gap-2.5 lg:gap-5 2xl:gap-">
+          <div className="flex flex-wrap justify-center gap-2.5 lg:gap-5 2xl:gap-">
             {socials.map((link) => (
               <span
                 key={link.label}
