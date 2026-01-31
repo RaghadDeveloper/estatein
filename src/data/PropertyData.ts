@@ -1,11 +1,16 @@
-import type { InputProps, SectionHeaderProps } from "../interfaces";
+import type {
+  InputProps,
+  PricingDetailsCardProps,
+  SectionHeaderProps,
+} from "../interfaces";
 
-export const inquireFormHeaderData : SectionHeaderProps = {
-    title: "Inquire About Seaside Serenity Villa",
-    text: "Interested in this property? Fill out the form below, and our real estate experts will get back to you with more details, including scheduling a viewing and answering any questions you may have.",
-}
+// Inquire Form Section
+export const inquireFormHeaderData: SectionHeaderProps = {
+  title: "Inquire About Seaside Serenity Villa",
+  text: "Interested in this property? Fill out the form below, and our real estate experts will get back to you with more details, including scheduling a viewing and answering any questions you may have.",
+};
 
-export const inquireFormInputsData : InputProps[] = [
+export const inquireFormInputsData: InputProps[] = [
   {
     name: "firstName",
     label: "First Name",
@@ -27,7 +32,7 @@ export const inquireFormInputsData : InputProps[] = [
   {
     name: "phone",
     label: "Phone",
-    type: "tel",
+    type: "number",
     placeholder: "Enter Phone Number",
   },
   {
@@ -35,11 +40,9 @@ export const inquireFormInputsData : InputProps[] = [
     label: "Select Property",
     // placeholder: "Selected Property",
     type: "select",
-    icon: "/assets/icons/Location.svg",
+    icon: "/assets/icons/LocationWhite.svg",
     colSpan: 2,
-    options: [
-      { label: "selectd property", value: "selected property" },
-    ],
+    options: [{ label: "selectd property", value: "selected property" }],
   },
   {
     name: "message",
@@ -49,3 +52,132 @@ export const inquireFormInputsData : InputProps[] = [
     colSpan: 2,
   },
 ];
+
+export const pricingDetailsHeaderData: SectionHeaderProps = {
+  title: "Comprehensive Pricing Details",
+  text: "At Estatein, transparency is key. We want you to have a clear understanding of all costs associated with your property investment. Below, we break down the pricing for Seaside Serenity Villa to help you make an informed decision",
+};
+
+export const pricingDetailsNote: string =
+  "The figures provided above are estimates and may vary depending on the property, location, and individual circumstances.";
+
+export const pricingDetailsCardsData: PricingDetailsCardProps[] = [
+  {
+    title: "Additional Fees",
+    detailsInfo: [
+      {
+        title: "Property Transfer Tax",
+        price: "$25,000",
+        note: "Based on the sale price and local regulations",
+      },
+      {
+        title: "Legal Fees",
+        price: "$3,000",
+        note: "Approximate cost for legal services, including title transfer",
+      },
+      {
+        title: "Home Inspection",
+        price: "$500",
+        note: "Recommended for due diligence",
+      },
+      {
+        title: "Property Insurance",
+        price: "$1,200",
+        note: "Annual cost for comprehensive property insurance",
+      },
+      {
+        title: "Mortgage Fees",
+        price: "Varies",
+        note: "If applicable, consult with your lender for specific details",
+      },
+    ],
+  },
+  {
+    title: "Monthly Costs",
+    detailsInfo: [
+      {
+        title: "Property Taxes",
+        price: "$1,250",
+        note: "Approximate monthly property tax based on the sale price and local rates",
+      },
+      {
+        title: "Homeowners' Association Fee",
+        price: "$300",
+        note: "Monthly fee for common area maintenance and security",
+      },
+    ],
+  },
+  {
+    title: "Total Initial Costs",
+    detailsInfo: [
+      {
+        title: "Listing Price",
+        price: "$1,250,000",
+      },
+      {
+        title: "Additional Fees",
+        price: "$29,700",
+        note: "Property transfer tax, legal fees, inspection, insurance",
+      },
+      {
+        title: "Down Payment",
+        price: "$250,000",
+        note: "20%",
+      },
+      {
+        title: "Mortgage Amount",
+        price: "$1,000,000",
+        note: "If applicable",
+      },
+    ],
+  },
+  {
+    title: "Monthly Expenses",
+    detailsInfo: [
+      {
+        title: "Property Taxes",
+        price: "$1,250",
+      },
+      {
+        title: "Homeowners' Association Fee",
+        price: "$300",
+      },
+      {
+        title: "Mortgage Payment",
+        price: "Varies based on terms and interest rate",
+        note: "If applicable",
+      },
+      {
+        title: "Property Insurance",
+        price: "$100",
+        note: "Approximate monthly cost",
+      },
+    ],
+  },
+];
+
+export const infoBlockData = [
+  {
+    label: "Bedrooms",
+    icon: "Bedroom",
+    value: 1,
+  },
+  {
+    label: "Bathrooms",
+    icon: "Bathroom",
+    value: 1,
+  },
+  {
+    label: "Area",
+    icon: "area",
+    value: 1,
+  },
+]
+
+export const featureItems : string[] = [
+  "Expansive oceanfront terrace for outdoor entertaining",
+  "Gourmet kitchen with top-of-the-line appliances",
+  "Private beach access for morning strolls and sunset views",
+  "Master suite with a spa-inspired bathroom and ocean-facing balcony",
+  "Private garage and ample storage space"
+]

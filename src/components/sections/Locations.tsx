@@ -1,37 +1,48 @@
 import { useState } from "react";
-import type { LocationsCardProps, LocationsSectionProps, TapS } from "../../interfaces";
+import type { LocationsCardProps, TapS } from "../../interfaces";
 import SectionContainer from "../layouts/SectionContainer";
 import SectionHeader from "../ui/SectionHeader";
 import LocationCard from "../ui/LocationCard";
-import ButtonLocations from "../ui/ButtonLocations";
-import { TAps } from "../../data/contactData";
+import Tab from "../ui/Tab";
+import {
+  locationsCardsData,
+  LocationsHeaderData,
+  TAps,
+} from "../../data/contactData";
 
-const Locations = ({ headerData, cards }: LocationsSectionProps) => {
-  const [activeTab, setActiveTap] = useState<string>("All")
-  const filterCardLocations = activeTab == "All" ? cards : cards.filter((card) => (card.category == activeTab))
+const Locations = () => {
+  const [activeTab, setActiveTap] = useState<string>("All");
+
+  const filterCardLocations =
+    activeTab == "All"
+      ? locationsCardsData
+      : locationsCardsData.filter((card) => card.category == activeTab);
+
   return (
     <SectionContainer>
-      <div className="flex flex-col 2xl:gap-[80px] lg:gap-[60px] gap-[40px]">
-        <SectionHeader {...headerData} />
-        <div className="flex flex-col 2xl:gap-[50px] lg:gap-[40px] gap-[30px]">
-          <div className="2xl:w-[516px] 2xl:h-[83px] rounded-xl p-2 bg-gray-10 flex justify-between items-center lg:w-[413px] h-[69px]  w-[357px]">
-            {
-              TAps.map((item: TapS) => (
-                <ButtonLocations Bool={false} variant={activeTab === item.tap ? "BgBlack" : "BgGray"} onClick={() => { setActiveTap(item.tap) }}>{item.tap}</ButtonLocations>
-              ))
-            }
-          </div>
-          <div className="flex 2xl:gap-[30px] lg:gap-[20px] gap-[30px] lg:flex-row flex-col">
-            {
-              filterCardLocations.map((card: LocationsCardProps) => (
-                <LocationCard {...card} />
-              ))
-            }
-          </div>
+      <SectionHeader {...LocationsHeaderData} />
+      <div className="flex flex-col 2xl:gap-12.5 lg:gap-10 gap-7.5">
+        <div className="2xl:w-129 2xl:h-20.75 rounded-xl p-2 bg-gray-10 flex justify-between items-center lg:w-103.25 h-17.25  w-89.25">
+          {TAps.map((item: TapS) => (
+            <Tab
+              key={item.tap}
+              active={activeTab === item.tap}
+              onClick={() => {
+                setActiveTap(item.tap);
+              }}
+            >
+              {item.tap}
+            </Tab>
+          ))}
+        </div>
+        <div className="flex items-stretch 2xl:gap-7.5 lg:gap-5 gap-7.5 min-[850px]:flex-row flex-col h-full">
+          {filterCardLocations.map((card: LocationsCardProps) => (
+            <LocationCard key={card.id} {...card} />
+          ))}
         </div>
       </div>
     </SectionContainer>
-  )
+  );
 };
 
 export default Locations;

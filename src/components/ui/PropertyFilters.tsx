@@ -1,23 +1,18 @@
-import { useState } from "react";
 import SearchBar from "./SearchBar";
 import PropertySelect from "./PropertySelect";
 import { filters } from "../../data/propertiesData";
+import { useDispatch } from "react-redux";
+import { setFilter, setSearch } from "../../redux/properties/propertiesSlice";
+import { useState } from "react";
 
 const PropertyFilters = () => {
-  const [searchQuery, setSearchQuery] = useState<string>("");
-  const [activeFilters, setActiveFilters] = useState<Record<string, string>>(
-    {}
-  );
+  const dispatch = useDispatch();
+  const [searchValue, setSearchValue] = useState("");
+  
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const handleFilterChange = (filterLabel: string, value: string): void => {
-    setActiveFilters((prev) => ({
-      ...prev,
-      [filterLabel]: value,
-    }));
-  };
-
-  const handleSearch = (): void => {
-    console.log("Search Data:", { searchQuery, activeFilters });
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
@@ -25,9 +20,9 @@ const PropertyFilters = () => {
       <div className="mx-auto lg:mx-20 2xl:mx-40.5 p-4 flex flex-col items-center">
         <div className="w-full md:w-[96%] lg:w-[85%] z-10">
           <SearchBar
-            value={searchQuery}
-            onChange={setSearchQuery}
-            onSearch={handleSearch}
+            value={searchValue}
+            onChange={setSearchValue}
+            onSearch={() => dispatch(setSearch(searchValue))}
           />
         </div>
 
@@ -39,7 +34,9 @@ const PropertyFilters = () => {
                 label={f.label}
                 icon={f.icon}
                 options={f.options}
-                onSelect={(value: string) => handleFilterChange(f.label, value)}
+                onSelect={(value) => dispatch(setFilter({ key: f.key, value }))}
+                isOpen={openIndex === i}
+                onToggle={() => handleToggle(i)}
               />
             ))}
           </div>

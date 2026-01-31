@@ -1,28 +1,29 @@
 import { useParams } from "react-router-dom";
 import CallToActionSection from "../components/sections/CallToActionSection";
 import { useSelector } from "react-redux";
-import type { PropertyData } from "../interfaces";
 import Faq from "../components/sections/Faq";
 import InquireForm from "../components/sections/InquireForm";
+import PropertySlider from "../components/sections/PropertySlider";
+import ComprehensivePricing from "../components/sections/ComprehensivePricing";
+import PropertyDetailsSec from "../components/sections/PropertyDetailsSec";
+import PropertyDetailsHeader from "../components/ui/PropertyDetailsHeader";
+import { selectProperty } from "../redux/properties/propertiesSelectors";
 
 const PropertyDetails = () => {
   const { id } = useParams();
-
-  const property = useSelector(
-    (state: { properties: { properties: PropertyData[] } }) =>
-      state.properties.properties.find(
-        (item: PropertyData) => item.id === Number(id)
-      )
-  );
+  const property = useSelector(selectProperty(Number(id)));
 
   if (!property) {
     return <p>Property not found</p>;
   }
 
-  console.log(property);
   return (
     <div>
+      <PropertyDetailsHeader />
+      <PropertySlider />
+      <PropertyDetailsSec />
       <InquireForm />
+      <ComprehensivePricing />
       <Faq />
       <CallToActionSection />
     </div>

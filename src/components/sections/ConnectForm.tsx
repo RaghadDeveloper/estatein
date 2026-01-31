@@ -10,16 +10,18 @@ import SelectField from "../ui/SelectField";
 import TextareaField from "../ui/TextareaField";
 import InputField from "../ui/InputField";
 import type { ConnectFormData } from "../../interfaces";
+import emailjs from "@emailjs/browser";
 
 const ConnectForm = () => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [connectFormData, setConnectFormData] = useState<ConnectFormData>({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    inquiry: "Select Inquiry Type",
-    hear: "Select",
+    inquiry: "",
+    hear: "",
     message: "",
   });
 
@@ -30,7 +32,7 @@ const ConnectForm = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setConnectFormData((prev) => ({ ...prev, [name]: value }));
@@ -39,17 +41,36 @@ const ConnectForm = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!isChecked) return;
-    console.log(connectFormData);
-    setConnectFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      inquiry: "Select Inquiry Type",
-      hear: "Select",
-      message: "",
-    });
-    setIsChecked(false);
+    setLoading(true);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          ...connectFormData,
+          time: new Date().toLocaleString(),
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        alert("Message sent successfully!");
+        setConnectFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          inquiry: "Select Inquiry Type",
+          hear: "Select",
+          message: "",
+        });
+        setIsChecked(false);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        setLoading(false);
+      });
   };
 
   return (
@@ -96,6 +117,7 @@ const ConnectForm = () => {
         </div>
         {/* submit */}
         <FormFooter
+          loading={loading}
           isChecked={isChecked}
           handleCheckboxChange={handleCheckboxChange}
         />

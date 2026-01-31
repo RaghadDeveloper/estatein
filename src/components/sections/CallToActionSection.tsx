@@ -24,11 +24,7 @@ const CallToActionSection = () => {
       />
 
       <div className="lg:w-244.75 2xl:w-288.5">
-        <h2
-          className="font-semibold leading-normal
-        text-[28px] lg:text-[38px] 2xl:text-[48px] text-white mb-1.5 lg:mb-2.5
-        2xl:mb-3.5"
-        >
+        <h2 className="font-semibold leading-normal text-[28px] lg:text-[38px] 2xl:text-[48px] mb-1.5 lg:mb-2.5 2xl:mb-3.5">
           Start Your Real Estate Journey Today
         </h2>
         <p

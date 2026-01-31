@@ -22,12 +22,12 @@ const PropertiesForm = () => {
       lastName: "",
       email: "",
       phone: "",
-      location: "Select Location",
-      propertyType: "Select Property Type",
-      bathrooms: "Select no. of Bathrooms",
-      bedrooms: "Select no. of Bedrooms",
-      budget: "Select Budget",
-      contactMethod: "phone",
+      location: "",
+      propertyType: "",
+      bathrooms: "",
+      bedrooms: "",
+      budget: "",
+      contactMethod: "",
       message: "",
     });
 
@@ -38,7 +38,7 @@ const PropertiesForm = () => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setPropertiesFormData((prev) => ({ ...prev, [name]: value }));
