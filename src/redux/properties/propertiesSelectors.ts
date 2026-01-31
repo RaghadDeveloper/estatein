@@ -7,7 +7,9 @@ export const selectFilteredProperties = createSelector(
     return properties.filter((property: PropertyData) => {
       const matchesSearch =
         property.title.toLowerCase().includes(filters.search.toLowerCase()) ||
-        property.location.toLowerCase().includes(filters.search.toLowerCase());
+        property?.location
+          ?.toLowerCase()
+          .includes(filters.search.toLowerCase());
 
       const matchesType =
         filters.propertyType && filters.propertyType !== "Any Type"
@@ -25,5 +27,5 @@ export const selectFilteredProperties = createSelector(
 );
 
 export const selectProperty =
-  (id: number) => (state: { properties: { all: PropertyData[] } }) =>
+  (id: string) => (state: { properties: { all: PropertyData[] } }) =>
     state.properties.all.find((item: PropertyData) => item.id === id);
