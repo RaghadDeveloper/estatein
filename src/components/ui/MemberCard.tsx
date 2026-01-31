@@ -34,7 +34,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
         {position}
       </p>
 
-      <button className=" w-full flex items-center justify-between bg-gray-10 hover:bg-gray-15 rounded-full p-2 pl-6 lg:p-2.5 lg:pl-5 2xl:p-3.5 2xl:pl-6 transition border border-gray-15">
+      <button className={`${theme=="light"?"":"hover:bg-gray-15"}  w-full flex items-center justify-between bg-gray-10  rounded-full p-2 pl-6 lg:p-2.5 lg:pl-5 2xl:p-3.5 2xl:pl-6 transition border border-gray-15 `}>
         <span className="flex items-center gap-2 text-sm lg:text-base 2xl:text-lg">
           <span>Say Hello 👋</span>
         </span>

@@ -195,7 +195,7 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
   return <div className="bg-gray-10 flex justify-around px-4 py-5 xl:text-[18px] md:text-[14px] items-center sticky w-full  top-0 h-fit z-50 ">
-    {(Open == false) && <img src="/assets/images/logo/fullLogo.png" alt="Logo" className="2xl:w-4 2xl:h-15 md:w-28.25 md:h-8 w-23.25 h-7 bg-gray-10" />}
+    {(Open == false) && <img src="/assets/images/logo/fullLogo.png" alt="Logo" className="2xl:w-4 2xl:h-15 md:w-28.25 md:h-8 w-23.25 h-7 bg-black p "   />}
     <div>
       <ul className="sm:flex gap-7.5 hidden ">
         <li><NavLink to="/" className={({ isActive }) => isActive ? "bg-gray-08 2xl:py-3.5 2xl:px-6 py-3 px-5 rounded-lg border border-gray-15 " : ""}>Home</NavLink></li>
