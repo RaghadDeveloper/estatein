@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { addProperty, getProperties } from "../services/propertyService";
-import type { PropertyData, PropertyInput } from "../interfaces";
+import { addProperty } from "../services/propertyService";
+import type { PropertyInput } from "../interfaces";
 import { useDispatch } from "react-redux";
-import { setProperties } from "../redux/properties/propertiesSlice";
 
 const AddProperty = () => {
   const dispatch = useDispatch();
   const [newProperty, setNewProperty] = useState<PropertyInput>({
-    title: "Test Property",
+    title: "Test Property1111",
     subTitle: "Test Subtitle",
     description: "Test description",
     photos: [],
@@ -29,9 +28,6 @@ const AddProperty = () => {
       try {
         await addProperty(newProperty);
         console.log("Property added successfully");
-
-        const updatedProperties: PropertyData[] = await getProperties();
-        dispatch(setProperties(updatedProperties));
       } catch (error) {
         console.error("Add property failed:", error);
       }

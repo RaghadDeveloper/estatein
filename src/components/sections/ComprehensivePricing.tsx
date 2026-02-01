@@ -13,7 +13,7 @@ import { selectProperty } from "../../redux/properties/propertiesSelectors";
 
 const ComprehensivePricing = () => {
   const { id } = useParams();
-  const property = useSelector(selectProperty(Number(id)));
+  const property = useSelector(selectProperty(id!));
 
   return (
     <SectionContainer>

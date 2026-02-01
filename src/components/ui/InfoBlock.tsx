@@ -20,7 +20,7 @@ const item = {
 
 const InfoBlock = () => {
   const { id } = useParams();
-  const property = useSelector(selectProperty(Number(id)));
+  const property = useSelector(selectProperty(id!));
 
   return (
     <motion.div

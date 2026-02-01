@@ -7,7 +7,7 @@ import {
   deleteDoc,
   doc,
 } from "firebase/firestore";
-import type { PropertyData, PropertyInput } from "../interfaces";
+import type { PropertyInput } from "../interfaces";
 
 const propertiesRef = collection(dataBase, "properties");
 
@@ -35,7 +35,7 @@ export const addProperty = async (data: PropertyInput) => {
 
 export const updateProperty = async (
   id: string,
-  data: Omit<PropertyData, "id">,
+  data: Partial<PropertyInput>,
 ) => {
   const ref = doc(dataBase, "properties", id);
   return await updateDoc(ref, data);

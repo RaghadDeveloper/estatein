@@ -234,16 +234,16 @@ export type PropertyInput = Omit<PropertyData, "id">;
 export interface PropertyData {
   id: string;
   title: string;
-  subTitle?: string;
+  subTitle: string;
   description: string;
-  photos?: string[];
+  photos: string[];
   price: number;
   bedrooms: number;
   bathrooms: number;
-  location?: string;
-  locationType?: string;
-  propertyType?: string;
-  area?: number;
+  location: string;
+  locationType: string;
+  propertyType: string;
+  area: number;
 }
 export interface PropertyCardProps {
   id: string;

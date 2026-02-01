@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import type { PropertyData, PropertyInput } from "../interfaces";
-import { getProperties, updateProperty } from "../services/propertyService";
+import type { PropertyInput } from "../interfaces";
+import { updateProperty } from "../services/propertyService";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setProperties } from "../redux/properties/propertiesSlice";
 
 const EditProperty = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const [updatedData, setUpdatedData] = useState<PropertyInput>({
+  const [updatedData, setUpdatedData] = useState<Partial<PropertyInput>>({
     title: "Updated title 222",
     description: "Updated description",
     price: 99999,
@@ -27,8 +26,6 @@ const EditProperty = () => {
         if (!id) throw new Error("Property ID is missing");
         await updateProperty(id, updatedData);
         console.log("Property updated successfully");
-        const updatedProperties: PropertyData[] = await getProperties();
-        dispatch(setProperties(updatedProperties));
       } catch (error) {
         console.error("Edit failed:", error);
       }
