@@ -1,3 +1,4 @@
+import { useState, type ChangeEvent } from "react";
 import {
   inputDevStyleBase,
   inputLabelStyleBase,
@@ -15,23 +16,28 @@ const SelectField = ({
   value,
   onChange,
 }: InputProps) => {
-  const isPlaceholder = placeholder && value === placeholder;
+  const [selectedValue, setSelectedValue] = useState(placeholder);
+
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedValue(e.target.value);
+    if (onChange) {
+      onChange(e);
+    }
+  };
 
   return (
     <div
-      className={`${inputDevStyleBase} md:col-span-${colSpan ? colSpan : 1}`}
-    >
+      className={`${inputDevStyleBase} md:col-span-${colSpan ? colSpan : 1}`}>
       <label className={`${inputLabelStyleBase}`} htmlFor={name}>
         {label}
       </label>
       <div className="relative flex items-center">
         <select
-          className={`${inputStyleBase} appearance-none cursor-pointer ${isPlaceholder ? "text-gray-40" : "text-white"}`}
+          className={`${inputStyleBase} appearance-none cursor-pointer ${selectedValue !== placeholder ? "text-white" : "text-gray-40"} focus:text-white`}
           name={name}
           id={name}
           value={value}
-          onChange={onChange}
-        >
+          onChange={handleChange}>
           {/* first option (fixed) */}
           {placeholder && (
             <option value="" disabled>

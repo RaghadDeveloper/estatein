@@ -236,7 +236,7 @@ export interface PropertyData {
   title: string;
   subTitle?: string;
   description: string;
-  photos?: string[];
+  photos?: File[];
   price: number;
   bedrooms: number;
   bathrooms: number;
@@ -283,6 +283,11 @@ export interface InputProps {
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => void;
 }
+
+export interface ImageInputFieldProps {
+  onImagesChange: (images: File[]) => void;
+}
+
 export interface FormFooterProps {
   loading?: boolean;
   isChecked: boolean;
