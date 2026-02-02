@@ -32,7 +32,7 @@ export const inquireFormInputsData: InputProps[] = [
   {
     name: "phone",
     label: "Phone",
-    type: "tel",
+    type: "number",
     placeholder: "Enter Phone Number",
   },
   {
@@ -155,3 +155,29 @@ export const pricingDetailsCardsData: PricingDetailsCardProps[] = [
     ],
   },
 ];
+
+export const infoBlockData = [
+  {
+    label: "Bedrooms",
+    icon: "Bedroom",
+    value: 1,
+  },
+  {
+    label: "Bathrooms",
+    icon: "Bathroom",
+    value: 1,
+  },
+  {
+    label: "Area",
+    icon: "area",
+    value: 1,
+  },
+]
+
+export const featureItems : string[] = [
+  "Expansive oceanfront terrace for outdoor entertaining",
+  "Gourmet kitchen with top-of-the-line appliances",
+  "Private beach access for morning strolls and sunset views",
+  "Master suite with a spa-inspired bathroom and ocean-facing balcony",
+  "Private garage and ample storage space"
+]

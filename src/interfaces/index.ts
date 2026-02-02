@@ -48,6 +48,12 @@ export interface PriceValueProps {
   value: number;
 }
 
+export interface InfoBlockCardProps {
+  label: string;
+  icon: string;
+  value?: number;
+}
+
 // ============================== Sliders ===============================
 export interface SliderButtonProps {
   className: string;
@@ -183,7 +189,7 @@ export interface ServiceCardProps {
 export interface FeatureServiceCardProps {
   title: string;
   description: string;
-  bgImage: string;
+  reverse?: boolean;
 }
 export interface ServiceItem {
   id: number;
@@ -194,7 +200,6 @@ export interface ServiceItem {
 export interface FeatureItem {
   title: string;
   description: string;
-   bgImage: string;
 }
 
 // =============================== Property Filter & Search Bar ============================
@@ -225,8 +230,9 @@ export interface FilterType {
 }
 
 // ============================== Property Data ============================
+export type PropertyInput = Omit<PropertyData, "id">;
 export interface PropertyData {
-  id: number;
+  id: string;
   title: string;
   subTitle: string;
   description: string;
@@ -240,7 +246,7 @@ export interface PropertyData {
   area: number;
 }
 export interface PropertyCardProps {
-  id: number;
+  id: string;
   title: string;
   description: string;
   photos: string[];
@@ -266,7 +272,7 @@ export interface Option {
 export interface InputProps {
   label: string;
   placeholder?: string;
-  type: "text" | "email" | "tel" | "select" | "textarea" | "radio";
+  type: "text" | "email" | "number" | "select" | "textarea" | "radio";
   name: string;
   options?: Option[];
   icon?: string;
@@ -278,6 +284,7 @@ export interface InputProps {
   ) => void;
 }
 export interface FormFooterProps {
+  loading?: boolean;
   isChecked: boolean;
   handleCheckboxChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -335,8 +342,10 @@ export interface LocationsCardProps {
   H3: string;
   text: string;
   category: string;
+  locationLinks: LocationLinkType[];
 }
-export interface ButtonDataLocation {
+export interface LocationLinkType {
+  type: "email" | "location" | "phone";
   Img: string;
   text: string;
 }
@@ -346,9 +355,8 @@ export interface TapS {
 }
 
 //ButtonLocations
-export interface buttonLocations {
-  Bool: boolean;
-  variant: "BgBlack" | "BgGray";
+export interface LocationTab {
+  active: boolean;
   onClick?: () => void;
   children: React.ReactNode;
 }
@@ -369,5 +377,10 @@ export interface FooterLink {
 
 export interface FooterSocial {
   icon: string;
+  link: string;
+}
+
+export interface NavLink {
+  label: string;
   link: string;
 }

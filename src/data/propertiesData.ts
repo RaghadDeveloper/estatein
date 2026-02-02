@@ -75,7 +75,7 @@ export const portfolioHeaderData: SectionHeaderProps = {
 // Properties Data
 export const propertiesData: PropertyData[] = [
   {
-    id: 1,
+    id: "1",
     subTitle: "Coastal Escapes - Where Waves Beckon",
     title: "Seaside Serenity Villa",
     location: "Malibu, California",
@@ -100,7 +100,7 @@ export const propertiesData: PropertyData[] = [
     area: 2500,
   },
   {
-    id: 2,
+    id: "2",
     subTitle: "Urban Oasis - Life in the Heart of the City",
     title: "Metropolitan Haven",
     location: "Malibu, California",
@@ -125,7 +125,7 @@ export const propertiesData: PropertyData[] = [
     area: 2500,
   },
   {
-    id: 3,
+    id: "3",
     subTitle: "Countryside Charm - Escape to Nature's Embrace",
     title: "Rustic Retreat Cottage",
     location: "Malibu, California",
@@ -150,7 +150,7 @@ export const propertiesData: PropertyData[] = [
     area: 2500,
   },
   {
-    id: 4,
+    id: "4",
     subTitle: "Coastal Escapes - Where Waves Beckon",
     title: "Seaside Serenity Villa",
     location: "Malibu, California",
@@ -177,11 +177,10 @@ export const propertiesData: PropertyData[] = [
 ];
 
 // Property Form Section
-
-export const propertiesFormHeaderData : SectionHeaderProps = {
-    title: "Let's Make it Happen",
-    text: "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.",
-}
+export const propertiesFormHeaderData: SectionHeaderProps = {
+  title: "Let's Make it Happen",
+  text: "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.",
+};
 
 export const propertyFormInputsData: InputProps[] = [
   {
@@ -205,7 +204,7 @@ export const propertyFormInputsData: InputProps[] = [
   {
     name: "phone",
     label: "Phone",
-    type: "tel",
+    type: "number",
     placeholder: "Enter Phone Number",
   },
   {

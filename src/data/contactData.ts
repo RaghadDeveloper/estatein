@@ -1,5 +1,4 @@
 import type {
-  ButtonDataLocation,
   CommonHeroProps,
   InfoCardProps,
   InputProps,
@@ -75,7 +74,7 @@ export const connectFormInputsData: InputProps[] = [
   {
     name: "phone",
     label: "Phone",
-    type: "tel",
+    type: "number",
     placeholder: "Enter Phone Number",
   },
   {
@@ -142,6 +141,23 @@ export const locationsCardsData: LocationsCardProps[] = [
     H3: "123 Estatein Plaza, City Center, Metropolis",
     text: "Our main headquarters serve as the heart of Estatein. Located in the bustling city center, this is where our core team of experts operates, driving the excellence and innovation that define us.",
     category: "International",
+    locationLinks: [
+      {
+        type: "email",
+        Img: "/public/assets/icons/email.svg",
+        text: "info@estatein.com",
+      },
+      {
+        type: "phone",
+        Img: "/public/assets/icons/Phone.svg",
+        text: "+1 (123) 456-7890",
+      },
+      {
+        type: "location",
+        Img: "/public/assets/icons/Location.svg",
+        text: "Metropolis",
+      },
+    ],
   },
   {
     id: 2,
@@ -149,21 +165,23 @@ export const locationsCardsData: LocationsCardProps[] = [
     H3: "456 Urban Avenue, Downtown District, Metropolis",
     text: "Estatein's presence extends to multiple regions, each with its own dynamic real estate landscape. Discover our regional offices, staffed by local experts who understand the nuances of their respective markets.",
     category: "Regional",
-  },
-];
-
-export const buttonDataLocation: ButtonDataLocation[] = [
-  {
-    Img: "/public/assets/icons/email.svg",
-    text: "info@estatein.com",
-  },
-  {
-    Img: "/public/assets/icons/Phone.svg",
-    text: "+1 (123) 456-7890",
-  },
-  {
-    Img: "/public/assets/icons/Location.svg",
-    text: "Metropolis",
+    locationLinks: [
+      {
+        type: "email",
+        Img: "/public/assets/icons/email.svg",
+        text: "info@estatein.com",
+      },
+      {
+        type: "phone",
+        Img: "/public/assets/icons/Phone.svg",
+        text: "+1 (123) 456-7890",
+      },
+      {
+        type: "location",
+        Img: "/public/assets/icons/Location.svg",
+        text: "Metropolis",
+      },
+    ],
   },
 ];
 

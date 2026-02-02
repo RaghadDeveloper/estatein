@@ -1,7 +1,11 @@
 import type { FormFooterProps } from "../../interfaces";
 import Button from "./Button";
 
-const FormFooter = ({ isChecked, handleCheckboxChange }: FormFooterProps) => {
+const FormFooter = ({
+  isChecked,
+  handleCheckboxChange,
+  loading,
+}: FormFooterProps) => {
   return (
     <div className="flex gap-5 flex-col md:flex-row md:items-center md:justify-between">
       <div className="flex gap-1.5 items-center">
@@ -18,7 +22,11 @@ const FormFooter = ({ isChecked, handleCheckboxChange }: FormFooterProps) => {
         </p>
       </div>
       <div className="">
-        <Button btnType="submit" variant="primary" disabled={!isChecked}>
+        <Button
+          btnType="submit"
+          variant="primary"
+          disabled={!isChecked || loading}
+        >
           Send Your Message
         </Button>
       </div>

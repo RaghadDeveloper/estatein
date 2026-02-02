@@ -11,7 +11,7 @@ import { selectProperty } from "../redux/properties/propertiesSelectors";
 
 const PropertyDetails = () => {
   const { id } = useParams();
-  const property = useSelector(selectProperty(Number(id)));
+  const property = useSelector(selectProperty(id!));
 
   if (!property) {
     return <p>Property not found</p>;

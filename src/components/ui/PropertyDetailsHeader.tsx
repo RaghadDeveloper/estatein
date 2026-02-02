@@ -6,7 +6,7 @@ import { selectProperty } from "../../redux/properties/propertiesSelectors";
 const PropertyDetailsHeader = () => {
   const { id } = useParams();
 
-  const property = useSelector(selectProperty(Number(id)));
+  const property = useSelector(selectProperty(id!));
 
   return (
     <div className="px-4 pt-15 pb-7.5 lg:px-20 lg:pt-20 lg:pb-10 2xl:px-40.5 2xl:pt-30 2xl:pb-12.5">
