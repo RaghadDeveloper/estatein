@@ -18,7 +18,6 @@ function Faq() {
 
   const sliderId = "faq"
 
-  // ✅ عدد الصفحات الحقيقي
   const totalPages = swiper
     ? Math.ceil(
         questionsCards.length /

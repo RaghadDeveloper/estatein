@@ -255,8 +255,8 @@ export interface Option {
 export interface InputProps {
   label: string;
   placeholder?: string;
-  type: "text" | "email" | "tel" | "select" | "textarea" | "radio";
-  name: string;
+  type: "text" | "email" | "tel" | "select" | "textarea" | "radio" | "password";
+  name?: string;
   options?: Option[];
   icon?: string;
   colSpan?: number;
@@ -341,4 +341,8 @@ export interface imageProps {
   source: string;
   source_alternative?: string;
   alternative: string;
+}
+
+export interface FormProps{
+  inputs:Array<InputProps>;
 }
