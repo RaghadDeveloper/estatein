@@ -26,13 +26,15 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         isExpanded ? "border-primary-60 z-50" : "border-gray-15 shadow-md"
       } overflow-hidden flex flex-col w-full relative transition-all duration-500 ease-in-out group gap-4 lg:gap-5 2xl:gap-7.5 p-6 lg:p-7.5 2xl:p-10`}
     >
-      <div className="h-52.5 sm:h-65 lg:h-63.75 2xl:h-79.5 overflow-hidden rounded-lg relative mx-auto w-full">
-        <img
-          src={photos[0]}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-        />
-      </div>
+      {photos && photos.length > 0 && (
+        <div className="h-52.5 sm:h-65 lg:h-63.75 2xl:h-79.5 overflow-hidden rounded-lg relative mx-auto w-full">
+          <img
+            src={photos[0]}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+          />
+        </div>
+      )}
 
       <div className=" flex flex-col flex-1 relative z-20">
         {subTitle && (

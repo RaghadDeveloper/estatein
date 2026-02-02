@@ -230,8 +230,9 @@ export interface FilterType {
 }
 
 // ============================== Property Data ============================
+export type PropertyInput = Omit<PropertyData, "id">;
 export interface PropertyData {
-  id: number;
+  id: string;
   title: string;
   subTitle: string;
   description: string;
@@ -245,7 +246,7 @@ export interface PropertyData {
   area: number;
 }
 export interface PropertyCardProps {
-  id: number;
+  id: string;
   title: string;
   description: string;
   photos: string[];

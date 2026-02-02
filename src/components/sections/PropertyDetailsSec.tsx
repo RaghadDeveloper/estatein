@@ -12,7 +12,8 @@ const PropertyDetailsSec = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="lg:w-1/2 rounded-[10px] 2xl:rounded-xl border border-gray-15 flex flex-col p-5 gap-5 lg:p-10 lg:gap-10 2xl:p-12.5 2xl:gap-12.5 overflow-auto transition-all duration-500 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_12px_32px_rgba(99,102,241,0.2)] lg:overflow-hidden cursor-default">
+        className="lg:w-1/2 rounded-[10px] 2xl:rounded-xl border border-gray-15 flex flex-col p-5 gap-5 lg:p-10 lg:gap-10 2xl:p-12.5 2xl:gap-12.5 overflow-auto transition-all duration-500 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_12px_32px_rgba(99,102,241,0.2)] lg:overflow-hidden cursor-default"
+      >
         <InfoBlock />
       </motion.div>
 
@@ -22,7 +23,8 @@ const PropertyDetailsSec = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
         viewport={{ once: true }}
-        className="lg:w-1/2 rounded-xl border border-gray-15 flex flex-col p-5 gap-5 lg:p-10 lg:gap-10 2xl:p-12.5 2xl:gap-12.5 transition-all duration-500 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_12px_32px_rgba(99,102,241,0.25)] overflow-hidden">
+        className="lg:w-1/2 rounded-xl border border-gray-15 flex flex-col p-5 gap-5 lg:p-10 lg:gap-10 2xl:p-12.5 2xl:gap-12.5 transition-all duration-500 hover:-translate-y-1 hover:border-white/30 hover:shadow-[0_12px_32px_rgba(99,102,241,0.25)] overflow-hidden"
+      >
         <h3 className="font-semibold text-[18px] lg:text-[20px] 2xl:text-[24px]">
           Key Features and Amenities
         </h3>
