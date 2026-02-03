@@ -1,14 +1,14 @@
 import { FaBell, FaUserCircle } from "react-icons/fa";
-import { GoSun } from "react-icons/go";
 import { HiOutlineLogout } from "react-icons/hi";
+import ThemeToggle from "./ThemeToggle";
 
 const DashboardHeader = () => {
   const style =
-    "text-2xl text-gray-70 hover:text-primary-65 cursor-pointer ml-6";
+    "text-3xl text-gray-70 hover:text-primary-65 cursor-pointer my-2 mx-4";
 
   return (
-    <div className="bg-gray-15 border-l-2 border-l-gray-10 px-3 py-3.5 shadow-md flex justify-end">
-      <GoSun className={style} />
+    <div className="bg-bg-secondary border-l-2 border-l-gray-10 light:border-l-light-90 px-3 py-3.5 shadow-2xl flex justify-end items-center">
+      <ThemeToggle />
       <FaBell className={style} />
       <HiOutlineLogout className={style} />
       <FaUserCircle className={style} />

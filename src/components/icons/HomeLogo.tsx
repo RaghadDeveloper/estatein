@@ -6,6 +6,7 @@ const HomeLogo = () => {
       viewBox="0 0 175 175"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-29 lg:w-32.25 2xl:w-43.75"
     >
       <rect
         x="0.795455"
@@ -23,7 +24,7 @@ const HomeLogo = () => {
         height="173.409"
         rx="86.7045"
         stroke="#262626"
-        stroke-width="1.59091"
+        strokeWidth="1.59091"
       />
       <rect
         x="48.5225"
@@ -34,14 +35,14 @@ const HomeLogo = () => {
         className="text-gray-10 light:text-light-90"
         fill="currentColor"
         stroke="#262626"
-        stroke-width="1.59091"
+        strokeWidth="1.59091"
       />
       <path
         d="M76.875 97.625L98.125 76.375M98.125 76.375L82.1875 76.375M98.125 76.375V92.3125"
         className="stroke-white light:stroke-gray-08"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M102.745 140.63L87.8821 142.712L89.9646 157.575L104.827 155.492L102.745 140.63Z"

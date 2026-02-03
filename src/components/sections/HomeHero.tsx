@@ -45,15 +45,8 @@ const HomeHero = () => {
             className="relative w-full h-full object-cover rounded-xl lg:rounded-none"
           />
 
-          {/* <motion.img
-            src="/assets/images/hero/homeLogo.webp"
-            alt="logo"
-            className="absolute w-29 -bottom-10 lg:w-32.25 lg:top-23.75 lg:-left-17 2xl:w-43.75 2xl:top-36 2xl:-left-23"
-            variants={floatLogo}
-            animate="animate"
-          /> */}
           <motion.div
-            className="absolute w-29 -bottom-10 lg:w-32.25 lg:top-23.75 lg:-left-17 2xl:w-43.75 2xl:top-36 2xl:-left-23 h-fit"
+            className="absolute -bottom-10 lg:top-23.75 lg:-left-17 2xl:top-36 2xl:-left-23 h-fit w-fit"
             variants={floatLogo}
             animate="animate"
           >

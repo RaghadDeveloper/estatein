@@ -8,6 +8,7 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import DashLink from "./DashLink";
+import Logo from "../icons/Logo";
 
 const Sidebar = () => {
   const links = [
@@ -20,12 +21,10 @@ const Sidebar = () => {
     { icon: FaQuestionCircle, label: "Help" },
   ];
   return (
-    <div className="row-span-full bg-gray-15 shadow-md px-5 py-10 flex flex-col items-center">
-      <img
-        src="/assets/images/logo/fullLogo.png"
-        alt="Logo"
-        className="mb-16"
-      />
+    <div className="row-span-full bg-bg-secondary shadow-md px-5 py-10 flex flex-col items-center">
+      <span className="mb-16">
+        <Logo />
+      </span>
 
       {links.map((link) => (
         <DashLink key={link.label} link={link} />
