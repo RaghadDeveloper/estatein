@@ -282,6 +282,11 @@ export interface InputProps {
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => void;
 }
+
+export interface ImageInputFieldProps {
+  onImagesChange: (images: string[]) => void;
+}
+
 export interface FormFooterProps {
   loading?: boolean;
   isChecked: boolean;
