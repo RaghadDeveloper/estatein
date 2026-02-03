@@ -14,7 +14,7 @@ const Sidebar = () => {
   const links = [
     { icon: FaTachometerAlt, label: "Dashboard" },
     { icon: FaBuilding, to: "/dashboard/properties", label: "properties" },
-    { icon: FaUsers, label: "Team" },
+    { icon: FaUsers, to: "/dashboard/team", label: "Team" },
     { icon: FaUserCircle, label: "Profile" },
     { icon: FaCog, label: "Settings" },
     { icon: FaBell, label: "Notifications" },

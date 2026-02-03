@@ -154,7 +154,7 @@ export interface AchievementsCardProps {
 }
 
 // Member Card
-export interface MemberCardProps {
+export interface MemberType {
   name: string;
   position: string;
   imageUrl: string;

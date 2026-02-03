@@ -1,7 +1,7 @@
 import React from "react";
-import type { MemberCardProps } from "../../interfaces";
+import type { MemberType } from "../../interfaces";
 
-const MemberCard: React.FC<MemberCardProps> = ({
+const MemberCard: React.FC<MemberType> = ({
   name,
   position,
   imageUrl,
@@ -25,14 +25,14 @@ const MemberCard: React.FC<MemberCardProps> = ({
         </div>
       </div>
 
-      <h3 className="text-xl 2xl:text-2xl font-semibold text-white mb-0.5 lg:mb-1 text-center">
+      <h3 className="text-xl 2xl:text-2xl font-semibold text-text-main mb-0.5 lg:mb-1 text-center">
         {name}
       </h3>
-      <p className="text-text-secondary text-[16px] 2xl:text-lg mb-4 lg:mb-5 text-center">
+      <p className="text-text-secondary text-[16px] 2xl:text-lg mb-4 lg:mb-5 text-center flex-1">
         {position}
       </p>
 
-      <button className=" w-full flex items-center justify-between bg-bg-secondary hover:bg-gray-15 rounded-full p-2 pl-6 lg:p-2.5 lg:pl-5 2xl:p-3.5 2xl:pl-6 transition border border-gray-15">
+      <button className=" w-full flex items-center justify-between bg-bg-secondary rounded-full p-2 pl-6 lg:p-2.5 lg:pl-5 2xl:p-3.5 2xl:pl-6 transition border border-gray-15">
         <span className="flex items-center gap-2 text-sm lg:text-base 2xl:text-lg">
           <span>Say Hello 👋</span>
         </span>
