@@ -236,14 +236,14 @@ export interface PropertyData {
   title: string;
   subTitle?: string;
   description: string;
-  photos?: File[];
-  price: number;
-  bedrooms: number;
-  bathrooms: number;
+  photos?: string[];
+  price: number | null;
+  bedrooms: number | null;
+  bathrooms: number | null;
   location?: string;
   locationType?: string;
   propertyType?: string;
-  area?: number;
+  area?: number | null;
 }
 export interface PropertyCardProps {
   id: string;
@@ -285,7 +285,7 @@ export interface InputProps {
 }
 
 export interface ImageInputFieldProps {
-  onImagesChange: (images: File[]) => void;
+  onImagesChange: (images: string[]) => void;
 }
 
 export interface FormFooterProps {

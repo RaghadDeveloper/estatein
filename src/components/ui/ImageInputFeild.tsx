@@ -42,7 +42,8 @@ const PropertyImageUpload = ({ onImagesChange }: ImageInputFieldProps) => {
             setImagePreviews(allPreviews);
 
             if (onImagesChange) {
-              onImagesChange(allImages);
+              onImagesChange(allPreviews);
+              // onImagesChange(allImages);
             }
 
             console.log("Images stored in state:", allImages);
@@ -66,7 +67,7 @@ const PropertyImageUpload = ({ onImagesChange }: ImageInputFieldProps) => {
     setSelectedImages(newImages);
     setImagePreviews(newPreviews);
 
-    onImagesChange(newImages);
+    onImagesChange(newPreviews);
   };
 
   return (
