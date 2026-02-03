@@ -6,7 +6,7 @@ const OptionField = ({
   placeholder,
   value,
   checked,
-  icon,
+  Icon,
   onChange,
 }: Option) => {
   return (
@@ -14,7 +14,8 @@ const OptionField = ({
       className={`${inputStyleBase} flex justify-between items-center cursor-pointer`}
     >
       <div className="flex items-center  gap-1.5 2xl:gap-3">
-        <img src={icon} alt="" className="w-5 2xl:6" />
+        {/* <img src={icon} alt="" className="w-5 2xl:6" /> */}
+        {Icon && <Icon className=" rotate-y-180 text-xl"/>}
         <p className="text-gray-40">{placeholder}</p>
       </div>
       <input

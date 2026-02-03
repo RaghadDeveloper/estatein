@@ -1,4 +1,11 @@
-import type { FooterLink, FooterSocial, InfoCardProps, NavLink, Testimonial } from "../interfaces";
+import type {
+  FooterLink,
+  FooterSocial,
+  InfoCardProps,
+  NavLink,
+  Testimonial,
+} from "../interfaces";
+import { FaFacebookF, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export const infoCardsData: InfoCardProps[] = [
   {
@@ -156,56 +163,73 @@ export const questions = [
   },
 ];
 
-
 // Footer Section
-export const footerLinks : FooterLink[] = [
+export const footerLinks: FooterLink[] = [
   {
     title: "Home",
-    sectionsLinks: ["Hero Section","Features","Properties","Testimonials","FAQ's",],
-    link: "/"
+    sectionsLinks: [
+      "Hero Section",
+      "Features",
+      "Properties",
+      "Testimonials",
+      "FAQ's",
+    ],
+    link: "/",
   },
   {
     title: "About Us",
-    sectionsLinks: ["Our Story", "Our Works","How It Works","Our Team","Our Clients",],
+    sectionsLinks: [
+      "Our Story",
+      "Our Works",
+      "How It Works",
+      "Our Team",
+      "Our Clients",
+    ],
     link: "/about",
   },
   {
     title: "Properties",
-    sectionsLinks: ["Portfolio","Categories",],
+    sectionsLinks: ["Portfolio", "Categories"],
     link: "/properties",
   },
   {
     title: "Services",
-    sectionsLinks: ["Valuation Mastery","Strategic Marketing","Negotiation Wizardry","Closing Success","Property Management",],
+    sectionsLinks: [
+      "Valuation Mastery",
+      "Strategic Marketing",
+      "Negotiation Wizardry",
+      "Closing Success",
+      "Property Management",
+    ],
     link: "/services",
   },
   {
     title: "Contact Us",
-    sectionsLinks: ["Contact Form","Our Offices",],
+    sectionsLinks: ["Contact Form", "Our Offices"],
     link: "/contact",
   },
-]
+];
 
-export const socialIcons : FooterSocial[] = [
+export const socialIcons: FooterSocial[] = [
   {
-    icon: "facebook",
-    link: "/"
+    icon: FaFacebookF,
+    link: "https://www.facebook.com",
   },
   {
-    icon: "linkedin",
-    link: "/"
+    icon: FaLinkedin,
+    link: "https://www.linkedin.com",
   },
   {
-    icon: "twitter",
-    link: "/"
+    icon: FaTwitter,
+    link: "https://www.twitter.com",
   },
   {
-    icon: "youtube",
-    link: "/"
+    icon: FaYoutube,
+    link: "https://www.youtube.com",
   },
-]
+];
 
-export const navLinks : NavLink[] = [
+export const navLinks: NavLink[] = [
   {
     label: "Home",
     link: "/",
@@ -226,5 +250,4 @@ export const navLinks : NavLink[] = [
     label: "Contact Us",
     link: "/contact",
   },
-
-]
+];

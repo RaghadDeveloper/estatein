@@ -1,4 +1,4 @@
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, ComponentType, SVGProps } from "react";
 import type { Swiper as SwiperType } from "swiper";
 
 // ============================== Common Interfaces ============================
@@ -16,7 +16,7 @@ export interface CommonHeroProps {
   propertyHero?: boolean;
 }
 export interface PillInfoProps {
-  icon?: string;
+  Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   label: string;
   value?: string;
   pricing?: boolean;
@@ -50,7 +50,7 @@ export interface PriceValueProps {
 
 export interface InfoBlockCardProps {
   label: string;
-  icon: string;
+  Icon: ComponentType<SVGProps<SVGSVGElement>>;
   value?: number;
 }
 
@@ -69,7 +69,6 @@ export interface SliderProps {
   sliderId?: string;
 }
 export interface SliderPagesProps {
-  // cardsLength: number;
   currentPage: number;
   totalPages: number;
   isPrevDisabled: boolean;
@@ -155,7 +154,7 @@ export interface AchievementsCardProps {
 }
 
 // Member Card
-export interface MemberCardProps {
+export interface MemberType {
   name: string;
   position: string;
   imageUrl: string;
@@ -234,16 +233,16 @@ export type PropertyInput = Omit<PropertyData, "id">;
 export interface PropertyData {
   id: string;
   title: string;
-  subTitle?: string;
+  subTitle: string;
   description: string;
-  photos?: string[];
-  price: number | null;
-  bedrooms: number | null;
-  bathrooms: number | null;
-  location?: string;
-  locationType?: string;
-  propertyType?: string;
-  area?: number | null;
+  photos: string[];
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+  location: string;
+  locationType: string;
+  propertyType: string;
+  area: number;
 }
 export interface PropertyCardProps {
   id: string;
@@ -251,7 +250,7 @@ export interface PropertyCardProps {
   description: string;
   photos: string[];
   price: number;
-  infos?: { icon: string; label: string }[];
+  infos?: PillInfoProps[];
   subTitle?: string;
 }
 export type FeatureItemProps = {
@@ -265,17 +264,24 @@ export interface Option {
   name?: string;
   placeholder?: string;
   value: string;
-  icon?: string;
+  Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   checked?: boolean;
 }
 export interface InputProps {
   label: string;
   placeholder?: string;
-  type: "text" | "email" | "number" | "select" | "textarea" | "radio";
+  type:
+    | "text"
+    | "email"
+    | "number"
+    | "select"
+    | "textarea"
+    | "radio"
+    | "password";
   name: string;
   options?: Option[];
-  icon?: string;
+  Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   colSpan?: number;
   value?: string;
   checked?: boolean;
@@ -351,7 +357,8 @@ export interface LocationsCardProps {
 }
 export interface LocationLinkType {
   type: "email" | "location" | "phone";
-  Img: string;
+
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   text: string;
 }
 export interface TapS {
@@ -381,7 +388,7 @@ export interface FooterLink {
 }
 
 export interface FooterSocial {
-  icon: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   link: string;
 }
 

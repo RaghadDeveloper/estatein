@@ -1,5 +1,23 @@
 import type { InputProps } from "../interfaces";
 
+
+// Login
+export const loginInputs: InputProps[] = [
+  {
+    name: "email",
+    label: "Email",
+    type: "email",
+    placeholder: "Enter your email",
+  },
+  {
+    name: "password",
+    label: "Password",
+    type: "password",
+    placeholder: "Enter your password",
+  },
+];
+
+// Add Property
 export const addPropertyInputs: InputProps[] = [
     {
       name: "title",
@@ -60,7 +78,6 @@ export const addPropertyInputs: InputProps[] = [
       label: "Property Type",
       type: "select",
       placeholder: "Select property type",
-      icon: "/assets/icons/arrowbottom.svg",
       options: [
         { label: "Any Type", value: "any" },
         { label: "Apartment", value: "apartment" },
@@ -79,3 +96,37 @@ export const addPropertyInputs: InputProps[] = [
       colSpan: 4
     },
   ];
+
+// Edit Property
+export const editPropertyInputs: InputProps[] = [
+  {
+    label: "Title",
+    placeholder: "Enter title",
+    type: "text",
+    name: "title",
+  },
+  {
+    label: "Description",
+    placeholder: "Enter description",
+    type: "text",
+    name: "description",
+  },
+  {
+    label: "Price",
+    placeholder: "Enter price",
+    type: "text",
+    name: "price",
+  },
+  {
+    label: "Bedrooms",
+    placeholder: "Enter bedrooms",
+    type: "text",
+    name: "bedrooms",
+  },
+  {
+    label: "Bathrooms",
+    placeholder: "Enter bathrooms",
+    type: "text",
+    name: "bathrooms",
+  },
+];

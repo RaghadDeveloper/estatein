@@ -10,7 +10,7 @@ function LocationCard(data: LocationsCardProps) {
         <h3 className="2xl:text-[30px] lg:text-[24px] text-[20px] flex-1">
           {data.H3}
         </h3>
-        <p className="2xl:text-[18px] lg:text-[16px] text-[14px] text-gray-60 flex-1">
+        <p className="2xl:text-[18px] lg:text-[16px] text-[14px] text-text-secondary flex-1">
           {data.text}
         </p>
       </div>

@@ -1,9 +1,15 @@
-import { teamHeaderData, teamMembers } from "../../data/aboutData";
+import { useSelector } from "react-redux";
+import { teamHeaderData } from "../../data/aboutData";
 import SectionContainer from "../layouts/SectionContainer";
 import MemberCard from "../ui/MemberCard";
 import SectionHeader from "../ui/SectionHeader";
+import type { MemberType } from "../../interfaces";
 
 const Team = () => {
+  const teamMembers = useSelector(
+    (state: { team: { items: MemberType[] } }) => state.team.items,
+  );
+
   return (
     <SectionContainer>
       <SectionHeader {...teamHeaderData} />

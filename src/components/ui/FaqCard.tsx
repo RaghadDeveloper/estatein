@@ -7,7 +7,7 @@ const FaqCard = ({ H3, P, isOpen, onToggle }: CardFaqProps) => {
       <h3 className="font-semibold text-lg lg:text-xl 2xl:text-2xl leading-[150%]">
         {H3}
       </h3>
-      <p className="text-gray-60 text-sm lg:text-base 2xl:text-lg">{P}</p>
+      <p className="text-text-secondary text-sm lg:text-base 2xl:text-lg">{P}</p>
       <div className="w-full md:w-fit">
         {!isOpen ? (
           <Button variant="secondary" onClick={onToggle}>
@@ -15,7 +15,7 @@ const FaqCard = ({ H3, P, isOpen, onToggle }: CardFaqProps) => {
           </Button>
         ) : (
           <p
-            className="text-gray-60 text-sm lg:text-base 2xl:text-lg cursor-pointer"
+            className="text-text-secondary text-sm lg:text-base 2xl:text-lg cursor-pointer"
             onClick={onToggle}
           >
             {P}

@@ -5,16 +5,18 @@ import { RouterProvider } from "react-router-dom";
 import { routes } from "./router/routes";
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import PropertiesSubscriber from "./components/subscribers/PropertiesSubscriber";
+import TeamSubscriber from "./components/subscribers/TeamSubscriber";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
+      <PropertiesSubscriber />
+      <TeamSubscriber />
       <RouterProvider router={routes} />
     </Provider>
-  </StrictMode>
+  </StrictMode>,
 );

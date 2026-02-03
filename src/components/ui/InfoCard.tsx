@@ -4,7 +4,7 @@ import { getFinalLink } from "../../utiles/helpers";
 
 const InfoCard = ({ icon, text, socials, link, type }: InfoCardProps) => {
   return (
-    <article className="py-5 px-3.5 lg:py-7.5 lg:px-4 2xl:py-10 2xl:px-5 bg-gray-10 border border-gray-15 rounded-[10px] flex flex-col relative items-center justify-center h-full transition-all duration-500 ease-out hover:scale-105 hover:border-primary-60 hover:shadow-xl hover:shadow-primary-60/20 group">
+    <article className="py-5 px-3.5 lg:py-7.5 lg:px-4 2xl:py-10 2xl:px-5 bg-bg-secondary border border-gray-15 rounded-[10px] flex flex-col relative items-center justify-center h-full transition-all duration-500 ease-out hover:scale-105 hover:border-primary-60 hover:shadow-xl hover:shadow-primary-60/20 group">
       {/* Link Arrow */}
       {type ? (
         <a
@@ -33,10 +33,10 @@ const InfoCard = ({ icon, text, socials, link, type }: InfoCardProps) => {
         <div className="absolute h-full w-full transition-all duration-700 ease-in-out group-hover:rotate-180">
           {/* outer border */}
           <div className="w-full h-full rounded-full p-[0.6px] rotate-12 bg-[conic-gradient(#A685FA,#A685FA,#A685FA,#A685FA00,#A685FA00,#A685FA,#A685FA,#A685FA,#A685FA,#A685FA00,#A685FA00,#A685FA)]">
-            <div className="rounded-full bg-gray-10 w-full p-1.5 lg:p-2 xl:p-2.5 h-full">
+            <div className="rounded-full bg-bg-secondary w-full p-1.5 lg:p-2 xl:p-2.5 h-full">
               {/* inner border */}
               <div className="rounded-full p-[0.6px] -rotate-12 bg-[conic-gradient(#A685FA00,#A685FA00,#A685FA,#A685FA,#A685FA00,#A685FA00,#A685FA,#A685FA,#A685FA00)] h-full w-full group-hover:rotate-0">
-                <div className="bg-gray-10 flex items-center justify-center h-full w-full rounded-full"></div>
+                <div className="bg-bg-secondary flex items-center justify-center h-full w-full rounded-full"></div>
               </div>
             </div>
           </div>

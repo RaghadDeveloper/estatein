@@ -38,7 +38,7 @@ const InputField = ({
         placeholder={placeholder}
         name={name}
         id={name}
-        value={value}
+        value={value !== "-1" ? value : ""}
         onChange={onChange}
         required
       />

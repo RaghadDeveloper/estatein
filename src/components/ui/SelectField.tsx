@@ -1,3 +1,4 @@
+import { SlArrowDown } from "react-icons/sl";
 import { useState, type ChangeEvent } from "react";
 import {
   inputDevStyleBase,
@@ -11,7 +12,7 @@ const SelectField = ({
   placeholder,
   options,
   name,
-  icon,
+  Icon,
   colSpan,
   value,
   onChange,
@@ -27,17 +28,19 @@ const SelectField = ({
 
   return (
     <div
-      className={`${inputDevStyleBase} md:col-span-${colSpan ? colSpan : 1}`}>
+      className={`${inputDevStyleBase} md:col-span-${colSpan ? colSpan : 1}`}
+    >
       <label className={`${inputLabelStyleBase}`} htmlFor={name}>
         {label}
       </label>
       <div className="relative flex items-center">
         <select
-          className={`${inputStyleBase} appearance-none cursor-pointer ${selectedValue !== placeholder ? "text-white" : "text-gray-40"} focus:text-white`}
+          className={`${inputStyleBase} appearance-none cursor-pointer ${selectedValue !== placeholder ? "text-text-main" : "text-gray-40"} focus:text-text-main`}
           name={name}
           id={name}
           value={value}
-          onChange={handleChange}>
+          onChange={handleChange}
+        >
           {/* first option (fixed) */}
           {placeholder && (
             <option value="" disabled>
@@ -52,8 +55,8 @@ const SelectField = ({
             </option>
           ))}
         </select>
-        <div className="absolute right-5">
-          <img className="w-5 2xl:w-6" src={icon} alt="" />
+        <div className="absolute right-5 pointer-events-none text-2xl">
+          {Icon ? <Icon /> : <SlArrowDown />}
         </div>
       </div>
     </div>

@@ -1,42 +1,90 @@
-import { useEffect, useRef, useState } from "react";
-import type { PropertyData, PropertyInput } from "../interfaces";
-import { getProperties, updateProperty } from "../services/propertyService";
+import { useState } from "react";
+import type { PropertyInput } from "../interfaces";
+import { updateProperty } from "../services/propertyService";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setProperties } from "../redux/properties/propertiesSlice";
+import { useSelector } from "react-redux";
+import InputField from "../components/ui/InputField";
+import { selectProperty } from "../redux/properties/propertiesSelectors";
+import Button from "../components/ui/Button";
+import PageTilte from "../components/ui/PageTilte";
+import { editPropertyInputs } from "../data/dashboard";
 
 const EditProperty = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
-  const [updatedData, setUpdatedData] = useState<PropertyInput>({
-    title: "Updated title 222",
-    description: "Updated description",
-    price: 99999,
-    bedrooms: 3,
-    bathrooms: 2,
-  });
+  const property = useSelector(selectProperty(id!));
 
-  const ran = useRef(false);
+  const [updatedData, setUpdatedData] = useState<Partial<PropertyInput>>(() =>
+    property
+      ? {
+          title: property.title,
+          description: property.description,
+          price: property.price,
+          bedrooms: property.bedrooms,
+          bathrooms: property.bathrooms,
+        }
+      : {},
+  );
 
-  useEffect(() => {
-    if (ran.current) return;
-    ran.current = true;
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+    const { name, value } = e.target;
 
-    const editProperty = async () => {
-      try {
-        if (!id) throw new Error("Property ID is missing");
-        await updateProperty(id, updatedData);
-        console.log("Property updated successfully");
-        const updatedProperties: PropertyData[] = await getProperties();
-        dispatch(setProperties(updatedProperties));
-      } catch (error) {
-        console.error("Edit failed:", error);
-      }
-    };
+    setUpdatedData((prev) => ({
+      ...prev!,
+      [name]: ["price", "bedrooms", "bathrooms"].includes(name)
+        ? Number(value)
+        : value,
+    }));
+  };
 
-    editProperty();
-  }, [updatedData, id, dispatch]);
-  return <div>EditProperty</div>;
+  const handleSave = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!id || !updatedData) return;
+
+    try {
+      await updateProperty(id, updatedData);
+      console.log("Property updated successfully");
+    } catch (error) {
+      console.error("Edit failed:", error);
+    }
+  };
+
+  if (!updatedData) return <div className="m-9 text-[25px]">Loading ...</div>;
+
+  return (
+    <div className="flex flex-col gap-7 px-5 max-w-3xl mx-auto">
+      <PageTilte title="Edit Property" />
+
+      <form
+        className="flex flex-col gap-7.5 2xl:gap-12.5"
+        onSubmit={handleSave}
+      >
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2">
+            {editPropertyInputs.map((field) => (
+              <InputField
+                key={field.name}
+                label={field.label}
+                placeholder={field.placeholder}
+                type={field.type}
+                name={field.name}
+                value={String(
+                  updatedData[field.name as keyof PropertyInput] ?? "",
+                )}
+                onChange={handleChange}
+              />
+            ))}
+          </div>
+        </div>
+        <Button variant="primary" btnType="submit">
+          Save Changes
+        </Button>
+      </form>
+    </div>
+  );
 };
 
 export default EditProperty;

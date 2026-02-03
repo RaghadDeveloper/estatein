@@ -1,8 +1,4 @@
-import locationIcon from "/assets/icons/Location.svg";
-import propertyIcon from "/assets/icons/property.svg";
-import priceIcon from "/assets/icons/Union.svg";
-import sizeIcon from "/assets/icons/Size.svg";
-import buildIcon from "/assets/icons/Year.svg";
+import { FaPhone } from "react-icons/fa";
 import type {
   CommonHeroProps,
   PropertyData,
@@ -10,6 +6,7 @@ import type {
   SectionHeaderProps,
   FilterType,
 } from "../interfaces";
+import { TbMailFilled } from "react-icons/tb";
 
 // Hero Section
 export const propertiesPageHeroData: CommonHeroProps = {
@@ -23,7 +20,7 @@ export const filters: FilterType[] = [
   {
     label: "Location",
     key: "location",
-    icon: locationIcon,
+    icon: "/assets/icons/Location.svg",
     options: [
       "Any location",
       "Downtown",
@@ -35,13 +32,13 @@ export const filters: FilterType[] = [
   {
     label: "Property Type",
     key: "propertyType",
-    icon: propertyIcon,
+    icon: "/assets/icons/property.svg",
     options: ["Any Type", "Apartment", "House", "Villa", "Studio", "Office"],
   },
   {
     label: "Pricing Range",
     key: "price",
-    icon: priceIcon,
+    icon: "/assets/icons/Union.svg",
     options: [
       "Any Price",
       "Under $50,000",
@@ -55,13 +52,13 @@ export const filters: FilterType[] = [
   {
     label: "Property Size",
     key: "area",
-    icon: sizeIcon,
+    icon: "/assets/icons/Size.svg",
     options: ["Any Size", "50-100m", "100-150m", "150-250m", "250+m"],
   },
   {
     label: "Build Year",
     key: "buildYear",
-    icon: buildIcon,
+    icon: "/assets/icons/Year.svg",
     options: ["New", "2017-2021", "2010-2016", "2000-2009", "Before 2000"],
   },
 ];
@@ -212,7 +209,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "Preferred Location",
     placeholder: "Select Location",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "Any location", value: "any" },
       { label: "Downtown", value: "downtown" },
@@ -226,7 +222,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "Property Type",
     placeholder: "Select Property Type",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "Any Type", value: "any" },
       { label: "Apartment", value: "apartment" },
@@ -241,7 +236,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "No. of Bathrooms",
     placeholder: "Select no. of Bathrooms",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "Any", value: "any" },
       { label: "1", value: "1" },
@@ -254,7 +248,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "No. of Bedrooms",
     placeholder: "Select no. of Bedrooms",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "Any", value: "any" },
       { label: "1", value: "1" },
@@ -267,7 +260,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "Budget",
     placeholder: "Select Budget",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     colSpan: 2,
     options: [
       { label: "Any Price", value: "any" },
@@ -288,13 +280,13 @@ export const propertyFormInputsData: InputProps[] = [
         placeholder: "Enter Your Number",
         name: "contactMethod",
         value: "phone",
-        icon: "assets/icons/Phone.svg",
+        Icon: FaPhone,
       },
       {
         placeholder: "Enter Your Email",
         name: "contactMethod",
         value: "email",
-        icon: "assets/icons/email.svg",
+        Icon: TbMailFilled,
       },
     ],
   },
@@ -420,7 +412,7 @@ export const photos = [
 
 // styles for property form inputs
 export const inputStyleBase: string =
-  "w-full rounded-md py-4 px-5 bg-gray-10 border border-gray-15 text-[14px] font-medium 2xl:text-[18px] 2xl:py-6 leading-[20px] focus:outline-none focus:ring-2 focus:ring-primary-60 caret-primary-60";
+  "w-full rounded-md py-4 px-5 bg-bg-secondary border border-gray-15 text-[14px] font-medium 2xl:text-[18px] 2xl:py-6 leading-[20px] focus:outline-none focus:ring-2 focus:ring-primary-60 caret-primary-60";
 
 export const inputLabelStyleBase: string =
   "text-[16px] 2xl:text-[20px] font-semibold";

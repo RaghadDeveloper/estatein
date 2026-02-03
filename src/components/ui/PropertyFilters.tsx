@@ -8,7 +8,7 @@ import { useState } from "react";
 const PropertyFilters = () => {
   const dispatch = useDispatch();
   const [searchValue, setSearchValue] = useState("");
-  
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
@@ -26,7 +26,7 @@ const PropertyFilters = () => {
           />
         </div>
 
-        <div className="w-full mt-3 lg:mt-0 bg-gray-10 border-x border-b border-gray-15 md:border-t-0 p-4 md:p-2.5 rounded-xl md:rounded-b-2xl shadow-2xl">
+        <div className="w-full mt-3 lg:mt-0 bg-bg-secondary p-4 md:p-2.5 rounded-xl md:rounded-b-2xl shadow-2xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
             {filters.map((f, i) => (
               <PropertySelect

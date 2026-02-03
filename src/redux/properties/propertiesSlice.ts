@@ -1,5 +1,4 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { propertiesData } from "../../data/propertiesData";
 import type { FiltersState, PropertyData } from "../../interfaces";
 
 interface PropertiesState {
@@ -8,7 +7,7 @@ interface PropertiesState {
 }
 
 const initialState: PropertiesState = {
-  all: propertiesData,
+  all: [],
   filters: {
     search: "",
   },
@@ -36,5 +35,6 @@ const propertiesSlice = createSlice({
   },
 });
 
-export const { setSearch, setFilter, clearFilters, setProperties } = propertiesSlice.actions;
+export const { setSearch, setFilter, clearFilters, setProperties } =
+  propertiesSlice.actions;
 export default propertiesSlice.reducer;

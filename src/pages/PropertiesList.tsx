@@ -1,28 +1,10 @@
-import { useEffect, useState } from "react";
-import type { PropertyData } from "../interfaces";
-import { getProperties } from "../services/propertyService";
-import { useDispatch } from "react-redux";
-import { setProperties } from "../redux/properties/propertiesSlice";
+import { useSelector } from "react-redux";
+import { selectFilteredProperties } from "../redux/properties/propertiesSelectors";
 
 const PropertiesList = () => {
-  const dispatch = useDispatch();
-  const [propertiesList, setPropertiesList] = useState<PropertyData[]>([]);
+  const properties = useSelector(selectFilteredProperties);
 
-  useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        const data: PropertyData[] = await getProperties();
-        setPropertiesList(data);
-        dispatch(setProperties(data));
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    fetchProperties();
-  }, [dispatch]);
-
-  console.log("Properties:", propertiesList);
+  console.log("Properties:", properties);
   return <div>PropertiesList</div>;
 };
 
