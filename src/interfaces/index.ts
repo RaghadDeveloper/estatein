@@ -271,7 +271,14 @@ export interface Option {
 export interface InputProps {
   label: string;
   placeholder?: string;
-  type: "text" | "email" | "number" | "select" | "textarea" | "radio";
+  type:
+    | "text"
+    | "email"
+    | "number"
+    | "select"
+    | "textarea"
+    | "radio"
+    | "password";
   name: string;
   options?: Option[];
   Icon?: ComponentType<SVGProps<SVGSVGElement>>;

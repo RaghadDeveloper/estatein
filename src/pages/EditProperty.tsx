@@ -7,6 +7,7 @@ import InputField from "../components/ui/InputField";
 import { selectProperty } from "../redux/properties/propertiesSelectors";
 import Button from "../components/ui/Button";
 import PageTilte from "../components/ui/PageTilte";
+import { editPropertyInputs } from "../data/dashboard";
 
 const EditProperty = () => {
   const { id } = useParams();
@@ -62,50 +63,21 @@ const EditProperty = () => {
         onSubmit={handleSave}
       >
         <div className="flex flex-col gap-2">
-          <InputField
-            label="Title"
-            placeholder="Enter title"
-            type="text"
-            name="title"
-            value={updatedData.title ?? ""}
-            onChange={handleChange}
-          />
-
-          <InputField
-            label="Description"
-            placeholder="Enter description"
-            type="text"
-            name="description"
-            value={updatedData.description ?? ""}
-            onChange={handleChange}
-          />
-
-          <InputField
-            label="Price"
-            placeholder="Enter price"
-            type="text"
-            name="price"
-            value={String(updatedData.price ?? "")}
-            onChange={handleChange}
-          />
-
-          <InputField
-            label="Bedrooms"
-            placeholder="Enter bedrooms"
-            type="text"
-            name="bedrooms"
-            value={String(updatedData.bedrooms ?? "")}
-            onChange={handleChange}
-          />
-
-          <InputField
-            label="Bathrooms"
-            placeholder="Enter bathrooms"
-            type="text"
-            name="bathrooms"
-            value={String(updatedData.bathrooms ?? "")}
-            onChange={handleChange}
-          />
+          <div className="flex flex-col gap-2">
+            {editPropertyInputs.map((field) => (
+              <InputField
+                key={field.name}
+                label={field.label}
+                placeholder={field.placeholder}
+                type={field.type}
+                name={field.name}
+                value={String(
+                  updatedData[field.name as keyof PropertyInput] ?? "",
+                )}
+                onChange={handleChange}
+              />
+            ))}
+          </div>
         </div>
         <Button variant="primary" btnType="submit">
           Save Changes
