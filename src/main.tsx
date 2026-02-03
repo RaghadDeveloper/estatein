@@ -10,13 +10,16 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import PropertiesSubscriber from "./components/subscribers/PropertiesSubscriber";
 import TeamSubscriber from "./components/subscribers/TeamSubscriber";
+import { AuthProvider } from "./context/AuthProvider";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={store}>
-      <PropertiesSubscriber />
-      <TeamSubscriber />
-      <RouterProvider router={routes} />
-    </Provider>
+    <AuthProvider>
+      <Provider store={store}>
+        <PropertiesSubscriber />
+        <TeamSubscriber />
+        <RouterProvider router={routes} />
+      </Provider>
+    </AuthProvider>
   </StrictMode>,
 );

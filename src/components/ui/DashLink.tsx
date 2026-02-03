@@ -11,7 +11,7 @@ const DashLink = ({
   };
 }) => {
   const style =
-    "w-full py-3 px-6 mb-3 rounded-lg hover:bg-gray-20 light:hover:bg-gray-60 light:hover:text-text-main transition-all flex items-center gap-4 text-lg font-medium";
+    "w-full py-3 px-6 mb-3 rounded-lg cursor-pointer hover:bg-gray-20 light:hover:bg-gray-60 light:hover:text-text-main transition-all flex items-center gap-4 text-lg font-medium";
 
   if (!link.to) {
     return (

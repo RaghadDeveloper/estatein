@@ -19,7 +19,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="px-4 py-2 rounded-full cursor-pointer text-3xl transition-all text-text-main hover:text-primary-70"
+      className="px-4 py-2 rounded-full cursor-pointer text-3xl transition-all text-text-main hover:text-primary-70 focus:outline-none"
     >
       {darkMode ? <HiOutlineSun /> : <HiOutlineMoon />}
     </button>
