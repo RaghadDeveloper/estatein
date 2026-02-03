@@ -8,6 +8,7 @@ import TextareaField from "../components/ui/TextareaField";
 import SelectField from "../components/ui/SelectField";
 import ImageInputFeild from "../components/ui/ImageInputFeild";
 import { useNavigate } from "react-router-dom";
+import PageTilte from "../components/ui/PageTilte";
 
 const AddProperty = () => {
   const navigate = useNavigate();
@@ -69,13 +70,11 @@ const AddProperty = () => {
   };
 
   return (
-    <div className="mx-4  md:mx-20 2xl:mx-40.5 mt-5 lg:mt-10 2xl:mt-12.5 flex flex-col gap-5 lg:gap-10 2xl:gap-12.5">
-      <h2 className="text-[28px] md:text-[32px] lg:text-[38px] 2xl:text-[48px] font-semibold">
-        Add New Product
-      </h2>
+    <div className="flex flex-col gap-5 lg:gap-10 2xl:gap-12.5">
+      <PageTilte title="Add New Property" />
       <form
         onSubmit={handleSubmit}
-        className="rounded-xl p-5 lg:p-12.5 2xl:p-25 border border-gray-15 flex flex-col gap-7.5 2xl:gap-12.5"
+        className="rounded-xl flex flex-col gap-7.5 2xl:gap-12.5"
         action=""
       >
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-5 lg:gap-7.5 2xl:gap-12.5">

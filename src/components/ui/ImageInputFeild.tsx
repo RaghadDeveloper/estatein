@@ -180,6 +180,7 @@ const PropertyImageUpload = ({ onImagesChange }: ImageInputFieldProps) => {
           accept="image/*"
           onChange={handleFileChange}
           className="hidden"
+          required
         />
       </div>
 
