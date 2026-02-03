@@ -32,10 +32,7 @@ const ValueCard = ({
           {title}
         </h3>
       </div>
-      <p
-        className="font-medium leading-normal text-gray-60 text-[14px]
-    lg:text-[16px] 2xl:text-[18px] max-w-102.25 transition-colors duration-300 group-hover:text-white"
-      >
+      <p className="font-medium leading-normal text-text-secondary text-[14px] lg:text-[16px] 2xl:text-[18px] max-w-102.25 transition-colors duration-300 group-hover:text-text-main">
         {description}
       </p>
     </div>

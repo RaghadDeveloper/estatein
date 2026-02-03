@@ -14,18 +14,16 @@ const SliderPages = ({
     <div className="mt-6 flex justify-between items-center border-t border-gray-15 pt-7.5 lg:pt-4 2xl:pt-5">
       {text && (
         <button
-          className={` border border-gray-15 py-3.5 px-5 text-[14px] text-white lg:hidden rounded-xl`}
+          className={` border border-gray-15 py-3.5 px-5 text-[14px] lg:hidden rounded-xl`}
         >
           {text}
         </button>
       )}
 
       <div className="hidden lg:block">
-        <span className="text-white">
-          {String(currentPage).padStart(2, "0")}
-        </span>
-        <span className="text-gray-60"> of </span>
-        <span className="text-gray-60">
+        <span>{String(currentPage).padStart(2, "0")}</span>
+        <span className="text-text-secondary"> of </span>
+        <span className="text-text-secondary">
           {String(totalPages).padStart(2, "0")}
         </span>
       </div>
@@ -45,11 +43,11 @@ const SliderPages = ({
           }}
         />
         <div className="block lg:hidden">
-          <span className="text-white">
+          <span className="text-text-main">
             {String(currentPage).padStart(2, "0")}
           </span>
-          <span className="text-gray-60"> of </span>
-          <span className="text-gray-60">
+          <span className="text-text-secondary"> of </span>
+          <span className="text-text-secondary">
             {String(totalPages).padStart(2, "0")}
           </span>
         </div>

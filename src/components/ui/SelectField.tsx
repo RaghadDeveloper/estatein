@@ -1,3 +1,4 @@
+import { SlArrowDown } from "react-icons/sl";
 import {
   inputDevStyleBase,
   inputLabelStyleBase,
@@ -10,7 +11,7 @@ const SelectField = ({
   placeholder,
   options,
   name,
-  icon,
+  Icon,
   colSpan,
   value,
   onChange,
@@ -26,7 +27,7 @@ const SelectField = ({
       </label>
       <div className="relative flex items-center">
         <select
-          className={`${inputStyleBase} appearance-none cursor-pointer ${isPlaceholder ? "text-gray-40" : "text-white"}`}
+          className={`${inputStyleBase} appearance-none cursor-pointer ${isPlaceholder ? "text-gray-40" : "text-text-main"}`}
           name={name}
           id={name}
           value={value}
@@ -46,8 +47,8 @@ const SelectField = ({
             </option>
           ))}
         </select>
-        <div className="absolute right-5">
-          <img className="w-5 2xl:w-6" src={icon} alt="" />
+        <div className="absolute right-5 pointer-events-none text-2xl">
+          {Icon ? <Icon /> : <SlArrowDown />}
         </div>
       </div>
     </div>

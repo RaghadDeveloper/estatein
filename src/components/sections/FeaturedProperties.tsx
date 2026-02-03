@@ -4,10 +4,13 @@ import SectionContainer from "../layouts/SectionContainer";
 import Slider from "../layouts/Slider";
 import PropertyCard from "../ui/PropertyCard";
 import SectionHeader from "../ui/SectionHeader";
-import type { PropertyData } from "../../interfaces";
+import type { PillInfoProps, PropertyData } from "../../interfaces";
 import type { Swiper as SwiperType } from "swiper";
 import { useState } from "react";
 import SliderPages from "../ui/SliderPages";
+import Bedroom from "../icons/Bedroom";
+import Bathroom from "../icons/Bathroom";
+import { HiOfficeBuilding } from "react-icons/hi";
 
 const FeaturedProperties = () => {
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
@@ -18,19 +21,19 @@ const FeaturedProperties = () => {
   );
 
   const propertiesCards = properties.map((property: PropertyData) => {
-    const infos = [
+    const infos: PillInfoProps[] = [
       {
-        icon: "assets/icons/Bedroom.svg",
+        Icon: Bedroom,
         label: "Bedroom",
-        value: property.bedrooms,
+        value: String(property.bedrooms),
       },
       {
-        icon: "/assets/icons/Bathroom.svg",
+        Icon: Bathroom,
         label: "Bathroom",
-        value: property.bathrooms,
+        value: String(property.bathrooms),
       },
       {
-        icon: "assets/icons/Villa.svg",
+        Icon: HiOfficeBuilding,
         label: property.propertyType,
       },
     ];

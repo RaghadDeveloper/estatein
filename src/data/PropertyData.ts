@@ -1,3 +1,4 @@
+import { FaLocationDot } from "react-icons/fa6";
 import type {
   InputProps,
   PricingDetailsCardProps,
@@ -40,7 +41,7 @@ export const inquireFormInputsData: InputProps[] = [
     label: "Select Property",
     // placeholder: "Selected Property",
     type: "select",
-    icon: "/assets/icons/LocationWhite.svg",
+    Icon: FaLocationDot,
     colSpan: 2,
     options: [{ label: "selectd property", value: "selected property" }],
   },
@@ -156,28 +157,10 @@ export const pricingDetailsCardsData: PricingDetailsCardProps[] = [
   },
 ];
 
-export const infoBlockData = [
-  {
-    label: "Bedrooms",
-    icon: "Bedroom",
-    value: 1,
-  },
-  {
-    label: "Bathrooms",
-    icon: "Bathroom",
-    value: 1,
-  },
-  {
-    label: "Area",
-    icon: "area",
-    value: 1,
-  },
-]
-
-export const featureItems : string[] = [
+export const featureItems: string[] = [
   "Expansive oceanfront terrace for outdoor entertaining",
   "Gourmet kitchen with top-of-the-line appliances",
   "Private beach access for morning strolls and sunset views",
   "Master suite with a spa-inspired bathroom and ocean-facing balcony",
-  "Private garage and ample storage space"
-]
+  "Private garage and ample storage space",
+];

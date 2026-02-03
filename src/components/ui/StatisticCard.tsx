@@ -7,7 +7,7 @@ const StatisticCard = ({ card }: { card: StatisticCardType }) => {
       <p className="font-bold text-2xl lg:text-3xl 2xl:text-[40px] leading-[150%] transition-colors duration-300 group-hover:text-primary-70">
         {value}+
       </p>
-      <h3 className="text-nowrap text-gray-60 text-[14px] lg:text-[16px] 2xl:text-lg leading-[150%] transition-colors duration-300 group-hover:text-primary-70">
+      <h3 className="text-nowrap text-text-secondary text-[14px] lg:text-[16px] 2xl:text-lg leading-[150%] transition-colors duration-300 group-hover:text-primary-70">
         {text}
       </h3>
     </div>

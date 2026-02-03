@@ -1,3 +1,4 @@
+import { TbMailFilled } from "react-icons/tb";
 import type {
   CommonHeroProps,
   InfoCardProps,
@@ -6,6 +7,8 @@ import type {
   SectionHeaderProps,
   TapS,
 } from "../interfaces";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhone } from "react-icons/fa";
 
 // Hero Section
 export const contactPageHeroData: CommonHeroProps = {
@@ -82,7 +85,6 @@ export const connectFormInputsData: InputProps[] = [
     label: "Inquiry Type",
     placeholder: "Select Inquiry Type",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "General Question", value: "general" },
       { label: "Product Inquiry", value: "product" },
@@ -101,7 +103,6 @@ export const connectFormInputsData: InputProps[] = [
     label: "How Did You Hear About Us?",
     placeholder: "Select",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "Google Search", value: "google" },
       {
@@ -144,17 +145,17 @@ export const locationsCardsData: LocationsCardProps[] = [
     locationLinks: [
       {
         type: "email",
-        Img: "/public/assets/icons/email.svg",
+        icon: TbMailFilled,
         text: "info@estatein.com",
       },
       {
         type: "phone",
-        Img: "/public/assets/icons/Phone.svg",
+        icon: FaPhone,
         text: "+1 (123) 456-7890",
       },
       {
         type: "location",
-        Img: "/public/assets/icons/Location.svg",
+        icon: FaLocationDot,
         text: "Metropolis",
       },
     ],
@@ -168,17 +169,17 @@ export const locationsCardsData: LocationsCardProps[] = [
     locationLinks: [
       {
         type: "email",
-        Img: "/public/assets/icons/email.svg",
+        icon: TbMailFilled,
         text: "info@estatein.com",
       },
       {
         type: "phone",
-        Img: "/public/assets/icons/Phone.svg",
+        icon: FaPhone,
         text: "+1 (123) 456-7890",
       },
       {
         type: "location",
-        Img: "/public/assets/icons/Location.svg",
+        icon: FaLocationDot,
         text: "Metropolis",
       },
     ],

@@ -7,18 +7,18 @@ const CallToActionSection = () => {
   return (
     <section
       className="relative z-0 flex flex-col lg:flex-row justify-between overflow-hidden lg:items-center
-      gap-7.5 py-12.5 lg:py-15 2xl:py-25 px-4 md:px-20 2xl:px-40.5 border-y border-gray-15 mt-20 lg:mt-30 2xl:mt-37.5"
+      gap-7.5 py-12.5 lg:py-15 2xl:py-25 px-4 md:px-20 min-[1740px]:px-40.5! border-y border-gray-15 mt-20 lg:mt-30 2xl:mt-37.5"
     >
       {/* left image */}
       <img
-        className="absolute -z-1 rotate-90 lg:rotate-0 h-71 lg:w-118.5 2xl:w-141.5 lg:h-full -left-19sm: -left-27 lg:left-0 -top-3.75 lg:top-0"
+        className="absolute -z-1 rotate-90 lg:rotate-0 h-71 lg:w-118.5 2xl:w-141.5 lg:h-full -left-19sm: -left-27 lg:left-0 -top-3.75 lg:top-0 light:hidden"
         src="/assets/images/abstractDesign/ctaLeft.png"
         alt="bg photo"
       />
 
       {/* right image */}
       <img
-        className="absolute -z-1 h-54.25 lg:h-77.5 2xl:w-181.25 -right-7.5 lg:right-0 -bottom-5.5 lg:bottom-0"
+        className="absolute -z-1 h-54.25 lg:h-77.5 2xl:w-181.25 -right-7.5 lg:right-0 -bottom-5.5 lg:bottom-0 light:hidden"
         src="/assets/images/abstractDesign/ctaRight.png"
         alt="bg photo"
       />
@@ -29,7 +29,7 @@ const CallToActionSection = () => {
         </h2>
         <p
           className="font-medium leading-normal
-        text-[14px] lg:text-[16px] 2xl:text-[18px] text-gray-60"
+        text-[14px] lg:text-[16px] 2xl:text-[18px] text-text-secondary"
         >
           Your dream property is just a click away. Whether you're looking for a
           new home, a strategic investment, or expert real estate advice,

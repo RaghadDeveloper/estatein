@@ -22,7 +22,7 @@ const Locations = () => {
     <SectionContainer>
       <SectionHeader {...LocationsHeaderData} />
       <div className="flex flex-col 2xl:gap-12.5 lg:gap-10 gap-7.5">
-        <div className="2xl:w-129 2xl:h-20.75 rounded-xl p-2 bg-gray-10 flex justify-between items-center lg:w-103.25 h-17.25  w-89.25">
+        <div className="2xl:w-129 2xl:h-20.75 rounded-xl p-2 bg-bg-secondary flex justify-between items-center lg:w-103.25 h-17.25 w-89.25">
           {TAps.map((item: TapS) => (
             <Tab
               key={item.tap}

@@ -7,7 +7,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
         {[...Array(testimonial.stars)].map((_, i) => (
           <div
             key={i}
-            className="bg-gray-10 border border-gray-15 w-7.5 h-7.5 lg:w-9.5 lg:h-9 éxl:w-11 2xl:h-11 rounded-full flex items-center justify-center"
+            className="bg-bg-secondary border border-gray-15 w-7.5 h-7.5 lg:w-9.5 lg:h-9.5 2xl:w-11 2xl:h-11 rounded-full flex items-center justify-center"
           >
             <img
               src="/assets/icons/GoldenStar.svg"
@@ -19,7 +19,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
       </div>
 
       <div className="grow">
-        <h3 className="text-white text-lg lg:text-xl 2xl:text-2xl font-semibold mb-1.5 lg:mb-2.5 2xl:mb-3.5 leading-[150%]">
+        <h3 className="text-lg lg:text-xl 2xl:text-2xl font-semibold mb-1.5 lg:mb-2.5 2xl:mb-3.5 leading-[150%]">
           {testimonial.title}
         </h3>
 
@@ -35,7 +35,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           className="w-12.5 h-12.5 2xl:w-15 2xl:h-15 rounded-full object-cover"
         />
         <div className="min-w-0">
-          <h4 className="text-white text-base lg:text-lg font-medium leading-tight truncate 2xl:mb-0.5">
+          <h4 className="text-base lg:text-lg font-medium leading-tight truncate 2xl:mb-0.5">
             {testimonial.userName}
           </h4>
           <p className="text-gray-400 text-sm lg:text-base 2xl:text-lg truncate">

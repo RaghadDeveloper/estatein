@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+@custom-variant light (&:where(.light, .light *));
 
 :root {
   /* Primary Colors */
@@ -19,6 +20,8 @@
   --color-light-97: #f7f7f8;
   --color-light-99: #fcfcfd;
 
+  --color-white: #ffffff;
+
   /* Gray Colors */
   --color-gray-09: #191919;
   --color-gray-08: #141414;
@@ -29,10 +32,31 @@
   --color-gray-40: #666666;
   --color-gray-50: #808080;
   --color-gray-60: #999999;
+
+  /* Dark Colors */
+  --bg-main: var(--color-gray-08);
+  --bg-secondary: var(--color-gray-10);
+  --text-main: var(--color-white);
+  --text-secondary: var(--color-gray-60);
+  --color-shadow: var(--color-gray-09);
+}
+
+.light {
+  --bg-main: var(--color-light-99);
+  --bg-secondary: var(--color-light-90);
+  --text-main: var(--color-gray-08);
+  --text-secondary: var(--color-gray-40);
+  --color-shadow: var(--color-light-90);
 }
 
 @theme {
   --font-urbanist: "Urbanist", sans-serif;
+
+  --color-bg-main: var(--bg-main);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-main: var(--text-main);
+  --color-text-secondary: var(--text-secondary);
+  --color-shadow: var(--color-shadow);
 
   --color-primary-50: var(--color-primary-50);
   --color-primary-60: var(--color-primary-60);

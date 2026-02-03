@@ -4,10 +4,10 @@ import Sidebar from "../ui/Sidebar";
 
 const DashboardLayout = () => {
   return (
-    <div className="grid grid-cols-[20rem_1fr] grid-rows-[auto_1fr] h-screen text-white">
+    <div className="grid grid-cols-[20rem_1fr] grid-rows-[auto_1fr] h-screen text-text-main">
       <DashboardHeader />
       <Sidebar />
-      <main className="font-urbanist bg-gray-08">
+      <main className="font-urbanist bg-bg-main">
         <Outlet />
       </main>
     </div>

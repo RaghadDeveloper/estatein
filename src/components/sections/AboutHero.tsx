@@ -21,26 +21,24 @@ const AboutHero = () => {
           "
         >
           {/* hero image */}
-          <div className="w-full h-fullw border border-gray-15 rounded-xl flex items-center justify-center relative overflow-hidden lg:order-2">
-            <motion.img
-              className="min-h-77.5 lg:min-h-108.5 2xl:min-h-136 w-full relative z-10 object-cover"
-              src="assets/images/hero/aboutHero.webp"
-              alt="About Hero"
-              initial={{ scale: 1.05, y: 10, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              whileHover={{ scale: 1.08, y: -5 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            />
-            <motion.img
-              className="absolute mix-blend-color-dodge w-full h-full"
-              src="assets/images/abstractDesign/aboutHero.png"
-              alt="Abstract Design"
-              initial={{ scale: 1, rotate: 0, opacity: 0.7 }}
-              animate={{ scale: 1, rotate: 0, opacity: 0.7 }}
-              whileHover={{ scale: 1.12, rotate: 2, opacity: 0.85 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-            />
-          </div>
+          <motion.img
+            className="min-h-77.5 lg:min-h-108.5 2xl:min-h-136 w-full relative z-10 object-cover"
+            src="assets/images/hero/aboutHero.webp"
+            alt="About Hero"
+            initial={{ scale: 1.05, y: 10, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            whileHover={{ scale: 1.08, y: -5 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          />
+          <motion.img
+            className="absolute mix-blend-color-dodge w-full h-full"
+            src="assets/images/abstractDesign/aboutHero.png"
+            alt="Abstract Design"
+            initial={{ scale: 1, rotate: 0, opacity: 0.7 }}
+            animate={{ scale: 1, rotate: 0, opacity: 0.7 }}
+            whileHover={{ scale: 1.12, rotate: 2, opacity: 0.85 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          />
         </motion.div>
 
         {/* hero data */}

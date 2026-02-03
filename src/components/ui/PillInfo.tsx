@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { PillInfoProps } from "../../interfaces";
 
-const PillInfo = ({ icon, label, value, pricing }: PillInfoProps) => {
+const PillInfo = ({ Icon, label, value, pricing }: PillInfoProps) => {
   const textRef = useRef<HTMLSpanElement>(null);
   const [isMultiLine, setIsMultiLine] = useState(false);
 
@@ -25,10 +25,11 @@ const PillInfo = ({ icon, label, value, pricing }: PillInfoProps) => {
 
   return (
     <div
-      className={`${pricing ? "" : "shrink-0"} flex items-center gap-1 px-3.5 py-1.5 2xl:py-2 bg-gray-10 border border-gray-15 ${pricing ? (isMultiLine ? "rounded-md" : "rounded-[28px]") : "rounded-full"}`}
+      className={`${pricing ? "" : "shrink-0"} w-fit flex items-center gap-1 px-3.5 py-1.5 2xl:py-2 bg-bg-secondary border border-gray-15 ${pricing ? (isMultiLine ? "rounded-md" : "rounded-[28px]") : "rounded-full"}`}
     >
-      {icon && (
-        <img src={icon} alt={label} className="w-5 2xl:w-6 h-5 2xl:h-6" />
+      {Icon && (
+        // <img src={icon} alt={label} className="w-5 2xl:w-6 h-5 2xl:h-6" />
+        <Icon className="text-2xl"/>
       )}
       <span ref={textRef} className="text-sm 2xl:text-lg font-medium">
         {value ? `${value}-${label}` : label}

@@ -2,7 +2,7 @@ import type { ServiceCardProps } from "../../interfaces";
 
 function ServiceCard({ title, description, icon }: ServiceCardProps) {
   return (
-    <div className="border border-gray-15 p-6 lg:p-10 2xl:p-12.5 rounded-xl flex flex-col gap-4 lg:gap-5 2xl:gap-7.5 h-full w-full bg-gray-08">
+    <div className="border border-gray-15 p-6 lg:p-10 2xl:p-12.5 rounded-xl flex flex-col gap-4 lg:gap-5 2xl:gap-7.5 h-full w-full bg-bg-main">
       <div className="flex items-center gap-4">
         <img
           src={icon}
@@ -15,7 +15,7 @@ function ServiceCard({ title, description, icon }: ServiceCardProps) {
         </h3>
       </div>
 
-      <p className="text-gray-60 leading-[150%] text-sm lg:text-base 2xl:text-lg">
+      <p className="text-text-secondary leading-[150%] text-sm lg:text-base 2xl:text-lg">
         {description}
       </p>
     </div>

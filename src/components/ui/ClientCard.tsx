@@ -19,10 +19,10 @@ const ClientCard = ({
   ];
 
   return (
-    <div className=" overflow-visible flex flex-col border border-gray-15 2xl:gap-10 2xl:p-12.5 lg:gap-7.5 lg:p-10 gap-6 p-7.5 rounded-xl shadow-[0px_0px_0px_6px_var(--color-gray-09)] lg:shadow-[0px_0px_0px_8px_var(--color-gray-09)] ">
+    <div className=" overflow-visible flex flex-col border border-gray-15 2xl:gap-10 2xl:p-12.5 lg:gap-7.5 lg:p-10 gap-6 p-7.5 rounded-xl shadow-[0px_0px_0px_6px_var(--color-shadow)] lg:shadow-[0px_0px_0px_8px_var(--color-shadow)] ">
       <div className="flex justify-between lg:items-center gap-5 lg:flex-row flex-col">
         <div className="flex flex-col justify-center">
-          <p className="text-gray-60 text-[16px] mb-0.5 lg:mb-1 2xl:mb-1.5">
+          <p className="text-text-secondary text-[16px] mb-0.5 lg:mb-1 2xl:mb-1.5">
             Since{year}
           </p>
           <h3 className="2xl:text-[30px] lg:text-[24px] text-[20px]">
@@ -39,7 +39,7 @@ const ClientCard = ({
         <ClientInfo {...infos[1]} />
       </div>
       <div className="flex flex-col gap-2 lg:gap-2.5 2xl:gap-3.5 border-2 border-gray-15 p-5 lg:p-6 2xl:p-7.5 rounded-xl text-[16px]">
-        <p className="text-gray-60">"What They Said 🤗"</p>
+        <p className="text-text-secondary">"What They Said 🤗"</p>
         <p className="2xl:text-lg lg:text-base text-sm">{comment}</p>
       </div>
     </div>
