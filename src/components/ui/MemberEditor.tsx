@@ -10,6 +10,7 @@ const MemberEditor = ({
   formTitle,
   formInputs,
   handleCloseForm,
+  id,
   name,
   position,
   imageUrl,
@@ -51,8 +52,9 @@ const MemberEditor = ({
   const handleEditSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
+      if (!id) return;
       console.log(newMember);
-      await updateMember("HqNVddn7qSuP8s7vnvay", newMember);
+      await updateMember(id, newMember);
       console.log("Member updates successfully");
       handleCloseForm();
     } catch (error) {

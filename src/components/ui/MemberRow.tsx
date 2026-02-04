@@ -29,7 +29,10 @@ const MemberRow = ({ member, onDelete }: Props) => {
         <td>{member.name}</td>
         <td>{member.position}</td>
         <td className="flex gap-4">
-          <Button variant="secondary" onClick={() => setShowEditMemberForm(true)}>
+          <Button
+            variant="secondary"
+            onClick={() => setShowEditMemberForm(true)}
+          >
             Edit
           </Button>
           <Button variant="primary" onClick={() => onDelete(member.id)}>
@@ -42,9 +45,7 @@ const MemberRow = ({ member, onDelete }: Props) => {
           formTitle="Edit"
           formInputs={teamFormInputs}
           handleCloseForm={handleCloseForm}
-          name={member.name}
-          position={member.position}
-          imageUrl={member.imageUrl}
+          {...member}
         />
       )}
     </>

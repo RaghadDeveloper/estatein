@@ -434,6 +434,7 @@ export interface MemberEditorProps {
   formTitle: string;
   formInputs: InputProps[];
   handleCloseForm: () => void;
+  id?: string;
   name?: string;
   position?: string;
   imageUrl?: string;
