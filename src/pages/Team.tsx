@@ -4,26 +4,46 @@ import type { MemberType } from "../interfaces";
 import { deleteMember } from "../services/teamService";
 import MemberRow from "../components/ui/MemberRow";
 import { useSelector } from "react-redux";
+import { CiSquarePlus } from "react-icons/ci";
+import MemberEditor from "../components/ui/MemberEditor";
+import { teamFormInputs } from "../data/dashboard";
 export type MemberWithId = MemberType & { id: string };
 
 const Team = () => {
   const team = useSelector(
     (state: { team: { items: MemberWithId[] } }) => state.team.items,
   );
-  const [members, setMembers] = useState<MemberWithId[]>(team);
+  const [showAddMemberForm, setShowAddMemberForm] = useState<boolean>(false);
 
   const handleDelete = async (id: string) => {
     try {
       await deleteMember(id);
-      setMembers((prev) => prev.filter((m) => m.id !== id));
     } catch (error) {
       console.error("Delete member failed:", error);
     }
   };
-  
+
+  const handleCloseForm = () => {
+    setShowAddMemberForm(false);
+  };
+
   return (
     <div className="flex flex-col gap-10">
       <PageTilte title=" Our Team" />
+      <div
+        className="cursor-pointer hover:text-primary-60 transition-all duration-200"
+        onClick={() => setShowAddMemberForm(true)}
+      >
+        <CiSquarePlus size={50} />
+      </div>
+      {showAddMemberForm && (
+        <MemberEditor
+          formTitle="Add"
+          formInputs={teamFormInputs}
+          handleCloseForm={handleCloseForm}
+        />
+      )}
+
       <div className="w-full cursor-cell text-center">
         <table className=" w-full">
           <thead>
@@ -34,9 +54,8 @@ const Team = () => {
               <th>Delete Member</th>
             </tr>
           </thead>
-          {/* <MemberHeader/> */}
           <tbody className="text-[20px]">
-            {members.map((member) => (
+            {team.map((member) => (
               <MemberRow
                 key={member.id}
                 member={member}

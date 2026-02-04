@@ -75,8 +75,7 @@ const AddProperty = () => {
       <form
         onSubmit={handleSubmit}
         className="rounded-xl flex flex-col gap-7.5 2xl:gap-12.5"
-        action=""
-      >
+        action="">
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 gap-5 lg:gap-7.5 2xl:gap-12.5">
           {addPropertyInputs.map((input: InputProps) => {
             let value = "";
@@ -116,7 +115,11 @@ const AddProperty = () => {
             }
           })}
           {/* images input */}
-          <ImageInputFeild onImagesChange={handleImagesChange} />
+          <ImageInputFeild
+            multi={true}
+            onImagesChange={handleImagesChange}
+            title="Property Images"
+          />
         </div>
         <Button btnType="submit" variant="primary">
           Add Property
