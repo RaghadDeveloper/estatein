@@ -256,7 +256,7 @@ const PropertyImageUpload = ({
           id="photos"
           name="photos"
           type="file"
-          multiple
+          multiple={multi}
           accept="image/*"
           onChange={handleFileChange}
           className="hidden"
