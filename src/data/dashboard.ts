@@ -130,3 +130,19 @@ export const editPropertyInputs: InputProps[] = [
     name: "bathrooms",
   },
 ];
+
+// Add Member
+export const teamFormInputs: InputProps[] = [
+    {
+      name: "name",
+      label: "Member Username",
+      type: "text",
+      placeholder: "Enter member username",
+    },
+    {
+      name: "position",
+      label: "Member Position",
+      type: "text",
+      placeholder: "Enter member position",
+    },
+  ];

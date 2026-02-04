@@ -158,6 +158,7 @@ export interface MemberType {
   name: string;
   position: string;
   imageUrl: string;
+  [key: string]: string;
 }
 // Testimonial Card
 export interface Testimonial {
@@ -291,7 +292,11 @@ export interface InputProps {
 }
 
 export interface ImageInputFieldProps {
-  onImagesChange: (images: string[]) => void;
+  onImagesChange?: (images: string[]) => void;
+  onImageChange?: (image: string) => void;
+  value?: string;
+  multi: boolean;
+  title: string;
 }
 
 export interface FormFooterProps {
@@ -395,4 +400,13 @@ export interface FooterSocial {
 export interface NavLink {
   label: string;
   link: string;
+}
+
+export interface MemberEditorProps {
+  formTitle: string;
+  formInputs: InputProps[];
+  handleCloseForm: () => void;
+  name?: string;
+  position?: string;
+  imageUrl?: string;
 }
