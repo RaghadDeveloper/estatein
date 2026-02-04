@@ -5,6 +5,7 @@ import InputField from "./InputField";
 import ImageInputFeild from "./ImageInputFeild";
 import PageTilte from "./PageTilte";
 import Button from "./Button";
+import { FirebaseError } from "firebase/app";
 
 const MemberEditor = ({
   formTitle,
@@ -15,15 +16,20 @@ const MemberEditor = ({
   position,
   imageUrl,
 }: MemberEditorProps) => {
-
-  const initialMember : MemberType = {
+  const initialMember: MemberType = {
     name: name || "",
     position: position || "",
     imageUrl: imageUrl || "",
   };
-  
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const [newMember, setNewMember] = useState<MemberType>(initialMember);
-  const noValue = newMember.name === "" || newMember.position === "" || newMember.imageUrl === "";
+  const noValue =
+    newMember.name === "" ||
+    newMember.position === "" ||
+    newMember.imageUrl === "";
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -44,28 +50,37 @@ const MemberEditor = ({
   const handleAddSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
+      setIsLoading(true);
       console.log(newMember);
       await addMember(newMember);
       console.log("Member added successfully");
       alert("Member added successfully");
       handleCloseForm();
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.error("Add Member failed:", error);
+      if (error instanceof FirebaseError) {
+        setErrorMessage(error.code + error.message);
+      } else {
+        setErrorMessage("Unexpected error" + error);
+      }
     }
   };
 
   const handleEditSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
+      setIsLoading(true);
       if (!id) return;
 
       const changedFeild: Partial<MemberType> = {};
 
       (Object.keys(newMember) as Array<keyof MemberType>).forEach((key) => {
-        if(newMember[key] !== initialMember[key]){
+        if (newMember[key] !== initialMember[key]) {
           changedFeild[key] = newMember[key];
         }
-      })
+      });
 
       if (Object.keys(changedFeild).length > 0) {
         console.log("changed fields to update: ", changedFeild);
@@ -78,9 +93,16 @@ const MemberEditor = ({
       }
 
       handleCloseForm();
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.error("Update Member failed:", error);
       alert("Update Member failed");
+      if (error instanceof FirebaseError) {
+        setErrorMessage(error.code + error.message);
+      } else {
+        setErrorMessage("Unexpected error" + error);
+      }
     }
   };
 
@@ -93,7 +115,8 @@ const MemberEditor = ({
         <form
           onSubmit={formTitle === "Add" ? handleAddSubmit : handleEditSubmit}
           className="bg-bg-main rounded-lg border border-gray-15 p-5 lg:p-10 lg:min-w-175 2xl:p-12.5"
-          action="">
+          action=""
+        >
           <div className="flex flex-col gap-5 lg:gap-10 2xl:gap-12.5">
             <PageTilte
               title={`${formTitle === "Add" ? `${formTitle} New` : `${formTitle}`} Team
@@ -125,12 +148,17 @@ const MemberEditor = ({
             </div>
             <div className="border-b border-gray-15"></div>
             <div>
-              <Button btnType="submit" variant="primary" disabled={noValue}>
+              <Button
+                btnType="submit"
+                variant="primary"
+                disabled={noValue || isLoading}
+              >
                 {formTitle === "Add" ? formTitle : "Edit"} Team Mmber
               </Button>
             </div>
           </div>
         </form>
+        {errorMessage && <p className="text-red-500 mt-5">{errorMessage}</p>}
       </div>
     </div>
   );

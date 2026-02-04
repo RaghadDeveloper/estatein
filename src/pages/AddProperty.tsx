@@ -9,9 +9,13 @@ import SelectField from "../components/ui/SelectField";
 import ImageInputFeild from "../components/ui/ImageInputFeild";
 import { useNavigate } from "react-router-dom";
 import PageTilte from "../components/ui/PageTilte";
+import { FirebaseError } from "firebase/app";
 
 const AddProperty = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const [newProperty, setNewProperty] = useState<PropertyInput>({
     title: "",
     subTitle: "",
@@ -61,11 +65,20 @@ const AddProperty = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
+      setIsLoading(true);
       await addProperty(newProperty);
       console.log("Property added successfully");
+      alert("Property added successfully");
       navigate("/dashboard");
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.error("Add property failed:", error);
+      if (error instanceof FirebaseError) {
+        setErrorMessage(error.code + error.message);
+      } else {
+        setErrorMessage("Unexpected error" + error);
+      }
     }
   };
 
@@ -121,10 +134,11 @@ const AddProperty = () => {
             title="Property Images"
           />
         </div>
-        <Button btnType="submit" variant="primary">
+        <Button btnType="submit" variant="primary" disabled={isLoading}>
           Add Property
         </Button>
       </form>
+      {errorMessage && <p className="text-red-500 mt-5">{errorMessage}</p>}
     </div>
   );
 };
