@@ -6,7 +6,7 @@ export const selectFilteredProperties = createSelector(
   (properties, filters) => {
     return properties.filter((property: PropertyData) => {
       const matchesSearch =
-        property.title.toLowerCase().includes(filters.search.toLowerCase()) ||
+        property.title?.toLowerCase().includes(filters.search.toLowerCase()) ||
         property?.location
           ?.toLowerCase()
           .includes(filters.search.toLowerCase());

@@ -7,7 +7,7 @@ const PriceValue = ({ title, value }: PriceValueProps) => {
         {title}
       </span>
       <span className="text-lg lg:text-xl 2xl:text-2xl font-semibold">
-        ${value.toLocaleString()}
+        ${value?.toLocaleString()}
       </span>
     </div>
   );

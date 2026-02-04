@@ -58,7 +58,7 @@ export interface InfoBlockCardProps {
 export interface SliderButtonProps {
   className: string;
   disabled?: boolean;
-  image: imageProps;
+  direction: "prev" | "next";
 }
 export interface SliderProps {
   cards: React.ReactNode[];
@@ -74,6 +74,7 @@ export interface SliderPagesProps {
   isPrevDisabled: boolean;
   isNextDisabled: boolean;
   text?: string;
+  link?: string;
   prevClass: string;
   nextClass: string;
 }

@@ -77,6 +77,7 @@ const FeaturedProperties = () => {
         isPrevDisabled={activeIndex === 0}
         isNextDisabled={activeIndex === totalPages - 1}
         text="View All Properties"
+        link="/properties"
       />
     </SectionContainer>
   );

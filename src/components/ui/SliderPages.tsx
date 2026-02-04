@@ -1,5 +1,7 @@
 import SliderButton from "./SliderButton";
 import type { SliderPagesProps } from "../../interfaces";
+import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const SliderPages = ({
   currentPage,
@@ -7,17 +9,19 @@ const SliderPages = ({
   isPrevDisabled,
   isNextDisabled,
   text,
+  link,
   prevClass,
   nextClass,
 }: SliderPagesProps) => {
+  const navigate = useNavigate();
   return (
     <div className="mt-6 flex justify-between items-center border-t border-gray-15 pt-7.5 lg:pt-4 2xl:pt-5">
       {text && (
-        <button
-          className={` border border-gray-15 py-3.5 px-5 text-[14px] lg:hidden rounded-xl`}
-        >
-          {text}
-        </button>
+        <div className="lg:hidden">
+          <Button variant="border" onClick={() => navigate(link!)}>
+            {text}
+          </Button>
+        </div>
       )}
 
       <div className="hidden lg:block">
@@ -30,17 +34,12 @@ const SliderPages = ({
 
       <div
         className={`flex items-center gap-2.5
-        ${!text && "justify-between grow"}`}
+        ${!text && "justify-between grow lg:grow-0"}`}
       >
         <SliderButton
           className={prevClass}
           disabled={isPrevDisabled}
-          image={{
-            source: isPrevDisabled
-              ? "/assets/icons/arrowleft.svg"
-              : "/assets/icons/arrowleftwhite.svg",
-            alternative: "arrow left",
-          }}
+          direction="prev"
         />
         <div className="block lg:hidden">
           <span className="text-text-main">
@@ -54,12 +53,7 @@ const SliderPages = ({
         <SliderButton
           className={nextClass}
           disabled={isNextDisabled}
-          image={{
-            source: isNextDisabled
-              ? "/assets/icons/arrowright.svg"
-              : "/assets/icons/arrowrightwithe.svg",
-            alternative: "arrow right",
-          }}
+          direction="next"
         />
       </div>
     </div>

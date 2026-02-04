@@ -37,7 +37,7 @@ const SectionHeader = ({
           </div>
 
           {btnText && (
-            <div className="hidden md:inline-block">
+            <div className="hidden lg:inline-block">
               <Button
                 variant="secondary"
                 onClick={() => navigate(`${onClick || "#"}`)}
