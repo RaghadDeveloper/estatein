@@ -11,18 +11,18 @@ const Footer = () => {
         {/* logo + entering email */}
         <div className="flex flex-col gap-5 lg:gap-6 2xl:gap-7.5">
           <Logo />
-          <div className="lg:w-76.25 2xl:w-105.75 flex gap-1.5 2xl:gap-2.5 py-3.5 2xl:py-4.5 px-5 2xl:px-6 items-center relative border border-gray-15 rounded-lg">
+          <div className="lg:w-76.25 2xl:w-105.75 flex gap-1.5 2xl:gap-2.5 py-3.5 2xl:py-4.5 px-5 2xl:px-6 items-center relative border border-gray-15 rounded-lg transition-all duration-300 hover:border-primary-60 hover:shadow-lg hover:shadow-primary-60/20 group">
             <img
               className="w-5 2xl:w-6"
               src="/assets/icons/envelope.svg"
               alt=""
             />
             <input
-              className="text-text-secondary focus:outline-none"
-              type="text"
+              className="text-text-secondary focus:outline-none bg-transparent flex-1 transition-all duration-300 group-hover:text-text-main placeholder:transition-all placeholder:duration-300 placeholder:group-hover:text-gray-400"
+              type="email"
               placeholder="Enter Your Email"
             />
-            <button className="absolute right-5 w-5 2xl:w-7.5 cursor-pointer">
+            <button className="absolute right-5 w-5 2xl:w-7.5 cursor-pointer transition-all duration-500 hover:scale-110 hover:rotate-12">
               <SendIcon />
             </button>
           </div>
