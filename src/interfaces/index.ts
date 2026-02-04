@@ -411,17 +411,17 @@ export interface Column<T> {
   render?: (item: T) => React.ReactNode;
 }
 
-export  interface DataTableProps<T> {
+export interface DataTableProps<T> {
   columns: Column<T>[];
   data: T[];
   isLoading?: boolean;
 }
- export interface PaginationProps {
+export interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
 }
- export interface SidebarProps {
+export interface SidebarProps {
   isOpen: boolean;
   setIsOpen: (val: boolean) => void;
 }
