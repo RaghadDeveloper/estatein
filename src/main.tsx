@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import PropertiesSubscriber from "./components/subscribers/PropertiesSubscriber";
 import TeamSubscriber from "./components/subscribers/TeamSubscriber";
 import { AuthProvider } from "./context/AuthProvider";
-import Mouse from "./components/ui/Mouse";
+// import Mouse from "./components/ui/Mouse";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -20,7 +20,7 @@ createRoot(document.getElementById("root")!).render(
         <PropertiesSubscriber />
         <TeamSubscriber />
         <RouterProvider router={routes} />
-        <Mouse />
+        {/* <Mouse /> */}
       </Provider>
     </AuthProvider>
   </StrictMode>,

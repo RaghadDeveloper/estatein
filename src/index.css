@@ -270,7 +270,7 @@
 }
 
 /* mouse */
-.cursor-dot,
+/* .cursor-dot,
 .cursor-ring {
   @apply fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full;
 }
@@ -309,4 +309,4 @@ button,
 [role="button"],
 [onclick] {
   cursor: none !important;
-}
+} */

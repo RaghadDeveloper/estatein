@@ -15,11 +15,15 @@ const MemberEditor = ({
   position,
   imageUrl,
 }: MemberEditorProps) => {
-  const [newMember, setNewMember] = useState<MemberType>({
-    name: name ? name : "",
-    position: position ? position : "",
-    imageUrl: imageUrl ? imageUrl : "",
-  });
+
+  const initialMember : MemberType = {
+    name: name || "",
+    position: position || "",
+    imageUrl: imageUrl || "",
+  };
+  
+  const [newMember, setNewMember] = useState<MemberType>(initialMember);
+  const noValue = newMember.name === "" || newMember.position === "" || newMember.imageUrl === "";
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -43,6 +47,7 @@ const MemberEditor = ({
       console.log(newMember);
       await addMember(newMember);
       console.log("Member added successfully");
+      alert("Member added successfully");
       handleCloseForm();
     } catch (error) {
       console.error("Add Member failed:", error);
@@ -53,12 +58,29 @@ const MemberEditor = ({
     event.preventDefault();
     try {
       if (!id) return;
-      console.log(newMember);
-      await updateMember(id, newMember);
-      console.log("Member updates successfully");
+
+      const changedFeild: Partial<MemberType> = {};
+
+      (Object.keys(newMember) as Array<keyof MemberType>).forEach((key) => {
+        if(newMember[key] !== initialMember[key]){
+          changedFeild[key] = newMember[key];
+        }
+      })
+
+      if (Object.keys(changedFeild).length > 0) {
+        console.log("changed fields to update: ", changedFeild);
+        await updateMember(id, changedFeild);
+        console.log("Member updates successfully");
+        alert("Member updates successfully");
+      } else {
+        console.log("No changes detected");
+        alert("No changes detected");
+      }
+
       handleCloseForm();
     } catch (error) {
       console.error("Update Member failed:", error);
+      alert("Update Member failed");
     }
   };
 
@@ -71,8 +93,7 @@ const MemberEditor = ({
         <form
           onSubmit={formTitle === "Add" ? handleAddSubmit : handleEditSubmit}
           className="bg-bg-main rounded-lg border border-gray-15 p-5 lg:p-10 lg:min-w-175 2xl:p-12.5"
-          action=""
-        >
+          action="">
           <div className="flex flex-col gap-5 lg:gap-10 2xl:gap-12.5">
             <PageTilte
               title={`${formTitle === "Add" ? `${formTitle} New` : `${formTitle}`} Team
@@ -104,7 +125,7 @@ const MemberEditor = ({
             </div>
             <div className="border-b border-gray-15"></div>
             <div>
-              <Button btnType="submit" variant="primary">
+              <Button btnType="submit" variant="primary" disabled={noValue}>
                 {formTitle === "Add" ? formTitle : "Edit"} Team Mmber
               </Button>
             </div>

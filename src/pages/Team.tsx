@@ -4,9 +4,9 @@ import type { MemberType } from "../interfaces";
 import { deleteMember } from "../services/teamService";
 import MemberRow from "../components/ui/MemberRow";
 import { useSelector } from "react-redux";
-import { CiSquarePlus } from "react-icons/ci";
 import MemberEditor from "../components/ui/MemberEditor";
 import { teamFormInputs } from "../data/dashboard";
+import Button from "../components/ui/Button";
 export type MemberWithId = MemberType & { id: string };
 
 const Team = () => {
@@ -29,12 +29,11 @@ const Team = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      <PageTilte title=" Our Team" />
-      <div
-        className="cursor-pointer hover:text-primary-60 transition-all duration-200"
-        onClick={() => setShowAddMemberForm(true)}
-      >
-        <CiSquarePlus size={50} />
+      <PageTilte title="Our Team" />
+      <div className="w-fit self-end">
+        <Button variant="primary" onClick={() => setShowAddMemberForm(true)}>
+          Add Member
+        </Button>
       </div>
       {showAddMemberForm && (
         <MemberEditor
