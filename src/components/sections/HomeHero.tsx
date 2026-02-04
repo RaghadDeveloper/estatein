@@ -30,7 +30,7 @@ const HomeHero = () => {
   };
 
   return (
-    <div className="mx-4 md:mx-20 lg:m-0">
+    <div className="mx-4 md:mx-20 lg:m-0 animate-fadeInUpScale">
       <div className="my-10 lg:m-0 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-15 2xl:gap-20">
         {/* right section image */}
         <div className="relative bg-shadow bg-linear-to-bl from-primary-50 to-shadow via-transparent border border-gray-15 lg:border-0 rounded-xl lg:rounded-none lg:order-2">

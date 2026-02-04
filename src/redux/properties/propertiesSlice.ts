@@ -32,9 +32,19 @@ const propertiesSlice = createSlice({
     setProperties(state, action: PayloadAction<PropertyData[]>) {
       state.all = action.payload;
     },
+    removeProperty(state, action: PayloadAction<string>) {
+      state.all = state.all.filter(
+        (property) => property.id !== action.payload,
+      );
+    },
   },
 });
 
-export const { setSearch, setFilter, clearFilters, setProperties } =
-  propertiesSlice.actions;
+export const {
+  setSearch,
+  setFilter,
+  clearFilters,
+  setProperties,
+  removeProperty,
+} = propertiesSlice.actions;
 export default propertiesSlice.reducer;

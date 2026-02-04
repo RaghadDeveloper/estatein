@@ -23,7 +23,7 @@ const PriceCard = ({ title, detailsInfo }: PricingDetailsCardProps) => {
           const isEvenTotal = totalItems % 2 === 0;
           const isLastItem = index === totalItems - 1;
           const isSecondLastItem = index === totalItems - 2;
-
+          
           // detect if the item was the last on a row
           const isSecondInRow = index % 2 === 1;
           const isFirstInRow = index % 2 === 0 && !isLastItem;

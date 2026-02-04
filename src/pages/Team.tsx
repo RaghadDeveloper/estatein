@@ -1,63 +1,69 @@
+import PageTilte from "../components/ui/PageTilte";
+import { useState } from "react";
+import type { MemberType } from "../interfaces";
+import { deleteMember } from "../services/teamService";
+import MemberRow from "../components/ui/MemberRow";
+import { useSelector } from "react-redux";
 import { CiSquarePlus } from "react-icons/ci";
 import MemberEditor from "../components/ui/MemberEditor";
-import { useState } from "react";
 import { teamFormInputs } from "../data/dashboard";
+export type MemberWithId = MemberType & { id: string };
 
 const Team = () => {
+  const team = useSelector(
+    (state: { team: { items: MemberWithId[] } }) => state.team.items,
+  );
   const [showAddMemberForm, setShowAddMemberForm] = useState<boolean>(false);
-  const [showEditMemberForm, setShowEditMemberForm] = useState<boolean>(false);
+
+  const handleDelete = async (id: string) => {
+    try {
+      await deleteMember(id);
+    } catch (error) {
+      console.error("Delete member failed:", error);
+    }
+  };
 
   const handleCloseForm = () => {
     setShowAddMemberForm(false);
-    setShowEditMemberForm(false);
   };
 
-  // testing edit member button
-  // const teamMember = {
-  //   name: "mimo",
-  //   position: "developer",
-  //   imageUrl: "/assets/images/clients/client1.webp",
-  // };
-
   return (
-    <div>
-      {/* title section */}
-      <div className="flex items-center justify-between">
-        <h2>Members List</h2>
-        <div
-          className="cursor-pointer hover:text-primary-60 transition-all duration-200"
-          onClick={() => setShowAddMemberForm(true)}>
-          <CiSquarePlus size={50} />
-        </div>
-        {showAddMemberForm && (
-          <MemberEditor
-            formTitle="Add"
-            formInputs={teamFormInputs}
-            handleCloseForm={handleCloseForm}
-          />
-        )}
+    <div className="flex flex-col gap-10">
+      <PageTilte title=" Our Team" />
+      <div
+        className="cursor-pointer hover:text-primary-60 transition-all duration-200"
+        onClick={() => setShowAddMemberForm(true)}
+      >
+        <CiSquarePlus size={50} />
       </div>
-      {/* members list section */}
-      <div>
-        {/* testing edit member button */}
-        {/* <article className="border border-violet-700 bg-violet-300 text-center p-10 w-fit">
-          <h1>{teamMember.name}</h1>
-          <p>{teamMember.position}</p>
-          <img className="w-50" src={teamMember.imageUrl} alt="" />
-          <button className="border-4 hover:bg-violet-800 cursor-pointer border-violet-400" onClick={() => setShowEditMemberForm(true)}>
-            Edit member
-          </button>
-          {showEditMemberForm && (
-            <MemberEditor
-              formTitle="Edit"
-              formInputs={teamFormInputs}
-              handleCloseForm={handleCloseForm}
-              name={teamMember.name}
-              position={teamMember.position}
-              imageUrl={teamMember.imageUrl}
-            />
-          )}
-        </article> */}
+      {showAddMemberForm && (
+        <MemberEditor
+          formTitle="Add"
+          formInputs={teamFormInputs}
+          handleCloseForm={handleCloseForm}
+        />
+      )}
+
+      <div className="w-full cursor-cell text-center">
+        <table className=" w-full">
+          <thead>
+            <tr className="w-full h-20 text-2xl">
+              <th>Image</th>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Delete Member</th>
+            </tr>
+          </thead>
+          <tbody className="text-[20px]">
+            {team.map((member) => (
+              <MemberRow
+                key={member.id}
+                member={member}
+                onDelete={handleDelete}
+              />
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

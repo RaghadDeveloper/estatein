@@ -55,7 +55,7 @@ const PropertySelect = ({
           <div
             key={idx}
             onClick={() => handleSelect(option)}
-            className="px-4 py-3 text-sm text-text-secondary hover:bg-bg-secondary hover:text-white cursor-pointer border-b border-gray-15 last:border-none"
+            className="px-4 py-3 text-sm text-text-secondary hover:bg-bg-secondary hover:text-text-main cursor-pointer border-b border-gray-15 last:border-none"
           >
             {option}
           </div>

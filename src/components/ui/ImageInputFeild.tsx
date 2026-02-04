@@ -111,7 +111,8 @@ const PropertyImageUpload = ({
 
   return (
     <div
-      className={`${inputDevStyleBase} ${multi ? "md:col-span-2 lg:col-span-4 row-span-10" : "flex-1"}`}>
+      className={`${inputDevStyleBase} ${multi ? "md:col-span-2 lg:col-span-4 row-span-10" : "flex-1"}`}
+    >
       <label className={`${inputLabelStyleBase}`} htmlFor="photos">
         {title}
       </label>
@@ -136,7 +137,8 @@ const PropertyImageUpload = ({
                         {/* Overlay مع زر الإزالة */}
                         <div
                           className="absolute inset-0 bg-black/0 rounded-lg group-hover:bg-black/40 
-                                  transition-all duration-300 flex items-center justify-center">
+                                  transition-all duration-300 flex items-center justify-center"
+                        >
                           <button
                             type="button"
                             onClick={(e) => {
@@ -145,12 +147,14 @@ const PropertyImageUpload = ({
                             }}
                             className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 
                                  transition-all duration-300 w-8 h-8 bg-red-500 text-white rounded-full 
-                                 flex items-center justify-center hover:bg-red-600 cursor-pointer">
+                                 flex items-center justify-center hover:bg-red-600 cursor-pointer"
+                          >
                             <svg
                               className="w-4 h-4"
                               fill="none"
                               stroke="currentColor"
-                              viewBox="0 0 24 24">
+                              viewBox="0 0 24 24"
+                            >
                               <path
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
@@ -176,12 +180,14 @@ const PropertyImageUpload = ({
                     className="aspect-square rounded-lg border-2 border-dashed border-gray-15 
                          flex flex-col items-center justify-center gap-2 cursor-pointer
                          hover:border-primary-60 hover:bg-gray-10 transition-all duration-200"
-                    onClick={handleImageClick}>
+                    onClick={handleImageClick}
+                  >
                     <svg
                       className="w-6 h-6 text-gray-60"
                       fill="none"
                       stroke="currentColor"
-                      viewBox="0 0 24 24">
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -195,7 +201,7 @@ const PropertyImageUpload = ({
               </div>
             ) : (
               <div className="flex items-center justify-center">
-                <div className="relative group w-full max-w-[150px]">
+                <div className="relative group w-full max-w-37.5">
                   <div className="aspect-square rounded-lg overflow-hidden bg-gray-10 border border-gray-15 p-2">
                     <img
                       src={imagePreviews[0]}
@@ -206,7 +212,8 @@ const PropertyImageUpload = ({
                     {/* Overlay مع زر الإزالة */}
                     <div
                       className="absolute inset-0 bg-black/0 rounded-lg group-hover:bg-black/40 
-                                  transition-all duration-300 flex items-center justify-center">
+                                  transition-all duration-300 flex items-center justify-center"
+                    >
                       <button
                         type="button"
                         onClick={(e) => {
@@ -215,12 +222,14 @@ const PropertyImageUpload = ({
                         }}
                         className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 
                                  transition-all duration-300 w-8 h-8 bg-red-500 text-white rounded-full 
-                                 flex items-center justify-center hover:bg-red-600 cursor-pointer">
+                                 flex items-center justify-center hover:bg-red-600 cursor-pointer"
+                      >
                         <svg
                           className="w-4 h-4"
                           fill="none"
                           stroke="currentColor"
-                          viewBox="0 0 24 24">
+                          viewBox="0 0 24 24"
+                        >
                           <path
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -281,7 +290,8 @@ const PropertyImageUpload = ({
                   if (onImagesChange) onImagesChange([]);
                 }
               }}
-              className="text-xs text-red-500 hover:text-red-600">
+              className="text-xs text-red-500 hover:text-red-600"
+            >
               Clear All
             </button>
           </div>

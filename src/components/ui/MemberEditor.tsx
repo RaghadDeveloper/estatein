@@ -1,10 +1,6 @@
 import { useState } from "react";
 import type { MemberEditorProps, MemberType } from "../../interfaces";
-import {
-  addMember,
-  // deleteMember,
-  updateMember,
-} from "../../services/teamService";
+import { addMember, updateMember } from "../../services/teamService";
 import InputField from "./InputField";
 import ImageInputFeild from "./ImageInputFeild";
 import PageTilte from "./PageTilte";
@@ -14,6 +10,7 @@ const MemberEditor = ({
   formTitle,
   formInputs,
   handleCloseForm,
+  id,
   name,
   position,
   imageUrl,
@@ -55,8 +52,9 @@ const MemberEditor = ({
   const handleEditSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
+      if (!id) return;
       console.log(newMember);
-      await updateMember("HqNVddn7qSuP8s7vnvay", newMember);
+      await updateMember(id, newMember);
       console.log("Member updates successfully");
       handleCloseForm();
     } catch (error) {
@@ -64,24 +62,17 @@ const MemberEditor = ({
     }
   };
 
-  // const testDelete = async () => {
-  //   try {
-  //     console.log("Deleting Member...");
-  //     await deleteMember("wNvdhGOPmqCfDGHg1TNj");
-  //     console.log("Member deleted successfully");
-  //   } catch (error) {
-  //     console.error("Delete Member failed:", error);
-  //   }
-  // };
-
   return (
     <div className="absolute inset-0">
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm z-40"></div>
+      <div className="absolute w-screen inset-0 bg-black/70 backdrop-blur-sm z-40"></div>
+
+      <span>&nbsp;</span>
       <div className="flex items-center justify-center h-full relative z-50 p-4">
         <form
           onSubmit={formTitle === "Add" ? handleAddSubmit : handleEditSubmit}
-          className="bg-gray-08 rounded-lg border border-gray-15 p-5 lg:p-10 lg:min-w-175 2xl:p-12.5"
-          action="">
+          className="bg-bg-main rounded-lg border border-gray-15 p-5 lg:p-10 lg:min-w-175 2xl:p-12.5"
+          action=""
+        >
           <div className="flex flex-col gap-5 lg:gap-10 2xl:gap-12.5">
             <PageTilte
               title={`${formTitle === "Add" ? `${formTitle} New` : `${formTitle}`} Team

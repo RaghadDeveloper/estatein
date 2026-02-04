@@ -402,10 +402,39 @@ export interface NavLink {
   link: string;
 }
 
+// Dashboard
+export interface DeleteModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onConfirm: () => void;
+  isDeleting: boolean;
+  title?: string;
+}
+export interface Column<T> {
+  header: string;
+  accessor: keyof T | "actions";
+  render?: (item: T) => React.ReactNode;
+}
+
+export interface DataTableProps<T> {
+  columns: Column<T>[];
+  data: T[];
+  isLoading?: boolean;
+}
+export interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
+export interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: (val: boolean) => void;
+}
 export interface MemberEditorProps {
   formTitle: string;
   formInputs: InputProps[];
   handleCloseForm: () => void;
+  id?: string;
   name?: string;
   position?: string;
   imageUrl?: string;

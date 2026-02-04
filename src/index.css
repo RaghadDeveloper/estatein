@@ -122,7 +122,7 @@
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px var(--color-gray-10) inset;
-    box-shadow: 0 0 0px 1000px var(--color-gray-10) inset;
+    box-shadow: 0 0 0px 1000px var(--bg-main) inset;
     border: var(--color-primary-60) solid 1px;
     -webkit-text-fill-color: var(--color-primary-60);
     transition: background-color 5000s ease-in-out 0s;
@@ -218,13 +218,29 @@
         -2em -2em 0 0.2em;
     }
   }
+
+  @keyframes fadeInUpScale {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-fadeInUpScale {
+    animation: fadeInUpScale 0.8s forwards;
+  }
 }
 
 @layer utilities {
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
-    background-color: var(--color-gray-15);
+    background-color: var(--bg-secondary);
   }
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(
@@ -251,4 +267,46 @@
 
 .swiper .swiper-slide {
   height: auto;
+}
+
+/* mouse */
+.cursor-dot,
+.cursor-ring {
+  @apply fixed pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 rounded-full;
+}
+
+.cursor-dot {
+  @apply w-1.5 h-1.5 bg-primary-60;
+}
+
+.cursor-ring {
+  @apply w-8 h-8 border-2 border-primary-60/60 transition-all duration-200 ease-out z-[9998];
+}
+
+body.cursor-hover .cursor-ring {
+  @apply w-12 h-12;
+}
+
+.cursor-dot {
+  @apply w-1.5 h-1.5 bg-primary-60 z-[10000];
+}
+
+html,
+body,
+* {
+  cursor: none !important;
+}
+
+input,
+textarea,
+select,
+[contenteditable="true"] {
+  cursor: auto !important;
+}
+
+a,
+button,
+[role="button"],
+[onclick] {
+  cursor: none !important;
 }

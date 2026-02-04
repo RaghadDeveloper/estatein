@@ -16,7 +16,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
 }) => {
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(false);
-
+  
   const needsReadMore = description.length > 100;
   const shortDescription = description.substring(0, 74) + "...";
 
