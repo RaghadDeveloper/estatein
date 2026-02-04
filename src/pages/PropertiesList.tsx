@@ -151,12 +151,18 @@ const PropertiesList = () => {
             <button
               title="Edit"
               className="p-2 cursor-pointer text-gray-400 hover:text-text-main hover:bg-gray-700 rounded-lg transition-all"
-              onClick={() => navigate(`/dashboard/properties/edit/${p.id}`)}
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate(`edit/${p.id}`);
+              }}
             >
               <FiEdit size={18} />
             </button>
             <button
-              onClick={() => setDeleteId(p.id)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setDeleteId(p.id);
+              }}
               title="Delete"
               className="p-2 cursor-pointer text-red-400 hover:text-text-main hover:bg-red-500/20 rounded-lg transition-all"
             >

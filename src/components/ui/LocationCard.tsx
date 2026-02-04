@@ -1,10 +1,12 @@
 import type { LocationsCardProps } from "../../interfaces";
 import Button from "./Button";
+import HoverXBg from "./HoverXBg";
 import LocationLink from "./LocationLink";
 
 function LocationCard(data: LocationsCardProps) {
   return (
-    <div className="flex flex-col 2xl:gap-10 2xl:p-12.5 border border-gray-15 rounded-xl lg:gap-7.5 lg:p-10 w-full flex-1 p-6 gap-6 min-[850px]:max-w-1/2">
+    <div className="relative group overflow-hidden flex flex-col 2xl:gap-10 2xl:p-12.5 border border-gray-15 rounded-xl lg:gap-7.5 lg:p-10 w-full flex-1 p-6 gap-6 min-[850px]:max-w-1/2">
+      <HoverXBg />
       <div className="flex flex-col 2xl:gap-3.5 lg:gap-2.5 gap-2 h-full">
         <p className="2xl:text-[18px] text-[14px]">{data.title}</p>
         <h3 className="2xl:text-[30px] lg:text-[24px] text-[20px] flex-1">

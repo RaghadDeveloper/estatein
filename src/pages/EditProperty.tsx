@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { PropertyInput } from "../interfaces";
 import { updateProperty } from "../services/propertyService";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import InputField from "../components/ui/InputField";
 import { selectProperty } from "../redux/properties/propertiesSelectors";
@@ -11,6 +11,7 @@ import { editPropertyInputs } from "../data/dashboard";
 
 const EditProperty = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const property = useSelector(selectProperty(id!));
 
   const [updatedData, setUpdatedData] = useState<Partial<PropertyInput>>(() =>
@@ -47,6 +48,8 @@ const EditProperty = () => {
     try {
       await updateProperty(id, updatedData);
       console.log("Property updated successfully");
+      alert("Property updated successfully");
+      navigate(`/dashboard/properties/${id}`);
     } catch (error) {
       console.error("Edit failed:", error);
     }
