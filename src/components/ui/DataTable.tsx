@@ -1,6 +1,7 @@
 import React from "react";
 import type { DataTableProps } from "../../interfaces";
 import Loader from "./Loader";
+import { useNavigate } from "react-router-dom";
 
 
 const DataTable = <T extends { id: string }>({
@@ -8,6 +9,7 @@ const DataTable = <T extends { id: string }>({
   data,
   isLoading,
 }: DataTableProps<T>) => {
+  const navigate = useNavigate();
   if (isLoading) return <div className="p-10 text-center text-gray-400"><Loader /></div>;
 
   return (
@@ -31,7 +33,7 @@ const DataTable = <T extends { id: string }>({
           <tbody className="divide-y divide-gray-800">
             {data.length > 0 ? (
               data.map((item) => (
-                <tr key={item.id} className="hover:bg-bg-secondary transition-all group ">
+                <tr key={item.id} className="hover:bg-bg-secondary transition-all group " onClick={()=>navigate(`${item.id}`)}>
                   {columns.map((col, index) => (
                     <td key={index} className="p-5 ">
                       {col.render ? col.render(item) : (item[col.accessor as keyof T] as React.ReactNode)}
