@@ -1,14 +1,11 @@
 import type { Testimonial } from "../../interfaces";
+import HoverBg from "./HoverBg";
+import HoverBorder from "./HoverBorder";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
     <div className="relative border border-gray-15 p-7.5 lg:p-10 2xl:p-12.5 rounded-xl flex flex-col h-full font-urbanist transition-all duration-500 ease-out group overflow-hidden">
-      <div
-        className={`absolute inset-0 bg-linear-to-br from-primary-60/5 via-transparent to-primary-60/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100`}
-      />
-
-      <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary-60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-primary-60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
+      <HoverBg />
 
       <div className="flex gap-2 lg:gap-2 mb-6 lg:mb-7.5 2xl:mb-10">
         {[...Array(testimonial.stars)].map((_, i) => (
@@ -51,7 +48,8 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => {
           </p>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 h-0.5 bg-primary-60 transition-all duration-500 w-0 group-hover:w-full" />
+
+      <HoverBorder />
     </div>
   );
 };

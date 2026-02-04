@@ -19,7 +19,10 @@ const ClientCard = ({
   ];
 
   return (
-    <div className=" overflow-visible flex flex-col border border-gray-15 2xl:gap-10 2xl:p-12.5 lg:gap-7.5 lg:p-10 gap-6 p-7.5 rounded-xl shadow-[0px_0px_0px_6px_var(--color-shadow)] lg:shadow-[0px_0px_0px_8px_var(--color-shadow)] ">
+    <div className=" relative overflow-visible flex flex-col border border-gray-15 2xl:gap-10 2xl:p-12.5 lg:gap-7.5 lg:p-10 gap-6 p-7.5 rounded-xl shadow-[0px_0px_0px_6px_var(--color-shadow)] lg:shadow-[0px_0px_0px_8px_var(--color-shadow)] transition-all duration-1000 ease-out group">
+      {/* Hover */}
+      <div className="pointer-events-none absolute inset-0 rounded-xl bg-linear-to-r from-primary-60/10 via-transparent to-primary-60/10 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+
       <div className="flex justify-between lg:items-center gap-5 lg:flex-row flex-col">
         <div className="flex flex-col justify-center">
           <p className="text-text-secondary text-[16px] mb-0.5 lg:mb-1 2xl:mb-1.5">

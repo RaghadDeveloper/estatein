@@ -24,7 +24,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
     <div
       className={`rounded-xl border ${
         isExpanded ? "border-primary-60 z-50" : "border-gray-15 shadow-md"
-      } overflow-hidden flex flex-col justify-between h-full w-full relative transition-all duration-500 ease-in-out group gap-4 lg:gap-5 2xl:gap-7.5 p-6 lg:p-7.5 2xl:p-10`}
+      } overflow-hidden flex flex-col justify-between h-full w-full relative transition-all duration-500 ease-in-out group gap-4 lg:gap-5 2xl:gap-7.5 p-6 lg:p-7.5 2xl:p-10 hover:shadow-md hover:border-primary-60`}
     >
       {photos && photos.length > 0 && (
         <div className="h-52.5 sm:h-65 lg:h-63.75 2xl:h-79.5 overflow-hidden rounded-lg relative mx-auto w-full">
