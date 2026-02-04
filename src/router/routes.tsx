@@ -1,6 +1,5 @@
 import { lazy } from "react";
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import ProtectedRoute from "./ProtectedRoute";
 
 const MainLayout = lazy(() => import("../components/layouts/MainLayout"));
 const Home = lazy(() => import("../pages/Home"));
@@ -35,9 +34,7 @@ export const routes = createBrowserRouter([
   {
     path: "/dashboard",
     element: (
-      <ProtectedRoute>
-        <DashboardLayout />
-      </ProtectedRoute>
+      <DashboardLayout />
     ),
     children: [
       { index: true, element: <Navigate to="properties" /> },
