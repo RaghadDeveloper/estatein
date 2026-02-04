@@ -47,8 +47,10 @@ const Slider = ({
           },
         }}
         onBeforeInit={(swiper) => {
-          swiper.params.navigation!.prevEl = `.${prevClass}`;
-          swiper.params.navigation!.nextEl = `.${nextClass}`;
+          if (typeof swiper.params.navigation !== 'boolean' && swiper.params.navigation) {
+            swiper.params.navigation.prevEl = `.${prevClass}`;
+            swiper.params.navigation.nextEl = `.${nextClass}`;
+          }
         }}
         onSlideChange={(swiper: SwiperType) => {
           const slidesView =

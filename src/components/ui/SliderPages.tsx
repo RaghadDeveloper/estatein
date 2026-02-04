@@ -30,7 +30,7 @@ const SliderPages = ({
 
       <div
         className={`flex items-center gap-2.5
-        ${!text && "justify-between grow"}`}
+        ${!text && "justify-between grow lg:grow-0"}`}
       >
         <SliderButton
           className={prevClass}
