@@ -29,7 +29,7 @@ const Team = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      <PageTilte title=" Our Team" />
+      <PageTilte title="Our Team" />
       <div
         className="cursor-pointer hover:text-primary-60 transition-all duration-200"
         onClick={() => setShowAddMemberForm(true)}

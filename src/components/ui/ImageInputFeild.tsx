@@ -269,7 +269,7 @@ const PropertyImageUpload = ({
           accept="image/*"
           onChange={handleFileChange}
           className="hidden"
-          required
+          required={multi}
         />
       </div>
 
