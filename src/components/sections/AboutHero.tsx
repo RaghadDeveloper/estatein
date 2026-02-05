@@ -6,7 +6,7 @@ import StatisticsCardsGorup from "../ui/StatisticsCardsGorup";
 const AboutHero = () => {
   return (
     <section>
-      <div className="mx-4 mt-12.5 md:mx-20 lg:mx-20 lg:mt-17.5 2xl:mx-40.5 2xl:mt-25 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-15 2xl:gap-20 items-center animate-fadeInUpScale">
+      <div className="mx-4 mt-12.5 md:mx-20 lg:mx-20 lg:mt-17.5 min-[1730px]:mx-40.5! min-[1730px]:mt-25! grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-15 min-[1730px]:gap-20! items-center animate-fadeInUpScale">
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
@@ -17,7 +17,7 @@ const AboutHero = () => {
           <div className="w-full h-full border border-gray-15 rounded-xl flex items-center justify-center relative overflow-hidden lg:order-2">
             {/* hero image */}
             <motion.img
-              className="min-h-77.5 lg:min-h-108.5 2xl:min-h-136 w-full relative z-10 object-cover"
+              className="min-h-77.5 lg:min-h-108.5 min-[1730px]:min-h-136! w-full relative z-10 object-cover"
               src="assets/images/hero/aboutHero.webp"
               alt="About Hero"
               initial={{ scale: 1.05, y: 10, opacity: 0 }}

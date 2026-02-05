@@ -88,6 +88,8 @@ export interface SliderDotsProps {
   nextClass: string;
 }
 export interface PropertyPhotosProps {
+  slidesPerView: number;
+  photos: string[];
   activeIndex: number;
   setActiveIndex: (index: number) => void;
 }

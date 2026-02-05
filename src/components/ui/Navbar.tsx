@@ -4,6 +4,7 @@ import { navLinks } from "../../data/homeData";
 import ThemeToggle from "./ThemeToggle";
 import Logo from "../icons/Logo";
 import { MdLogin } from "react-icons/md";
+import { HiMenuAlt3 } from "react-icons/hi";
 
 const Navbar = () => {
   const [Open, setOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
           )}
         </ul>
         {/* contact */}
-        <div className="flex items-center gap-1.5">
+        <div className=" hidden md:flex items-center gap-1.5">
           <NavLink
             to={navLinks[navLinks.length - 1].link}
             className={({ isActive }) =>
@@ -54,25 +55,27 @@ const Navbar = () => {
         </div>
         {/* nav bars for small screens */}
         {Open == false && (
-          <button className="md:hidden flex" onClick={() => setOpen(!Open)}>
-            <img src="/assets/icons/bars.svg" alt="ImbBar" />
+          <button
+            className="md:hidden flex cursor-pointer text-2xl"
+            onClick={() => setOpen(!Open)}
+          >
+            <HiMenuAlt3 />
           </button>
         )}
       </div>
       {/* Small Screens Nav */}
       <div
-        className={`md:hidden absolute flex flex-col gap-6.25 h-screen w-screen ${Open ? "top-0" : "-top-[200vh]"} right-0 left-0 bg-gray-09 transition-all duration-300`}
+        className={`md:hidden absolute flex flex-col gap-6.25 h-screen ${Open ? "top-0" : "-top-[200vh]"} right-0 left-0 bg-bg-secondary transition-all duration-300`}
       >
         <div className="flex justify-between p-5">
           {/* logo */}
-          <img
-            src="/assets/images/logo/fullLogo.png"
-            alt="Logo"
-            className="2xl:w-40 2xl:h-15 md:w-28.25 md:h-8 w-23.25"
-          />
+          <Logo />
           {/* close btn */}
-          <button onClick={() => setOpen(!Open)}>
-            <img src="/assets/icons/cancel.svg" alt="cancel" className="w-6" />
+          <button
+            onClick={() => setOpen(!Open)}
+            className="text-5xl cursor-pointer"
+          >
+            &times;
           </button>
         </div>
         {/* nav links */}
@@ -98,19 +101,29 @@ const Navbar = () => {
             )}
           </ul>
           {/* contact */}
-          <div>
-            <NavLink
-              to={navLinks[navLinks.length - 1].link}
-              onClick={() => setOpen(!Open)}
-              className={({ isActive }) =>
-                `py-3.5 px-5 2xl:py-4 2xl:px-6 rounded-xl border border-gray-15 ${
-                  isActive ? "bg-primary-60" : "bg-bg-main"
-                }`
-              }
-            >
-              {navLinks[4].label}
-            </NavLink>
-          </div>
+          <NavLink
+            to={navLinks[navLinks.length - 1].link}
+            onClick={() => setOpen(!Open)}
+            className={({ isActive }) =>
+              `py-3.5 px-5 2xl:py-4 2xl:px-6 rounded-xl border border-gray-15 ${
+                isActive ? "bg-primary-60" : "bg-bg-main"
+              }`
+            }
+          >
+            {navLinks[4].label}
+          </NavLink>
+          <NavLink
+            to="/login"
+            onClick={() => setOpen(!Open)}
+            className={({ isActive }) =>
+              `py-3.5 px-5 2xl:py-4 2xl:px-6 rounded-xl border border-gray-15 ${
+                isActive ? "bg-bg-main border" : ""
+              }`
+            }
+          >
+            Login
+          </NavLink>
+          <ThemeToggle />
         </div>
       </div>
     </nav>

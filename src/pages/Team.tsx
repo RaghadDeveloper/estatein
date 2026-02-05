@@ -1,7 +1,5 @@
-import PageTilte from "../components/ui/PageTilte";
 import { useState } from "react";
 import type { MemberType } from "../interfaces";
-import { deleteMember } from "../services/teamService";
 import MemberRow from "../components/ui/MemberRow";
 import { useSelector } from "react-redux";
 import MemberEditor from "../components/ui/MemberEditor";
@@ -15,25 +13,21 @@ const Team = () => {
   );
   const [showAddMemberForm, setShowAddMemberForm] = useState<boolean>(false);
 
-  const handleDelete = async (id: string) => {
-    try {
-      await deleteMember(id);
-    } catch (error) {
-      console.error("Delete member failed:", error);
-    }
-  };
-
   const handleCloseForm = () => {
     setShowAddMemberForm(false);
   };
 
   return (
     <div className="flex flex-col gap-10">
-      <PageTilte title="Our Team" />
-      <div className="w-fit self-end">
-        <Button variant="primary" onClick={() => setShowAddMemberForm(true)}>
-          Add Member
-        </Button>
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
+        <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-text-main tracking-tight">
+          Team Management
+        </h1>
+        <div className="w-full sm:w-auto">
+          <Button variant="primary" onClick={() => setShowAddMemberForm(true)}>
+            + Add Member
+          </Button>
+        </div>
       </div>
       {showAddMemberForm && (
         <MemberEditor
@@ -44,22 +38,18 @@ const Team = () => {
       )}
 
       <div className="w-full cursor-cell text-center">
-        <table className=" w-full">
+        <table className=" w-full bg-bg-secondary rounded-2xl">
           <thead>
-            <tr className="w-full h-20 text-2xl">
+            <tr className="w-full h-20 text-2xl border-b border-gray-15">
               <th>Image</th>
               <th>Name</th>
               <th>Position</th>
-              <th>Delete Member</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody className="text-[20px]">
             {team.map((member) => (
-              <MemberRow
-                key={member.id}
-                member={member}
-                onDelete={handleDelete}
-              />
+              <MemberRow key={member.id} member={member} />
             ))}
           </tbody>
         </table>

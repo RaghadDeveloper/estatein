@@ -53,10 +53,10 @@ const MemberEditor = ({
       setIsLoading(true);
       console.log(newMember);
       await addMember(newMember);
-      console.log("Member added successfully");
-      alert("Member added successfully");
       handleCloseForm();
+      console.log("Member added successfully");
       setIsLoading(false);
+      alert("Member added successfully");
     } catch (error) {
       setIsLoading(false);
       console.error("Add Member failed:", error);
@@ -107,8 +107,11 @@ const MemberEditor = ({
   };
 
   return (
-    <div className="absolute inset-0">
-      <div className="absolute w-screen inset-0 bg-black/70 backdrop-blur-sm z-40"></div>
+    <div className="fixed inset-0 z-999 flex items-center justify-center p-4">
+      <div
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        onClick={handleCloseForm}
+      ></div>
 
       <span>&nbsp;</span>
       <div className="flex items-center justify-center h-full relative z-50 p-4">

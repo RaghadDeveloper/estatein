@@ -10,7 +10,7 @@ const DeleteModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-999 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-999 flex items-center justify-center">
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
         onClick={() => !isDeleting && onClose()}
@@ -22,11 +22,7 @@ const DeleteModal = ({
           disabled={isDeleting}
           className="absolute top-5 right-5 p-1 transition-transform hover:rotate-90 active:scale-90 disabled:opacity-30 disabled:cursor-not-allowed"
         >
-          <img
-            src="/assets/icons/cancel.svg"
-            alt="Close"
-            className="w-3 h-3  cursor-pointer object-contain opacity-50 hover:opacity-100 transition-opacity"
-          />
+          &times;
         </button>
 
         <div className="flex flex-col items-center text-center">

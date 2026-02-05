@@ -20,7 +20,8 @@ const PropertyDetails = () => {
   return (
     <div>
       <PropertyDetailsHeader />
-      <PropertySlider />
+      <PropertySlider photos={property.photos} />
+      {/* <PropertySlider /> */}
       <PropertyDetailsSec />
       <InquireForm />
       <ComprehensivePricing />

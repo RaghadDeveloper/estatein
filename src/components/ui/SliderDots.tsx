@@ -15,12 +15,7 @@ const SliderDots = ({
       <SliderButton
         className={prevClass}
         disabled={isPrevDisabled}
-        image={{
-          source: isPrevDisabled
-            ? "/assets/icons/arrowleft.svg"
-            : "/assets/icons/arrowleftwhite.svg",
-          alternative: "arrow left",
-        }}
+        direction="prev"
       />
 
       <div className="flex gap-0.75">
@@ -43,12 +38,7 @@ const SliderDots = ({
       <SliderButton
         className={nextClass}
         disabled={isNextDisabled}
-        image={{
-          source: isNextDisabled
-            ? "/assets/icons/arrowright.svg"
-            : "/assets/icons/arrowrightwithe.svg",
-          alternative: "arrow right",
-        }}
+        direction="next"
       />
     </div>
   );

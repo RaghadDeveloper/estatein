@@ -71,7 +71,6 @@ export const addPropertyInputs: InputProps[] = [
     type: "select",
     placeholder: "Enter property location type",
     options: [
-      { label: "Any location", value: "any" },
       { label: "Downtown", value: "downtown" },
       { label: "City center", value: "cityCenter" },
       { label: "Suburbs", value: "suburbs" },
@@ -85,7 +84,6 @@ export const addPropertyInputs: InputProps[] = [
     type: "select",
     placeholder: "Select property type",
     options: [
-      { label: "Any Type", value: "any" },
       { label: "Apartment", value: "apartment" },
       { label: "House", value: "house" },
       { label: "Villa", value: "villa" },
