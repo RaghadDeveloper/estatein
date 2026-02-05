@@ -4,6 +4,7 @@ import StatisticsCardsGorup from "../ui/StatisticsCardsGorup";
 import InfoCardsSection from "./InfoCardsSection";
 import { infoCardsData } from "../../data/homeData";
 import { motion } from "framer-motion";
+import HomeLogo from "../icons/HomeLogo";
 
 const HomeHero = () => {
   const navigate = useNavigate();
@@ -29,10 +30,10 @@ const HomeHero = () => {
   };
 
   return (
-    <div className="mx-4 md:mx-20 lg:m-0">
+    <div className="mx-4 md:mx-20 lg:m-0 animate-fadeInUpScale">
       <div className="my-10 lg:m-0 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-15 2xl:gap-20">
         {/* right section image */}
-        <div className="relative bg-gray-09 bg-linear-to-bl from-primary-50 to-gray-09 via-transparent border border-gray-15 lg:border-0 rounded-xl lg:rounded-none lg:order-2">
+        <div className="relative bg-shadow bg-linear-to-bl from-primary-50 to-shadow via-transparent border border-gray-15 lg:border-0 rounded-xl lg:rounded-none lg:order-2">
           <img
             src="/assets/images/abstractDesign/homeHero.png"
             alt="abstract design"
@@ -44,17 +45,17 @@ const HomeHero = () => {
             className="relative w-full h-full object-cover rounded-xl lg:rounded-none"
           />
 
-          <motion.img
-            src="/assets/images/hero/homeLogo.webp"
-            alt="logo"
-            className="absolute w-29 -bottom-10 lg:w-32.25 lg:top-23.75 lg:-left-17 2xl:w-43.75 2xl:top-36 2xl:-left-23"
+          <motion.div
+            className="absolute -bottom-20 lg:top-23.75 lg:-left-17 2xl:top-36 2xl:-left-23 h-fit w-fit"
             variants={floatLogo}
             animate="animate"
-          />
+          >
+            <HomeLogo />
+          </motion.div>
         </div>
 
         {/* left section content */}
-        <div className="mt-5 lg:my-10 lg:ml-20 2xl:ml-40.5 flex flex-col justify-center gap-10 lg:gap-12.5 2xl:gap-15">
+        <div className="mt-5 lg:my-10 lg:ml-20 min-[1740px]:ml-40.5! flex flex-col justify-center gap-10 lg:gap-12.5 min-[1740px]:gap-15">
           <motion.div
             className="flex flex-col gap-4 lg:gap-5 2xl:gap-6"
             variants={fadeSlideUp}
@@ -69,7 +70,7 @@ const HomeHero = () => {
             </motion.h2>
 
             <motion.p
-              className="text-gray-60 text-[14px] lg:text-[16px] 2xl:text-[18px]"
+              className="text-text-secondary text-[14px] lg:text-[16px] 2xl:text-[18px]"
               variants={fadeSlideUp}
               transition={{
                 delay: 0.2,

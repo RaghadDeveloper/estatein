@@ -16,7 +16,7 @@ import { selectProperty } from "../../redux/properties/propertiesSelectors";
 
 const InquireForm = () => {
   const { id } = useParams();
-  const property = useSelector(selectProperty(Number(id)));
+  const property = useSelector(selectProperty(id!));
   const selectedPlaceholder = `${property?.title}, ${property?.location}`;
 
   const [isChecked, setIsChecked] = useState<boolean>(false);

@@ -7,7 +7,7 @@ function FeatureServiceCard({
   reverse,
 }: FeatureServiceCardProps) {
   return (
-    <div className="relative border border-gray-15 rounded-xl p-6 lg:p-10 2xl:p-12.5 overflow-hidden flex flex-col gap-4 lg:gap-5 2xl:gap-7.5 h-full font-urbanist bg-gray-10">
+    <div className="relative border border-gray-15 rounded-xl p-6 lg:p-10 2xl:p-12.5 overflow-hidden flex flex-col gap-4 lg:gap-5 2xl:gap-7.5 h-full font-urbanist bg-bg-secondary">
       <div className="absolute inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat bg-[url('/assets/images/abstractDesign/featureServiceCard.png')]" />
 
       <div className="relative z-10 flex items-center justify-between w-full gap-4">
@@ -27,7 +27,7 @@ function FeatureServiceCard({
           <Button variant="border">Learn More</Button>
         </div>
 
-        <p className="text-gray-60 text-sm lg:text-base 2xl:text-lg max-w-2xl leading-[150%] mb-0 ">
+        <p className="text-text-secondary text-sm lg:text-base 2xl:text-lg max-w-2xl leading-[150%] mb-0 ">
           {description}
         </p>
       </div>

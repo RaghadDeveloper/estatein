@@ -1,8 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { propertiesData } from "../../data/propertiesData";
 import type { FiltersState, PropertyData } from "../../interfaces";
-
-
 
 interface PropertiesState {
   all: PropertyData[];
@@ -10,7 +7,7 @@ interface PropertiesState {
 }
 
 const initialState: PropertiesState = {
-  all: propertiesData,
+  all: [],
   filters: {
     search: "",
   },
@@ -25,15 +22,29 @@ const propertiesSlice = createSlice({
     },
     setFilter(
       state,
-      action: PayloadAction<{ key: keyof FiltersState; value: string }>
+      action: PayloadAction<{ key: keyof FiltersState; value: string }>,
     ) {
       state.filters[action.payload.key] = action.payload.value;
     },
     clearFilters(state) {
       state.filters = { search: "" };
     },
+    setProperties(state, action: PayloadAction<PropertyData[]>) {
+      state.all = action.payload;
+    },
+    removeProperty(state, action: PayloadAction<string>) {
+      state.all = state.all.filter(
+        (property) => property.id !== action.payload,
+      );
+    },
   },
 });
 
-export const { setSearch, setFilter, clearFilters } = propertiesSlice.actions;
+export const {
+  setSearch,
+  setFilter,
+  clearFilters,
+  setProperties,
+  removeProperty,
+} = propertiesSlice.actions;
 export default propertiesSlice.reducer;

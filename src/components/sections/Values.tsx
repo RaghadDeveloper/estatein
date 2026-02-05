@@ -15,7 +15,7 @@ const Values = () => {
           <SectionHeader {...valuesHeaderData} />
         </div>
 
-        <div className="w-full p-6 lg:p-12.5 2xl:p-15 border border-gray-15 shadow-[0_0_0_6px_var(--color-gray-09)] rounded-xl">
+        <div className="w-full p-6 lg:p-12.5 2xl:p-15 border border-gray-15 shadow-[0_0_0_6px_var(--color-shadow)] rounded-xl">
           {groupedValues.map((group, groupIndex) => {
             const isEven = groupIndex % 2 === 0;
             return (

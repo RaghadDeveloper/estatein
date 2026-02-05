@@ -1,4 +1,4 @@
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, ComponentType, SVGProps } from "react";
 import type { Swiper as SwiperType } from "swiper";
 
 // ============================== Common Interfaces ============================
@@ -16,7 +16,7 @@ export interface CommonHeroProps {
   propertyHero?: boolean;
 }
 export interface PillInfoProps {
-  icon?: string;
+  Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   label: string;
   value?: string;
   pricing?: boolean;
@@ -50,7 +50,7 @@ export interface PriceValueProps {
 
 export interface InfoBlockCardProps {
   label: string;
-  icon: string;
+  Icon: ComponentType<SVGProps<SVGSVGElement>>;
   value?: number;
 }
 
@@ -58,7 +58,7 @@ export interface InfoBlockCardProps {
 export interface SliderButtonProps {
   className: string;
   disabled?: boolean;
-  image: imageProps;
+  direction: "prev" | "next";
 }
 export interface SliderProps {
   cards: React.ReactNode[];
@@ -69,12 +69,12 @@ export interface SliderProps {
   sliderId?: string;
 }
 export interface SliderPagesProps {
-  // cardsLength: number;
   currentPage: number;
   totalPages: number;
   isPrevDisabled: boolean;
   isNextDisabled: boolean;
   text?: string;
+  link?: string;
   prevClass: string;
   nextClass: string;
 }
@@ -88,6 +88,8 @@ export interface SliderDotsProps {
   nextClass: string;
 }
 export interface PropertyPhotosProps {
+  slidesPerView: number;
+  photos: string[];
   activeIndex: number;
   setActiveIndex: (index: number) => void;
 }
@@ -155,10 +157,11 @@ export interface AchievementsCardProps {
 }
 
 // Member Card
-export interface MemberCardProps {
+export interface MemberType {
   name: string;
   position: string;
   imageUrl: string;
+  [key: string]: string;
 }
 // Testimonial Card
 export interface Testimonial {
@@ -230,8 +233,9 @@ export interface FilterType {
 }
 
 // ============================== Property Data ============================
+export type PropertyInput = Omit<PropertyData, "id">;
 export interface PropertyData {
-  id: number;
+  id: string;
   title: string;
   subTitle: string;
   description: string;
@@ -245,12 +249,12 @@ export interface PropertyData {
   area: number;
 }
 export interface PropertyCardProps {
-  id: number;
+  id: string;
   title: string;
   description: string;
   photos: string[];
   price: number;
-  infos?: { icon: string; label: string }[];
+  infos?: PillInfoProps[];
   subTitle?: string;
 }
 export type FeatureItemProps = {
@@ -264,17 +268,24 @@ export interface Option {
   name?: string;
   placeholder?: string;
   value: string;
-  icon?: string;
+  Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   checked?: boolean;
 }
 export interface InputProps {
   label: string;
   placeholder?: string;
-  type: "text" | "email" | "number" | "select" | "textarea" | "radio";
+  type:
+    | "text"
+    | "email"
+    | "number"
+    | "select"
+    | "textarea"
+    | "radio"
+    | "password";
   name: string;
   options?: Option[];
-  icon?: string;
+  Icon?: ComponentType<SVGProps<SVGSVGElement>>;
   colSpan?: number;
   value?: string;
   checked?: boolean;
@@ -282,6 +293,15 @@ export interface InputProps {
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => void;
 }
+
+export interface ImageInputFieldProps {
+  onImagesChange?: (images: string[]) => void;
+  onImageChange?: (image: string) => void;
+  value?: string;
+  multi: boolean;
+  title: string;
+}
+
 export interface FormFooterProps {
   loading?: boolean;
   isChecked: boolean;
@@ -345,7 +365,8 @@ export interface LocationsCardProps {
 }
 export interface LocationLinkType {
   type: "email" | "location" | "phone";
-  Img: string;
+
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   text: string;
 }
 export interface TapS {
@@ -375,11 +396,49 @@ export interface FooterLink {
 }
 
 export interface FooterSocial {
-  icon: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   link: string;
 }
 
 export interface NavLink {
   label: string;
   link: string;
+}
+
+// Dashboard
+export interface DeleteModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onConfirm: () => void;
+  isDeleting: boolean;
+  title?: string;
+}
+export interface Column<T> {
+  header: string;
+  accessor: keyof T | "actions";
+  render?: (item: T) => React.ReactNode;
+}
+
+export interface DataTableProps<T> {
+  columns: Column<T>[];
+  data: T[];
+  isLoading?: boolean;
+}
+export interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
+export interface SidebarProps {
+  isOpen: boolean;
+  setIsOpen: (val: boolean) => void;
+}
+export interface MemberEditorProps {
+  formTitle: string;
+  formInputs: InputProps[];
+  handleCloseForm: () => void;
+  id?: string;
+  name?: string;
+  position?: string;
+  imageUrl?: string;
 }

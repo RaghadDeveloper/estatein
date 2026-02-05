@@ -1,15 +1,12 @@
-import locationIcon from "/assets/icons/Location.svg";
-import propertyIcon from "/assets/icons/property.svg";
-import priceIcon from "/assets/icons/Union.svg";
-import sizeIcon from "/assets/icons/Size.svg";
-import buildIcon from "/assets/icons/Year.svg";
+import { FaPhone } from "react-icons/fa";
 import type {
   CommonHeroProps,
-  PropertyData,
+  // PropertyData,
   InputProps,
   SectionHeaderProps,
   FilterType,
 } from "../interfaces";
+import { TbMailFilled } from "react-icons/tb";
 
 // Hero Section
 export const propertiesPageHeroData: CommonHeroProps = {
@@ -23,7 +20,7 @@ export const filters: FilterType[] = [
   {
     label: "Location",
     key: "location",
-    icon: locationIcon,
+    icon: "/assets/icons/Location.svg",
     options: [
       "Any location",
       "Downtown",
@@ -35,13 +32,13 @@ export const filters: FilterType[] = [
   {
     label: "Property Type",
     key: "propertyType",
-    icon: propertyIcon,
+    icon: "/assets/icons/property.svg",
     options: ["Any Type", "Apartment", "House", "Villa", "Studio", "Office"],
   },
   {
     label: "Pricing Range",
     key: "price",
-    icon: priceIcon,
+    icon: "/assets/icons/Union.svg",
     options: [
       "Any Price",
       "Under $50,000",
@@ -55,13 +52,13 @@ export const filters: FilterType[] = [
   {
     label: "Property Size",
     key: "area",
-    icon: sizeIcon,
+    icon: "/assets/icons/Size.svg",
     options: ["Any Size", "50-100m", "100-150m", "150-250m", "250+m"],
   },
   {
     label: "Build Year",
     key: "buildYear",
-    icon: buildIcon,
+    icon: "/assets/icons/Year.svg",
     options: ["New", "2017-2021", "2010-2016", "2000-2009", "Before 2000"],
   },
 ];
@@ -73,115 +70,10 @@ export const portfolioHeaderData: SectionHeaderProps = {
 };
 
 // Properties Data
-export const propertiesData: PropertyData[] = [
-  {
-    id: 1,
-    subTitle: "Coastal Escapes - Where Waves Beckon",
-    title: "Seaside Serenity Villa",
-    location: "Malibu, California",
-    locationType: "Near Beach",
-    photos: [
-      "/assets/images/propertyPhoto/propertyPhoto1.webp",
-      "/assets/images/propertyPhoto/propertyPhoto2.webp",
-      "/assets/images/propertyPhoto/propertyPhoto3.webp",
-      "/assets/images/propertyPhoto/propertyPhoto4.webp",
-      "/assets/images/propertyPhoto/propertyPhoto5.webp",
-      "/assets/images/propertyPhoto/propertyPhoto6.webp",
-      "/assets/images/propertyPhoto/propertyPhoto7.webp",
-      "/assets/images/propertyPhoto/propertyPhoto8.webp",
-      "/assets/images/propertyPhoto/propertyPhoto9.webp",
-    ],
-    description:
-      "A stunning 4-bedroom, 3-bathroom villa in a peaceful suburban neighborhood. 6-bathroom villa in a peaceful suburban neighborhood.",
-    price: 550000,
-    bedrooms: 4,
-    bathrooms: 3,
-    propertyType: "House",
-    area: 2500,
-  },
-  {
-    id: 2,
-    subTitle: "Urban Oasis - Life in the Heart of the City",
-    title: "Metropolitan Haven",
-    location: "Malibu, California",
-    locationType: "City center",
-    photos: [
-      "/assets/images/properties/property2.webp",
-      "/assets/images/propertyPhoto/propertyPhoto2.webp",
-      "/assets/images/propertyPhoto/propertyPhoto3.webp",
-      "/assets/images/propertyPhoto/propertyPhoto4.webp",
-      "/assets/images/propertyPhoto/propertyPhoto5.webp",
-      "/assets/images/propertyPhoto/propertyPhoto6.webp",
-      "/assets/images/propertyPhoto/propertyPhoto7.webp",
-      "/assets/images/propertyPhoto/propertyPhoto8.webp",
-      "/assets/images/propertyPhoto/propertyPhoto9.webp",
-    ],
-    description:
-      "A chic and fully-furnished 2-bedroom apartment with panoramic city views. 6-bathroom villa in a peaceful suburban neighborhood.",
-    price: 550000,
-    bedrooms: 2,
-    bathrooms: 2,
-    propertyType: "Villa",
-    area: 2500,
-  },
-  {
-    id: 3,
-    subTitle: "Countryside Charm - Escape to Nature's Embrace",
-    title: "Rustic Retreat Cottage",
-    location: "Malibu, California",
-    locationType: "Suburbs",
-    photos: [
-      "/assets/images/properties/property3.webp",
-      "/assets/images/propertyPhoto/propertyPhoto2.webp",
-      "/assets/images/propertyPhoto/propertyPhoto3.webp",
-      "/assets/images/propertyPhoto/propertyPhoto4.webp",
-      "/assets/images/propertyPhoto/propertyPhoto5.webp",
-      "/assets/images/propertyPhoto/propertyPhoto6.webp",
-      "/assets/images/propertyPhoto/propertyPhoto7.webp",
-      "/assets/images/propertyPhoto/propertyPhoto8.webp",
-      "/assets/images/propertyPhoto/propertyPhoto9.webp",
-    ],
-    description:
-      "An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community. 6-bathroom villa in a peaceful suburban neighborhood.",
-    price: 550000,
-    bedrooms: 3,
-    bathrooms: 3,
-    propertyType: "Villa",
-    area: 2500,
-  },
-  {
-    id: 4,
-    subTitle: "Coastal Escapes - Where Waves Beckon",
-    title: "Seaside Serenity Villa",
-    location: "Malibu, California",
-    locationType: "Suburbs",
-    photos: [
-      "/assets/images/propertyPhoto/propertyPhoto1.webp",
-      "/assets/images/propertyPhoto/propertyPhoto2.webp",
-      "/assets/images/propertyPhoto/propertyPhoto3.webp",
-      "/assets/images/propertyPhoto/propertyPhoto4.webp",
-      "/assets/images/propertyPhoto/propertyPhoto5.webp",
-      "/assets/images/propertyPhoto/propertyPhoto6.webp",
-      "/assets/images/propertyPhoto/propertyPhoto7.webp",
-      "/assets/images/propertyPhoto/propertyPhoto8.webp",
-      "/assets/images/propertyPhoto/propertyPhoto9.webp",
-    ],
-    description:
-      "An elegant 6-bedroom, 6.5-bathroom townhouse in a gated community. A stunning 8-bedroom, 6-bathroom villa in a peaceful suburban neighborhood.6-bathroom villa in a peaceful suburban neighborhood.",
-    price: 550000,
-    bedrooms: 4,
-    bathrooms: 3,
-    propertyType: "Villa",
-    area: 2500,
-  },
-];
-
-// Property Form Section
-
-export const propertiesFormHeaderData : SectionHeaderProps = {
-    title: "Let's Make it Happen",
-    text: "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.",
-}
+export const propertiesFormHeaderData: SectionHeaderProps = {
+  title: "Let's Make it Happen",
+  text: "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match. Don't wait; let's embark on this exciting journey together.",
+};
 
 export const propertyFormInputsData: InputProps[] = [
   {
@@ -205,7 +97,7 @@ export const propertyFormInputsData: InputProps[] = [
   {
     name: "phone",
     label: "Phone",
-    type: "tel",
+    type: "number",
     placeholder: "Enter Phone Number",
   },
   {
@@ -213,7 +105,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "Preferred Location",
     placeholder: "Select Location",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "Any location", value: "any" },
       { label: "Downtown", value: "downtown" },
@@ -227,7 +118,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "Property Type",
     placeholder: "Select Property Type",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "Any Type", value: "any" },
       { label: "Apartment", value: "apartment" },
@@ -242,7 +132,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "No. of Bathrooms",
     placeholder: "Select no. of Bathrooms",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "Any", value: "any" },
       { label: "1", value: "1" },
@@ -255,7 +144,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "No. of Bedrooms",
     placeholder: "Select no. of Bedrooms",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     options: [
       { label: "Any", value: "any" },
       { label: "1", value: "1" },
@@ -268,7 +156,6 @@ export const propertyFormInputsData: InputProps[] = [
     label: "Budget",
     placeholder: "Select Budget",
     type: "select",
-    icon: "assets/icons/arrowbottom.svg",
     colSpan: 2,
     options: [
       { label: "Any Price", value: "any" },
@@ -289,13 +176,13 @@ export const propertyFormInputsData: InputProps[] = [
         placeholder: "Enter Your Number",
         name: "contactMethod",
         value: "phone",
-        icon: "assets/icons/Phone.svg",
+        Icon: FaPhone,
       },
       {
         placeholder: "Enter Your Email",
         name: "contactMethod",
         value: "email",
-        icon: "assets/icons/email.svg",
+        Icon: TbMailFilled,
       },
     ],
   },
@@ -308,120 +195,9 @@ export const propertyFormInputsData: InputProps[] = [
   },
 ];
 
-export const photos = [
-  {
-    images: [
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto1.webp",
-        alternative: "Villa photo",
-      },
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto8.webp",
-        alternative: "Villa photo",
-      },
-    ],
-  },
-  {
-    images: [
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto2.webp",
-        alternative: "Villa photo",
-      },
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto4.webp",
-        alternative: "Villa photo",
-      },
-    ],
-  },
-  {
-    images: [
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto3.webp",
-        alternative: "Villa photo",
-      },
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto9.webp",
-        alternative: "Villa photo",
-      },
-    ],
-  },
-  {
-    images: [
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto4.webp",
-        alternative: "Villa photo",
-      },
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto3.webp",
-        alternative: "Villa photo",
-      },
-    ],
-  },
-  {
-    images: [
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto5.webp",
-        alternative: "Villa photo",
-      },
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto1.webp",
-        alternative: "Villa photo",
-      },
-    ],
-  },
-  {
-    images: [
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto6.webp",
-        alternative: "Villa photo",
-      },
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto5.webp",
-        alternative: "Villa photo",
-      },
-    ],
-  },
-  {
-    images: [
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto7.webp",
-        alternative: "Villa photo",
-      },
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto4.webp",
-        alternative: "Villa photo",
-      },
-    ],
-  },
-  {
-    images: [
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto8.webp",
-        alternative: "Villa photo",
-      },
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto6.webp",
-        alternative: "Villa photo",
-      },
-    ],
-  },
-  {
-    images: [
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto9.webp",
-        alternative: "Villa photo",
-      },
-      {
-        source: "/assets/images/propertyPhoto/propertyPhoto2.webp",
-        alternative: "Villa photo",
-      },
-    ],
-  },
-];
-
 // styles for property form inputs
 export const inputStyleBase: string =
-  "w-full rounded-md py-4 px-5 bg-gray-10 border border-gray-15 text-[14px] font-medium 2xl:text-[18px] 2xl:py-6 leading-[20px] focus:outline-none focus:ring-2 focus:ring-primary-60 caret-primary-60";
+  "w-full rounded-md py-4 px-5 bg-bg-secondary border border-gray-15 text-[14px] font-medium 2xl:text-[18px] 2xl:py-6 leading-[20px] focus:outline-none focus:ring-2 focus:ring-primary-60 caret-primary-60";
 
 export const inputLabelStyleBase: string =
   "text-[16px] 2xl:text-[20px] font-semibold";

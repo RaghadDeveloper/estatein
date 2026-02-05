@@ -6,24 +6,18 @@ import StatisticsCardsGorup from "../ui/StatisticsCardsGorup";
 const AboutHero = () => {
   return (
     <section>
-      <div className="mx-4 mt-12.5 md:mx-20 lg:mx-20 lg:mt-17.5 2xl:mx-40.5 2xl:mt-25 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-15 2xl:gap-20 items-center">
+      <div className="mx-4 mt-12.5 md:mx-20 lg:mx-20 lg:mt-17.5 min-[1730px]:mx-40.5! min-[1730px]:mt-25! grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-15 min-[1730px]:gap-20! items-center animate-fadeInUpScale">
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="
-            w-full h-full
-            border border-gray-15 rounded-xl
-            flex items-center justify-center
-            relative overflow-hidden lg:order-2 group
-            transition-all duration-500
-            hover:border-primary-60
-          "
+            w-full h-full border border-gray-15 rounded-xl flex items-center justify-center relative overflow-hidden lg:order-2 group transition-all duration-500 hover:border-primary-60"
         >
-          {/* hero image */}
-          <div className="w-full h-fullw border border-gray-15 rounded-xl flex items-center justify-center relative overflow-hidden lg:order-2">
+          <div className="w-full h-full border border-gray-15 rounded-xl flex items-center justify-center relative overflow-hidden lg:order-2">
+            {/* hero image */}
             <motion.img
-              className="min-h-77.5 lg:min-h-108.5 2xl:min-h-136 w-full relative z-10 object-cover"
+              className="min-h-77.5 lg:min-h-108.5 min-[1730px]:min-h-136! w-full relative z-10 object-cover"
               src="assets/images/hero/aboutHero.webp"
               alt="About Hero"
               initial={{ scale: 1.05, y: 10, opacity: 0 }}
@@ -40,7 +34,12 @@ const AboutHero = () => {
               whileHover={{ scale: 1.12, rotate: 2, opacity: 0.85 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             />
+            <div className="absolute inset-0 rounded-xl bg-linear-to-tr from-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
           </div>
+          <div
+            className="
+              absolute inset-0 rounded-xl bg-linear-to-tr from-transparent to-primary-60/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+          />
         </motion.div>
 
         {/* hero data */}

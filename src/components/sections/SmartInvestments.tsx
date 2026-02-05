@@ -17,7 +17,7 @@ const SmartInvestments = () => {
             <SectionHeader {...SmartInvestmentsFormHeaderData} />
           </div>
 
-          <div className="mt-0 [&>div]:flex-col! [&>div]:items-start! [&_div.hidden.lg\:block]:hidden! [&_div.lg\:hidden]:flex! [&_div.lg\:hidden]:w-full! [&_h2]:order-1! [&_div.lg\:hidden]:order-2! [&_p]:order-3! lg:[&_p]:order-2! lg:[&_div.lg\:hidden]:order-3! lg:[&_div.lg\:hidden]:mt-auto! [&_h2]:text-[20px]! min-[1440px]:[&_h2]:text-[22px]! min-[1920px]:[&_h2]:text-[24px]! [&>div_p]:text-gray-60! [&>div_button]:w-full! [&>div_div:last-child]:mt-auto!">
+          <div className="mt-0 [&>div]:flex-col! [&>div]:items-start! [&_div.hidden.lg\:block]:hidden! [&_div.lg\:hidden]:flex! [&_div.lg\:hidden]:w-full! [&_h2]:order-1! [&_div.lg\:hidden]:order-2! [&_p]:order-3! lg:[&_p]:order-2! lg:[&_div.lg\:hidden]:order-3! lg:[&_div.lg\:hidden]:mt-auto! [&_h2]:text-[20px]! min-[1440px]:[&_h2]:text-[22px]! min-[1920px]:[&_h2]:text-[24px]! [&>div_button]:w-full! [&>div_div:last-child]:mt-auto!">
             <FeatureServiceCard
               title={investmentFeatureData.title}
               description={investmentFeatureData.description}
@@ -26,7 +26,7 @@ const SmartInvestments = () => {
           </div>
         </div>
 
-        <div className="min-[1241px]:col-span-2 bg-gray-10 p-2 rounded-xl border border-gray-15 shadow-sm">
+        <div className="min-[1241px]:col-span-2 bg-bg-secondary p-2 rounded-xl border border-gray-15 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
             {investmentServicesData.map((service) => (
               <div key={service.id}>

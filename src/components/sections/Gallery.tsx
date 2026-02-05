@@ -8,7 +8,7 @@ const Gallery = () => {
 
   return (
     <SectionContainer>
-      <div className="bg-[url('/assets/images/abstractDesign/gallery.png')] bg-gray-10 p-6 lg:p-15 2xl:p-20 border border-gray-15 rounded-xl">
+      <div className="bg-[url('/assets/images/abstractDesign/gallery.png')] bg-no-repeat bg-cover bg-bg-secondary p-6 lg:p-15 2xl:p-20 border border-gray-15 rounded-xl">
         <div className="grid grid-cols-2 gap-2.5 lg:gap-5">
           {dataGallery?.map((data, index) => {
             const isLastTwo = index >= dataGallery.length - 2;

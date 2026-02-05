@@ -1,8 +1,11 @@
 import type { ServiceCardProps } from "../../interfaces";
+import HoverXBg from "./HoverXBg";
+import HoverBorder from "./HoverBorder";
 
 function ServiceCard({ title, description, icon }: ServiceCardProps) {
   return (
-    <div className="border border-gray-15 p-6 lg:p-10 2xl:p-12.5 rounded-xl flex flex-col gap-4 lg:gap-5 2xl:gap-7.5 h-full w-full bg-gray-08">
+    <div className=" relative overflow-hidden border border-gray-15 p-6 lg:p-10 2xl:p-12.5 rounded-xl flex flex-col gap-4 lg:gap-5 2xl:gap-7.5 h-full w-full bg-bg-main transition-all duration-1200 ease-out transform-gpu group group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:blur-0">
+      <HoverXBg />
       <div className="flex items-center gap-4">
         <img
           src={icon}
@@ -15,9 +18,10 @@ function ServiceCard({ title, description, icon }: ServiceCardProps) {
         </h3>
       </div>
 
-      <p className="text-gray-60 leading-[150%] text-sm lg:text-base 2xl:text-lg">
+      <p className="text-text-secondary leading-[150%] text-sm lg:text-base 2xl:text-lg">
         {description}
       </p>
+      <HoverBorder />
     </div>
   );
 }

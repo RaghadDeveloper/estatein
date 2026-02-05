@@ -11,16 +11,11 @@ const SliderDots = ({
   nextClass,
 }: SliderDotsProps) => {
   return (
-    <div className=" flex items-center lg:w-fit mx-auto p-2 lg:p-2.5 mt-5 2xl:mt-7.5 rounded-[100px] bg-gray-08 gap-2.5 justify-between">
+    <div className=" flex items-center lg:w-fit mx-auto p-2 lg:p-2.5 mt-5 2xl:mt-7.5 rounded-[100px] bg-bg-main gap-2.5 justify-between">
       <SliderButton
         className={prevClass}
         disabled={isPrevDisabled}
-        image={{
-          source: isPrevDisabled
-            ? "/assets/icons/arrowleft.svg"
-            : "/assets/icons/arrowleftwhite.svg",
-          alternative: "arrow left",
-        }}
+        direction="prev"
       />
 
       <div className="flex gap-0.75">
@@ -43,12 +38,7 @@ const SliderDots = ({
       <SliderButton
         className={nextClass}
         disabled={isNextDisabled}
-        image={{
-          source: isNextDisabled
-            ? "/assets/icons/arrowright.svg"
-            : "/assets/icons/arrowrightwithe.svg",
-          alternative: "arrow right",
-        }}
+        direction="next"
       />
     </div>
   );

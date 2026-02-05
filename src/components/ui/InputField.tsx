@@ -11,20 +11,34 @@ const InputField = ({
   type,
   name,
   value,
+  colSpan,
   onChange,
 }: InputProps) => {
+  const colSpanClasses = {
+    2: "lg:col-span-2",
+    3: "lg:col-span-3",
+    4: "lg:col-span-4",
+    // more col span can be added
+  };
+
+  const lgColSpan =
+    colSpanClasses[colSpan as keyof typeof colSpanClasses] || "lg:col-span-2";
+
+  const numberInputSyle =
+    "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none";
+
   return (
-    <div className={`${inputDevStyleBase}`}>
+    <div className={`${inputDevStyleBase} col-span-1 ${colSpan && lgColSpan}`}>
       <label className={`${inputLabelStyleBase}`} htmlFor={name}>
         {label}
       </label>
       <input
-        className={`${inputStyleBase} placeholder:text-gray-40`}
+        className={`${inputStyleBase} ${type === "number" && numberInputSyle} placeholder:text-gray-40`}
         type={type}
         placeholder={placeholder}
         name={name}
         id={name}
-        value={value}
+        value={value !== undefined && value !== "-1" ? String(value) : ""}
         onChange={onChange}
         required
       />

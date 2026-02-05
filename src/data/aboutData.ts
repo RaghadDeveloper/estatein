@@ -137,29 +137,6 @@ export const teamHeaderData: SectionHeaderProps = {
   text: "At Estatein, our success is driven by the dedication and expertise of our team. Get to know the people behind our mission to make your real estate dreams a reality.",
 };
 
-export const teamMembers = [
-  {
-    name: "Max Mitchell",
-    position: "Founder",
-    imageUrl: "/assets/images/team/member1.webp",
-  },
-  {
-    name: "Sarah Johnson",
-    position: "Chief Real Estate Officer",
-    imageUrl: "/assets/images/team/member2.webp",
-  },
-  {
-    name: "David Brown",
-    position: "Head of Property Management",
-    imageUrl: "/assets/images/team/member3.webp",
-  },
-  {
-    name: "Michael Turner",
-    position: "Legal Counsel",
-    imageUrl: "/assets/images/team/member4.webp",
-  },
-];
-
 // Clients Section
 export const clientsHeaderData: SectionHeaderProps = {
   title: "Our Valued Clients",

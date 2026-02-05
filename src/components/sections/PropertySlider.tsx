@@ -1,53 +1,54 @@
 import { useState } from "react";
-import { photos } from "../../data/propertiesData";
 import PropertyPhotos from "../ui/PropertyPhotos";
+import SliderDots from "../ui/SliderDots";
 import type { Swiper as SwiperType } from "swiper";
 import Slider from "../layouts/Slider";
-import SliderDots from "../ui/SliderDots";
 
-const PropertySlider = () => {
+const PropertySlider = ({ photos }: { photos: string[] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const [slidesPerView, setSlidesPerView] = useState(1);
   const sliderId = "property";
 
-  const cards = photos.map((photo, index) => (
+  const cards = photos.map((photo, i) => (
     <div
-      key={index}
-      className="w-full grid justify-between grid-cols-1 lg:lg:grid-cols-2 gap-7.5"
+      key={i}
+      className="w-full lg:aspect-585/5072xl:aspect-733/583 rounded-xl overflow-hidden"
     >
-      {photo.images.map((image, i) => (
-        <div
-          key={i}
-          className={`
-            aspect-4/3 rounded-xl overflow-hidden
-            ${i === 1 ? "hidden lg:block" : ""}
-          `}
-        >
-          <img
-            src={image.source}
-            alt={image.alternative}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      ))}
+      <img src={photo} alt="property" className="w-full h-full object-cover" />
     </div>
   ));
 
-  const goToIndex = (index: number) => {
-    setActiveIndex(index);
-    swiper?.slideTo(index);
+  const goToSlide = (slideIndex: number) => {
+    if (!swiper) return;
+
+    setSlidesPerView(
+      typeof swiper.params.slidesPerView === "number"
+        ? swiper.params.slidesPerView
+        : 1,
+    );
+
+    const pageIndex = Math.floor(slideIndex / slidesPerView);
+
+    setActiveIndex(pageIndex);
+    swiper.slideTo(slideIndex);
   };
 
   return (
-    <div className="mx-4 lg:mx-20 2xl:mx-40.5 p-5 lg:p-10 2xl:p-12.5 border border-gray-15 bg-gray-10">
+    <div className="mx-4 lg:mx-20 min-[1730px]:mx-40.5! p-5 lg:p-10 min-[1730px]:p-12.5! border border-gray-15 bg-bg-secondary rounded-xl">
       <div className="flex flex-col-reverse lg:flex-col">
         {/* thumbnails */}
-        <PropertyPhotos activeIndex={activeIndex} setActiveIndex={goToIndex} />
+        <PropertyPhotos
+          slidesPerView={Number(slidesPerView)}
+          photos={photos}
+          activeIndex={activeIndex}
+          setActiveIndex={goToSlide}
+        />
         {/* main slider */}
         <Slider
           sliderId={sliderId}
           cards={cards}
-          cardsPerView={1}
+          cardsPerView={2}
           swiperRef={setSwiper}
           onSlideIndexChange={setActiveIndex}
         />

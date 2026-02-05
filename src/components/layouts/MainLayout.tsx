@@ -17,7 +17,7 @@ const MainLayout = () => {
   }, []);
 
   return (
-    <div className="font-urbanist bg-gray-08 text-white min-h-screen">
+    <div className="font-urbanist min-h-screen text-text-main bg-bg-main">
       <AnnouncementBar />
       <Navbar />
 
