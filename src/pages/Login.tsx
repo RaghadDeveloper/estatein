@@ -1,24 +1,22 @@
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Loader from "../components/ui/Loader";
+import { loginUser } from "../services/authService";
+import { FirebaseError } from "firebase/app";
+import { IoHomeOutline } from "react-icons/io5";
+import ThemeToggle from "../components/ui/ThemeToggle";
 import InputField from "../components/ui/InputField";
+import { loginInputs } from "../data/dashboard";
 import PasswordInputField from "../components/ui/PasswordInputField";
 import Button from "../components/ui/Button";
-import ThemeToggle from "../components/ui/ThemeToggle";
-import { loginInputs } from "../data/dashboard";
-import { loginUser } from "../services/authService";
-import { useNavigate } from "react-router-dom";
-import { FirebaseError } from "firebase/app";
-import { useAuth } from "../context/useAuth";
-import Loader from "../components/ui/Loader";
-import { IoHomeOutline } from "react-icons/io5";
+import type { RootState } from "../redux/store";
 
 const Login = () => {
-  const { user, loading } = useAuth();
+  const { user, loading } = useSelector((state: RootState) => state.user);
   const navigate = useNavigate();
-  const [data, setData] = useState({
-    email: "",
-    password: "",
-  });
-  const [isloading, setIsLoading] = useState(false);
+  const [data, setData] = useState({ email: "", password: "" });
+  const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
@@ -38,9 +36,7 @@ const Login = () => {
     e.preventDefault();
     try {
       setIsLoading(true);
-      const user = await loginUser(data.email, data.password);
-      console.log("Logged in user:", user);
-
+      await loginUser(data.email, data.password);
       navigate("/dashboard");
       setIsLoading(false);
     } catch (error: unknown) {
@@ -58,6 +54,7 @@ const Login = () => {
   }, [user, navigate]);
 
   if (loading) return <Loader />;
+
   return (
     <div className="bg-bg-main text-text-main min-w-screen min-h-screen flex justify-center items-center">
       <span className=" absolute top-10 right-10 bg-bg-secondary rounded-full shadow-2xl flex items-center">
@@ -88,7 +85,7 @@ const Login = () => {
             variant="primary"
             btnType="submit"
             children="log in"
-            disabled={isloading}
+            disabled={isLoading}
           />
         </form>
         {errorMessage && <p className="text-red-500 mt-5">{errorMessage}</p>}
