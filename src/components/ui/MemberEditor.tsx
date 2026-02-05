@@ -132,7 +132,7 @@ const MemberEditor = ({
                   return (
                     <InputField
                       key={input.name}
-                      value={newMember[input.name]}
+                      value={newMember[input.name as keyof MemberType]}
                       onChange={handleChange}
                       {...input}
                     />
