@@ -111,8 +111,8 @@ export const editPropertyInputs: InputProps[] = [
   },
   {
     label: "Description",
+    type: "textarea",
     placeholder: "Enter description",
-    type: "text",
     name: "description",
   },
   {

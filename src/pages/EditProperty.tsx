@@ -8,6 +8,7 @@ import { selectProperty } from "../redux/properties/propertiesSelectors";
 import Button from "../components/ui/Button";
 import PageTilte from "../components/ui/PageTilte";
 import { editPropertyInputs } from "../data/dashboard";
+import TextareaField from "../components/ui/TextareaField";
 
 const EditProperty = () => {
   const { id } = useParams();
@@ -67,19 +68,35 @@ const EditProperty = () => {
       >
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-2">
-            {editPropertyInputs.map((field) => (
-              <InputField
-                key={field.name}
-                label={field.label}
-                placeholder={field.placeholder}
-                type={field.type}
-                name={field.name}
-                value={String(
-                  updatedData[field.name as keyof PropertyInput] ?? "",
-                )}
-                onChange={handleChange}
-              />
-            ))}
+            {editPropertyInputs.map((field) => {
+              switch (field.type) {
+                case "textarea":
+                  return (
+                    <TextareaField
+                      key={field.name}
+                      value={String(
+                        updatedData[field.name as keyof PropertyInput] ?? "",
+                      )}
+                      onChange={handleChange}
+                      {...field}
+                    />
+                  );
+                default:
+                  return (
+                    <InputField
+                      key={field.name}
+                      label={field.label}
+                      placeholder={field.placeholder}
+                      type={field.type}
+                      name={field.name}
+                      value={String(
+                        updatedData[field.name as keyof PropertyInput] ?? "",
+                      )}
+                      onChange={handleChange}
+                    />
+                  );
+              }
+            })}
           </div>
         </div>
         <Button variant="primary" btnType="submit">
