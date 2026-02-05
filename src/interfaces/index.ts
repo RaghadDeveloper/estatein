@@ -161,7 +161,6 @@ export interface MemberType {
   name: string;
   position: string;
   imageUrl: string;
-  [key: string]: string;
 }
 // Testimonial Card
 export interface Testimonial {
